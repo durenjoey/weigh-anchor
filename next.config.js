@@ -3,7 +3,9 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  output: 'standalone'
+  output: 'standalone',
+  distDir: '.next',
+  useFileSystemPublicRoutes: true
 };
 
 module.exports = nextConfig;
