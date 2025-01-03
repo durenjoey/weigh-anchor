@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Navigation } from "../../components/Navigation";
 import Footer from "../../components/Footer";
 
@@ -24,28 +25,26 @@ const AboutPage = () => {
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-orange-500">Where We Are Today</h2>
                 <p className="text-gray-600 dark:text-gray-300">
-                  As a Service-Disabled Veteran-Owned Small Business (SDVOSB), we've built a strong foundation in construction project management, serving federal agencies, tribal organizations, and Fortune 500 companies. Our expertise in traditional construction management now fuels our technology innovations, creating solutions that address real-world challenges we've encountered in the field.
+                  As a Service-Disabled Veteran-Owned Small Business (SDVOSB), we&apos;ve built a strong foundation in construction project management, serving federal agencies, tribal organizations, and Fortune 500 companies. Our expertise in traditional construction management now fuels our technology innovations, creating solutions that address real-world challenges we&apos;ve encountered in the field.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-orange-500">Innovation Focus</h2>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Today, we're leading the charge in construction technology innovation. Our Construction Copilot platform and emerging robotics solutions represent our commitment to automating and enhancing construction processes. We're not just managing projects - we're revolutionizing how they're delivered.
+                  Today, we&apos;re leading the charge in construction technology innovation. Our Construction Copilot platform and emerging robotics solutions represent our commitment to automating and enhancing construction processes. We&apos;re not just managing projects - we&apos;re revolutionizing how they&apos;re delivered.
                 </p>
               </section>
 
               <section className="card-bg p-8 rounded-lg shadow-lg transition-colors">
                 <h2 className="text-2xl font-bold mb-4 text-orange-500">SDVOSB Certification</h2>
                 <div className="flex items-center space-x-6">
-                  <img 
+                  <Image 
                     src="/images/sdvosb-logo.png" 
                     alt="SDVOSB Certification"
+                    width={128}
+                    height={128}
                     className="w-32 h-32 object-contain"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = 'https://placehold.co/128x128/orange/white?text=SDVOSB';
-                    }}
                   />
                   <p className="text-gray-600 dark:text-gray-300 font-medium">
                     Certified Service-Disabled Veteran-Owned Small Business

@@ -68,7 +68,7 @@ const ConstructionCopilotPage = () => {
             <div className="max-w-3xl mx-auto text-center mb-16">
               <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Why Construction Copilot?</h2>
               <p className="text-gray-600 dark:text-gray-300">
-                Built by construction professionals, for construction professionals. We've automated the tedious tasks so you can focus on what matters most - building.
+                Built by construction professionals, for construction professionals. We&apos;ve automated the tedious tasks so you can focus on what matters most - building.
               </p>
             </div>
             

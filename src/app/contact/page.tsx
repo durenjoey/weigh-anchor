@@ -41,7 +41,7 @@ ${formData.message}
         message: ""
       });
       setSubmitStatus("success");
-    } catch (error) {
+    } catch (_) {
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -64,7 +64,7 @@ ${formData.message}
             <div className="max-w-4xl mx-auto">
               <h1 className="text-4xl font-bold text-center mb-4 text-gray-900 dark:text-white">Contact Us</h1>
               <p className="text-center text-gray-600 dark:text-gray-300 mb-12">
-                If you have any questions, please don't hesitate to reach out.
+                If you have any questions, please don&apos;t hesitate to reach out.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
