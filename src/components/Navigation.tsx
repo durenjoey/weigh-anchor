@@ -1,66 +1,130 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const [currentHash, setCurrentHash] = useState('');
+
+  useEffect(() => {
+    const updateHash = () => {
+      const hash = window.location.hash;
+      setCurrentHash(hash);
+    };
+    
+    // Initial hash
+    updateHash();
+    
+    // Update hash on navigation
+    window.addEventListener('hashchange', updateHash);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('load', updateHash);
+    }
+    
+    return () => {
+      window.removeEventListener('hashchange', updateHash);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('load', updateHash);
+      }
+    };
+  }, []);
+
+  const isActive = (path: string) => {
+    if (path === '/') {
+      return pathname === '/' && !currentHash;
+    }
+    if (path.startsWith('/#')) {
+      const expectedHash = path.substring(1); // Remove the leading /
+      return pathname === '/' && currentHash === expectedHash;
+    }
+    return pathname.startsWith(path);
+  };
   
   return (
     <nav className="fixed w-full z-50">
-      <div className="bg-white/95 backdrop-blur-sm dark:bg-slate-900/95 border-b border-gray-200 dark:border-slate-700">
+      <div className="bg-orange-100/80 backdrop-blur-sm dark:bg-slate-800/95 border-b border-orange-200 dark:border-slate-700 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <Link href="/" className="flex-shrink-0 flex items-center space-x-3">
-                <div className="relative w-8 h-8">
-                  <Image
-                    src="/images/logo.png"
-                    alt="Weigh Anchor Logo"
-                    sizes="32px"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
-                </div>
-                <span className="text-xl font-bold text-gray-900 dark:text-white">Weigh Anchor</span>
-              </Link>
-              <div className="hidden sm:ml-10 sm:flex sm:space-x-8">
+          <div className="flex items-center justify-between h-36 pb-4">
+            <Link href="/" className="flex-shrink-0 -mb-8">
+              <div className="relative w-[400px] h-36">
+                <Image
+                  src="/images/logo-with-text.png"
+                  alt="Weigh Anchor"
+                  sizes="400px"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </Link>
+            <div className="hidden sm:flex sm:space-x-16 flex-1 justify-center mt-4">
+                <Link 
+                  href="/" 
+                  className={`${
+                    isActive('/') 
+                      ? 'border-orange-500 text-gray-900 dark:text-white' 
+                      : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-orange-500 hover:text-gray-700 dark:hover:text-white'
+                  } inline-flex items-center px-1 pt-2 border-b-2 text-base font-medium transition-colors`}
+                >
+                  Home
+                </Link>
                 <Link 
                   href="/#services" 
-                  className="border-transparent text-gray-500 dark:text-gray-300 hover:border-orange-500 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors"
+                  className={`${
+                    isActive('/#services')
+                      ? 'border-orange-500 text-gray-900 dark:text-white'
+                      : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-orange-500 hover:text-gray-700 dark:hover:text-white'
+                  } inline-flex items-center px-1 pt-2 border-b-2 text-base font-medium transition-colors`}
                 >
                   Services
                 </Link>
                 <Link 
                   href="/#technology" 
-                  className="border-transparent text-gray-500 dark:text-gray-300 hover:border-orange-500 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors"
+                  className={`${
+                    isActive('/#technology')
+                      ? 'border-orange-500 text-gray-900 dark:text-white'
+                      : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-orange-500 hover:text-gray-700 dark:hover:text-white'
+                  } inline-flex items-center px-1 pt-2 border-b-2 text-base font-medium transition-colors`}
                 >
                   Technology
                 </Link>
                 <Link 
                   href="/construction-copilot" 
-                  className="border-transparent text-gray-500 dark:text-gray-300 hover:border-orange-500 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors"
+                  className={`${
+                    isActive('/construction-copilot')
+                      ? 'border-orange-500 text-gray-900 dark:text-white'
+                      : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-orange-500 hover:text-gray-700 dark:hover:text-white'
+                  } inline-flex items-center px-1 pt-2 border-b-2 text-base font-medium transition-colors`}
                 >
                   Construction Copilot
                 </Link>
                 <Link 
                   href="/about" 
-                  className="border-transparent text-gray-500 dark:text-gray-300 hover:border-orange-500 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors"
+                  className={`${
+                    isActive('/about')
+                      ? 'border-orange-500 text-gray-900 dark:text-white'
+                      : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-orange-500 hover:text-gray-700 dark:hover:text-white'
+                  } inline-flex items-center px-1 pt-2 border-b-2 text-base font-medium transition-colors`}
                 >
                   About
                 </Link>
                 <Link 
                   href="/contact" 
-                  className="border-transparent text-gray-500 dark:text-gray-300 hover:border-orange-500 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors"
+                  className={`${
+                    isActive('/contact')
+                      ? 'border-orange-500 text-gray-900 dark:text-white'
+                      : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-orange-500 hover:text-gray-700 dark:hover:text-white'
+                  } inline-flex items-center px-1 pt-2 border-b-2 text-base font-medium transition-colors`}
                 >
                   Contact
                 </Link>
               </div>
-            </div>
-
             <div className="flex items-center">
               <div className="sm:hidden">
                 <button
@@ -82,36 +146,67 @@ export const Navigation = () => {
         <div className={`${isOpen ? 'block' : 'hidden'} sm:hidden`}>
           <div className="pt-2 pb-3 space-y-1">
             <Link
+              href="/"
+              className={`block pl-3 pr-4 py-2 text-base font-medium ${
+                isActive('/') 
+                  ? 'text-orange-500 bg-orange-50 dark:bg-slate-700'
+                  : 'text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700'
+              } transition-colors`}
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </Link>
+            <Link
               href="/#services"
-              className="block pl-3 pr-4 py-2 text-base font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors"
+              className={`block pl-3 pr-4 py-2 text-base font-medium ${
+                isActive('/#services')
+                  ? 'text-orange-500 bg-orange-50 dark:bg-slate-700'
+                  : 'text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700'
+              } transition-colors`}
               onClick={() => setIsOpen(false)}
             >
               Services
             </Link>
             <Link
               href="/#technology"
-              className="block pl-3 pr-4 py-2 text-base font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors"
+              className={`block pl-3 pr-4 py-2 text-base font-medium ${
+                isActive('/#technology')
+                  ? 'text-orange-500 bg-orange-50 dark:bg-slate-700'
+                  : 'text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700'
+              } transition-colors`}
               onClick={() => setIsOpen(false)}
             >
               Technology
             </Link>
             <Link
               href="/construction-copilot"
-              className="block pl-3 pr-4 py-2 text-base font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors"
+              className={`block pl-3 pr-4 py-2 text-base font-medium ${
+                isActive('/construction-copilot')
+                  ? 'text-orange-500 bg-orange-50 dark:bg-slate-700'
+                  : 'text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700'
+              } transition-colors`}
               onClick={() => setIsOpen(false)}
             >
               Construction Copilot
             </Link>
             <Link
               href="/about"
-              className="block pl-3 pr-4 py-2 text-base font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors"
+              className={`block pl-3 pr-4 py-2 text-base font-medium ${
+                isActive('/about')
+                  ? 'text-orange-500 bg-orange-50 dark:bg-slate-700'
+                  : 'text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700'
+              } transition-colors`}
               onClick={() => setIsOpen(false)}
             >
               About
             </Link>
             <Link
               href="/contact"
-              className="block pl-3 pr-4 py-2 text-base font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors"
+              className={`block pl-3 pr-4 py-2 text-base font-medium ${
+                isActive('/contact')
+                  ? 'text-orange-500 bg-orange-50 dark:bg-slate-700'
+                  : 'text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700'
+              } transition-colors`}
               onClick={() => setIsOpen(false)}
             >
               Contact

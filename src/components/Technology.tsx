@@ -19,7 +19,7 @@ const StatCard = ({ icon: Icon, value, label }: { icon: React.ElementType; value
 );
 
 export const Technology = () => (
-  <section id="technology" className="py-20">
+  <section id="technology" className="py-20 scroll-mt-44">
     <div className="container mx-auto px-4">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">

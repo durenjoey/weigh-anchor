@@ -4,16 +4,23 @@ import React from 'react';
 import Link from 'next/link';
 
 export const Hero = () => (
-  <div className="relative overflow-hidden card-bg pt-16">
-    <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
+  <div className="relative overflow-hidden pt-16">
+    <div 
+      className="relative flex items-center justify-center min-h-screen bg-cover bg-center bg-fixed"
+      style={{
+        backgroundImage: 'url(/images/hero-background.jpg)',
+      }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-slate-900/50 backdrop-blur-[1px]"></div>
       <div className="container relative mx-auto">
         <div className="items-center flex flex-wrap">
           <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-            <h1 className="text-6xl font-bold leading-tight text-gray-900 dark:text-white">
+            <h1 className="text-7xl font-bold leading-tight text-white drop-shadow-md">
               Where Construction
               <span className="block text-orange-500 mt-2">Meets Innovation</span>
             </h1>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+            <p className="mt-4 text-xl text-gray-200 drop-shadow">
               Breaking free from traditional constraints through technology-enhanced construction management.
             </p>
             <div className="mt-8 flex justify-center gap-4">
@@ -25,7 +32,7 @@ export const Hero = () => (
               </Link>
               <a 
                 href="#services" 
-                className="px-8 py-3 border-2 border-orange-500 text-orange-500 rounded-lg font-medium hover:bg-orange-50 dark:hover:bg-slate-800 transition-all hover:shadow-lg hover:shadow-orange-500/10 hover:-translate-y-0.5"
+                className="px-8 py-3 border-2 border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all hover:shadow-lg hover:shadow-white/10 hover:-translate-y-0.5"
               >
                 Learn More
               </a>
@@ -34,9 +41,9 @@ export const Hero = () => (
         </div>
       </div>
       {/* Decorative background elements */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-40 -right-32 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900/30 dark:to-orange-800/20 blur-3xl opacity-30 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-32 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-orange-100 to-orange-200 dark:from-orange-900/30 dark:to-orange-800/20 blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute inset-0 -z-10 overflow-hidden mix-blend-soft-light">
+        <div className="absolute -top-40 -right-32 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-orange-400 to-orange-500 blur-3xl opacity-30 animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-32 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-orange-400 to-orange-500 blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
     </div>
   </div>

@@ -35,7 +35,7 @@ const ConstructionCopilotPage = () => {
         <Navigation />
 
         {/* Hero Section */}
-        <section className="pt-24 pb-16 bg-slate-900">
+        <section className="pt-44 pb-16 bg-slate-900">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -86,7 +86,7 @@ const ConstructionCopilotPage = () => {
         </section>
 
         {/* Core Features */}
-        <section id="features" className="py-20 section-alt">
+        <section id="features" className="py-20 section-alt scroll-mt-44">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Core Features</h2>
