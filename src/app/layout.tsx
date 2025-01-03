@@ -7,7 +7,7 @@ import { ThemeProvider } from './providers'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://weighanchor.com'),
+  metadataBase: new URL(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
   title: 'Weigh Anchor - Construction Meets Innovation',
   description: 'Breaking free from traditional constraints through technology-enhanced construction management.',
   icons: {
