@@ -1,0 +1,17 @@
+{
+  "name": "Weigh Anchor",
+  "short_name": "Weigh Anchor",
+  "description": "Breaking free from traditional constraints through technology-enhanced construction management.",
+  "icons": [
+    {
+      "src": "/favicon/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#f97316",
+  "background_color": "#0f172a",
+  "display": "standalone",
+  "start_url": "/",
+  "orientation": "portrait"
+}
