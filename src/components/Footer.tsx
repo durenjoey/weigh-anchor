@@ -10,7 +10,7 @@ export const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
         {/* SDVOSB Section */}
         <div className="md:col-span-4 bg-slate-800/50 p-6 rounded-lg">
-          <h4 className="text-xl font-bold mb-4 text-orange-500">Proudly American Owned</h4>
+          <h4 className="text-xl font-bold mb-4 text-orange-500">Proudly Veteran Owned</h4>
           <div className="flex items-start space-x-4">
             <div className="relative w-20 h-20 flex-shrink-0">
               <Image
@@ -31,7 +31,7 @@ export const Footer = () => (
         <div className="md:col-span-4 bg-slate-800/50 p-6 rounded-lg">
           <h4 className="text-xl font-bold mb-6 text-orange-500">Quick Links</h4>
           <div className="grid grid-cols-2 gap-x-8 gap-y-4">
-            <div className="flex flex-col items-center space-y-4">
+            <div className="flex flex-col space-y-4">
               <Link href="/" className="text-gray-400 hover:text-orange-500 transition-colors">
                 Home
               </Link>
@@ -42,7 +42,7 @@ export const Footer = () => (
                 Services
               </Link>
             </div>
-            <div className="flex flex-col items-center space-y-4">
+            <div className="flex flex-col space-y-4">
               <Link href="/#technology" className="text-gray-400 hover:text-orange-500 transition-colors">
                 Technology
               </Link>
