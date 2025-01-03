@@ -55,7 +55,7 @@ export const Technology = () => (
               Construction <span className="text-orange-500">Copilot</span>
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Our AI-powered construction management platform streamlines project delivery through automation. From scope creation to proposal review, we're revolutionizing how construction projects are managed.
+              Our AI-powered construction management platform streamlines project delivery through automation. From scope creation to proposal review, we&apos;re revolutionizing how construction projects are managed.
             </p>
             <ul className="space-y-4 mb-6">
               <li className="flex items-start">

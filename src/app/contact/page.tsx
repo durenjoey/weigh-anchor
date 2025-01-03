@@ -41,7 +41,7 @@ ${formData.message}
         message: ""
       });
       setSubmitStatus("success");
-    } catch (_) {
+    } catch {
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
