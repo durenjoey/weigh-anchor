@@ -21,7 +21,7 @@ export const Hero = () => (
               <span className="block text-orange-500 mt-2">Meets Innovation</span>
             </h1>
             <p className="mt-4 text-lg sm:text-xl text-gray-200 drop-shadow max-w-2xl mx-auto">
-              Breaking free from traditional constraints through technology-enhanced construction management.
+              Technology-Enhanced Construction Management
             </p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4 px-4 sm:px-0">
               <Link 
