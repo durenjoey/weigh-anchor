@@ -6,9 +6,9 @@ import Link from 'next/link';
 export const Hero = () => (
   <div className="relative overflow-hidden pt-16">
     <div 
-      className="relative flex items-center justify-center min-h-screen bg-cover bg-center bg-fixed"
+      className="relative flex items-center justify-center min-h-screen bg-cover bg-center bg-scroll sm:bg-fixed"
       style={{
-        backgroundImage: 'url(/images/hero-background.jpg)',
+        backgroundImage: 'url(/images/hero-background.jpg)'
       }}
     >
       {/* Dark overlay */}
