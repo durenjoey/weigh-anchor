@@ -59,15 +59,15 @@ ${formData.message}
     <main className="min-h-screen">
         <Navigation />
         
-        <main className="pt-44 pb-16">
+        <main className="pt-32 sm:pt-44 pb-12 sm:pb-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl font-bold text-center mb-4 text-gray-900 dark:text-white">Contact Us</h1>
-              <p className="text-center text-gray-600 dark:text-gray-300 mb-12">
+              <h1 className="text-3xl sm:text-4xl font-bold text-center mb-3 sm:mb-4 text-gray-900 dark:text-white">Contact Us</h1>
+              <p className="text-center text-gray-600 dark:text-gray-300 mb-8 sm:mb-12">
                 If you have any questions, please don&apos;t hesitate to reach out.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
                 <div className="text-center">
                   <div className="w-12 h-12 bg-orange-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Mail className="h-6 w-6 text-orange-500" />
@@ -96,7 +96,7 @@ ${formData.message}
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6 card-bg p-8 rounded-lg shadow-lg transition-colors">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 card-bg p-4 sm:p-8 rounded-lg shadow-lg transition-colors">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">

@@ -16,23 +16,23 @@ export const Hero = () => (
       <div className="container relative mx-auto">
         <div className="items-center flex flex-wrap">
           <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-            <h1 className="text-7xl font-bold leading-tight text-white drop-shadow-md">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white drop-shadow-md">
               Where Construction
               <span className="block text-orange-500 mt-2">Meets Innovation</span>
             </h1>
-            <p className="mt-4 text-xl text-gray-200 drop-shadow">
+            <p className="mt-4 text-lg sm:text-xl text-gray-200 drop-shadow max-w-2xl mx-auto">
               Breaking free from traditional constraints through technology-enhanced construction management.
             </p>
-            <div className="mt-8 flex justify-center gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4 px-4 sm:px-0">
               <Link 
                 href="/contact" 
-                className="px-8 py-3 bg-orange-500 text-white rounded-lg font-medium hover:bg-orange-600 transition-all hover:shadow-lg hover:shadow-orange-500/20 hover:-translate-y-0.5"
+                className="w-full sm:w-auto px-8 py-3 bg-orange-500 text-white rounded-lg font-medium hover:bg-orange-600 transition-all hover:shadow-lg hover:shadow-orange-500/20 hover:-translate-y-0.5 text-center"
               >
                 Contact Us
               </Link>
               <a 
                 href="#services" 
-                className="px-8 py-3 border-2 border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all hover:shadow-lg hover:shadow-white/10 hover:-translate-y-0.5"
+                className="w-full sm:w-auto px-8 py-3 border-2 border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all hover:shadow-lg hover:shadow-white/10 hover:-translate-y-0.5 text-center"
               >
                 Learn More
               </a>

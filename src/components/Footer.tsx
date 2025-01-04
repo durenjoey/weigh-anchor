@@ -6,13 +6,13 @@ import Image from 'next/image';
 
 export const Footer = () => (
   <footer className="bg-gradient-to-b from-slate-800 to-slate-900 text-white">
-    <div className="container mx-auto px-4 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+    <div className="container mx-auto px-4 py-12 sm:py-16">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-12">
         {/* SDVOSB Section */}
-        <div className="md:col-span-4 bg-slate-800/50 p-6 rounded-lg">
-          <h4 className="text-xl font-bold mb-4 text-orange-500">Proudly Veteran Owned</h4>
-          <div className="flex items-start space-x-4">
-            <div className="relative w-20 h-20 flex-shrink-0">
+        <div className="md:col-span-4 bg-slate-800/50 p-4 sm:p-6 rounded-lg">
+          <h4 className="text-lg sm:text-xl font-bold mb-4 text-orange-500">Proudly Veteran Owned</h4>
+          <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="relative w-16 sm:w-20 h-16 sm:h-20 flex-shrink-0">
               <Image
                 src="/images/sdvosb-logo.png"
                 alt="SDVOSB Certification"
@@ -72,7 +72,7 @@ export const Footer = () => (
         </div>
       </div>
 
-      <div className="mt-16 pt-8 border-t border-gray-700/50">
+      <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-gray-700/50">
         <div className="flex flex-col items-center space-y-4">
           <div className="flex items-center space-x-2">
             <Image

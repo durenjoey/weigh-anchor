@@ -50,9 +50,9 @@ export const Navigation = () => {
     <nav className="fixed w-full z-50">
       <div className="bg-orange-100/80 backdrop-blur-sm dark:bg-slate-800/95 border-b border-orange-200 dark:border-slate-700 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-36 pb-4">
-            <Link href="/" className="flex-shrink-0 -mb-8">
-              <div className="relative w-[400px] h-36">
+          <div className="flex items-center justify-between h-24 sm:h-36 pb-4">
+            <Link href="/" className="flex-shrink-0 -mb-4 sm:-mb-8">
+              <div className="relative w-[200px] sm:w-[400px] h-24 sm:h-36">
                 <Image
                   src="/images/logo-with-text.png"
                   alt="Weigh Anchor"
@@ -143,8 +143,8 @@ export const Navigation = () => {
         </div>
 
         {/* Mobile menu */}
-        <div className={`${isOpen ? 'block' : 'hidden'} sm:hidden`}>
-          <div className="pt-2 pb-3 space-y-1">
+        <div className={`${isOpen ? 'block' : 'hidden'} sm:hidden fixed inset-x-0 top-24 bg-orange-100/95 dark:bg-slate-800/95 border-b border-orange-200 dark:border-slate-700 shadow-lg`}>
+          <div className="pt-2 pb-3 space-y-1 max-h-[calc(100vh-6rem)] overflow-y-auto">
             <Link
               href="/"
               className={`block pl-3 pr-4 py-2 text-base font-medium ${

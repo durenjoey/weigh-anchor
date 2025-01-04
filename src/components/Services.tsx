@@ -22,13 +22,13 @@ const ServiceCard = ({
 );
 
 export const Services = () => (
-  <section id="services" className="py-20 section-alt scroll-mt-44">
+  <section id="services" className="py-12 sm:py-20 section-alt scroll-mt-32 sm:scroll-mt-44">
     <div className="container mx-auto px-4">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+      <div className="text-center mb-12 sm:mb-16">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
           <span className="text-orange-500">Professional</span> Services
         </h2>
-        <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4 sm:px-0">
           Decades of construction expertise enhanced by modern technology
         </p>
       </div>

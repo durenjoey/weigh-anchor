@@ -19,20 +19,20 @@ const StatCard = ({ icon: Icon, value, label }: { icon: React.ElementType; value
 );
 
 export const Technology = () => (
-  <section id="technology" className="py-20 scroll-mt-44">
+  <section id="technology" className="py-12 sm:py-20 scroll-mt-32 sm:scroll-mt-44">
     <div className="container mx-auto px-4">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+      <div className="text-center mb-12 sm:mb-16">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
           <span className="text-orange-500">Technology</span> Solutions
         </h2>
-        <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4 sm:px-0">
           Pioneering the future of construction automation
         </p>
       </div>
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
+          <div className="space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 sm:gap-6">
               <StatCard
                 icon={MessageSquare}
                 value="10,000+"
@@ -50,8 +50,8 @@ export const Technology = () => (
               />
             </div>
           </div>
-          <div className="flex flex-col justify-center">
-            <h3 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+          <div className="flex flex-col justify-center mt-8 lg:mt-0">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-white">
               Construction <span className="text-orange-500">Copilot</span>
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
