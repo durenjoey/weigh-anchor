@@ -46,7 +46,7 @@ const ConstructionCopilotPage = () => {
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <a 
-                  href="https://constructioncopilot.ai" 
+                  href="mailto:admin@weighanchor.com?subject=Construction Copilot Beta Access Request&body=Hi,%0A%0AI'd like to request beta access for Construction Copilot.%0A%0AThank you" 
                   className="px-8 py-3 bg-orange-500 text-white rounded-lg font-medium hover:bg-orange-600 transition-all hover:shadow-lg hover:shadow-orange-500/20 hover:-translate-y-0.5"
                 >
                   Request Beta Access
@@ -165,7 +165,7 @@ const ConstructionCopilotPage = () => {
                 Join our beta program and be among the first to experience the future of construction management.
               </p>
               <a 
-                href="https://constructioncopilot.ai" 
+                href="mailto:admin@weighanchor.com?subject=Construction Copilot Beta Access Request&body=Hi,%0A%0AI'd like to request beta access for Construction Copilot.%0A%0AThank you" 
                 className="inline-flex items-center px-8 py-3 bg-orange-500 text-white rounded-lg font-medium hover:bg-orange-600 transition-all hover:shadow-lg hover:shadow-orange-500/20 hover:-translate-y-0.5"
               >
                 Get Started <ArrowRight className="ml-2 h-5 w-5" />
