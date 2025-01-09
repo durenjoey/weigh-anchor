@@ -58,7 +58,7 @@ export const Navigation = () => {
                   alt="Weigh Anchor"
                   sizes="400px"
                   fill
-                  className="object-contain"
+                  className="object-contain dark:invert"
                   priority
                 />
               </div>
