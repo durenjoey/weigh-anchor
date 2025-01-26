@@ -99,18 +99,13 @@ const ConstructionCopilotPage = () => {
                 <div className="space-y-8">
                   <FeatureCard 
                     icon={FileText}
-                    title="Smart Scope Creator"
-                    description="Generate comprehensive project scopes in minutes using our intelligent templates and industry best practices."
-                  />
-                  <FeatureCard 
-                    icon={CheckSquare}
-                    title="Proposal Reviewer"
-                    description="Streamline proposal analysis and ensure alignment with project requirements, making review processes more efficient."
+                    title="AI Construction Chat"
+                    description="Expert guidance for estimating, proposals, scopes, and all aspects of construction management"
                   />
                   <FeatureCard 
                     icon={BookOpen}
-                    title="Lessons Learned Repository"
-                    description="Capture and organize valuable project insights, making institutional knowledge accessible and actionable for future projects."
+                    title="Smart Lessons Learned Repository"
+                    description="Interactive knowledge base that transforms past experiences into actionable insights"
                   />
                 </div>
               </div>
@@ -120,7 +115,7 @@ const ConstructionCopilotPage = () => {
                   <FeatureCard 
                     icon={ClipboardList}
                     title="Daily Reporter"
-                    description="Simplify daily reporting with automated documentation and progress tracking, keeping all stakeholders informed."
+                    description="Streamlined voice-activated reporting system for efficient project documentation"
                   />
                 </div>
               </div>
