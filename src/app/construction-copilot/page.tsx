@@ -157,7 +157,7 @@ const ConstructionCopilotPage = () => {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Ready to Transform Your Project Delivery?</h2>
               <p className="text-gray-600 dark:text-gray-300 mb-8">
-                Join our beta program and be among the first to experience the future of construction management.
+                Experience the future of construction project management.
               </p>
               <a 
                 href="https://constructioncopilot.com" 
