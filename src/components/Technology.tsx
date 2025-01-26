@@ -63,7 +63,7 @@ export const Technology = () => (
                   <span className="text-orange-500 text-sm">✓</span>
                 </div>
                 <p className="ml-3 text-gray-600 dark:text-gray-300">
-                  <strong className="text-gray-900 dark:text-white">AI-Driven Scope Creation:</strong> Generate detailed project scopes in minutes
+                  <strong className="text-gray-900 dark:text-white">AI Construction Chat:</strong> Expert guidance for estimating, proposals, scopes, and all aspects of construction management
                 </p>
               </li>
               <li className="flex items-start">
@@ -71,7 +71,7 @@ export const Technology = () => (
                   <span className="text-orange-500 text-sm">✓</span>
                 </div>
                 <p className="ml-3 text-gray-600 dark:text-gray-300">
-                  <strong className="text-gray-900 dark:text-white">Smart Proposal Review:</strong> Automated analysis and risk assessment
+                  <strong className="text-gray-900 dark:text-white">Smart Lessons Learned Repository:</strong> Interactive knowledge base that transforms past experiences into actionable insights
                 </p>
               </li>
               <li className="flex items-start">
@@ -79,7 +79,7 @@ export const Technology = () => (
                   <span className="text-orange-500 text-sm">✓</span>
                 </div>
                 <p className="ml-3 text-gray-600 dark:text-gray-300">
-                  <strong className="text-gray-900 dark:text-white">Knowledge Repository:</strong> AI-organized lessons learned database
+                  <strong className="text-gray-900 dark:text-white">Daily Reporter:</strong> Streamlined voice-activated reporting system for efficient project documentation
                 </p>
               </li>
             </ul>
