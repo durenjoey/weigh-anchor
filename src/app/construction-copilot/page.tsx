@@ -3,7 +3,7 @@
 import React from "react";
 import { Navigation } from "../../components/Navigation";
 import Footer from "../../components/Footer";
-import { FileText, CheckSquare, ClipboardList, BookOpen, ArrowRight } from "lucide-react";
+import { FileText, ClipboardList, BookOpen, ArrowRight } from "lucide-react";
 
 const FeatureCard = ({ icon: Icon, title, description }: { icon: React.ElementType; title: string; description: string }) => (
   <div className="card-bg p-6 rounded-lg shadow-lg transition-colors hover:shadow-xl">
