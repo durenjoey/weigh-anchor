@@ -139,8 +139,8 @@ const ConstructionCopilotPage = () => {
               />
               <TimelineItem 
                 date="February 2025"
-                title="Quality Assurance Module"
-                description="Advanced QA/QC tools integrated with field operations and reporting."
+                title="Smart Risk Management Module"
+                description="AI-powered system that proactively identifies, analyzes, and mitigates project risks by leveraging historical data and industry insights."
               />
               <TimelineItem 
                 date="March 2025"
