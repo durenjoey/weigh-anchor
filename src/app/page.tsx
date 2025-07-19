@@ -104,7 +104,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button size="lg" className="bg-electric-blue hover:bg-electric-blue/80 text-arctic-white font-medium px-8 py-4 text-lg">
                 <Satellite className="w-5 h-5 mr-2" />
-                INITIATE MISSION
+                START PROJECT
                 <ChevronRight className="w-5 h-5 ml-2" />
               </Button>
               <Link href="/operations">
@@ -144,10 +144,10 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-3xl md:text-4xl text-arctic-white mb-4">
-              MISSION CAPABILITIES
+              SERVICE CAPABILITIES
             </h2>
             <p className="text-muted-foreground text-lg">
-              Precision deployment in impossible conditions
+              Precision execution in challenging environments
             </p>
           </div>
 
@@ -157,7 +157,7 @@ export default function Home() {
                 <div className="w-16 h-16 bg-electric-blue/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse-glow">
                   <Target className="w-8 h-8 text-electric-blue" />
                 </div>
-                <h3 className="font-display text-xl text-arctic-white mb-4">PRECISION LOGISTICS</h3>
+                <h3 className="font-display text-xl text-arctic-white mb-4">PROJECT LOGISTICS</h3>
                 <p className="text-muted-foreground">
                   Coordinating complex supply chains across impossible terrain and weather conditions.
                 </p>
@@ -169,7 +169,7 @@ export default function Home() {
                 <div className="w-16 h-16 bg-electric-blue/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse-glow">
                   <Shield className="w-8 h-8 text-electric-blue" />
                 </div>
-                <h3 className="font-display text-xl text-arctic-white mb-4">EXTREME CONDITIONS</h3>
+                <h3 className="font-display text-xl text-arctic-white mb-4">CHALLENGING ENVIRONMENTS</h3>
                 <p className="text-muted-foreground">
                   Operating in environments where conventional methods fail. Arctic, tropical, remote.
                 </p>
@@ -181,7 +181,7 @@ export default function Home() {
                 <div className="w-16 h-16 bg-electric-blue/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse-glow">
                   <Zap className="w-8 h-8 text-electric-blue" />
                 </div>
-                <h3 className="font-display text-xl text-arctic-white mb-4">RAPID DEPLOYMENT</h3>
+                <h3 className="font-display text-xl text-arctic-white mb-4">RAPID EXECUTION</h3>
                 <p className="text-muted-foreground">
                   Gaming-level responsiveness in real-world logistics. Every decision optimized for speed.
                 </p>
@@ -202,7 +202,7 @@ export default function Home() {
               </span>
             </div>
             <div className="font-mono text-sm text-muted-foreground">
-              PROJECT ARD © 2025 • CLASSIFIED OPERATIONS
+              PROJECT ARD © 2025 • ENTERPRISE PROJECTS
             </div>
           </div>
         </div>

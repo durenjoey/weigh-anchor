@@ -351,7 +351,7 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
             <CardHeader>
               <CardTitle className="font-display text-electric-blue flex items-center">
                 <Target className="w-5 h-5 mr-2" />
-                GLOBAL OPERATIONS MAP
+                GLOBAL PROJECT MAP
               </CardTitle>
             </CardHeader>
             <CardContent className="p-6">

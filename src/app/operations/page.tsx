@@ -39,12 +39,12 @@ export default function OperationsPage() {
               <Link href="/">
                 <Button variant="ghost" size="sm" className="text-electric-blue hover:bg-electric-blue/10">
                   <ArrowLeft className="w-4 h-4 mr-2" />
-                  MISSION CONTROL
+                  PROJECT OVERSIGHT
                 </Button>
               </Link>
               <div className="h-6 w-px bg-electric-blue/30"></div>
               <div>
-                <h1 className="font-display text-xl text-arctic-white">OPERATIONS CENTER</h1>
+                <h1 className="font-display text-xl text-arctic-white">PROJECT CONTROL CENTER</h1>
                 <p className="text-xs text-muted-foreground">GLOBAL PROJECT MONITORING</p>
               </div>
             </div>
@@ -54,7 +54,7 @@ export default function OperationsPage() {
                 OPERATIONAL
               </Badge>
               <div className="text-right">
-                <p className="text-xs text-muted-foreground">MISSION TIME</p>
+                <p className="text-xs text-muted-foreground">SYSTEM TIME</p>
                 <p className="font-mono text-sm text-electric-blue">
                   {formatMissionTime(missionTime)}
                 </p>
@@ -71,10 +71,10 @@ export default function OperationsPage() {
           <div className="flex items-center justify-between mb-4">
             <div>
               <h2 className="font-display text-3xl text-arctic-white mb-2">
-                GLOBAL OPERATIONS OVERVIEW
+                PROJECT PORTFOLIO OVERVIEW
               </h2>
               <p className="text-muted-foreground">
-                Real-time monitoring of all active deployments and mission-critical infrastructure
+                Real-time monitoring of all active projects and critical infrastructure
               </p>
             </div>
             <div className="flex items-center space-x-4">
@@ -123,13 +123,13 @@ export default function OperationsPage() {
             <div className="flex items-center space-x-4 mb-4 md:mb-0">
               <Target className="w-5 h-5 text-electric-blue" />
               <span className="font-mono text-sm text-muted-foreground">
-                OPERATIONS CENTER • REAL-TIME DATA FEED
+                PROJECT CONTROL CENTER • REAL-TIME DATA FEED
               </span>
             </div>
             <div className="flex items-center space-x-6 text-xs text-muted-foreground">
               <span>LAST UPDATE: {formatMissionTime(missionTime)}</span>
               <span>•</span>
-              <span>SECURITY LEVEL: AUTHORIZED PERSONNEL ONLY</span>
+              <span>ACCESS LEVEL: AUTHORIZED PERSONNEL ONLY</span>
             </div>
           </div>
         </div>
