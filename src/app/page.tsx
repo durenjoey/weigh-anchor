@@ -15,7 +15,7 @@ import {
   Activity,
   Globe
 } from "lucide-react";
-import { projects, getTotalProjectCount, getUniqueStates } from "@/data/projects";
+import { projects, getTotalProjectCount, getOpenProjectCount, getUniqueStates } from "@/data/projects";
 import Link from "next/link";
 
 export default function Home() {

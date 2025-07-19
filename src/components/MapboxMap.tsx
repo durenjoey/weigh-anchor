@@ -13,7 +13,7 @@ import {
   Satellite,
   Map as MapIcon
 } from "lucide-react";
-import { projects, Project, getProjectsByType, getTotalProjectCount } from "@/data/projects";
+import { projects, Project, getProjectsByType, getProjectsByStatus, getTotalProjectCount, getOpenProjectCount, getClosedProjectCount } from "@/data/projects";
 
 // Import Mapbox GL JS
 import mapboxgl from 'mapbox-gl';
@@ -28,7 +28,10 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
   const map = useRef<mapboxgl.Map | null>(null);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [visibleTypes, setVisibleTypes] = useState<Set<Project['type']>>(
-    new Set(['tribal', 'sensitive', 'corporate', 'government'])
+    new Set(['tribal-government', 'corporate'])
+  );
+  const [visibleStatus, setVisibleStatus] = useState<Set<Project['status']>>(
+    new Set(['open', 'closed'])
   );
   const [mapStyle, setMapStyle] = useState<'satellite' | 'dark' | 'terrain'>('dark');
   const [isMapLoaded, setIsMapLoaded] = useState(false);
@@ -38,19 +41,16 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
 
   const getProjectColor = (project: Project) => {
     switch (project.type) {
-      case 'tribal': return '#60a5fa'; // blue-400
-      case 'sensitive': return '#f87171'; // red-400
+      case 'tribal-government': return '#60a5fa'; // blue-400
       case 'corporate': return '#4ade80'; // green-400
-      case 'government': return '#a78bfa'; // purple-400
       default: return '#3b82f6'; // electric-blue
     }
   };
 
   const getStatusColor = (status: Project['status']) => {
     switch (status) {
-      case 'active': return '#3b82f6'; // electric-blue
-      case 'completed': return '#4ade80'; // green-400
-      case 'planning': return '#f97316'; // signal-orange
+      case 'open': return '#3b82f6'; // electric-blue
+      case 'closed': return '#4ade80'; // green-400
       default: return '#6b7280'; // muted
     }
   };
@@ -91,7 +91,9 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
     }
   };
 
-  const visibleProjects = projects.filter(project => visibleTypes.has(project.type));
+  const visibleProjects = projects.filter(project => 
+    visibleTypes.has(project.type) && visibleStatus.has(project.status)
+  );
 
   // Initialize map
   useEffect(() => {
@@ -218,7 +220,7 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
             backdrop-filter: blur(8px);
           ">
             <div style="font-weight: bold; color: ${getProjectColor(project)};">
-              ${project.securityLevel === 'classified' ? 'CLASSIFIED OPERATION' : project.name}
+              ${project.name}
             </div>
             <div style="opacity: 0.8; margin-top: 2px;">
               ${project.location}, ${project.state}
@@ -247,7 +249,7 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
         <div className="flex items-center space-x-2 text-sm text-muted-foreground">
           <span>FILTER:</span>
         </div>
-        {(['tribal', 'sensitive', 'corporate', 'government'] as const).map((type) => (
+        {(['tribal-government', 'corporate'] as const).map((type) => (
           <Button
             key={type}
             variant="outline"
@@ -260,9 +262,40 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
             } transition-all`}
           >
             {visibleTypes.has(type) ? <Eye className="w-3 h-3 mr-1" /> : <EyeOff className="w-3 h-3 mr-1" />}
-            {type.toUpperCase()} ({getProjectsByType(type).length})
+            {type === 'tribal-government' ? 'TRIBAL/GOVERNMENT' : type.toUpperCase()} ({getProjectsByType(type).length})
           </Button>
         ))}
+        
+        <div className="h-4 w-px bg-electric-blue/30 mx-2"></div>
+        
+        {/* Status Controls */}
+        <div className="flex items-center space-x-2">
+          <span className="text-sm text-muted-foreground">STATUS:</span>
+          {(['open', 'closed'] as const).map((status) => (
+            <Button
+              key={status}
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                const newVisible = new Set(visibleStatus);
+                if (newVisible.has(status)) {
+                  newVisible.delete(status);
+                } else {
+                  newVisible.add(status);
+                }
+                setVisibleStatus(newVisible);
+              }}
+              className={`${
+                visibleStatus.has(status) 
+                  ? 'bg-electric-blue/20 border-electric-blue text-electric-blue' 
+                  : 'border-muted text-muted-foreground'
+              } transition-all`}
+            >
+              {visibleStatus.has(status) ? <Eye className="w-3 h-3 mr-1" /> : <EyeOff className="w-3 h-3 mr-1" />}
+              {status.toUpperCase()} ({getProjectsByStatus(status).length})
+            </Button>
+          ))}
+        </div>
         
         <div className="h-4 w-px bg-electric-blue/30 mx-2"></div>
         
@@ -336,20 +369,28 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
           {/* Stats Card */}
           <Card className="bg-card/30 backdrop-blur-sm border-electric-blue/20">
             <CardHeader>
-              <CardTitle className="font-display text-electric-blue text-sm">MISSION STATS</CardTitle>
+              <CardTitle className="font-display text-electric-blue text-sm">PROJECT PORTFOLIO</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Total Projects:</span>
+                <span className="text-muted-foreground">Total Portfolio:</span>
                 <span className="text-electric-blue font-mono">{getTotalProjectCount()}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Active Locations:</span>
-                <span className="text-electric-blue font-mono">{visibleProjects.length}</span>
+                <span className="text-muted-foreground">Active Projects:</span>
+                <span className="text-electric-blue font-mono">{getOpenProjectCount()}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">States/Territories:</span>
-                <span className="text-electric-blue font-mono">{new Set(visibleProjects.map(p => p.state)).size}</span>
+                <span className="text-muted-foreground">Completed Projects:</span>
+                <span className="text-electric-blue font-mono">{getClosedProjectCount()}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">Geographic Reach:</span>
+                <span className="text-electric-blue font-mono">{new Set(projects.map(p => p.state)).size} locations</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">Visible Projects:</span>
+                <span className="text-electric-blue font-mono">{visibleProjects.length}</span>
               </div>
             </CardContent>
           </Card>
@@ -366,7 +407,7 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
               <CardContent className="space-y-4">
                 <div>
                   <h3 className="font-display text-arctic-white mb-2">
-                    {selectedProject.securityLevel === 'classified' ? 'CLASSIFIED OPERATION' : selectedProject.name}
+                    {selectedProject.name}
                   </h3>
                   <p className="text-sm text-muted-foreground">{selectedProject.location}, {selectedProject.state}</p>
                 </div>

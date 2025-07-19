@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import MapboxMap from "@/components/MapboxMap";
-import { Project, getTotalProjectCount, getUniqueStates } from "@/data/projects";
+import { Project, getTotalProjectCount, getOpenProjectCount, getUniqueStates } from "@/data/projects";
 
 export default function OperationsPage() {
   const [missionTime, setMissionTime] = useState(new Date());

@@ -8,377 +8,245 @@ export interface Project {
     lng: number;
   };
   projectCount: number;
-  type: 'tribal' | 'sensitive' | 'corporate' | 'government';
-  category: 'remote' | 'infrastructure' | 'automation' | 'communications';
-  status: 'active' | 'completed' | 'planning';
-  securityLevel: 'public' | 'restricted' | 'classified';
-  clientName?: string; // Only for corporate/government with public security level
+  type: 'tribal-government' | 'corporate';
+  category: 'construction' | 'engineering' | 'automation' | 'infrastructure';
+  status: 'open' | 'closed';
+  clientName?: string; // Only for corporate projects
   description?: string;
 }
 
 export const projects: Project[] = [
-  // Alaska - Remote/Tribal Projects
+  // OPEN PROJECTS - Tribal/Government
   {
     id: 'atka-ak',
-    name: 'Atka Remote Operations',
+    name: 'Atka Infrastructure Project',
     location: 'Atka',
     state: 'Alaska',
     coordinates: { lat: 52.2322, lng: -174.2064 },
     projectCount: 1,
-    type: 'tribal',
-    category: 'remote',
-    status: 'completed',
-    securityLevel: 'restricted'
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
   },
   {
     id: 'chefornak-ak',
-    name: 'Chefornak Infrastructure',
+    name: 'Chefornak Development',
     location: 'Chefornak',
     state: 'Alaska',
     coordinates: { lat: 60.1492, lng: -164.2856 },
     projectCount: 1,
-    type: 'tribal',
+    type: 'tribal-government',
     category: 'infrastructure',
-    status: 'active',
-    securityLevel: 'restricted'
+    status: 'open'
   },
   {
-    id: 'fort-yukon-ak',
-    name: 'Fort Yukon Operations',
-    location: 'Fort Yukon',
-    state: 'Alaska',
-    coordinates: { lat: 66.5694, lng: -145.2736 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'remote',
-    status: 'completed',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'huslia-ak',
-    name: 'Huslia Village Project',
-    location: 'Huslia Village',
-    state: 'Alaska',
-    coordinates: { lat: 65.6981, lng: -156.3931 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'infrastructure',
-    status: 'active',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'kaltag-ak',
-    name: 'Kaltag Remote Station',
-    location: 'Kaltag',
-    state: 'Alaska',
-    coordinates: { lat: 64.3189, lng: -158.7267 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'communications',
-    status: 'completed',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'ketchikan-ak',
-    name: 'Ketchikan Community Project',
-    location: 'Ketchikan Indian Community',
-    state: 'Alaska',
-    coordinates: { lat: 55.3422, lng: -131.6461 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'infrastructure',
-    status: 'active',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'knik-ak',
-    name: 'Knik Tribe Operations',
-    location: 'Knik Tribe',
-    state: 'Alaska',
-    coordinates: { lat: 61.5181, lng: -149.6444 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'remote',
-    status: 'planning',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'manley-ak',
-    name: 'Manley Village Project',
-    location: 'Manley Village Council',
-    state: 'Alaska',
-    coordinates: { lat: 64.9975, lng: -150.6403 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'infrastructure',
-    status: 'active',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'buckland-ak',
-    name: 'Buckland Operations',
-    location: 'Native Village of Buckland',
-    state: 'Alaska',
-    coordinates: { lat: 65.9814, lng: -161.1489 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'remote',
-    status: 'completed',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'chuathbaluk-ak',
-    name: 'Chuathbaluk Project',
-    location: 'Native Village of Chuathbaluk',
-    state: 'Alaska',
-    coordinates: { lat: 61.5781, lng: -159.2156 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'infrastructure',
-    status: 'active',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'gakona-ak',
-    name: 'Gakona Operations',
-    location: 'Native Village of Gakona',
-    state: 'Alaska',
-    coordinates: { lat: 62.3069, lng: -145.3181 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'communications',
-    status: 'completed',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'solomon-ak',
-    name: 'Solomon Remote Station',
-    location: 'Native Village of Solomon',
-    state: 'Alaska',
-    coordinates: { lat: 64.5631, lng: -164.4339 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'remote',
-    status: 'active',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'kake-ak',
-    name: 'Kake Village Project',
-    location: 'Organized Village of Kake',
-    state: 'Alaska',
-    coordinates: { lat: 56.9719, lng: -133.9453 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'infrastructure',
-    status: 'completed',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'anvik-ak',
-    name: 'Anvik Operations',
-    location: 'Anvik',
-    state: 'Alaska',
-    coordinates: { lat: 62.6467, lng: -160.1089 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'remote',
-    status: 'active',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'chalkitsik-ak',
-    name: 'Chalkitsik Project',
-    location: 'Chalkitsik',
-    state: 'Alaska',
-    coordinates: { lat: 66.6444, lng: -143.7278 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'infrastructure',
-    status: 'completed',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'circle-ak',
-    name: 'Circle Remote Station',
-    location: 'Circle',
-    state: 'Alaska',
-    coordinates: { lat: 65.8275, lng: -144.0647 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'communications',
-    status: 'active',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'eagle-ak',
-    name: 'Eagle Operations',
-    location: 'Eagle',
-    state: 'Alaska',
-    coordinates: { lat: 64.7881, lng: -141.2019 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'remote',
-    status: 'planning',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'minto-ak',
-    name: 'Minto Village Project',
-    location: 'Minto',
-    state: 'Alaska',
-    coordinates: { lat: 65.1431, lng: -149.3706 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'infrastructure',
-    status: 'active',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'nenana-ak',
-    name: 'Nenana Operations',
-    location: 'Nenana',
-    state: 'Alaska',
-    coordinates: { lat: 64.5639, lng: -149.0939 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'communications',
-    status: 'completed',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'rampart-ak',
-    name: 'Rampart Remote Station',
-    location: 'Rampart',
-    state: 'Alaska',
-    coordinates: { lat: 65.5097, lng: -150.1411 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'remote',
-    status: 'active',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'shageluk-ak',
-    name: 'Shageluk Project',
-    location: 'Shageluk',
-    state: 'Alaska',
-    coordinates: { lat: 62.6925, lng: -159.5689 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'infrastructure',
-    status: 'completed',
-    securityLevel: 'restricted'
-  },
-  {
-    id: 'tanacross-ak',
-    name: 'Tanacross Operations',
-    location: 'Tanacross',
-    state: 'Alaska',
-    coordinates: { lat: 63.3889, lng: -143.3456 },
-    projectCount: 1,
-    type: 'tribal',
-    category: 'communications',
-    status: 'active',
-    securityLevel: 'restricted'
-  },
-
-  // Other States - Tribal Projects
-  {
-    id: 'crow-mt',
+    id: 'crow-nation-mt',
     name: 'Crow Nation Project',
     location: 'Crow Nation',
     state: 'Montana',
     coordinates: { lat: 45.5347, lng: -107.9403 },
     projectCount: 1,
-    type: 'tribal',
+    type: 'tribal-government',
     category: 'infrastructure',
-    status: 'active',
-    securityLevel: 'restricted'
+    status: 'open'
+  },
+  {
+    id: 'fort-yukon-ak',
+    name: 'Fort Yukon Development',
+    location: 'Fort Yukon',
+    state: 'Alaska',
+    coordinates: { lat: 66.5694, lng: -145.2736 },
+    projectCount: 1,
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
   },
   {
     id: 'gila-river-az',
-    name: 'Gila River Operations',
+    name: 'Gila River Project',
     location: 'Gila River',
     state: 'Arizona',
     coordinates: { lat: 33.2456, lng: -111.7847 },
     projectCount: 1,
-    type: 'tribal',
+    type: 'tribal-government',
     category: 'infrastructure',
-    status: 'completed',
-    securityLevel: 'restricted'
+    status: 'open'
+  },
+  {
+    id: 'huslia-ak',
+    name: 'Huslia Village Development',
+    location: 'Huslia Village',
+    state: 'Alaska',
+    coordinates: { lat: 65.6981, lng: -156.3931 },
+    projectCount: 1,
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
+  },
+  {
+    id: 'kaltag-ak',
+    name: 'Kaltag Infrastructure',
+    location: 'Kaltag',
+    state: 'Alaska',
+    coordinates: { lat: 64.3189, lng: -158.7267 },
+    projectCount: 1,
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
+  },
+  {
+    id: 'ketchikan-ak',
+    name: 'Ketchikan Indian Community Project',
+    location: 'Ketchikan Indian Community',
+    state: 'Alaska',
+    coordinates: { lat: 55.3422, lng: -131.6461 },
+    projectCount: 1,
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
+  },
+  {
+    id: 'knik-ak',
+    name: 'Knik Tribe Development',
+    location: 'Knik Tribe',
+    state: 'Alaska',
+    coordinates: { lat: 61.5181, lng: -149.6444 },
+    projectCount: 1,
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
   },
   {
     id: 'lac-vieux-mi',
-    name: 'Lac Vieux Desert Project',
+    name: 'Lac Vieux Desert Band Project',
     location: 'Lac Vieux Desert Band',
     state: 'Michigan',
     coordinates: { lat: 46.2619, lng: -89.1456 },
     projectCount: 1,
-    type: 'tribal',
-    category: 'communications',
-    status: 'active',
-    securityLevel: 'restricted'
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
   },
   {
     id: 'little-traverse-mi',
-    name: 'Little Traverse Bay Operations',
+    name: 'Little Traverse Bay Bands Project',
     location: 'Little Traverse Bay Bands',
     state: 'Michigan',
     coordinates: { lat: 45.3694, lng: -84.9544 },
     projectCount: 1,
-    type: 'tribal',
+    type: 'tribal-government',
     category: 'infrastructure',
-    status: 'completed',
-    securityLevel: 'restricted'
+    status: 'open'
+  },
+  {
+    id: 'manley-ak',
+    name: 'Manley Village Council Project',
+    location: 'Manley Village Council',
+    state: 'Alaska',
+    coordinates: { lat: 64.9975, lng: -150.6403 },
+    projectCount: 1,
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
+  },
+  {
+    id: 'buckland-ak',
+    name: 'Native Village of Buckland Project',
+    location: 'Native Village of Buckland',
+    state: 'Alaska',
+    coordinates: { lat: 65.9814, lng: -161.1489 },
+    projectCount: 1,
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
+  },
+  {
+    id: 'chuathbaluk-ak',
+    name: 'Native Village of Chuathbaluk Project',
+    location: 'Native Village of Chuathbaluk',
+    state: 'Alaska',
+    coordinates: { lat: 61.5781, lng: -159.2156 },
+    projectCount: 1,
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
+  },
+  {
+    id: 'gakona-ak',
+    name: 'Native Village of Gakona Project',
+    location: 'Native Village of Gakona',
+    state: 'Alaska',
+    coordinates: { lat: 62.3069, lng: -145.3181 },
+    projectCount: 1,
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
+  },
+  {
+    id: 'solomon-ak',
+    name: 'Native Village of Solomon Project',
+    location: 'Native Village of Solomon',
+    state: 'Alaska',
+    coordinates: { lat: 64.5631, lng: -164.4339 },
+    projectCount: 1,
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
+  },
+  {
+    id: 'kake-ak',
+    name: 'Organized Village of Kake Project',
+    location: 'Organized Village of Kake',
+    state: 'Alaska',
+    coordinates: { lat: 56.9719, lng: -133.9453 },
+    projectCount: 1,
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
   },
   {
     id: 'prairie-band-ks',
-    name: 'Prairie Band Potawatomi Project',
+    name: 'Prairie Band Potawatomi Nation Project',
     location: 'Prairie Band Potawatomi Nation',
     state: 'Kansas',
     coordinates: { lat: 39.3644, lng: -95.8019 },
     projectCount: 1,
-    type: 'tribal',
-    category: 'communications',
-    status: 'active',
-    securityLevel: 'restricted'
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
   },
   {
     id: 'zuni-nm',
-    name: 'Pueblo of Zuni Operations',
+    name: 'Pueblo of Zuni Project',
     location: 'Pueblo of Zuni',
     state: 'New Mexico',
     coordinates: { lat: 35.0719, lng: -108.8506 },
     projectCount: 1,
-    type: 'tribal',
+    type: 'tribal-government',
     category: 'infrastructure',
-    status: 'completed',
-    securityLevel: 'restricted'
+    status: 'open'
   },
   {
     id: 'quinault-wa',
-    name: 'Quinault Nation Project',
+    name: 'Quinault Indian Nation Project',
     location: 'Quinault Indian Nation',
     state: 'Washington',
     coordinates: { lat: 47.1431, lng: -124.2581 },
     projectCount: 1,
-    type: 'tribal',
-    category: 'remote',
-    status: 'active',
-    securityLevel: 'restricted'
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
   },
   {
     id: 'red-cliff-wi',
-    name: 'Red Cliff Band Operations',
+    name: 'Red Cliff Band Project',
     location: 'Red Cliff Band',
     state: 'Wisconsin',
     coordinates: { lat: 46.8456, lng: -90.8181 },
     projectCount: 1,
-    type: 'tribal',
+    type: 'tribal-government',
     category: 'infrastructure',
-    status: 'completed',
-    securityLevel: 'restricted'
+    status: 'open'
   },
   {
     id: 'red-lake-mn',
@@ -387,22 +255,20 @@ export const projects: Project[] = [
     state: 'Minnesota',
     coordinates: { lat: 47.8744, lng: -95.0181 },
     projectCount: 1,
-    type: 'tribal',
-    category: 'communications',
-    status: 'active',
-    securityLevel: 'restricted'
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
   },
   {
     id: 'sac-fox-ks',
-    name: 'Sac and Fox Nation Operations',
+    name: 'Sac and Fox Nation Project',
     location: 'Sac and Fox Nation',
     state: 'Kansas',
     coordinates: { lat: 39.7456, lng: -95.3181 },
     projectCount: 1,
-    type: 'tribal',
+    type: 'tribal-government',
     category: 'infrastructure',
-    status: 'completed',
-    securityLevel: 'restricted'
+    status: 'open'
   },
   {
     id: 'salt-river-az',
@@ -411,22 +277,20 @@ export const projects: Project[] = [
     state: 'Arizona',
     coordinates: { lat: 33.5456, lng: -111.8847 },
     projectCount: 1,
-    type: 'tribal',
+    type: 'tribal-government',
     category: 'infrastructure',
-    status: 'active',
-    securityLevel: 'restricted'
+    status: 'open'
   },
   {
     id: 'seminole-ok',
-    name: 'Seminole Nation Operations',
+    name: 'Seminole Nation Project',
     location: 'Seminole Nation',
     state: 'Oklahoma',
     coordinates: { lat: 35.2456, lng: -96.6847 },
     projectCount: 1,
-    type: 'tribal',
-    category: 'communications',
-    status: 'completed',
-    securityLevel: 'restricted'
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
   },
   {
     id: 'seneca-cayuga-ok',
@@ -435,22 +299,31 @@ export const projects: Project[] = [
     state: 'Oklahoma',
     coordinates: { lat: 36.8456, lng: -94.8847 },
     projectCount: 1,
-    type: 'tribal',
+    type: 'tribal-government',
     category: 'infrastructure',
-    status: 'active',
-    securityLevel: 'restricted'
+    status: 'open'
   },
   {
     id: 'spokane-wa',
-    name: 'Spokane Tribe Operations',
+    name: 'Spokane Tribe Project',
     location: 'Spokane Tribe',
     state: 'Washington',
     coordinates: { lat: 47.9456, lng: -118.0847 },
     projectCount: 1,
-    type: 'tribal',
-    category: 'communications',
-    status: 'completed',
-    securityLevel: 'restricted'
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
+  },
+  {
+    id: 'tanana-chiefs-ak',
+    name: 'Tanana Chiefs Conference Project',
+    location: 'Tanana Chiefs Conference',
+    state: 'Alaska',
+    coordinates: { lat: 64.8378, lng: -147.7164 },
+    projectCount: 1,
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
   },
   {
     id: 'winnebago-ne',
@@ -459,76 +332,122 @@ export const projects: Project[] = [
     state: 'Nebraska',
     coordinates: { lat: 42.2456, lng: -96.4847 },
     projectCount: 1,
-    type: 'tribal',
+    type: 'tribal-government',
     category: 'infrastructure',
-    status: 'active',
-    securityLevel: 'restricted'
+    status: 'open'
   },
   {
     id: 'yurok-ca',
-    name: 'Yurok Tribe Operations',
+    name: 'Yurok Tribe Project',
     location: 'Yurok Tribe',
     state: 'California',
     coordinates: { lat: 41.5456, lng: -124.0847 },
     projectCount: 1,
-    type: 'tribal',
-    category: 'remote',
-    status: 'completed',
-    securityLevel: 'restricted'
-  },
-
-  // Sensitive Locations
-  {
-    id: 'northern-mariana',
-    name: 'Northern Mariana Operations',
-    location: 'Northern Mariana Islands',
-    state: 'Northern Mariana Islands',
-    coordinates: { lat: 15.2, lng: 145.7 },
-    projectCount: 3,
-    type: 'sensitive',
-    category: 'communications',
-    status: 'active',
-    securityLevel: 'classified'
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
   },
   {
     id: 'lafourche-la',
-    name: 'Lafourche Parish Operations',
+    name: 'Lafourche Parish Project',
     location: 'Lafourche Parish',
     state: 'Louisiana',
     coordinates: { lat: 29.5456, lng: -90.4847 },
     projectCount: 1,
-    type: 'sensitive',
+    type: 'tribal-government',
     category: 'infrastructure',
-    status: 'active',
-    securityLevel: 'classified'
+    status: 'open'
+  },
+  {
+    id: 'northern-mariana',
+    name: 'Northern Mariana Islands Projects',
+    location: 'Northern Mariana Islands',
+    state: 'Northern Mariana Islands',
+    coordinates: { lat: 15.2, lng: 145.7 },
+    projectCount: 3,
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'open'
   },
 
-  // Corporate/Government Projects
+  // OPEN PROJECTS - Government
   {
-    id: 'pfizer-wa',
-    name: 'Pfizer Automation Center',
+    id: 'va-portland-or',
+    name: 'Department of Veterans Affairs Construction Project',
+    location: 'Portland',
+    state: 'Oregon',
+    coordinates: { lat: 45.5152, lng: -122.6784 },
+    projectCount: 1,
+    type: 'tribal-government',
+    category: 'construction',
+    status: 'open',
+    clientName: 'Department of Veterans Affairs',
+    description: 'Construction project for Veterans Affairs facility'
+  },
+
+  // OPEN PROJECTS - Corporate
+  {
+    id: 'pfizer-bothell-wa-open',
+    name: 'Pfizer Business Process Automation',
     location: 'Bothell',
     state: 'Washington',
     coordinates: { lat: 47.7544, lng: -122.2056 },
     projectCount: 66,
     type: 'corporate',
     category: 'automation',
-    status: 'active',
-    securityLevel: 'public',
+    status: 'open',
     clientName: 'Pfizer',
-    description: 'Business process automation and facility optimization'
+    description: 'Business process automation tasks'
+  },
+
+  // CLOSED PROJECTS - Tribal/Government
+  {
+    id: 'sisseton-wahpeton-sd',
+    name: 'Sisseton Wahpeton Oyate Project',
+    location: 'Sisseton Wahpeton Oyate of the Lake Traverse Reservation',
+    state: 'South Dakota',
+    coordinates: { lat: 45.6644, lng: -96.9847 },
+    projectCount: 1,
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'closed'
+  },
+  {
+    id: 'confederated-tribes-or',
+    name: 'Confederated Tribes Project',
+    location: 'Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians',
+    state: 'Oregon',
+    coordinates: { lat: 43.7456, lng: -124.2847 },
+    projectCount: 1,
+    type: 'tribal-government',
+    category: 'infrastructure',
+    status: 'closed'
+  },
+
+  // CLOSED PROJECTS - Corporate
+  {
+    id: 'pfizer-bothell-wa-closed',
+    name: 'Pfizer Seismic Engineering Projects',
+    location: 'Bothell',
+    state: 'Washington',
+    coordinates: { lat: 47.7544, lng: -122.2056 },
+    projectCount: 2,
+    type: 'corporate',
+    category: 'engineering',
+    status: 'closed',
+    clientName: 'Pfizer',
+    description: 'Non-structural Seismic Engineering projects'
   },
   {
     id: 'wcgi-pembroke-nc',
-    name: 'WCGi Pembroke Operations',
+    name: 'WCGi Pembroke Projects',
     location: 'Pembroke',
     state: 'North Carolina',
     coordinates: { lat: 34.6831, lng: -79.1956 },
     projectCount: 3,
     type: 'corporate',
     category: 'infrastructure',
-    status: 'active',
-    securityLevel: 'public',
+    status: 'closed',
     clientName: 'WCGi'
   },
   {
@@ -540,21 +459,19 @@ export const projects: Project[] = [
     projectCount: 1,
     type: 'corporate',
     category: 'infrastructure',
-    status: 'completed',
-    securityLevel: 'public',
+    status: 'closed',
     clientName: 'WCGi'
   },
   {
     id: 'wcgi-raeford-nc',
-    name: 'WCGi Raeford Operations',
+    name: 'WCGi Raeford Project',
     location: 'Raeford',
     state: 'North Carolina',
     coordinates: { lat: 34.9781, lng: -79.2256 },
     projectCount: 1,
     type: 'corporate',
     category: 'infrastructure',
-    status: 'active',
-    securityLevel: 'public',
+    status: 'closed',
     clientName: 'WCGi'
   }
 ];
@@ -568,12 +485,20 @@ export const getProjectsByType = (type: Project['type']) => {
   return projects.filter(project => project.type === type);
 };
 
-export const getProjectsBySecurityLevel = (level: Project['securityLevel']) => {
-  return projects.filter(project => project.securityLevel === level);
+export const getProjectsByStatus = (status: Project['status']) => {
+  return projects.filter(project => project.status === status);
 };
 
 export const getTotalProjectCount = () => {
   return projects.reduce((total, project) => total + project.projectCount, 0);
+};
+
+export const getOpenProjectCount = () => {
+  return projects.filter(p => p.status === 'open').reduce((total, project) => total + project.projectCount, 0);
+};
+
+export const getClosedProjectCount = () => {
+  return projects.filter(p => p.status === 'closed').reduce((total, project) => total + project.projectCount, 0);
 };
 
 export const getUniqueStates = () => {
