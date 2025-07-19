@@ -15,6 +15,8 @@ import {
   Activity,
   Globe
 } from "lucide-react";
+import { projects, getTotalProjectCount, getUniqueStates } from "@/data/projects";
+import Link from "next/link";
 
 export default function Home() {
   const [activeCoordinate, setActiveCoordinate] = useState(0);
@@ -95,7 +97,7 @@ export default function Home() {
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               Advanced logistics coordination for the world's most remote construction projects.
               <span className="block mt-2 text-electric-blue font-medium">
-                43 projects • 17 states • 1 territory
+                {getTotalProjectCount()} projects • {getUniqueStates().length} locations • Global reach
               </span>
             </p>
 
@@ -105,10 +107,12 @@ export default function Home() {
                 INITIATE MISSION
                 <ChevronRight className="w-5 h-5 ml-2" />
               </Button>
-              <Button variant="outline" size="lg" className="border-electric-blue text-electric-blue hover:bg-electric-blue/10 px-8 py-4 text-lg">
-                <Globe className="w-5 h-5 mr-2" />
-                VIEW OPERATIONS
-              </Button>
+              <Link href="/operations">
+                <Button variant="outline" size="lg" className="border-electric-blue text-electric-blue hover:bg-electric-blue/10 px-8 py-4 text-lg">
+                  <Globe className="w-5 h-5 mr-2" />
+                  VIEW OPERATIONS
+                </Button>
+              </Link>
             </div>
 
             {/* Live Coordinates Display */}
