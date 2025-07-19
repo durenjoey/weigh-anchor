@@ -95,7 +95,7 @@ export default function Home() {
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Advanced logistics coordination for the world's most remote construction projects.
+              Professional services for construction, engineering, and technology projects in the world's most challenging locations.
               <span className="block mt-2 text-electric-blue font-medium">
                 {getTotalProjectCount()} projects • {getUniqueStates().length} locations • Global reach
               </span>
@@ -157,9 +157,9 @@ export default function Home() {
                 <div className="w-16 h-16 bg-electric-blue/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse-glow">
                   <Target className="w-8 h-8 text-electric-blue" />
                 </div>
-                <h3 className="font-display text-xl text-arctic-white mb-4">PROJECT LOGISTICS</h3>
+                <h3 className="font-display text-xl text-arctic-white mb-4">CONSTRUCTION PROJECT MANAGEMENT</h3>
                 <p className="text-muted-foreground">
-                  Coordinating complex supply chains across impossible terrain and weather conditions.
+                  Remote infrastructure projects for tribal nations and government agencies in impossible locations.
                 </p>
               </CardContent>
             </Card>
@@ -169,9 +169,9 @@ export default function Home() {
                 <div className="w-16 h-16 bg-electric-blue/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse-glow">
                   <Shield className="w-8 h-8 text-electric-blue" />
                 </div>
-                <h3 className="font-display text-xl text-arctic-white mb-4">CHALLENGING ENVIRONMENTS</h3>
+                <h3 className="font-display text-xl text-arctic-white mb-4">ENGINEERING SERVICES</h3>
                 <p className="text-muted-foreground">
-                  Operating in environments where conventional methods fail. Arctic, tropical, remote.
+                  Specialized technical and seismic engineering for complex corporate and government projects.
                 </p>
               </CardContent>
             </Card>
@@ -181,9 +181,9 @@ export default function Home() {
                 <div className="w-16 h-16 bg-electric-blue/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse-glow">
                   <Zap className="w-8 h-8 text-electric-blue" />
                 </div>
-                <h3 className="font-display text-xl text-arctic-white mb-4">RAPID EXECUTION</h3>
+                <h3 className="font-display text-xl text-arctic-white mb-4">TECHNOLOGY & AUTOMATION</h3>
                 <p className="text-muted-foreground">
-                  Gaming-level responsiveness in real-world logistics. Every decision optimized for speed.
+                  Business process automation and digital transformation for enterprise clients.
                 </p>
               </CardContent>
             </Card>

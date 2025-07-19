@@ -13,7 +13,7 @@ import {
   Satellite,
   Map as MapIcon
 } from "lucide-react";
-import { projects, Project, getProjectsByType, getProjectsByStatus, getTotalProjectCount, getOpenProjectCount, getClosedProjectCount } from "@/data/projects";
+import { projects, Project, getProjectsByType, getProjectsByStatus, getTotalProjectCount, getOpenProjectCount, getClosedProjectCount, getServiceTypeBreakdown } from "@/data/projects";
 
 // Import Mapbox GL JS
 import mapboxgl from 'mapbox-gl';
@@ -428,6 +428,11 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
                       {selectedProject.status.toUpperCase()}
                     </Badge>
                   </div>
+                </div>
+
+                <div>
+                  <span className="text-xs text-muted-foreground">SERVICE TYPE</span>
+                  <div className="text-sm text-arctic-white font-medium">{selectedProject.serviceType}</div>
                 </div>
 
                 <div>

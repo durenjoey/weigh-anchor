@@ -9,14 +9,15 @@ export interface Project {
   };
   projectCount: number;
   type: 'tribal-government' | 'corporate';
-  category: 'construction' | 'engineering' | 'automation' | 'infrastructure';
+  category: 'construction' | 'engineering' | 'automation';
+  serviceType: 'Construction Project Management' | 'Engineering Services' | 'Technology & Automation';
   status: 'open' | 'closed';
   clientName?: string; // Only for corporate projects
   description?: string;
 }
 
 export const projects: Project[] = [
-  // OPEN PROJECTS - Tribal/Government
+  // OPEN PROJECTS - Tribal/Government (All Construction Projects)
   {
     id: 'atka-ak',
     name: 'Atka Infrastructure Project',
@@ -25,7 +26,8 @@ export const projects: Project[] = [
     coordinates: { lat: 52.2322, lng: -174.2064 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -36,7 +38,8 @@ export const projects: Project[] = [
     coordinates: { lat: 60.1492, lng: -164.2856 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -47,7 +50,8 @@ export const projects: Project[] = [
     coordinates: { lat: 45.5347, lng: -107.9403 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -58,7 +62,8 @@ export const projects: Project[] = [
     coordinates: { lat: 66.5694, lng: -145.2736 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -69,7 +74,8 @@ export const projects: Project[] = [
     coordinates: { lat: 33.2456, lng: -111.7847 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -80,7 +86,8 @@ export const projects: Project[] = [
     coordinates: { lat: 65.6981, lng: -156.3931 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -91,7 +98,8 @@ export const projects: Project[] = [
     coordinates: { lat: 64.3189, lng: -158.7267 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -102,7 +110,8 @@ export const projects: Project[] = [
     coordinates: { lat: 55.3422, lng: -131.6461 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -113,7 +122,8 @@ export const projects: Project[] = [
     coordinates: { lat: 61.5181, lng: -149.6444 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -124,7 +134,8 @@ export const projects: Project[] = [
     coordinates: { lat: 46.2619, lng: -89.1456 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -135,7 +146,8 @@ export const projects: Project[] = [
     coordinates: { lat: 45.3694, lng: -84.9544 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -146,7 +158,8 @@ export const projects: Project[] = [
     coordinates: { lat: 64.9975, lng: -150.6403 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -157,7 +170,8 @@ export const projects: Project[] = [
     coordinates: { lat: 65.9814, lng: -161.1489 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -168,7 +182,8 @@ export const projects: Project[] = [
     coordinates: { lat: 61.5781, lng: -159.2156 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -179,7 +194,8 @@ export const projects: Project[] = [
     coordinates: { lat: 62.3069, lng: -145.3181 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -190,7 +206,8 @@ export const projects: Project[] = [
     coordinates: { lat: 64.5631, lng: -164.4339 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -201,7 +218,8 @@ export const projects: Project[] = [
     coordinates: { lat: 56.9719, lng: -133.9453 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -212,7 +230,8 @@ export const projects: Project[] = [
     coordinates: { lat: 39.3644, lng: -95.8019 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -223,7 +242,8 @@ export const projects: Project[] = [
     coordinates: { lat: 35.0719, lng: -108.8506 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -234,7 +254,8 @@ export const projects: Project[] = [
     coordinates: { lat: 47.1431, lng: -124.2581 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -245,7 +266,8 @@ export const projects: Project[] = [
     coordinates: { lat: 46.8456, lng: -90.8181 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -256,7 +278,8 @@ export const projects: Project[] = [
     coordinates: { lat: 47.8744, lng: -95.0181 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -267,7 +290,8 @@ export const projects: Project[] = [
     coordinates: { lat: 39.7456, lng: -95.3181 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -278,7 +302,8 @@ export const projects: Project[] = [
     coordinates: { lat: 33.5456, lng: -111.8847 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -289,7 +314,8 @@ export const projects: Project[] = [
     coordinates: { lat: 35.2456, lng: -96.6847 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -300,7 +326,8 @@ export const projects: Project[] = [
     coordinates: { lat: 36.8456, lng: -94.8847 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -311,7 +338,8 @@ export const projects: Project[] = [
     coordinates: { lat: 47.9456, lng: -118.0847 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -322,7 +350,8 @@ export const projects: Project[] = [
     coordinates: { lat: 64.8378, lng: -147.7164 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -333,7 +362,8 @@ export const projects: Project[] = [
     coordinates: { lat: 42.2456, lng: -96.4847 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -344,7 +374,8 @@ export const projects: Project[] = [
     coordinates: { lat: 41.5456, lng: -124.0847 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -355,7 +386,8 @@ export const projects: Project[] = [
     coordinates: { lat: 29.5456, lng: -90.4847 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
   {
@@ -366,7 +398,8 @@ export const projects: Project[] = [
     coordinates: { lat: 15.2, lng: 145.7 },
     projectCount: 3,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open'
   },
 
@@ -380,6 +413,7 @@ export const projects: Project[] = [
     projectCount: 1,
     type: 'tribal-government',
     category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'open',
     clientName: 'Department of Veterans Affairs',
     description: 'Construction project for Veterans Affairs facility'
@@ -395,6 +429,7 @@ export const projects: Project[] = [
     projectCount: 66,
     type: 'corporate',
     category: 'automation',
+    serviceType: 'Technology & Automation',
     status: 'open',
     clientName: 'Pfizer',
     description: 'Business process automation tasks'
@@ -409,7 +444,8 @@ export const projects: Project[] = [
     coordinates: { lat: 45.6644, lng: -96.9847 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'closed'
   },
   {
@@ -420,7 +456,8 @@ export const projects: Project[] = [
     coordinates: { lat: 43.7456, lng: -124.2847 },
     projectCount: 1,
     type: 'tribal-government',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'closed'
   },
 
@@ -434,21 +471,24 @@ export const projects: Project[] = [
     projectCount: 2,
     type: 'corporate',
     category: 'engineering',
+    serviceType: 'Engineering Services',
     status: 'closed',
     clientName: 'Pfizer',
     description: 'Non-structural Seismic Engineering projects'
   },
   {
     id: 'wcgi-pembroke-nc',
-    name: 'WCGi Pembroke Projects',
+    name: 'WCGi Pembroke Technology Projects',
     location: 'Pembroke',
     state: 'North Carolina',
     coordinates: { lat: 34.6831, lng: -79.1956 },
     projectCount: 3,
     type: 'corporate',
-    category: 'infrastructure',
+    category: 'automation',
+    serviceType: 'Technology & Automation',
     status: 'closed',
-    clientName: 'WCGi'
+    clientName: 'WCGi',
+    description: 'Technology and automation projects'
   },
   {
     id: 'wcgi-fayetteville-nc',
@@ -458,7 +498,8 @@ export const projects: Project[] = [
     coordinates: { lat: 35.0527, lng: -78.8784 },
     projectCount: 1,
     type: 'corporate',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'closed',
     clientName: 'WCGi'
   },
@@ -470,7 +511,8 @@ export const projects: Project[] = [
     coordinates: { lat: 34.9781, lng: -79.2256 },
     projectCount: 1,
     type: 'corporate',
-    category: 'infrastructure',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
     status: 'closed',
     clientName: 'WCGi'
   }
@@ -489,6 +531,10 @@ export const getProjectsByStatus = (status: Project['status']) => {
   return projects.filter(project => project.status === status);
 };
 
+export const getProjectsByServiceType = (serviceType: Project['serviceType']) => {
+  return projects.filter(project => project.serviceType === serviceType);
+};
+
 export const getTotalProjectCount = () => {
   return projects.reduce((total, project) => total + project.projectCount, 0);
 };
@@ -503,4 +549,18 @@ export const getClosedProjectCount = () => {
 
 export const getUniqueStates = () => {
   return [...new Set(projects.map(project => project.state))];
+};
+
+export const getServiceTypeBreakdown = () => {
+  const breakdown = {
+    'Construction Project Management': 0,
+    'Engineering Services': 0,
+    'Technology & Automation': 0
+  };
+  
+  projects.forEach(project => {
+    breakdown[project.serviceType] += project.projectCount;
+  });
+  
+  return breakdown;
 };
