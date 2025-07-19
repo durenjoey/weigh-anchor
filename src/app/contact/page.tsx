@@ -121,7 +121,7 @@ export default function ContactPage() {
                           <MapPin className="w-6 h-6 text-electric-blue" />
                         </div>
                         <div>
-                          <h3 className="font-display text-lg text-arctic-white mb-1">LOCATION</h3>
+                          <h3 className="font-display text-lg text-arctic-white mb-1">HEADQUARTERS</h3>
                           <p className="text-muted-foreground">Bellevue, WA</p>
                         </div>
                       </div>
