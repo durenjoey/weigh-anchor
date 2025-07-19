@@ -21,7 +21,6 @@ import {
 } from "lucide-react";
 import { projects, getTotalProjectCount, getOpenProjectCount, getUniqueStates } from "@/data/projects";
 import Link from "next/link";
-import MapboxMap from "@/components/MapboxMap";
 
 export default function Home() {
 
@@ -108,18 +107,6 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Global Project Map */}
-            <div className="max-w-6xl mx-auto">
-              <div className="bg-card/30 backdrop-blur-sm border border-electric-blue/20 rounded-lg p-6">
-                <div className="flex items-center justify-center mb-4">
-                  <Target className="w-5 h-5 text-electric-blue mr-2" />
-                  <span className="font-display text-lg text-arctic-white">GLOBAL PROJECT REACH</span>
-                </div>
-                <div className="h-96">
-                  <MapboxMap />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
