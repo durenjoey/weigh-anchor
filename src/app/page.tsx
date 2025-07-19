@@ -20,7 +20,7 @@ import Link from "next/link";
 
 export default function Home() {
   const [activeCoordinate, setActiveCoordinate] = useState(0);
-  const [missionStatus, setMissionStatus] = useState("OPERATIONAL");
+  const [missionStatus, setMissionStatus] = useState("ACTIVE");
 
   const coordinates = [
     { lat: "71.0°N", lng: "156.8°W", location: "Northern Alaska" },
@@ -39,8 +39,8 @@ export default function Home() {
   useEffect(() => {
     const statusInterval = setInterval(() => {
       setMissionStatus(prev => 
-        prev === "OPERATIONAL" ? "SCANNING" : 
-        prev === "SCANNING" ? "LOCKED" : "OPERATIONAL"
+        prev === "ACTIVE" ? "SCANNING" : 
+        prev === "SCANNING" ? "LOCKED" : "ACTIVE"
       );
     }, 2000);
     return () => clearInterval(statusInterval);
@@ -119,7 +119,7 @@ export default function Home() {
             <Card className="bg-card/50 backdrop-blur-sm border-electric-blue/20 max-w-md mx-auto">
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-muted-foreground">CURRENT TARGET</span>
+                  <span className="text-sm text-muted-foreground">FEATURED PROJECT</span>
                   <MapPin className="w-4 h-4 text-signal-orange animate-pulse" />
                 </div>
                 <div className="font-mono text-lg text-electric-blue">
@@ -198,7 +198,7 @@ export default function Home() {
             <div className="flex items-center space-x-4 mb-4 md:mb-0">
               <div className="w-3 h-3 bg-electric-blue rounded-full animate-pulse"></div>
               <span className="font-mono text-sm text-muted-foreground">
-                SYSTEM STATUS: ALL OPERATIONS NOMINAL
+                ACTIVE PROJECTS: {getOpenProjectCount()}
               </span>
             </div>
             <div className="font-mono text-sm text-muted-foreground">

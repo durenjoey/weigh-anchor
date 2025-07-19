@@ -55,14 +55,14 @@ export default function OperationsPage() {
               </Link>
               <div className="h-6 w-px bg-electric-blue/30"></div>
               <div>
-                <h1 className="font-display text-xl text-arctic-white">PROJECT CONTROL CENTER</h1>
+                <h1 className="font-display text-xl text-arctic-white">OPERATIONS OVERVIEW</h1>
                 <p className="text-xs text-muted-foreground">GLOBAL PROJECT MONITORING</p>
               </div>
             </div>
             <div className="flex items-center space-x-6">
               <Badge variant="outline" className="text-electric-blue border-electric-blue">
                 <Activity className="w-3 h-3 mr-1" />
-                OPERATIONAL
+                ACTIVE
               </Badge>
               <div className="text-right">
                 <p className="text-xs text-muted-foreground">SYSTEM TIME</p>
