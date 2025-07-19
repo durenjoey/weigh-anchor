@@ -41,10 +41,12 @@ export default function Home() {
             </div>
             <div className="flex items-center space-x-6">
               <nav className="hidden md:flex items-center space-x-6">
-                <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-electric-blue hover:bg-electric-blue/10">
-                  <User className="w-4 h-4 mr-2" />
-                  About
-                </Button>
+                <Link href="/about">
+                  <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-electric-blue hover:bg-electric-blue/10">
+                    <User className="w-4 h-4 mr-2" />
+                    About
+                  </Button>
+                </Link>
                 <Link href="/operations">
                   <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-electric-blue hover:bg-electric-blue/10">
                     <Briefcase className="w-4 h-4 mr-2" />
