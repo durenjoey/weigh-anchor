@@ -1,75 +1,25 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { 
-  Target, 
   Crosshair, 
-  MapPin, 
   Zap, 
   Shield, 
   Satellite,
   ChevronRight,
-  Activity,
   Globe,
-  Menu,
-  User,
-  Briefcase,
-  Mail
+  Target
 } from "lucide-react";
-import { projects, getTotalProjectCount, getOpenProjectCount, getUniqueStates } from "@/data/projects";
+import { getTotalProjectCount, getOpenProjectCount, getUniqueStates } from "@/data/projects";
 import Link from "next/link";
+import Header from "@/components/Header";
 
 export default function Home() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Mission Control Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-electric-blue/20">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="w-8 h-8 bg-electric-blue rounded-full flex items-center justify-center animate-pulse-glow">
-                <Target className="w-4 h-4 text-arctic-white" />
-              </div>
-              <div>
-                <h1 className="font-display text-xl text-arctic-white">PROJECT ARD</h1>
-                <p className="text-xs text-muted-foreground">ADVANCED REMOTE DEPLOYMENT</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-6">
-              <nav className="hidden md:flex items-center space-x-6">
-                <Link href="/about">
-                  <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-electric-blue hover:bg-electric-blue/10">
-                    <User className="w-4 h-4 mr-2" />
-                    About
-                  </Button>
-                </Link>
-                <Link href="/operations">
-                  <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-electric-blue hover:bg-electric-blue/10">
-                    <Briefcase className="w-4 h-4 mr-2" />
-                    Projects
-                  </Button>
-                </Link>
-                <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-electric-blue hover:bg-electric-blue/10">
-                  <Shield className="w-4 h-4 mr-2" />
-                  Capabilities
-                </Button>
-                <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-electric-blue hover:bg-electric-blue/10">
-                  <Mail className="w-4 h-4 mr-2" />
-                  Contact
-                </Button>
-              </nav>
-              <Badge variant="outline" className="text-electric-blue border-electric-blue">
-                <Activity className="w-3 h-3 mr-1" />
-                ACTIVE
-              </Badge>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative">

@@ -14,6 +14,7 @@ import {
 import Link from "next/link";
 import MapboxMap from "@/components/MapboxMap";
 import { Project, getTotalProjectCount, getOpenProjectCount, getUniqueStates } from "@/data/projects";
+import Header from "@/components/Header";
 
 // Client-only time component to prevent hydration issues
 const TimeDisplay = dynamic(() => Promise.resolve(function TimeDisplay() {
@@ -42,36 +43,7 @@ export default function OperationsPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Mission Control Header */}
-      <header className="border-b border-electric-blue/20 bg-background/80 backdrop-blur-md sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Link href="/">
-                <Button variant="ghost" size="sm" className="text-electric-blue hover:bg-electric-blue/10">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  PROJECT OVERSIGHT
-                </Button>
-              </Link>
-              <div className="h-6 w-px bg-electric-blue/30"></div>
-              <div>
-                <h1 className="font-display text-xl text-arctic-white">OPERATIONS OVERVIEW</h1>
-                <p className="text-xs text-muted-foreground">GLOBAL PROJECT MONITORING</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-6">
-              <Badge variant="outline" className="text-electric-blue border-electric-blue">
-                <Activity className="w-3 h-3 mr-1" />
-                ACTIVE
-              </Badge>
-              <div className="text-right">
-                <p className="text-xs text-muted-foreground">SYSTEM TIME</p>
-                <TimeDisplay />
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Operations Dashboard */}
       <main className="container mx-auto px-6 py-8">

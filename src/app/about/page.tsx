@@ -18,34 +18,12 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { getTotalProjectCount, getUniqueStates } from "@/data/projects";
+import Header from "@/components/Header";
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-electric-blue/20 bg-background/80 backdrop-blur-md sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Link href="/">
-                <Button variant="ghost" size="sm" className="text-electric-blue hover:bg-electric-blue/10">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  PROJECT ARD
-                </Button>
-              </Link>
-              <div className="h-6 w-px bg-electric-blue/30"></div>
-              <div>
-                <h1 className="font-display text-xl text-arctic-white">ABOUT</h1>
-                <p className="text-xs text-muted-foreground">ADVANCED REMOTE DEPLOYMENT</p>
-              </div>
-            </div>
-            <Badge variant="outline" className="text-electric-blue border-electric-blue">
-              <Target className="w-3 h-3 mr-1" />
-              OPERATIONAL
-            </Badge>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
