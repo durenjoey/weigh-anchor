@@ -13,38 +13,17 @@ import {
   Satellite,
   ChevronRight,
   Activity,
-  Globe
+  Globe,
+  Menu,
+  User,
+  Briefcase,
+  Mail
 } from "lucide-react";
 import { projects, getTotalProjectCount, getOpenProjectCount, getUniqueStates } from "@/data/projects";
 import Link from "next/link";
+import MapboxMap from "@/components/MapboxMap";
 
 export default function Home() {
-  const [activeCoordinate, setActiveCoordinate] = useState(0);
-  const [missionStatus, setMissionStatus] = useState("ACTIVE");
-
-  const coordinates = [
-    { lat: "71.0°N", lng: "156.8°W", location: "Northern Alaska" },
-    { lat: "15.2°N", lng: "145.7°E", location: "Northern Mariana Islands" },
-    { lat: "64.8°N", lng: "147.7°W", location: "Interior Alaska" },
-    { lat: "19.7°N", lng: "155.1°W", location: "Hawaii Remote" },
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveCoordinate((prev) => (prev + 1) % coordinates.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const statusInterval = setInterval(() => {
-      setMissionStatus(prev => 
-        prev === "ACTIVE" ? "SCANNING" : 
-        prev === "SCANNING" ? "LOCKED" : "ACTIVE"
-      );
-    }, 2000);
-    return () => clearInterval(statusInterval);
-  }, []);
 
   return (
     <div className="min-h-screen relative overflow-hidden">
@@ -62,16 +41,30 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center space-x-6">
+              <nav className="hidden md:flex items-center space-x-6">
+                <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-electric-blue hover:bg-electric-blue/10">
+                  <User className="w-4 h-4 mr-2" />
+                  About
+                </Button>
+                <Link href="/operations">
+                  <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-electric-blue hover:bg-electric-blue/10">
+                    <Briefcase className="w-4 h-4 mr-2" />
+                    Projects
+                  </Button>
+                </Link>
+                <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-electric-blue hover:bg-electric-blue/10">
+                  <Shield className="w-4 h-4 mr-2" />
+                  Capabilities
+                </Button>
+                <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-electric-blue hover:bg-electric-blue/10">
+                  <Mail className="w-4 h-4 mr-2" />
+                  Contact
+                </Button>
+              </nav>
               <Badge variant="outline" className="text-electric-blue border-electric-blue">
                 <Activity className="w-3 h-3 mr-1" />
-                {missionStatus}
+                ACTIVE
               </Badge>
-              <div className="text-right">
-                <p className="text-xs text-muted-foreground">ACTIVE COORDINATES</p>
-                <p className="font-mono text-sm text-electric-blue">
-                  {coordinates[activeCoordinate].lat} {coordinates[activeCoordinate].lng}
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -110,26 +103,23 @@ export default function Home() {
               <Link href="/operations">
                 <Button variant="outline" size="lg" className="border-electric-blue text-electric-blue hover:bg-electric-blue/10 px-8 py-4 text-lg">
                   <Globe className="w-5 h-5 mr-2" />
-                  VIEW OPERATIONS
+                  PROJECT PORTFOLIO
                 </Button>
               </Link>
             </div>
 
-            {/* Live Coordinates Display */}
-            <Card className="bg-card/50 backdrop-blur-sm border-electric-blue/20 max-w-md mx-auto">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-muted-foreground">FEATURED PROJECT</span>
-                  <MapPin className="w-4 h-4 text-signal-orange animate-pulse" />
+            {/* Global Project Map */}
+            <div className="max-w-6xl mx-auto">
+              <div className="bg-card/30 backdrop-blur-sm border border-electric-blue/20 rounded-lg p-6">
+                <div className="flex items-center justify-center mb-4">
+                  <Target className="w-5 h-5 text-electric-blue mr-2" />
+                  <span className="font-display text-lg text-arctic-white">GLOBAL PROJECT REACH</span>
                 </div>
-                <div className="font-mono text-lg text-electric-blue">
-                  {coordinates[activeCoordinate].location}
+                <div className="h-96">
+                  <MapboxMap />
                 </div>
-                <div className="font-mono text-sm text-muted-foreground">
-                  {coordinates[activeCoordinate].lat} {coordinates[activeCoordinate].lng}
-                </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
 
