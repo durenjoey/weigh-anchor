@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { 
@@ -14,9 +15,9 @@ import Link from "next/link";
 import MapboxMap from "@/components/MapboxMap";
 import { Project, getTotalProjectCount, getOpenProjectCount, getUniqueStates } from "@/data/projects";
 
-export default function OperationsPage() {
+// Client-only time component to prevent hydration issues
+const TimeDisplay = dynamic(() => Promise.resolve(function TimeDisplay() {
   const [missionTime, setMissionTime] = useState(new Date());
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -28,6 +29,16 @@ export default function OperationsPage() {
   const formatMissionTime = (date: Date) => {
     return date.toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
   };
+
+  return (
+    <p className="font-mono text-sm text-electric-blue">
+      {formatMissionTime(missionTime)}
+    </p>
+  );
+}), { ssr: false });
+
+export default function OperationsPage() {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <div className="min-h-screen bg-background">
@@ -55,9 +66,7 @@ export default function OperationsPage() {
               </Badge>
               <div className="text-right">
                 <p className="text-xs text-muted-foreground">SYSTEM TIME</p>
-                <p className="font-mono text-sm text-electric-blue">
-                  {formatMissionTime(missionTime)}
-                </p>
+                <TimeDisplay />
               </div>
             </div>
           </div>
@@ -127,7 +136,7 @@ export default function OperationsPage() {
               </span>
             </div>
             <div className="flex items-center space-x-6 text-xs text-muted-foreground">
-              <span>LAST UPDATE: {formatMissionTime(missionTime)}</span>
+              <span>LAST UPDATE: <TimeDisplay /></span>
               <span>•</span>
               <span>ACCESS LEVEL: AUTHORIZED PERSONNEL ONLY</span>
             </div>
