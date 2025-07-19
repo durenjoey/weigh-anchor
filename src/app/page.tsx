@@ -9,7 +9,8 @@ import {
   Satellite,
   ChevronRight,
   Globe,
-  Target
+  Target,
+  Mail
 } from "lucide-react";
 import { getTotalProjectCount, getOpenProjectCount, getUniqueStates } from "@/data/projects";
 import Link from "next/link";
@@ -46,11 +47,16 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button size="lg" className="bg-electric-blue hover:bg-electric-blue/80 text-arctic-white font-medium px-8 py-4 text-lg">
-                <Satellite className="w-5 h-5 mr-2" />
-                START PROJECT
-                <ChevronRight className="w-5 h-5 ml-2" />
-              </Button>
+              <a 
+                href="mailto:info@projectard.com?subject=Project%20Inquiry&body=Hello%20Project%20ARD%20team,%0A%0AI'm%20interested%20in%20discussing%20a%20potential%20project.%20Please%20contact%20me%20to%20explore%20how%20we%20can%20work%20together.%0A%0AThank%20you!"
+                className="inline-block"
+              >
+                <Button size="lg" className="bg-electric-blue hover:bg-electric-blue/80 text-arctic-white font-medium px-8 py-4 text-lg">
+                  <Mail className="w-5 h-5 mr-2" />
+                  CONTACT US
+                  <ChevronRight className="w-5 h-5 ml-2" />
+                </Button>
+              </a>
               <Link href="/operations">
                 <Button variant="outline" size="lg" className="border-electric-blue text-electric-blue hover:bg-electric-blue/10 px-8 py-4 text-lg">
                   <Globe className="w-5 h-5 mr-2" />
