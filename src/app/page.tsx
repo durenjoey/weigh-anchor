@@ -1,102 +1,207 @@
-import Image from "next/image";
+"use client";
+
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { 
+  Target, 
+  Crosshair, 
+  MapPin, 
+  Zap, 
+  Shield, 
+  Satellite,
+  ChevronRight,
+  Activity,
+  Globe
+} from "lucide-react";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [activeCoordinate, setActiveCoordinate] = useState(0);
+  const [missionStatus, setMissionStatus] = useState("OPERATIONAL");
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const coordinates = [
+    { lat: "71.0°N", lng: "156.8°W", location: "Northern Alaska" },
+    { lat: "15.2°N", lng: "145.7°E", location: "Northern Mariana Islands" },
+    { lat: "64.8°N", lng: "147.7°W", location: "Interior Alaska" },
+    { lat: "19.7°N", lng: "155.1°W", location: "Hawaii Remote" },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveCoordinate((prev) => (prev + 1) % coordinates.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const statusInterval = setInterval(() => {
+      setMissionStatus(prev => 
+        prev === "OPERATIONAL" ? "SCANNING" : 
+        prev === "SCANNING" ? "LOCKED" : "OPERATIONAL"
+      );
+    }, 2000);
+    return () => clearInterval(statusInterval);
+  }, []);
+
+  return (
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Mission Control Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-electric-blue/20">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <div className="w-8 h-8 bg-electric-blue rounded-full flex items-center justify-center animate-pulse-glow">
+                <Target className="w-4 h-4 text-arctic-white" />
+              </div>
+              <div>
+                <h1 className="font-display text-xl text-arctic-white">PROJECT ARD</h1>
+                <p className="text-xs text-muted-foreground">ADVANCED REMOTE DEPLOYMENT</p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-6">
+              <Badge variant="outline" className="text-electric-blue border-electric-blue">
+                <Activity className="w-3 h-3 mr-1" />
+                {missionStatus}
+              </Badge>
+              <div className="text-right">
+                <p className="text-xs text-muted-foreground">ACTIVE COORDINATES</p>
+                <p className="font-mono text-sm text-electric-blue">
+                  {coordinates[activeCoordinate].lat} {coordinates[activeCoordinate].lng}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 relative">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Crosshair Animation */}
+            <div className="mb-8 flex justify-center">
+              <div className="relative">
+                <Crosshair className="w-16 h-16 text-electric-blue animate-crosshair" />
+                <div className="absolute inset-0 w-16 h-16 border-2 border-electric-blue/30 rounded-full animate-ping"></div>
+              </div>
+            </div>
+
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl mb-6 text-arctic-white leading-tight">
+              WE GO WHERE
+              <span className="block text-electric-blue">OTHERS CAN'T</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Advanced logistics coordination for the world's most remote construction projects.
+              <span className="block mt-2 text-electric-blue font-medium">
+                43 projects • 17 states • 1 territory
+              </span>
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <Button size="lg" className="bg-electric-blue hover:bg-electric-blue/80 text-arctic-white font-medium px-8 py-4 text-lg">
+                <Satellite className="w-5 h-5 mr-2" />
+                INITIATE MISSION
+                <ChevronRight className="w-5 h-5 ml-2" />
+              </Button>
+              <Button variant="outline" size="lg" className="border-electric-blue text-electric-blue hover:bg-electric-blue/10 px-8 py-4 text-lg">
+                <Globe className="w-5 h-5 mr-2" />
+                VIEW OPERATIONS
+              </Button>
+            </div>
+
+            {/* Live Coordinates Display */}
+            <Card className="bg-card/50 backdrop-blur-sm border-electric-blue/20 max-w-md mx-auto">
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm text-muted-foreground">CURRENT TARGET</span>
+                  <MapPin className="w-4 h-4 text-signal-orange animate-pulse" />
+                </div>
+                <div className="font-mono text-lg text-electric-blue">
+                  {coordinates[activeCoordinate].location}
+                </div>
+                <div className="font-mono text-sm text-muted-foreground">
+                  {coordinates[activeCoordinate].lat} {coordinates[activeCoordinate].lng}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* Background Elements */}
+        <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-electric-blue rounded-full animate-ping"></div>
+        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-signal-orange rounded-full animate-pulse"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-electric-blue rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
+      </section>
+
+      {/* Capabilities Grid */}
+      <section className="py-20 relative">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-3xl md:text-4xl text-arctic-white mb-4">
+              MISSION CAPABILITIES
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Precision deployment in impossible conditions
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <Card className="bg-card/30 backdrop-blur-sm border-electric-blue/20 hover:border-electric-blue/40 transition-all duration-300 cursor-crosshair group">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-electric-blue/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse-glow">
+                  <Target className="w-8 h-8 text-electric-blue" />
+                </div>
+                <h3 className="font-display text-xl text-arctic-white mb-4">PRECISION LOGISTICS</h3>
+                <p className="text-muted-foreground">
+                  Coordinating complex supply chains across impossible terrain and weather conditions.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card/30 backdrop-blur-sm border-electric-blue/20 hover:border-electric-blue/40 transition-all duration-300 cursor-crosshair group">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-electric-blue/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse-glow">
+                  <Shield className="w-8 h-8 text-electric-blue" />
+                </div>
+                <h3 className="font-display text-xl text-arctic-white mb-4">EXTREME CONDITIONS</h3>
+                <p className="text-muted-foreground">
+                  Operating in environments where conventional methods fail. Arctic, tropical, remote.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card/30 backdrop-blur-sm border-electric-blue/20 hover:border-electric-blue/40 transition-all duration-300 cursor-crosshair group">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-electric-blue/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse-glow">
+                  <Zap className="w-8 h-8 text-electric-blue" />
+                </div>
+                <h3 className="font-display text-xl text-arctic-white mb-4">RAPID DEPLOYMENT</h3>
+                <p className="text-muted-foreground">
+                  Gaming-level responsiveness in real-world logistics. Every decision optimized for speed.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Status Footer */}
+      <footer className="py-8 border-t border-electric-blue/20 bg-background/50 backdrop-blur-sm">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="flex items-center space-x-4 mb-4 md:mb-0">
+              <div className="w-3 h-3 bg-electric-blue rounded-full animate-pulse"></div>
+              <span className="font-mono text-sm text-muted-foreground">
+                SYSTEM STATUS: ALL OPERATIONS NOMINAL
+              </span>
+            </div>
+            <div className="font-mono text-sm text-muted-foreground">
+              PROJECT ARD © 2025 • CLASSIFIED OPERATIONS
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   );
