@@ -11,7 +11,7 @@ import {
   Satellite
 } from "lucide-react";
 import Link from "next/link";
-import InteractiveMap from "@/components/InteractiveMap";
+import MapboxMap from "@/components/MapboxMap";
 import { Project, getTotalProjectCount, getUniqueStates } from "@/data/projects";
 
 export default function OperationsPage() {
@@ -114,7 +114,7 @@ export default function OperationsPage() {
 
         {/* Interactive Map */}
         <div className="min-h-[600px]">
-          <InteractiveMap onProjectSelect={setSelectedProject} />
+          <MapboxMap onProjectSelect={setSelectedProject} />
         </div>
 
         {/* Mission Footer */}
