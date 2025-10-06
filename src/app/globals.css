@@ -1,69 +1,49 @@
-/* Import technical sans-serif font - must be first */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+/* Import professional fonts - must be first */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-  --font-technical: 'Rajdhani', 'Orbitron', system-ui, sans-serif;
-  --radius: 0.375rem;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Poppins', system-ui, sans-serif;
+  --radius: 0.5rem;
   
-  /* Mission Control Color Palette */
-  --electric-blue: oklch(0.6 0.25 240);
-  --signal-orange: oklch(0.7 0.25 45);
-  --arctic-white: oklch(0.98 0.005 240);
-  --deep-charcoal: oklch(0.15 0.02 240);
+  /* Professional Color Palette with Brand Orange */
+  --brand-orange: oklch(0.65 0.25 45);
+  --brand-orange-dark: oklch(0.55 0.25 45);
+  --navy-blue: oklch(0.25 0.15 250);
+  --slate-900: oklch(0.25 0.02 250);
+  --slate-700: oklch(0.40 0.02 250);
+  --slate-600: oklch(0.50 0.02 250);
+  --slate-500: oklch(0.60 0.02 250);
+  --slate-400: oklch(0.70 0.02 250);
+  --slate-300: oklch(0.80 0.02 250);
+  --slate-200: oklch(0.90 0.01 250);
+  --slate-100: oklch(0.95 0.005 250);
+  --slate-50: oklch(0.98 0.003 250);
+  --pure-white: oklch(1 0 0);
   
-  /* Light theme (fallback - we'll primarily use dark) */
-  --background: var(--arctic-white);
-  --foreground: var(--deep-charcoal);
-  --card: oklch(0.95 0.01 240);
-  --card-foreground: var(--deep-charcoal);
-  --popover: var(--arctic-white);
-  --popover-foreground: var(--deep-charcoal);
-  --primary: var(--electric-blue);
-  --primary-foreground: var(--arctic-white);
-  --secondary: oklch(0.85 0.02 240);
-  --secondary-foreground: var(--deep-charcoal);
-  --muted: oklch(0.9 0.01 240);
-  --muted-foreground: oklch(0.4 0.02 240);
-  --accent: var(--electric-blue);
-  --accent-foreground: var(--arctic-white);
-  --destructive: var(--signal-orange);
-  --border: oklch(0.8 0.02 240);
-  --input: oklch(0.85 0.02 240);
-  --ring: var(--electric-blue);
-  --chart-1: var(--electric-blue);
-  --chart-2: var(--signal-orange);
-  --chart-3: oklch(0.6 0.2 180);
-  --chart-4: oklch(0.7 0.2 300);
-  --chart-5: oklch(0.5 0.2 120);
-}
-
-@theme dark {
-  /* Mission Control Dark Theme - Primary Theme */
-  --background: var(--deep-charcoal);
-  --foreground: var(--arctic-white);
-  --card: oklch(0.18 0.02 240);
-  --card-foreground: var(--arctic-white);
-  --popover: oklch(0.16 0.02 240);
-  --popover-foreground: var(--arctic-white);
-  --primary: var(--electric-blue);
-  --primary-foreground: var(--arctic-white);
-  --secondary: oklch(0.25 0.02 240);
-  --secondary-foreground: var(--arctic-white);
-  --muted: oklch(0.22 0.02 240);
-  --muted-foreground: oklch(0.7 0.02 240);
-  --accent: var(--electric-blue);
-  --accent-foreground: var(--arctic-white);
-  --destructive: var(--signal-orange);
-  --border: oklch(0.3 0.02 240);
-  --input: oklch(0.25 0.02 240);
-  --ring: var(--electric-blue);
-  --chart-1: var(--electric-blue);
-  --chart-2: var(--signal-orange);
-  --chart-3: oklch(0.6 0.2 180);
-  --chart-4: oklch(0.7 0.2 300);
-  --chart-5: oklch(0.5 0.2 120);
+  /* Light theme - Primary */
+  --background: var(--pure-white);
+  --foreground: var(--slate-900);
+  --card: var(--pure-white);
+  --card-foreground: var(--slate-900);
+  --popover: var(--pure-white);
+  --popover-foreground: var(--slate-900);
+  --primary: var(--brand-orange);
+  --primary-foreground: var(--pure-white);
+  --secondary: var(--slate-100);
+  --secondary-foreground: var(--slate-900);
+  --muted: var(--slate-100);
+  --muted-foreground: var(--slate-600);
+  --accent: var(--brand-orange);
+  --accent-foreground: var(--pure-white);
+  --destructive: oklch(0.6 0.25 30);
+  --border: var(--slate-200);
+  --input: var(--slate-100);
+  --ring: var(--brand-orange);
+  --chart-1: var(--brand-orange);
+  --chart-2: var(--navy-blue);
 }
 
 @layer base {
@@ -73,104 +53,123 @@
     outline-offset: 2px;
   }
   
-  html {
-    color-scheme: dark;
-  }
-  
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: var(--font-technical);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
-  /* Mission Control Typography */
-  .font-technical {
-    font-family: var(--font-technical);
+  /* Typography */
+  .font-sans {
+    font-family: var(--font-sans);
   }
   
   .font-display {
-    font-family: 'Orbitron', var(--font-technical);
-    font-weight: 600;
-    letter-spacing: 0.025em;
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 }
 
 @layer utilities {
-  /* Mission Control Utilities */
+  /* Brand Colors */
+  .text-orange {
+    color: var(--brand-orange);
+  }
+  
+  .text-navy {
+    color: var(--navy-blue);
+  }
+  
+  .text-slate-900 {
+    color: var(--slate-900);
+  }
+  
+  .text-slate-700 {
+    color: var(--slate-700);
+  }
+  
+  .text-slate-600 {
+    color: var(--slate-600);
+  }
+  
+  .text-slate-500 {
+    color: var(--slate-500);
+  }
+  
+  .bg-orange {
+    background-color: var(--brand-orange);
+  }
+  
+  .bg-orange-dark {
+    background-color: var(--brand-orange-dark);
+  }
+  
+  .bg-navy {
+    background-color: var(--navy-blue);
+  }
+  
+  .bg-slate-50 {
+    background-color: var(--slate-50);
+  }
+  
+  .bg-slate-100 {
+    background-color: var(--slate-100);
+  }
+  
+  .border-orange {
+    border-color: var(--brand-orange);
+  }
+  
+  .border-slate-200 {
+    border-color: var(--slate-200);
+  }
+  
+  .border-slate-300 {
+    border-color: var(--slate-300);
+  }
+  
+  /* Legacy compatibility */
   .text-electric-blue {
-    color: var(--electric-blue);
+    color: var(--navy-blue);
   }
   
   .text-signal-orange {
-    color: var(--signal-orange);
-  }
-  
-  .text-arctic-white {
-    color: var(--arctic-white);
-  }
-  
-  .text-deep-charcoal {
-    color: var(--deep-charcoal);
+    color: var(--brand-orange);
   }
   
   .bg-electric-blue {
-    background-color: var(--electric-blue);
+    background-color: var(--navy-blue);
   }
   
   .bg-signal-orange {
-    background-color: var(--signal-orange);
+    background-color: var(--brand-orange);
   }
   
-  .bg-arctic-white {
-    background-color: var(--arctic-white);
+  .text-arctic-white {
+    color: var(--pure-white);
   }
   
-  .bg-deep-charcoal {
-    background-color: var(--deep-charcoal);
+  .text-slate-gray {
+    color: var(--slate-700);
   }
   
-  /* Mission Control Grid Pattern */
-  .grid-pattern {
-    background-image: 
-      linear-gradient(rgba(96, 165, 250, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(96, 165, 250, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
+  /* Professional Card Effects */
+  .card-shadow {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   }
   
-  /* Precision targeting cursor */
-  .cursor-crosshair {
-    cursor: crosshair;
+  .card-shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
   
-  /* Mission Control Animations */
-  .animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
+  .card-shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
   
-  .animate-crosshair {
-    animation: crosshair 3s linear infinite;
-  }
-}
-
-@layer components {
-  @keyframes pulse-glow {
-    0%, 100% {
-      box-shadow: 0 0 5px var(--electric-blue);
-    }
-    50% {
-      box-shadow: 0 0 20px var(--electric-blue), 0 0 30px var(--electric-blue);
-    }
-  }
-  
-  @keyframes crosshair {
-    0% {
-      transform: scale(1) rotate(0deg);
-    }
-    50% {
-      transform: scale(1.05) rotate(180deg);
-    }
-    100% {
-      transform: scale(1) rotate(360deg);
-    }
+  .card-shadow-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
 }

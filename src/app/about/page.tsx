@@ -32,13 +32,13 @@ export default function AboutPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h1 className="font-display text-4xl md:text-6xl text-arctic-white mb-6 leading-tight">
-                  ABOUT PROJECT ARD
+                  ABOUT WEIGH ANCHOR
                   <span className="block text-electric-blue text-2xl md:text-3xl mt-2">
-                    Advanced Remote Deployment
+                    Construction Innovation Command
                   </span>
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                  From tundra accessible only by bush plane to Fortune 500 corporate campuses, Project ARD executes complex construction, engineering, and technology projects where precision and reliability are non-negotiable.
+                  From complex infrastructure projects to Fortune 500 corporate campuses, Weigh Anchor delivers technology-enhanced construction management where precision and innovation are non-negotiable.
                 </p>
                 <div className="flex items-center space-x-6">
                   <div className="text-center">
@@ -271,17 +271,16 @@ export default function AboutPage() {
                   OUR FOUNDATION
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  Project ARD operates as a certified Service-Disabled Veteran-Owned Small Business (SDVOSB), Minority Business Enterprise (MBE), and Disadvantaged Business Enterprise (DBE). These certifications reflect our commitment to excellence and provide our clients with additional procurement advantages.
+                  Weigh Anchor operates as a certified Service-Disabled Veteran-Owned Small Business (SDVOSB). This certification reflects our commitment to excellence and provides our clients with additional procurement advantages while honoring our military heritage.
                 </p>
-                <div className="grid grid-cols-3 gap-4">
-                  <Badge variant="outline" className="text-electric-blue border-electric-blue p-3 text-center">
-                    <div className="font-mono text-xs">SDVOSB</div>
+                <div className="flex gap-4">
+                  <Badge variant="outline" className="text-electric-blue border-electric-blue p-4 text-center">
+                    <Award className="w-4 h-4 mr-2" />
+                    <div className="font-mono text-sm">SDVOSB CERTIFIED</div>
                   </Badge>
-                  <Badge variant="outline" className="text-electric-blue border-electric-blue p-3 text-center">
-                    <div className="font-mono text-xs">MBE</div>
-                  </Badge>
-                  <Badge variant="outline" className="text-electric-blue border-electric-blue p-3 text-center">
-                    <div className="font-mono text-xs">DBE</div>
+                  <Badge variant="outline" className="text-electric-blue border-electric-blue p-4 text-center">
+                    <Shield className="w-4 h-4 mr-2" />
+                    <div className="font-mono text-sm">VETERAN OWNED</div>
                   </Badge>
                 </div>
               </div>
@@ -325,11 +324,11 @@ export default function AboutPage() {
             <div className="flex items-center space-x-4 mb-4 md:mb-0">
               <div className="w-3 h-3 bg-electric-blue rounded-full animate-pulse"></div>
               <span className="font-mono text-sm text-muted-foreground">
-                PROJECT ARD • ADVANCED REMOTE DEPLOYMENT
+                WEIGH ANCHOR • CONSTRUCTION INNOVATION
               </span>
             </div>
             <div className="font-mono text-sm text-muted-foreground">
-              SDVOSB • MBE • DBE CERTIFIED
+              PROUDLY VETERAN OWNED • SDVOSB CERTIFIED
             </div>
           </div>
         </div>

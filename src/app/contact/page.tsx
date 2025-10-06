@@ -85,10 +85,10 @@ export default function ContactPage() {
                         <div>
                           <h3 className="font-display text-lg text-arctic-white mb-1">EMAIL</h3>
                           <a 
-                            href="mailto:info@projectard.com" 
+                            href="mailto:info@weighanchor.com" 
                             className="text-electric-blue hover:text-electric-blue/80 font-mono"
                           >
-                            info@projectard.com
+                            info@weighanchor.com
                           </a>
                         </div>
                       </div>
@@ -104,10 +104,10 @@ export default function ContactPage() {
                         <div>
                           <h3 className="font-display text-lg text-arctic-white mb-1">PHONE</h3>
                           <a 
-                            href="tel:407-687-3792" 
+                            href="tel:+14252890030" 
                             className="text-electric-blue hover:text-electric-blue/80 font-mono"
                           >
-                            407-687-3792
+                            (425) 289-0030
                           </a>
                         </div>
                       </div>
@@ -122,7 +122,10 @@ export default function ContactPage() {
                         </div>
                         <div>
                           <h3 className="font-display text-lg text-arctic-white mb-1">HEADQUARTERS</h3>
-                          <p className="text-muted-foreground">Bellevue, WA</p>
+                          <p className="text-muted-foreground">
+                            10900 NE 4th Street, Suite 2300<br />
+                            Bellevue, WA 98004
+                          </p>
                         </div>
                       </div>
                     </CardContent>
@@ -256,11 +259,11 @@ export default function ContactPage() {
             <div className="flex items-center space-x-4 mb-4 md:mb-0">
               <div className="w-3 h-3 bg-electric-blue rounded-full animate-pulse"></div>
               <span className="font-mono text-sm text-muted-foreground">
-                PROJECT ARD • ADVANCED REMOTE DEPLOYMENT
+                WEIGH ANCHOR • CONSTRUCTION INNOVATION
               </span>
             </div>
             <div className="font-mono text-sm text-muted-foreground">
-              SDVOSB • MBE • DBE CERTIFIED
+              PROUDLY VETERAN OWNED • SDVOSB CERTIFIED
             </div>
           </div>
         </div>
