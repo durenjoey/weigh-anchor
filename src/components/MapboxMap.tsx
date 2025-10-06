@@ -1,19 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { 
-  MapPin, 
-  Target, 
-  Eye, 
-  EyeOff,
-  Layers,
-  Satellite,
-  Map as MapIcon
-} from "lucide-react";
-import { projects, Project, getProjectsByType, getProjectsByStatus, getTotalProjectCount, getOpenProjectCount, getClosedProjectCount, getServiceTypeBreakdown } from "@/data/projects";
+import { projects, Project } from "@/data/projects";
 
 // Import Mapbox GL JS
 import mapboxgl from 'mapbox-gl';
@@ -26,14 +14,6 @@ interface MapboxMapProps {
 export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [visibleTypes, setVisibleTypes] = useState<Set<Project['type']>>(
-    new Set(['tribal-government', 'corporate'])
-  );
-  const [visibleStatus, setVisibleStatus] = useState<Set<Project['status']>>(
-    new Set(['open', 'closed'])
-  );
-  const [mapStyle, setMapStyle] = useState<'satellite' | 'dark' | 'terrain'>('dark');
   const [isMapLoaded, setIsMapLoaded] = useState(false);
 
   // Mapbox access token - you'll need to get this from Mapbox
@@ -41,59 +21,11 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
 
   const getProjectColor = (project: Project) => {
     switch (project.type) {
-      case 'tribal-government': return '#60a5fa'; // blue-400
-      case 'corporate': return '#4ade80'; // green-400
-      default: return '#3b82f6'; // electric-blue
+      case 'tribal-government': return '#3b82f6'; // blue
+      case 'corporate': return '#10b981'; // green
+      default: return '#ff8c42'; // orange
     }
   };
-
-  const getStatusColor = (status: Project['status']) => {
-    switch (status) {
-      case 'open': return '#3b82f6'; // electric-blue
-      case 'closed': return '#4ade80'; // green-400
-      default: return '#6b7280'; // muted
-    }
-  };
-
-  const getMapStyle = (style: string) => {
-    switch (style) {
-      case 'satellite':
-        return 'mapbox://styles/mapbox/satellite-v9';
-      case 'terrain':
-        return 'mapbox://styles/mapbox/outdoors-v12';
-      case 'dark':
-      default:
-        return 'mapbox://styles/mapbox/dark-v11';
-    }
-  };
-
-  const toggleTypeVisibility = (type: Project['type']) => {
-    const newVisible = new Set(visibleTypes);
-    if (newVisible.has(type)) {
-      newVisible.delete(type);
-    } else {
-      newVisible.add(type);
-    }
-    setVisibleTypes(newVisible);
-  };
-
-  const handleProjectClick = (project: Project) => {
-    setSelectedProject(project);
-    onProjectSelect?.(project);
-    
-    // Fly to project location
-    if (map.current) {
-      map.current.flyTo({
-        center: [project.coordinates.lng, project.coordinates.lat],
-        zoom: 8,
-        duration: 2000
-      });
-    }
-  };
-
-  const visibleProjects = projects.filter(project => 
-    visibleTypes.has(project.type) && visibleStatus.has(project.status)
-  );
 
   // Initialize map
   useEffect(() => {
@@ -103,7 +35,7 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
 
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: getMapStyle(mapStyle),
+      style: 'mapbox://styles/mapbox/light-v11',
       center: [-98.5795, 39.8283], // Center of US
       zoom: 3.5,
       pitch: 0,
@@ -112,7 +44,7 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
       attributionControl: false
     });
 
-    // Add custom controls
+    // Add navigation controls
     map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
 
     map.current.on('load', () => {
@@ -127,13 +59,6 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
     };
   }, []);
 
-  // Update map style
-  useEffect(() => {
-    if (map.current && isMapLoaded) {
-      map.current.setStyle(getMapStyle(mapStyle));
-    }
-  }, [mapStyle, isMapLoaded]);
-
   // Add project markers
   useEffect(() => {
     if (!map.current || !isMapLoaded) return;
@@ -142,45 +67,36 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
     const existingMarkers = document.querySelectorAll('.mapbox-marker');
     existingMarkers.forEach(marker => marker.remove());
 
-    // Add new markers for visible projects
-    visibleProjects.forEach((project) => {
+    // Add markers for all projects
+    projects.forEach((project) => {
       // Create marker element
       const markerEl = document.createElement('div');
       markerEl.className = 'mapbox-marker';
+      
+      const size = project.projectCount > 5 ? '28px' : project.projectCount > 1 ? '24px' : '20px';
       markerEl.style.cssText = `
-        width: ${project.projectCount > 1 ? '32px' : '24px'};
-        height: ${project.projectCount > 1 ? '32px' : '24px'};
+        width: ${size};
+        height: ${size};
         border-radius: 50%;
         background-color: ${getProjectColor(project)};
-        border: 2px solid rgba(255, 255, 255, 0.8);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px ${getProjectColor(project)}40;
+        border: 2px solid white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 10px;
+        font-size: 11px;
         font-weight: bold;
         color: white;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(4px);
+        transition: all 0.2s ease;
       `;
 
-      // Add project count or dot
+      // Add project count if > 1
       if (project.projectCount > 1) {
         markerEl.textContent = project.projectCount.toString();
-      } else {
-        const dot = document.createElement('div');
-        dot.style.cssText = `
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          background-color: currentColor;
-          opacity: 0.9;
-        `;
-        markerEl.appendChild(dot);
       }
 
-      // Add hover effects
+      // Add hover effect
       markerEl.addEventListener('mouseenter', () => {
         markerEl.style.transform = 'scale(1.2)';
         markerEl.style.zIndex = '1000';
@@ -193,7 +109,18 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
 
       // Add click handler
       markerEl.addEventListener('click', () => {
-        handleProjectClick(project);
+        if (onProjectSelect) {
+          onProjectSelect(project);
+        }
+        
+        // Fly to location
+        if (map.current) {
+          map.current.flyTo({
+            center: [project.coordinates.lng, project.coordinates.lat],
+            zoom: 8,
+            duration: 2000
+          });
+        }
       });
 
       // Create marker
@@ -211,23 +138,28 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
       markerEl.addEventListener('mouseenter', () => {
         const popupContent = `
           <div style="
-            background: rgba(15, 23, 42, 0.95);
-            color: white;
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            backdrop-filter: blur(8px);
+            background: white;
+            color: #1e293b;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            max-width: 250px;
           ">
-            <div style="font-weight: bold; color: ${getProjectColor(project)};">
+            <div style="font-weight: bold; color: ${getProjectColor(project)}; margin-bottom: 4px;">
               ${project.name}
             </div>
-            <div style="opacity: 0.8; margin-top: 2px;">
+            <div style="color: #64748b; font-size: 12px;">
               ${project.location}, ${project.state}
             </div>
-            <div style="opacity: 0.6; margin-top: 2px; font-size: 10px;">
-              ${project.type.toUpperCase()} • ${project.status.toUpperCase()}
+            <div style="color: #94a3b8; margin-top: 4px; font-size: 11px;">
+              ${project.type.replace('-', ' ').toUpperCase()} • ${project.status.toUpperCase()}
             </div>
+            ${project.projectCount > 1 ? `
+              <div style="color: ${getProjectColor(project)}; margin-top: 4px; font-size: 12px; font-weight: 600;">
+                ${project.projectCount} projects at this location
+              </div>
+            ` : ''}
           </div>
         `;
 
@@ -240,231 +172,13 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
         popup.remove();
       });
     });
-  }, [visibleProjects, isMapLoaded]);
+  }, [isMapLoaded, onProjectSelect]);
 
   return (
-    <div className="w-full h-full">
-      {/* Map Controls */}
-      <div className="mb-6 flex flex-wrap gap-2 items-center">
-        <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-          <span>FILTER:</span>
-        </div>
-        {(['tribal-government', 'corporate'] as const).map((type) => (
-          <Button
-            key={type}
-            variant="outline"
-            size="sm"
-            onClick={() => toggleTypeVisibility(type)}
-            className={`${
-              visibleTypes.has(type) 
-                ? 'bg-electric-blue/20 border-electric-blue text-electric-blue' 
-                : 'border-muted text-muted-foreground'
-            } transition-all`}
-          >
-            {visibleTypes.has(type) ? <Eye className="w-3 h-3 mr-1" /> : <EyeOff className="w-3 h-3 mr-1" />}
-            {type === 'tribal-government' ? 'TRIBAL/GOVERNMENT' : type.toUpperCase()} ({getProjectsByType(type).length})
-          </Button>
-        ))}
-        
-        <div className="h-4 w-px bg-electric-blue/30 mx-2"></div>
-        
-        {/* Status Controls */}
-        <div className="flex items-center space-x-2">
-          <span className="text-sm text-muted-foreground">STATUS:</span>
-          {(['open', 'closed'] as const).map((status) => (
-            <Button
-              key={status}
-              variant="outline"
-              size="sm"
-              onClick={() => {
-                const newVisible = new Set(visibleStatus);
-                if (newVisible.has(status)) {
-                  newVisible.delete(status);
-                } else {
-                  newVisible.add(status);
-                }
-                setVisibleStatus(newVisible);
-              }}
-              className={`${
-                visibleStatus.has(status) 
-                  ? 'bg-electric-blue/20 border-electric-blue text-electric-blue' 
-                  : 'border-muted text-muted-foreground'
-              } transition-all`}
-            >
-              {visibleStatus.has(status) ? <Eye className="w-3 h-3 mr-1" /> : <EyeOff className="w-3 h-3 mr-1" />}
-              {status.toUpperCase()} ({getProjectsByStatus(status).length})
-            </Button>
-          ))}
-        </div>
-        
-        <div className="h-4 w-px bg-electric-blue/30 mx-2"></div>
-        
-        {/* Map Style Controls */}
-        <div className="flex items-center space-x-2">
-          <span className="text-sm text-muted-foreground">VIEW:</span>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => setMapStyle('dark')}
-            className={`${
-              mapStyle === 'dark' 
-                ? 'bg-electric-blue/20 border-electric-blue text-electric-blue' 
-                : 'border-muted text-muted-foreground'
-            } transition-all`}
-          >
-            <MapIcon className="w-3 h-3 mr-1" />
-            TACTICAL
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => setMapStyle('satellite')}
-            className={`${
-              mapStyle === 'satellite' 
-                ? 'bg-electric-blue/20 border-electric-blue text-electric-blue' 
-                : 'border-muted text-muted-foreground'
-            } transition-all`}
-          >
-            <Satellite className="w-3 h-3 mr-1" />
-            SATELLITE
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => setMapStyle('terrain')}
-            className={`${
-              mapStyle === 'terrain' 
-                ? 'bg-electric-blue/20 border-electric-blue text-electric-blue' 
-                : 'border-muted text-muted-foreground'
-            } transition-all`}
-          >
-            <Layers className="w-3 h-3 mr-1" />
-            TERRAIN
-          </Button>
-        </div>
-      </div>
-
-      <div className="grid lg:grid-cols-3 gap-6 h-full">
-        {/* Mapbox Map */}
-        <div className="lg:col-span-2">
-          <Card className="bg-card/30 backdrop-blur-sm border-electric-blue/20 h-full">
-            <CardHeader>
-              <CardTitle className="font-display text-electric-blue flex items-center">
-                <Target className="w-5 h-5 mr-2" />
-                GLOBAL PROJECT MAP
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-6">
-              <div 
-                ref={mapContainer}
-                className="w-full h-96 rounded-lg border border-electric-blue/30 overflow-hidden"
-                style={{ minHeight: '400px' }}
-              />
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Project Details Panel */}
-        <div className="space-y-4">
-          {/* Stats Card */}
-          <Card className="bg-card/30 backdrop-blur-sm border-electric-blue/20">
-            <CardHeader>
-              <CardTitle className="font-display text-electric-blue text-sm">PROJECT PORTFOLIO</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Total Portfolio:</span>
-                <span className="text-electric-blue font-mono">{getTotalProjectCount()}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Active Projects:</span>
-                <span className="text-electric-blue font-mono">{getOpenProjectCount()}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Completed Projects:</span>
-                <span className="text-electric-blue font-mono">{getClosedProjectCount()}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Geographic Reach:</span>
-                <span className="text-electric-blue font-mono">{new Set(projects.map(p => p.state)).size} locations</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Visible Projects:</span>
-                <span className="text-electric-blue font-mono">{visibleProjects.length}</span>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Selected Project Details */}
-          {selectedProject && (
-            <Card className="bg-card/30 backdrop-blur-sm border-electric-blue/20">
-              <CardHeader>
-                <CardTitle className="font-display text-electric-blue text-sm flex items-center">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  PROJECT DETAILS
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h3 className="font-display text-arctic-white mb-2">
-                    {selectedProject.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">{selectedProject.location}, {selectedProject.state}</p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <span className="text-xs text-muted-foreground">TYPE</span>
-                    <div className="text-sm font-mono" style={{ color: getProjectColor(selectedProject) }}>
-                      {selectedProject.type.toUpperCase()}
-                    </div>
-                  </div>
-                  <div>
-                    <span className="text-xs text-muted-foreground">STATUS</span>
-                    <Badge variant="outline" className="text-xs" style={{ 
-                      color: getStatusColor(selectedProject.status),
-                      borderColor: getStatusColor(selectedProject.status)
-                    }}>
-                      {selectedProject.status.toUpperCase()}
-                    </Badge>
-                  </div>
-                </div>
-
-                <div>
-                  <span className="text-xs text-muted-foreground">SERVICE TYPE</span>
-                  <div className="text-sm text-arctic-white font-medium">{selectedProject.serviceType}</div>
-                </div>
-
-                <div>
-                  <span className="text-xs text-muted-foreground">COORDINATES</span>
-                  <div className="font-mono text-sm text-electric-blue">
-                    {selectedProject.coordinates.lat.toFixed(4)}°N {Math.abs(selectedProject.coordinates.lng).toFixed(4)}°{selectedProject.coordinates.lng < 0 ? 'W' : 'E'}
-                  </div>
-                </div>
-
-                {selectedProject.clientName && (
-                  <div>
-                    <span className="text-xs text-muted-foreground">CLIENT</span>
-                    <div className="text-sm text-arctic-white">{selectedProject.clientName}</div>
-                  </div>
-                )}
-
-                {selectedProject.description && (
-                  <div>
-                    <span className="text-xs text-muted-foreground">DESCRIPTION</span>
-                    <p className="text-sm text-muted-foreground">{selectedProject.description}</p>
-                  </div>
-                )}
-
-                <div>
-                  <span className="text-xs text-muted-foreground">PROJECT COUNT</span>
-                  <div className="text-lg font-bold text-electric-blue">{selectedProject.projectCount}</div>
-                </div>
-              </CardContent>
-            </Card>
-          )}
-        </div>
-      </div>
-    </div>
+    <div 
+      ref={mapContainer}
+      className="w-full h-full"
+      style={{ minHeight: '100%' }}
+    />
   );
 }
