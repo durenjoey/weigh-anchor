@@ -414,13 +414,13 @@ export const projects: Project[] = [
     location: 'Bothell',
     state: 'Washington',
     coordinates: { lat: 47.7544, lng: -122.2056 },
-    projectCount: 66,
+    projectCount: 1,
     type: 'corporate',
     category: 'automation',
     serviceType: 'Technology & Automation',
     status: 'open',
     clientName: 'Pfizer',
-    description: 'Business process automation tasks'
+    description: 'Business process automation contract'
   },
 
   // CLOSED PROJECTS - Tribal/Government
