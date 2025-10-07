@@ -7,8 +7,9 @@ export const metadata: Metadata = {
   keywords: ["construction management", "technology", "innovation", "project management"],
   authors: [{ name: "Weigh Anchor" }],
   icons: {
-    icon: "/assets/logos/WeighAnchor_Logoonly_Transparent_2023_08_16.png",
-    apple: "/assets/logos/WeighAnchor_Logoonly_Transparent_2023_08_16.png",
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+    shortcut: "/favicon.png",
   },
 };
 
