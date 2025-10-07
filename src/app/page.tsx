@@ -68,14 +68,14 @@ export default function Home() {
   const capabilities = [
     {
       icon: Building2,
-      title: "Construction Management",
-      description: "End-to-end project oversight powered by AI and real-time analytics",
+      title: "Construction Professional Services",
+      description: "Comprehensive construction management, owner's representation, and project oversight services",
       color: "from-orange-500 to-orange-600"
     },
     {
-      icon: Shield,
-      title: "Owner's Representative",
-      description: "We manage your projects from idea to delivery, protecting your interests every step of the way",
+      icon: Globe2,
+      title: "Remote Project Delivery",
+      description: "Specialized expertise delivering complex projects in challenging locations from arctic tundra to remote tropical islands",
       color: "from-blue-500 to-blue-600"
     },
     {
@@ -109,7 +109,7 @@ export default function Home() {
             </h1>
             <p className="mt-6 text-xl text-slate-600 max-w-3xl leading-relaxed">
               Technology-Enhanced Construction Management delivering exceptional results 
-              across federal, tribal, and commercial projects nationwide.
+              across government, tribal, and private clients nationwide.
             </p>
 
             {/* Performance Metrics */}
@@ -436,7 +436,7 @@ export default function Home() {
                 className="h-12 w-auto mb-4 brightness-0 invert"
               />
               <p className="text-sm text-slate-400">
-                Technology-enhanced construction management for federal and commercial projects.
+                Technology-enhanced construction management for government and private clients.
               </p>
             </div>
             <div>

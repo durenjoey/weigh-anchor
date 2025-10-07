@@ -21,49 +21,49 @@ import Header from "@/components/Header";
 export default function ServicesPage() {
   const services = [
     {
-      icon: Building2,
-      title: "Construction Management",
-      subtitle: "Comprehensive oversight of construction projects from inception to completion",
-      description: "End-to-end project oversight enhanced by our proprietary technology platform and decades of industry expertise.",
+      icon: Globe2,
+      title: "Remote Project Delivery",
+      subtitle: "Specialized expertise for challenging and isolated locations",
+      description: "When others say impossible, we deploy. From arctic installations to tropical island construction, isolated government sites to extreme terrain—you can get us anywhere.",
       features: [
-        "Project planning and scheduling optimization",
-        "Real-time progress monitoring and reporting",
-        "Quality control and safety management",
-        "Budget tracking and cost control",
-        "Subcontractor coordination and management",
-        "Risk assessment and mitigation strategies"
-      ],
-      color: "from-orange-500 to-orange-600",
-      bgColor: "from-orange-50 to-orange-100"
-    },
-    {
-      icon: Shield,
-      title: "Owner's Representative",
-      subtitle: "Protecting owner interests throughout the project lifecycle",
-      description: "Strategic advisory services ensuring your project investment is protected with expert guidance and advocacy.",
-      features: [
-        "Independent project oversight and advocacy",
-        "Contract review and negotiation support",
-        "Design and construction quality assurance",
-        "Change order evaluation and approval",
-        "Vendor and contractor performance monitoring",
-        "Project milestone and deliverable validation"
+        "Arctic installations and cold-weather construction",
+        "Tropical island and coastal project delivery",
+        "Isolated government sites and remote facilities",
+        "Extreme terrain and challenging access logistics",
+        "Remote supply chain and resource management",
+        "Specialized deployment and mobilization capabilities"
       ],
       color: "from-blue-500 to-blue-600",
       bgColor: "from-blue-50 to-blue-100"
     },
     {
-      icon: Cpu,
-      title: "Technology Integration",
-      subtitle: "Implementing cutting-edge solutions to enhance project delivery",
-      description: "Industry-leading efficiency through proprietary technology, automation, and data-driven insights that transform construction delivery.",
+      icon: Building2,
+      title: "Construction Professional Services",
+      subtitle: "Full-service capabilities, regardless of location complexity",
+      description: "Construction Management, Owner's Representative, Project Management, and Construction Inspection services delivered with the same expertise whether you're in downtown Seattle or the middle of Alaska.",
       features: [
-        "AI-powered project analytics and insights",
-        "Automated reporting and documentation",
-        "Digital workflow optimization",
-        "IoT sensor integration and monitoring",
-        "Predictive analytics and forecasting",
-        "Performance optimization algorithms"
+        "Construction Management and oversight",
+        "Owner's Representative and advocacy services",
+        "Project Management and coordination",
+        "Construction Inspection and quality assurance",
+        "Consulting services and strategic advisory",
+        "Contract administration and change management"
+      ],
+      color: "from-orange-500 to-orange-600",
+      bgColor: "from-orange-50 to-orange-100"
+    },
+    {
+      icon: Cpu,
+      title: "Technology-Enhanced Solutions",
+      subtitle: "Tech-augmented professionals delivering faster results",
+      description: "Our technology capabilities and tools augment our team's expertise, enabling enhanced efficiency and accurate project delivery regardless of location.",
+      features: [
+        "Proprietary AI platform for construction intelligence",
+        "Drone surveying and aerial inspection services",
+        "Remote site surveys and assessments",
+        "Digital drafting and design services",
+        "Digital twin creation and modeling",
+        "Data analytics and project reporting"
       ],
       color: "from-purple-500 to-purple-600",
       bgColor: "from-purple-50 to-purple-100"
@@ -73,13 +73,13 @@ export default function ServicesPage() {
   const differentiators = [
     {
       icon: Users,
-      title: "Expert Team",
-      description: "Decades of combined experience in federal and commercial construction"
+      title: "Direct Deployment",
+      description: "We deploy our own expert teams rather than relying on local subcontractors"
     },
     {
-      icon: Activity,
-      title: "Real-Time Monitoring",
-      description: "Real-time project visibility with instant alerts and automated reporting"
+      icon: Globe2,
+      title: "Geographic Reach",
+      description: "Arctic tundra to tropical islands—you can get us anywhere"
     },
     {
       icon: TrendingUp,
@@ -88,8 +88,8 @@ export default function ServicesPage() {
     },
     {
       icon: Clock,
-      title: "Rapid Response",
-      description: "Quick deployment capabilities for urgent project needs"
+      title: "Rapid Mobilization",
+      description: "Quick deployment capabilities for urgent and remote project needs"
     },
     {
       icon: Award,
@@ -97,9 +97,9 @@ export default function ServicesPage() {
       description: "Service-Disabled Veteran-Owned Small Business certification"
     },
     {
-      icon: Globe2,
-      title: "National Reach",
-      description: "Project delivery capabilities across all 50 states"
+      icon: Cpu,
+      title: "Tech-Augmented Teams",
+      description: "Internal software tools that enhance our team's efficiency in any environment"
     }
   ];
 
@@ -112,11 +112,12 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-              Our Services
+              When Others Say "Impossible Location," 
+              <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent"> We Say "Let's Get Started"</span>
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              Comprehensive construction solutions enhanced by cutting-edge technology 
-              and decades of industry expertise.
+              Our mission: becoming the most remote, most tech-forward construction company. Professional services 
+              delivered anywhere—from arctic installations to tropical island projects.
             </p>
           </div>
         </div>
@@ -188,10 +189,10 @@ export default function ServicesPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                Why Choose Weigh Anchor
+                Why This Matters
               </h2>
               <p className="text-lg text-slate-600">
-                What sets us apart in the construction management industry
+                Others subcontract to local firms. We deploy our own experts.
               </p>
             </div>
             

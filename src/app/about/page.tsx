@@ -30,12 +30,13 @@ export default function AboutPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-                  About Weigh Anchor
+                  Where Construction 
+                  <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent"> Meets Innovation</span>
                 </h1>
                 <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-                  From complex infrastructure projects to Fortune 500 corporate campuses, Weigh Anchor 
-                  delivers technology-enhanced construction management where precision and innovation 
-                  drive exceptional outcomes.
+                  Our mission: becoming the most remote, most tech-forward construction company. 
+                  When others say "impossible location," we deploy our experts with cutting-edge 
+                  technology to deliver exceptional results anywhere.
                 </p>
                 <div className="grid grid-cols-3 gap-6 mb-8">
                   <div>
@@ -53,25 +54,25 @@ export default function AboutPage() {
                 </div>
               </div>
               
-              {/* Company Stats Card */}
+              {/* Our Approach Card */}
               <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-8 border border-slate-200">
-                <h3 className="text-lg font-semibold text-slate-900 mb-6">Our Impact</h3>
+                <h3 className="text-xl font-semibold text-slate-900 mb-6">Our Approach</h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-slate-600">Federal Contracts</span>
-                    <span className="font-bold text-slate-900">$30M+</span>
+                    <span className="text-slate-600">Deployment Model</span>
+                    <span className="font-bold text-slate-900">Direct Expert Teams</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-slate-600">Commercial Projects</span>
-                    <span className="font-bold text-slate-900">$17M+</span>
+                    <span className="text-slate-600">Geographic Reach</span>
+                    <span className="font-bold text-slate-900">Anywhere, Anytime</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-slate-600">Team Members</span>
-                    <span className="font-bold text-slate-900">200+</span>
+                    <span className="text-slate-600">Technology Edge</span>
+                    <span className="font-bold text-slate-900">Proprietary AI Platform</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-slate-600">Client Retention</span>
-                    <span className="font-bold text-slate-900">95%</span>
+                    <span className="text-slate-600">Core Difference</span>
+                    <span className="font-bold text-slate-900">We Go Where Others Won't</span>
                   </div>
                 </div>
               </div>
@@ -139,48 +140,35 @@ export default function AboutPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                  Our Foundation
+                  Our Story
                 </h2>
                 <div className="prose prose-lg text-slate-600">
                   <p className="mb-4">
-                    Founded by USAF veteran <strong>Joseph Duren Lopez</strong>, Weigh Anchor began with a clear mission: 
-                    to transform the construction industry through innovation and unwavering commitment to excellence.
+                    We discovered our niche when others wouldn't go: the impossible locations. Arctic installations, 
+                    remote tropical islands, isolated government sites—places where traditional construction companies 
+                    subcontract to local firms or simply decline the work.
                   </p>
                   <p className="mb-4">
                     Our name reflects our philosophy - helping clients break free from constraints that hold them back, 
                     just as a ship weighs anchor to set sail toward new horizons.
                   </p>
                   <p className="mb-4">
-                    As a Service-Disabled Veteran-Owned Small Business (SDVOSB), we've built a strong foundation in 
-                    construction project management, serving federal agencies, tribal organizations, and Fortune 500 companies.
+                    Instead of saying "we can't," we built the capabilities to deploy our own expert teams anywhere. 
+                    We developed proprietary technology, specialized logistics, and remote project delivery systems 
+                    that work where others fail.
                   </p>
                   <p>
-                    Today, we're leading the charge in construction technology innovation. Our expertise in traditional 
-                    construction management now fuels our technology innovations, creating solutions that address real-world 
-                    challenges we've encountered in the field.
+                    Our founder's background combines military precision with hands-on experience in challenging 
+                    environments—from scuba diving across 4 continents to mountain climbing in 3. This isn't just 
+                    business strategy; it's personal expertise that translates directly into our ability to deploy 
+                    teams and execute projects where others see only obstacles.
                   </p>
-                </div>
-              </div>
-              
-              <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-8 border border-slate-200">
-                <h3 className="text-xl font-semibold text-slate-900 mb-6">Where We Are Today</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-slate-600">Innovation Focus</span>
-                    <span className="font-bold text-slate-900">Technology Leadership</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-slate-600">Market Position</span>
-                    <span className="font-bold text-slate-900">Industry Pioneer</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-slate-600">Core Mission</span>
-                    <span className="font-bold text-slate-900">Construction Innovation</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-slate-600">Value Proposition</span>
-                    <span className="font-bold text-slate-900">Efficiency & Excellence</span>
-                  </div>
+                  <p>
+                    Today, we're on a mission to become the most remote, most tech-forward construction company. 
+                    Our field expertise fuels our technology innovations, creating solutions that address real-world 
+                    challenges we've encountered in the most demanding environments. When we say "you can get us anywhere," 
+                    we mean it—because we've already been there.
+                  </p>
                 </div>
               </div>
             </div>
@@ -331,6 +319,15 @@ export default function AboutPage() {
                       <div className="font-semibold text-slate-900">Government Experience</div>
                       <div className="text-sm text-slate-600">
                         Proven track record with federal, tribal, and local governments
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-slate-900">Fortune 500 Clients</div>
+                      <div className="text-sm text-slate-600">
+                        Enterprise-scale projects for major corporations including Pfizer
                       </div>
                     </div>
                   </div>
