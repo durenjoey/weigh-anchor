@@ -24,11 +24,56 @@ export default function ContactPage() {
     projectType: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Thank you for your message! We\'ll get back to you within one business day.'
+        });
+        // Clear form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          organization: "",
+          projectType: "",
+          message: ""
+        });
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: data.error || 'Something went wrong. Please try again.'
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Unable to send message. Please try again or call us directly.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -135,12 +180,29 @@ export default function ContactPage() {
                       <div className="font-semibold">236220, 541330, 541511</div>
                     </div>
                     <div className="pt-3">
-                      <div className="text-sm text-slate-500 mb-2">Certification</div>
-                      <img 
-                        src="/assets/logos/SDVOSB_Logo_White_2023_06_22.png.png" 
-                        alt="SDVOSB Certified" 
-                        className="h-10 w-auto bg-slate-800 p-2 rounded mb-3"
-                      />
+                      <div className="text-sm text-slate-500 mb-3">Certifications</div>
+                      <div className="grid grid-cols-2 gap-2 mb-3">
+                        <img 
+                          src="/assets/logos/SDVOSB_Logo_White_2023_06_22.png.png" 
+                          alt="SDVOSB Certified" 
+                          className="h-10 w-auto bg-slate-800 p-2 rounded"
+                        />
+                        <img 
+                          src="/assets/logos/dbe.png" 
+                          alt="DBE Certified" 
+                          className="h-10 w-auto bg-white p-1 rounded border border-slate-200"
+                        />
+                        <img 
+                          src="/assets/logos/King county scs.png" 
+                          alt="King County SCS" 
+                          className="h-10 w-auto bg-white p-1 rounded border border-slate-200"
+                        />
+                        <img 
+                          src="/assets/logos/OMWBE-Certified-Badge.png" 
+                          alt="OMWBE MBE Certified" 
+                          className="h-10 w-auto bg-white p-1 rounded border border-slate-200"
+                        />
+                      </div>
                     </div>
                     <div className="pt-3">
                       <Button 
@@ -258,13 +320,34 @@ export default function ContactPage() {
                         />
                       </div>
 
+                      {/* Status Message */}
+                      {submitStatus.type && (
+                        <div className={`p-4 rounded-lg ${
+                          submitStatus.type === 'success' 
+                            ? 'bg-green-50 text-green-800 border border-green-200' 
+                            : 'bg-red-50 text-red-800 border border-red-200'
+                        }`}>
+                          {submitStatus.message}
+                        </div>
+                      )}
+
                       <div className="flex justify-end">
                         <Button 
                           type="submit"
-                          className="bg-orange hover:bg-orange-dark text-white px-8"
+                          disabled={isSubmitting}
+                          className="bg-orange hover:bg-orange-dark text-white px-8 disabled:opacity-50"
                         >
-                          <Send className="w-4 h-4 mr-2" />
-                          Send Message
+                          {isSubmitting ? (
+                            <>
+                              <div className="w-4 h-4 mr-2 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                              Sending...
+                            </>
+                          ) : (
+                            <>
+                              <Send className="w-4 h-4 mr-2" />
+                              Send Message
+                            </>
+                          )}
                         </Button>
                       </div>
                     </form>
