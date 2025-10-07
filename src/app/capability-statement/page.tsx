@@ -75,15 +75,88 @@ export default function CapabilityStatementPage() {
     pageStyle: `
       @page {
         size: A4;
-        margin: 0.5in;
+        margin: 0.4in;
       }
       @media print {
+        * {
+          box-sizing: border-box !important;
+        }
         body {
           -webkit-print-color-adjust: exact !important;
           color-adjust: exact !important;
+          font-size: 12px !important;
+          line-height: 1.3 !important;
         }
-        .print-break {
-          page-break-before: always;
+        /* Force proper grid layout */
+        .lg\\:grid-cols-3 {
+          display: grid !important;
+          grid-template-columns: 2fr 1fr !important;
+          gap: 1rem !important;
+          align-items: start !important;
+        }
+        .lg\\:col-span-2 {
+          grid-column: span 1 !important;
+        }
+        /* Fix all spacing */
+        .space-y-6 > *:not(:first-child) {
+          margin-top: 1rem !important;
+        }
+        .space-y-8 > *:not(:first-child) {
+          margin-top: 1.25rem !important;
+        }
+        .gap-6 {
+          gap: 0.75rem !important;
+        }
+        .gap-8 {
+          gap: 1rem !important;
+        }
+        /* Card sizing and positioning */
+        [class*="Card"], .card {
+          break-inside: avoid !important;
+          margin-bottom: 0.75rem !important;
+          padding: 0.75rem !important;
+          min-height: unset !important;
+          height: auto !important;
+        }
+        .p-6 {
+          padding: 0.75rem !important;
+        }
+        .p-8 {
+          padding: 1rem !important;
+        }
+        .mb-6 {
+          margin-bottom: 0.75rem !important;
+        }
+        .mb-12 {
+          margin-bottom: 1rem !important;
+        }
+        /* Text sizing for print */
+        .text-4xl { font-size: 1.5rem !important; line-height: 1.2 !important; }
+        .text-3xl { font-size: 1.25rem !important; line-height: 1.2 !important; }
+        .text-2xl { font-size: 1.125rem !important; line-height: 1.2 !important; }
+        .text-xl { font-size: 1rem !important; line-height: 1.2 !important; }
+        .text-lg { font-size: 0.9rem !important; line-height: 1.2 !important; }
+        /* Grid layout specific fixes */
+        .grid.md\\:grid-cols-2 {
+          grid-template-columns: 1fr 1fr !important;
+          gap: 0.5rem !important;
+        }
+        .grid.md\\:grid-cols-3 {
+          grid-template-columns: 1fr 1fr 1fr !important;
+          gap: 0.5rem !important;
+        }
+        /* Ensure content doesn't overflow */
+        .container {
+          max-width: 100% !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+        /* Right column specific fixes */
+        .space-y-6.h-full > * {
+          margin-bottom: 0.75rem !important;
+        }
+        .space-y-6.h-full > *:last-child {
+          margin-bottom: 0 !important;
         }
       }
     `
@@ -159,6 +232,29 @@ export default function CapabilityStatementPage() {
         </div>
       </div>
 
+      {/* Print Header - Only visible in PDF */}
+      <div className="hidden print:block bg-white p-8 border-b border-slate-200">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-6">
+            <img 
+              src="/assets/logos/WeighAnchor_Logoonly_Transparent_2023_08_16.png" 
+              alt="Weigh Anchor" 
+              className="h-16 w-auto"
+            />
+            <div>
+              <h1 className="text-3xl font-bold text-slate-900 mb-1">WEIGH ANCHOR</h1>
+              <p className="text-orange-600 text-lg font-semibold">CAPABILITY STATEMENT</p>
+              <p className="text-slate-600">Professional Services, Any Location</p>
+            </div>
+          </div>
+          <div className="text-right text-sm text-slate-600">
+            <p>Generated: {new Date().toLocaleDateString()}</p>
+            <p>CAGE Code: 9LA92</p>
+            <p>UEI: JU1LYRJGRWL9</p>
+          </div>
+        </div>
+      </div>
+
       {/* Real-Time Metrics Dashboard */}
       <div ref={contentRef} className="container mx-auto px-6 py-8">
         <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -208,7 +304,7 @@ export default function CapabilityStatementPage() {
           </Card>
         </div>
         
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8 items-start">
           {/* Left Column */}
           <div className="lg:col-span-2 space-y-8">
             
@@ -406,7 +502,7 @@ export default function CapabilityStatementPage() {
           </div>
 
           {/* Right Column */}
-          <div className="space-y-6">
+          <div className="space-y-6 h-full">
             
             {/* NAICS Codes */}
             <Card className="border-0 shadow-xl bg-gradient-to-br from-indigo-50 to-cyan-50">
@@ -499,7 +595,7 @@ export default function CapabilityStatementPage() {
                   <div className="bg-white p-4 rounded-lg shadow-md">
                     <h4 className="font-bold text-blue-900 mb-2">Geographic Coverage</h4>
                     <p className="text-sm text-slate-600 mb-2">
-                      Active in {statesServed} states with expertise in remote deployment
+                      Active in {statesServed} states
                     </p>
                     <div className="flex flex-wrap gap-1 text-xs">
                       <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded">Alaska</span>
@@ -528,7 +624,6 @@ export default function CapabilityStatementPage() {
                       <li>• Federal, State & Municipal Government</li>
                       <li>• Educational Institutions & Healthcare</li>
                       <li>• Commercial & Industrial Facilities</li>
-                      <li>• Infrastructure & Transportation</li>
                     </ul>
                   </div>
                 </div>
