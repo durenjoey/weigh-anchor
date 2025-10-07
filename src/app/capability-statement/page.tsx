@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useReactToPrint } from 'react-to-print';
 import { 
   Building2,
   MapPin,
@@ -61,47 +62,32 @@ export default function CapabilityStatementPage() {
     return () => clearInterval(timer);
   }, [totalProjects, activeProjects, statesServed]);
 
-  const generatePDF = async () => {
-    if (!contentRef.current) return;
-    
-    setIsGeneratingPdf(true);
-    
-    try {
-      const html2canvas = (await import('html2canvas')).default;
-      const jsPDF = (await import('jspdf')).default;
-      
-      const canvas = await html2canvas(contentRef.current, {
-        scale: 2,
-        useCORS: true,
-        allowTaint: true,
-        backgroundColor: '#ffffff'
-      });
-      
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF('p', 'mm', 'a4');
-      const imgWidth = 210;
-      const pageHeight = 295;
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-      let heightLeft = imgHeight;
-      let position = 0;
-
-      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-      heightLeft -= pageHeight;
-
-      while (heightLeft >= 0) {
-        position = heightLeft - imgHeight;
-        pdf.addPage();
-        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
-      }
-
-      pdf.save(`Weigh-Anchor-Capability-Statement-${new Date().toISOString().split('T')[0]}.pdf`);
-    } catch (error) {
-      console.error('Error generating PDF:', error);
-    } finally {
+  const handlePrint = useReactToPrint({
+    contentRef: contentRef,
+    documentTitle: `Weigh-Anchor-Capability-Statement-${new Date().toISOString().split('T')[0]}`,
+    onBeforeGetContent: () => {
+      setIsGeneratingPdf(true);
+      return Promise.resolve();
+    },
+    onAfterPrint: () => {
       setIsGeneratingPdf(false);
-    }
-  };
+    },
+    pageStyle: `
+      @page {
+        size: A4;
+        margin: 0.5in;
+      }
+      @media print {
+        body {
+          -webkit-print-color-adjust: exact !important;
+          color-adjust: exact !important;
+        }
+        .print-break {
+          page-break-before: always;
+        }
+      }
+    `
+  });
 
   const naicsCodes = [
     { code: "236220", description: "Commercial and Institutional Building Construction", icon: Building2 },
@@ -160,12 +146,12 @@ export default function CapabilityStatementPage() {
             <div className="text-right space-y-2">
               <Button 
                 size="lg"
-                onClick={generatePDF}
+                onClick={handlePrint}
                 disabled={isGeneratingPdf}
                 className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg shadow-orange-500/25 disabled:opacity-50"
               >
                 <Download className="mr-2 h-4 w-4" />
-                {isGeneratingPdf ? 'Generating...' : 'Download PDF'}
+                {isGeneratingPdf ? 'Preparing...' : 'Print/Save as PDF'}
               </Button>
               <div className="text-slate-400 text-sm">Generated: {new Date().toLocaleDateString()}</div>
             </div>
