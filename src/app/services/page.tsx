@@ -4,12 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { 
   Building2,
-  Shield, 
   Cpu,
   CheckCircle2,
   ArrowRight,
   Users,
-  Activity,
   TrendingUp,
   Clock,
   Award,
@@ -112,8 +110,8 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-              When Others Say "Impossible Location," 
-              <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent"> We Say "Let's Get Started"</span>
+              When Others Say &quot;Impossible Location,&quot; 
+              <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent"> We Say &quot;Let&apos;s Get Started&quot;</span>
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
               Our mission: becoming the most remote, most tech-forward construction company. Professional services 

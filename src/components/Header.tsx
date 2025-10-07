@@ -2,12 +2,10 @@
 
 import { Button } from "@/components/ui/button";
 import { 
-  Anchor,
   Menu,
   X,
   Phone,
-  Mail,
-  MapPin
+  Mail
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

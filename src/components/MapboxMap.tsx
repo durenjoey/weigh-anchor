@@ -57,7 +57,7 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
         map.current = null;
       }
     };
-  }, []);
+  }, [MAPBOX_TOKEN]);
 
   // Add project markers
   useEffect(() => {
