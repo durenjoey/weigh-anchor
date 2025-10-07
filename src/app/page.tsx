@@ -108,8 +108,8 @@ export default function Home() {
               <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent"> Meets Innovation</span>
             </h1>
             <p className="mt-6 text-xl text-slate-600 max-w-3xl leading-relaxed">
-              Technology-Enhanced Construction Management delivering exceptional results 
-              across government, tribal, and private clients nationwide.
+              Professional services for public and private clients in any location - from arctic tundra 
+              to corporate boardrooms, powered by cutting-edge technology.
             </p>
 
             {/* Performance Metrics */}

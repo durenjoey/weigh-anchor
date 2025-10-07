@@ -31,21 +31,17 @@ export default function Header() {
       {/* Top Bar with Contact Info */}
       <div className="hidden md:block bg-slate-900 text-white py-2">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="flex items-center justify-between text-sm">
+          <div className="flex items-center justify-end text-sm">
             <div className="flex items-center gap-6">
               <a href="tel:+14076873792" className="flex items-center gap-2 hover:text-orange-400 transition-colors">
                 <Phone className="h-3 w-3" />
                 (407) 687-3792
               </a>
+              <span className="text-slate-400">•</span>
               <a href="mailto:info@weighanchor.com" className="flex items-center gap-2 hover:text-orange-400 transition-colors">
                 <Mail className="h-3 w-3" />
                 info@weighanchor.com
               </a>
-            </div>
-            <div className="flex items-center gap-6">
-              <span className="text-slate-400">SDVOSB Certified</span>
-              <span className="text-slate-400">•</span>
-              <span className="text-slate-400">Federal & Commercial Projects</span>
             </div>
           </div>
         </div>
@@ -63,7 +59,7 @@ export default function Header() {
             />
             <div>
               <span className="font-display text-xl font-semibold text-slate-900">Weigh Anchor</span>
-              <span className="hidden lg:block text-xs text-slate-500">Construction Innovation</span>
+              <span className="hidden lg:block text-xs text-slate-500">Professional Services, Any Location</span>
             </div>
           </Link>
           

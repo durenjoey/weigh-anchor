@@ -12,7 +12,11 @@ import {
   Building,
   Target,
   CheckCircle2,
-  TrendingUp
+  TrendingUp,
+  Plane,
+  RefreshCw,
+  Cpu,
+  CheckCircle
 } from "lucide-react";
 import Link from "next/link";
 import { getTotalProjectCount, getUniqueStates } from "@/data/projects";
@@ -89,42 +93,51 @@ export default function AboutPage() {
               Our Mission & Values
             </h2>
             
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="grid md:grid-cols-4 gap-6 mb-16">
               <Card className="border-0 shadow-lg">
-                <CardContent className="p-8">
-                  <div className="w-14 h-14 bg-gradient-to-br from-orange to-orange-dark rounded-xl flex items-center justify-center mb-6 shadow-md">
-                    <Target className="h-7 w-7 text-white" />
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-4 shadow-md">
+                    <MapPin className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">Precision</h3>
-                  <p className="text-slate-600">
-                    Meticulous attention to detail in every aspect of project delivery, 
-                    from planning to execution.
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">Deployment</h3>
+                  <p className="text-sm text-slate-600">
+                    We go where others won't
                   </p>
                 </CardContent>
               </Card>
 
               <Card className="border-0 shadow-lg">
-                <CardContent className="p-8">
-                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-md">
-                    <Shield className="h-7 w-7 text-white" />
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-md">
+                    <RefreshCw className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">Integrity</h3>
-                  <p className="text-slate-600">
-                    Unwavering commitment to ethical practices and transparent 
-                    communication with all stakeholders.
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">Adaptability</h3>
+                  <p className="text-sm text-slate-600">
+                    Corporate boardroom to arctic tundra
                   </p>
                 </CardContent>
               </Card>
 
               <Card className="border-0 shadow-lg">
-                <CardContent className="p-8">
-                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 shadow-md">
-                    <TrendingUp className="h-7 w-7 text-white" />
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 shadow-md">
+                    <Cpu className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">Innovation</h3>
-                  <p className="text-slate-600">
-                    Leveraging cutting-edge technology to deliver superior outcomes 
-                    and efficiency gains.
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">Technology</h3>
+                  <p className="text-sm text-slate-600">
+                    Internal tools that give competitive advantage
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 shadow-md">
+                    <Shield className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">Reliability</h3>
+                  <p className="text-sm text-slate-600">
+                    Delivery regardless of complexity
                   </p>
                 </CardContent>
               </Card>
@@ -136,13 +149,11 @@ export default function AboutPage() {
       {/* Founder Story */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                  Our Story
-                </h2>
-                <div className="prose prose-lg text-slate-600">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              Our Story
+            </h2>
+            <div className="prose prose-lg text-slate-600 mx-auto">
                   <p className="mb-4">
                     We discovered our niche when others wouldn't go: the impossible locations. Arctic installations, 
                     remote tropical islands, isolated government sites—places where traditional construction companies 
@@ -169,8 +180,6 @@ export default function AboutPage() {
                     challenges we've encountered in the most demanding environments. When we say "you can get us anywhere," 
                     we mean it—because we've already been there.
                   </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
