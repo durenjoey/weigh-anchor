@@ -2,19 +2,17 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+// Badge component imported as BadgeUI to avoid naming conflict
+import { Badge as BadgeUI } from "@/components/ui/badge";
 import { 
-  Target, 
-  ArrowLeft,
   Shield, 
-  Zap,
   Users,
   Award,
-  ExternalLink,
   MapPin,
   Building,
-  Cpu,
-  Globe
+  Target,
+  CheckCircle2,
+  TrendingUp
 } from "lucide-react";
 import Link from "next/link";
 import { getTotalProjectCount, getUniqueStates } from "@/data/projects";
@@ -22,168 +20,58 @@ import Header from "@/components/Header";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <Header />
 
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="container mx-auto px-6">
+      <section className="py-20 bg-white border-b border-slate-200">
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h1 className="font-display text-4xl md:text-6xl text-arctic-white mb-6 leading-tight">
-                  ABOUT WEIGH ANCHOR
-                  <span className="block text-electric-blue text-2xl md:text-3xl mt-2">
-                    Construction Innovation Command
-                  </span>
+                <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                  About Weigh Anchor
                 </h1>
-                <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                  From complex infrastructure projects to Fortune 500 corporate campuses, Weigh Anchor delivers technology-enhanced construction management where precision and innovation are non-negotiable.
+                <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+                  From complex infrastructure projects to Fortune 500 corporate campuses, Weigh Anchor 
+                  delivers technology-enhanced construction management where precision and innovation 
+                  drive exceptional outcomes.
                 </p>
-                <div className="flex items-center space-x-6">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-electric-blue">{getTotalProjectCount()}+</div>
-                    <div className="text-sm text-muted-foreground">PROJECTS</div>
+                <div className="grid grid-cols-3 gap-6 mb-8">
+                  <div>
+                    <div className="text-3xl font-bold text-orange mb-1">{getTotalProjectCount()}+</div>
+                    <div className="text-sm text-slate-500">Projects Delivered</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-electric-blue">{getUniqueStates().length}</div>
-                    <div className="text-sm text-muted-foreground">STATES</div>
+                  <div>
+                    <div className="text-3xl font-bold text-orange mb-1">{getUniqueStates().length}</div>
+                    <div className="text-sm text-slate-500">States Served</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-electric-blue">24/7</div>
-                    <div className="text-sm text-muted-foreground">OPERATIONS</div>
-                  </div>
-                </div>
-              </div>
-              <div className="relative">
-                {/* Hero Image Placeholder */}
-                <div className="bg-card/30 backdrop-blur-sm border border-electric-blue/20 rounded-lg p-8 h-96 flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-16 h-16 text-electric-blue mx-auto mb-4" />
-                    <p className="text-muted-foreground">
-                      [HERO IMAGE]<br />
-                      Bush plane in remote Alaska landscape<br />
-                      Expedition team at remote construction site
-                    </p>
+                  <div>
+                    <div className="text-3xl font-bold text-orange mb-1">2020</div>
+                    <div className="text-sm text-slate-500">Founded</div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Capability */}
-      <section className="py-20 bg-card/10">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="font-display text-3xl md:text-4xl text-arctic-white mb-4">
-                OUR CAPABILITY
-              </h2>
-              <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-                As a nationally operating firm, we've delivered over {getTotalProjectCount()} projects across {getUniqueStates().length} states and territories. Our expertise spans remote infrastructure development, specialized engineering services, and cutting-edge business process automation.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="relative">
-                {/* Capability Image Placeholder */}
-                <div className="bg-card/30 backdrop-blur-sm border border-electric-blue/20 rounded-lg p-8 h-64 flex items-center justify-center">
-                  <div className="text-center">
-                    <Building className="w-12 h-12 text-electric-blue mx-auto mb-4" />
-                    <p className="text-muted-foreground">
-                      [CAPABILITY IMAGE]<br />
-                      Remote construction site<br />
-                      Technical infrastructure work
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="relative">
-                {/* Corporate Image Placeholder */}
-                <div className="bg-card/30 backdrop-blur-sm border border-electric-blue/20 rounded-lg p-8 h-64 flex items-center justify-center">
-                  <div className="text-center">
-                    <Globe className="w-12 h-12 text-electric-blue mx-auto mb-4" />
-                    <p className="text-muted-foreground">
-                      [CORPORATE IMAGE]<br />
-                      Fortune 500 campus<br />
-                      Professional team meeting
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <Card className="bg-card/30 backdrop-blur-sm border-electric-blue/20">
-              <CardContent className="p-8">
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  We don't just adapt to challenging environments—we thrive in them. Our approach combines traditional construction management excellence with advanced technology solutions. We've developed{" "}
-                  <a 
-                    href="https://constructioncopilot.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-electric-blue hover:text-electric-blue/80 font-medium inline-flex items-center"
-                  >
-                    Construction Copilot
-                    <ExternalLink className="w-4 h-4 ml-1" />
-                  </a>
-                  , an AI-powered platform that automates critical project management functions, demonstrating our commitment to not just using technology, but building it.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Technology Innovation */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="font-display text-3xl md:text-4xl text-arctic-white mb-6">
-                  TECHNOLOGY INNOVATION
-                </h2>
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Our{" "}
-                  <a 
-                    href="https://constructioncopilot.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-electric-blue hover:text-electric-blue/80 font-medium inline-flex items-center"
-                  >
-                    Construction Copilot
-                    <ExternalLink className="w-4 h-4 ml-1" />
-                  </a>
-                  {" "}platform represents the cutting edge of construction project management automation. This AI-powered solution streamlines complex workflows, enhances decision-making, and ensures precision execution across all project phases.
-                </p>
+              
+              {/* Company Stats Card */}
+              <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-8 border border-slate-200">
+                <h3 className="text-lg font-semibold text-slate-900 mb-6">Our Impact</h3>
                 <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <Cpu className="w-5 h-5 text-electric-blue" />
-                    <span className="text-muted-foreground">AI-powered project management automation</span>
+                  <div className="flex items-center justify-between">
+                    <span className="text-slate-600">Federal Contracts</span>
+                    <span className="font-bold text-slate-900">$30M+</span>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <Zap className="w-5 h-5 text-electric-blue" />
-                    <span className="text-muted-foreground">Real-time workflow optimization</span>
+                  <div className="flex items-center justify-between">
+                    <span className="text-slate-600">Commercial Projects</span>
+                    <span className="font-bold text-slate-900">$17M+</span>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <Shield className="w-5 h-5 text-electric-blue" />
-                    <span className="text-muted-foreground">Mission-critical reliability standards</span>
+                  <div className="flex items-center justify-between">
+                    <span className="text-slate-600">Team Members</span>
+                    <span className="font-bold text-slate-900">200+</span>
                   </div>
-                </div>
-              </div>
-              <div className="relative">
-                {/* Technology Image Placeholder */}
-                <div className="bg-card/30 backdrop-blur-sm border border-electric-blue/20 rounded-lg p-8 h-96 flex items-center justify-center">
-                  <div className="text-center">
-                    <Cpu className="w-16 h-16 text-electric-blue mx-auto mb-4" />
-                    <p className="text-muted-foreground">
-                      [TECHNOLOGY IMAGE]<br />
-                      Construction Copilot dashboard<br />
-                      AI interface screenshots<br />
-                      Technical workflow diagrams
-                    </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-slate-600">Client Retention</span>
+                    <span className="font-bold text-slate-900">95%</span>
                   </div>
                 </div>
               </div>
@@ -192,109 +80,227 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Who We Serve */}
-      <section className="py-20 bg-card/10">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="font-display text-3xl md:text-4xl text-arctic-white mb-4">
-                WHO WE SERVE
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                From federal agencies to Fortune 500 enterprises, we deliver mission-critical execution
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card className="bg-card/30 backdrop-blur-sm border-electric-blue/20 hover:border-electric-blue/40 transition-all duration-300">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-electric-blue/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Shield className="w-8 h-8 text-electric-blue" />
-                  </div>
-                  <h3 className="font-display text-xl text-arctic-white mb-4">FEDERAL AGENCIES & GOVERNMENT</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Department of Justice, Veterans Affairs, tribal nations
-                  </p>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <div>• Secure facility construction</div>
-                    <div>• Remote infrastructure development</div>
-                    <div>• Compliance-critical projects</div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-card/30 backdrop-blur-sm border-electric-blue/20 hover:border-electric-blue/40 transition-all duration-300">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-electric-blue/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Building className="w-8 h-8 text-electric-blue" />
-                  </div>
-                  <h3 className="font-display text-xl text-arctic-white mb-4">FORTUNE 500 ENTERPRISES</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Pfizer, Seagen, and leading corporations requiring mission-critical execution
-                  </p>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <div>• Business process automation</div>
-                    <div>• Seismic engineering services</div>
-                    <div>• Enterprise technology solutions</div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-card/30 backdrop-blur-sm border-electric-blue/20 hover:border-electric-blue/40 transition-all duration-300">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-electric-blue/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Target className="w-8 h-8 text-electric-blue" />
-                  </div>
-                  <h3 className="font-display text-xl text-arctic-white mb-4">SPECIALIZED MARKETS</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Technical projects in remote locations, seismic engineering, infrastructure automation
-                  </p>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <div>• Extreme environment projects</div>
-                    <div>• Technical engineering solutions</div>
-                    <div>• Custom automation platforms</div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Foundation */}
+      {/* Mission & Values */}
       <section className="py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">
+              Our Mission & Values
+            </h2>
+            
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-8">
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange to-orange-dark rounded-xl flex items-center justify-center mb-6 shadow-md">
+                    <Target className="h-7 w-7 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">Precision</h3>
+                  <p className="text-slate-600">
+                    Meticulous attention to detail in every aspect of project delivery, 
+                    from planning to execution.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-8">
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-md">
+                    <Shield className="h-7 w-7 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">Integrity</h3>
+                  <p className="text-slate-600">
+                    Unwavering commitment to ethical practices and transparent 
+                    communication with all stakeholders.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-8">
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 shadow-md">
+                    <TrendingUp className="h-7 w-7 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">Innovation</h3>
+                  <p className="text-slate-600">
+                    Leveraging cutting-edge technology to deliver superior outcomes 
+                    and efficiency gains.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder Story */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="font-display text-3xl md:text-4xl text-arctic-white mb-6">
-                  OUR FOUNDATION
+                <h2 className="text-3xl font-bold text-slate-900 mb-6">
+                  Our Foundation
                 </h2>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  Weigh Anchor operates as a certified Service-Disabled Veteran-Owned Small Business (SDVOSB). This certification reflects our commitment to excellence and provides our clients with additional procurement advantages while honoring our military heritage.
+                <div className="prose prose-lg text-slate-600">
+                  <p className="mb-4">
+                    Founded by USAF veteran <strong>Joseph Duren Lopez</strong>, Weigh Anchor began with a clear mission: 
+                    to transform the construction industry through innovation and unwavering commitment to excellence.
+                  </p>
+                  <p className="mb-4">
+                    Our name reflects our philosophy - helping clients break free from constraints that hold them back, 
+                    just as a ship weighs anchor to set sail toward new horizons.
+                  </p>
+                  <p className="mb-4">
+                    As a Service-Disabled Veteran-Owned Small Business (SDVOSB), we've built a strong foundation in 
+                    construction project management, serving federal agencies, tribal organizations, and Fortune 500 companies.
+                  </p>
+                  <p>
+                    Today, we're leading the charge in construction technology innovation. Our expertise in traditional 
+                    construction management now fuels our technology innovations, creating solutions that address real-world 
+                    challenges we've encountered in the field.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-8 border border-slate-200">
+                <h3 className="text-xl font-semibold text-slate-900 mb-6">Where We Are Today</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-slate-600">Innovation Focus</span>
+                    <span className="font-bold text-slate-900">Technology Leadership</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-slate-600">Market Position</span>
+                    <span className="font-bold text-slate-900">Industry Pioneer</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-slate-600">Core Mission</span>
+                    <span className="font-bold text-slate-900">Construction Innovation</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-slate-600">Value Proposition</span>
+                    <span className="font-bold text-slate-900">Efficiency & Excellence</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">
+              Leadership Team
+            </h2>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Placeholder for leadership - replace with actual team */}
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-8 text-center">
+                  <div className="w-24 h-24 bg-slate-200 rounded-full mx-auto mb-4"></div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-1">CEO & Founder</h3>
+                  <p className="text-sm text-slate-600 mb-3">Service-Disabled Veteran</p>
+                  <p className="text-sm text-slate-500">
+                    20+ years construction and federal contracting experience
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-8 text-center">
+                  <div className="w-24 h-24 bg-slate-200 rounded-full mx-auto mb-4"></div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-1">Chief Technology Officer</h3>
+                  <p className="text-sm text-slate-600 mb-3">Technology Innovation</p>
+                  <p className="text-sm text-slate-500">
+                    Former tech industry leader driving construction innovation
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-8 text-center">
+                  <div className="w-24 h-24 bg-slate-200 rounded-full mx-auto mb-4"></div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-1">VP of Operations</h3>
+                  <p className="text-sm text-slate-600 mb-3">Project Excellence</p>
+                  <p className="text-sm text-slate-500">
+                    15+ years managing complex federal construction projects
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications & Differentiators */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12">
+              <div>
+                <h2 className="text-3xl font-bold text-slate-900 mb-6">
+                  Our Foundation
+                </h2>
+                <p className="text-lg text-slate-600 mb-8">
+                  Weigh Anchor operates as a certified Service-Disabled Veteran-Owned Small Business 
+                  (SDVOSB). This certification reflects our commitment to excellence and provides our 
+                  clients with procurement advantages while honoring our military heritage.
                 </p>
                 <div className="flex gap-4">
-                  <Badge variant="outline" className="text-electric-blue border-electric-blue p-4 text-center">
+                  <BadgeUI className="bg-orange-100 text-orange-700 border-orange-200 px-4 py-2">
                     <Award className="w-4 h-4 mr-2" />
-                    <div className="font-mono text-sm">SDVOSB CERTIFIED</div>
-                  </Badge>
-                  <Badge variant="outline" className="text-electric-blue border-electric-blue p-4 text-center">
+                    SDVOSB Certified
+                  </BadgeUI>
+                  <BadgeUI className="bg-blue-100 text-blue-700 border-blue-200 px-4 py-2">
                     <Shield className="w-4 h-4 mr-2" />
-                    <div className="font-mono text-sm">VETERAN OWNED</div>
-                  </Badge>
+                    Veteran Owned
+                  </BadgeUI>
                 </div>
               </div>
-              <div className="relative">
-                {/* Team Image Placeholder */}
-                <div className="bg-card/30 backdrop-blur-sm border border-electric-blue/20 rounded-lg p-8 h-96 flex items-center justify-center">
-                  <div className="text-center">
-                    <Users className="w-16 h-16 text-electric-blue mx-auto mb-4" />
-                    <p className="text-muted-foreground">
-                      [TEAM IMAGE]<br />
-                      Professional expedition team<br />
-                      Technical expertise in action<br />
-                      Certification badges/awards
-                    </p>
+
+              <div>
+                <h2 className="text-3xl font-bold text-slate-900 mb-6">
+                  Why Weigh Anchor
+                </h2>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-slate-900">Remote Project Expertise</div>
+                      <div className="text-sm text-slate-600">
+                        Specialized capabilities for challenging and remote locations
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-slate-900">Technology Leadership</div>
+                      <div className="text-sm text-slate-600">
+                        Industry-leading efficiency through proprietary systems
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-slate-900">Federal Experience</div>
+                      <div className="text-sm text-slate-600">
+                        Proven track record with DOJ, VA, and tribal nations
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-slate-900">24/7 Support</div>
+                      <div className="text-sm text-slate-600">
+                        Continuous monitoring and rapid response capabilities
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -303,32 +309,44 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Closing Statement */}
-      <section className="py-20 bg-card/10">
-        <div className="container mx-auto px-6">
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-orange/5 to-orange/10">
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-display text-3xl md:text-4xl text-arctic-white mb-6">
-              PRECISION. INNOVATION. RELIABILITY.
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              Ready to Partner with Weigh Anchor?
             </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Whether coordinating complex logistics in roadless environments or delivering sophisticated automation solutions for enterprise clients, we bring the same standard of precision, innovation, and unwavering reliability to every engagement.
+            <p className="text-lg text-slate-600 mb-8">
+              Discover how our technology-forward approach and federal expertise 
+              can transform your next construction project.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact">
+                <Button size="lg" className="bg-slate-900 hover:bg-slate-800 text-white px-8">
+                  Contact Our Team
+                </Button>
+              </Link>
+              <Link href="/capabilities">
+                <Button size="lg" variant="outline" className="border-slate-300 px-8">
+                  View Capabilities
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-electric-blue/20 bg-background/50 backdrop-blur-sm">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="flex items-center space-x-4 mb-4 md:mb-0">
-              <div className="w-3 h-3 bg-electric-blue rounded-full animate-pulse"></div>
-              <span className="font-mono text-sm text-muted-foreground">
-                WEIGH ANCHOR • CONSTRUCTION INNOVATION
-              </span>
+      <footer className="py-12 bg-slate-950 text-white">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="text-sm text-slate-400">
+              © 2025 Weigh Anchor. All rights reserved.
             </div>
-            <div className="font-mono text-sm text-muted-foreground">
-              PROUDLY VETERAN OWNED • SDVOSB CERTIFIED
+            <div className="flex items-center gap-6 text-sm">
+              <span className="text-slate-300">Proudly Veteran Owned</span>
+              <span className="text-slate-600">•</span>
+              <span className="text-slate-300">SDVOSB Certified</span>
             </div>
           </div>
         </div>
@@ -336,3 +354,4 @@ export default function AboutPage() {
     </div>
   );
 }
+

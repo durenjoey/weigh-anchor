@@ -127,18 +127,6 @@ export const projects: Project[] = [
     status: 'open'
   },
   {
-    id: 'lac-vieux-mi',
-    name: 'Lac Vieux Desert Band Project',
-    location: 'Lac Vieux Desert Band',
-    state: 'Michigan',
-    coordinates: { lat: 46.2619, lng: -89.1456 },
-    projectCount: 1,
-    type: 'tribal-government',
-    category: 'construction',
-    serviceType: 'Construction Project Management',
-    status: 'open'
-  },
-  {
     id: 'little-traverse-mi',
     name: 'Little Traverse Bay Bands Project',
     location: 'Little Traverse Bay Bands',
@@ -396,7 +384,7 @@ export const projects: Project[] = [
     location: 'Northern Mariana Islands',
     state: 'Northern Mariana Islands',
     coordinates: { lat: 15.2, lng: 145.7 },
-    projectCount: 3,
+    projectCount: 6,
     type: 'tribal-government',
     category: 'construction',
     serviceType: 'Construction Project Management',
@@ -436,6 +424,18 @@ export const projects: Project[] = [
   },
 
   // CLOSED PROJECTS - Tribal/Government
+  {
+    id: 'lac-vieux-mi',
+    name: 'Lac Vieux Desert Band Project',
+    location: 'Lac Vieux Desert Band',
+    state: 'Michigan',
+    coordinates: { lat: 46.2619, lng: -89.1456 },
+    projectCount: 1,
+    type: 'tribal-government',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
+    status: 'closed'
+  },
   {
     id: 'sisseton-wahpeton-sd',
     name: 'Sisseton Wahpeton Oyate Project',
