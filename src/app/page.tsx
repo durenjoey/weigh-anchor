@@ -75,7 +75,7 @@ export default function Home() {
     {
       icon: Shield,
       title: "Owner's Representative",
-      description: "Strategic advisory services protecting your investment interests",
+      description: "We manage your projects from idea to delivery, protecting your interests every step of the way",
       color: "from-blue-500 to-blue-600"
     },
     {
@@ -86,10 +86,9 @@ export default function Home() {
     }
   ];
 
-  // Placeholder client logos - replace with actual logos when provided
+  // Client sectors we serve
   const clientLogos = [
-    { name: "Department of Justice", type: "federal" },
-    { name: "Veterans Affairs", type: "federal" },
+    { name: "Federal Government", type: "federal" },
     { name: "Tribal Nations", type: "tribal" },
     { name: "Fortune 500", type: "corporate" }
   ];
@@ -121,7 +120,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-slate-900">{mounted ? totalProjects : 0}+</div>
-                  <div className="text-sm text-slate-500">Projects Delivered</div>
+                  <div className="text-sm text-slate-500">Project Portfolio</div>
                 </div>
               </div>
               
@@ -154,15 +153,6 @@ export default function Home() {
                   <div className="text-sm text-slate-500">Certified</div>
                 </div>
               </div>
-            </div>
-
-            {/* SDVOSB Certification */}
-            <div className="mt-8 mb-6">
-              <img 
-                src="/assets/logos/SDVOSB_Logo_White_2023_06_22.png.png" 
-                alt="SDVOSB Certified" 
-                className="h-12 w-auto bg-slate-800 p-2 rounded-lg"
-              />
             </div>
 
             {/* Professional Action Buttons */}
@@ -220,10 +210,10 @@ export default function Home() {
               {/* Stats Overlay */}
               <div className="absolute bottom-6 right-6 z-20 bg-white/95 backdrop-blur-md rounded-xl p-4 shadow-xl">
                 <div className="text-2xl font-bold text-slate-900">
-                  {getUniqueStates().length} States • {getTotalProjectCount()}+ Projects
+                  {getUniqueStates().length} States • {getTotalProjectCount()}+ Project Portfolio
                 </div>
                 <div className="text-sm text-slate-600">
-                  {getOpenProjectCount()} Active Engagements
+                  Federal, Tribal & Commercial Projects
                 </div>
               </div>
             </div>
@@ -234,9 +224,9 @@ export default function Home() {
       {/* Client Trust Bar */}
       <section className="py-12 bg-slate-100 border-y border-slate-200">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="text-center lg:text-left">
-              <h3 className="text-sm font-semibold text-slate-600 uppercase tracking-wider">Trusted By</h3>
+          <div className="flex flex-col items-center justify-center gap-6">
+            <div className="text-center">
+              <h3 className="text-sm font-semibold text-slate-600 uppercase tracking-wider">Our Clients</h3>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
               {clientLogos.map((client, index) => (
@@ -244,14 +234,6 @@ export default function Home() {
                   <div className="text-sm font-medium">{client.name}</div>
                 </div>
               ))}
-            </div>
-            <div className="flex items-center gap-4">
-              <Badge className="bg-orange-100 text-orange-700 border-orange-200 px-3 py-1">
-                SDVOSB
-              </Badge>
-              <Badge className="bg-blue-100 text-blue-700 border-blue-200 px-3 py-1">
-                CAGE: 9LA92
-              </Badge>
             </div>
           </div>
         </div>
@@ -265,7 +247,7 @@ export default function Home() {
               Core Capabilities
             </h2>
             <p className="text-lg text-slate-600">
-              Comprehensive solutions engineered for federal and commercial construction challenges
+              Solutions for your construction challenges
             </p>
           </div>
 
@@ -344,21 +326,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contract Vehicles & Certifications */}
+      {/* Qualifications and Certifications */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12">
               <div>
                 <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                  Contract Vehicles & Certifications
+                  Qualifications and Certifications
                 </h2>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5" />
                     <div>
-                      <div className="font-semibold text-slate-900">SDVOSB Certified</div>
-                      <div className="text-sm text-slate-600">Service-Disabled Veteran-Owned Small Business</div>
+                      <div className="font-semibold text-slate-900">Business Certifications</div>
+                      <div className="text-sm text-slate-600">SDVOSB | MBE | DBE | King County SCS</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">

@@ -40,7 +40,7 @@ export default function AboutPage() {
                 <div className="grid grid-cols-3 gap-6 mb-8">
                   <div>
                     <div className="text-3xl font-bold text-orange mb-1">{getTotalProjectCount()}+</div>
-                    <div className="text-sm text-slate-500">Projects Delivered</div>
+                    <div className="text-sm text-slate-500">Project Portfolio</div>
                   </div>
                   <div>
                     <div className="text-3xl font-bold text-orange mb-1">{getUniqueStates().length}</div>
