@@ -79,14 +79,16 @@ export default function Header() {
               </Link>
             ))}
             
-            {/* Download Capability Statement */}
-            <Button 
-              variant="outline"
-              size="sm"
-              className="ml-4 border-slate-300 text-slate-700 hover:bg-slate-50"
-            >
-              Capability Statement
-            </Button>
+            {/* View Capability Statement */}
+            <a href="/assets/images/thisone.png" target="_blank" rel="noopener noreferrer">
+              <Button 
+                variant="outline"
+                size="sm"
+                className="ml-4 border-slate-300 text-slate-700 hover:bg-slate-50"
+              >
+                Capability Statement
+              </Button>
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}

@@ -206,12 +206,14 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div className="pt-3">
-                      <Button 
-                        variant="outline" 
-                        className="w-full border-slate-300"
-                      >
-                        Download Capability Statement
-                      </Button>
+                      <a href="/assets/images/thisone.png" target="_blank" rel="noopener noreferrer">
+                        <Button 
+                          variant="outline" 
+                          className="w-full border-slate-300"
+                        >
+                          View Capability Statement
+                        </Button>
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
