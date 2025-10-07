@@ -247,7 +247,49 @@ export default function ServicesPage() {
       {/* Footer */}
       <footer className="py-12 bg-slate-950 text-white">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="grid lg:grid-cols-4 gap-8 mb-8">
+            <div className="flex items-center justify-center">
+              <Link href="/">
+                <img 
+                  src="/assets/logos/WeighAnchor_Logowithwords_Transparent_Alt_2022_03_06.png.png" 
+                  alt="Weigh Anchor" 
+                  className="h-32 w-auto brightness-0 invert hover:scale-105 transition-transform cursor-pointer"
+                />
+              </Link>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4">Contact</h3>
+              <div className="space-y-2 text-sm text-slate-400">
+                <p>Bellevue, WA</p>
+                <p>(407) 687-3792</p>
+                <p>info@weighanchor.com</p>
+              </div>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4">Certifications</h3>
+              <div className="space-y-2 text-sm text-slate-400">
+                <p>SDVOSB Certified</p>
+                <p>Service-Disabled Veteran-Owned</p>
+                <p>Federal & Commercial Projects</p>
+              </div>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4">Quick Links</h3>
+              <div className="space-y-2">
+                <Link href="/services" className="block text-sm text-slate-400 hover:text-white">
+                  Our Services
+                </Link>
+                <Link href="/about" className="block text-sm text-slate-400 hover:text-white">
+                  About Us
+                </Link>
+                <Link href="/contact" className="block text-sm text-slate-400 hover:text-white">
+                  Contact
+                </Link>
+              </div>
+            </div>
+          </div>
+          
+          <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-sm text-slate-400">
               © 2025 Weigh Anchor. All rights reserved.
             </div>

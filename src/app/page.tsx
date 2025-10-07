@@ -429,15 +429,14 @@ export default function Home() {
       <footer className="py-12 bg-slate-950 text-white">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="grid lg:grid-cols-4 gap-8 mb-8">
-            <div>
-              <img 
-                src="/assets/logos/WeighAnchor_Logowithwords_Transparent_Alt_2022_03_06.png.png" 
-                alt="Weigh Anchor" 
-                className="h-12 w-auto mb-4 brightness-0 invert"
-              />
-              <p className="text-sm text-slate-400">
-                Technology-enhanced construction management for government and private clients.
-              </p>
+            <div className="flex items-center justify-center">
+              <Link href="/">
+                <img 
+                  src="/assets/logos/WeighAnchor_Logowithwords_Transparent_Alt_2022_03_06.png.png" 
+                  alt="Weigh Anchor" 
+                  className="h-32 w-auto brightness-0 invert hover:scale-105 transition-transform cursor-pointer"
+                />
+              </Link>
             </div>
             <div>
               <h3 className="font-semibold mb-4">Contact</h3>
