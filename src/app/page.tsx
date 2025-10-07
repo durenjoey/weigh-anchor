@@ -282,47 +282,6 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Technology Advantage Metrics */}
-          <div className="mt-16 max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">The Technology Advantage</h3>
-              <p className="text-slate-600">Our proprietary construction technology delivers measurable results</p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="border-0 shadow-lg bg-gradient-to-br from-orange-50 to-orange-100">
-                <div className="p-6 text-center">
-                  <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <MessageCircle className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="text-3xl font-bold text-slate-900 mb-1">10,000+</div>
-                  <div className="text-sm text-slate-600">AI Conversations</div>
-                  <div className="text-xs text-slate-500 mt-1">Construction guidance & support</div>
-                </div>
-              </Card>
-              
-              <Card className="border-0 shadow-lg bg-gradient-to-br from-green-50 to-green-100">
-                <div className="p-6 text-center">
-                  <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <Star className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="text-3xl font-bold text-slate-900 mb-1">4.4/5</div>
-                  <div className="text-sm text-slate-600">Client Rating</div>
-                  <div className="text-xs text-slate-500 mt-1">Based on 200+ reviews</div>
-                </div>
-              </Card>
-              
-              <Card className="border-0 shadow-lg bg-gradient-to-br from-purple-50 to-purple-100">
-                <div className="p-6 text-center">
-                  <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <TrendingUp className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="text-3xl font-bold text-slate-900 mb-1">40%</div>
-                  <div className="text-sm text-slate-600">Efficiency Gain</div>
-                  <div className="text-xs text-slate-500 mt-1">Technology-driven savings</div>
-                </div>
-              </Card>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -389,15 +348,15 @@ export default function Home() {
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-slate-900">Federal Experience</div>
-                      <div className="text-sm text-slate-600">DOJ, VA, and tribal nation projects</div>
+                      <div className="font-semibold text-slate-900">Government Experience</div>
+                      <div className="text-sm text-slate-600">Federal, tribal, and local government projects</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-slate-900">Real-Time Monitoring</div>
-                      <div className="text-sm text-slate-600">Continuous project visibility and tracking</div>
+                      <div className="font-semibold text-slate-900">Project Oversight</div>
+                      <div className="text-sm text-slate-600">Comprehensive project visibility and tracking</div>
                     </div>
                   </div>
                 </div>
@@ -422,24 +381,28 @@ export default function Home() {
                 The Technology <span className="text-orange-500">Advantage</span>
               </h2>
               <p className="text-lg text-slate-300 mb-8 leading-relaxed">
-                As the industry's most technology-forward construction firm, we deliver superior 
-                results through proprietary systems and data-driven insights. Our clients benefit 
-                from unmatched efficiency, real-time visibility, and predictive project intelligence—all 
-                while their data remains secure in our closed-loop systems.
+                Our mission is to become the industry's most technology-forward construction firm. 
+                We deliver superior results through proprietary systems and data-driven insights. 
+                Our clients benefit from enhanced efficiency, improved project visibility, and 
+                intelligent project management—all while maintaining complete data ownership in our systems.
               </p>
               
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="bg-slate-800/50 backdrop-blur rounded-lg p-4">
-                  <div className="text-3xl font-bold text-orange-500 mb-1">40%</div>
-                  <div className="text-sm text-slate-400">Cost Efficiency</div>
+                  <div className="text-3xl font-bold text-orange-500 mb-1">10,000+</div>
+                  <div className="text-sm text-slate-400">AI Conversations</div>
                 </div>
                 <div className="bg-slate-800/50 backdrop-blur rounded-lg p-4">
-                  <div className="text-3xl font-bold text-blue-500 mb-1">50%</div>
-                  <div className="text-sm text-slate-400">Faster Delivery</div>
+                  <div className="text-3xl font-bold text-green-500 mb-1">4.4/5</div>
+                  <div className="text-sm text-slate-400">Client Rating</div>
                 </div>
                 <div className="bg-slate-800/50 backdrop-blur rounded-lg p-4">
-                  <div className="text-3xl font-bold text-green-500 mb-1">100%</div>
-                  <div className="text-sm text-slate-400">Data Security</div>
+                  <div className="text-3xl font-bold text-blue-500 mb-1">40%</div>
+                  <div className="text-sm text-slate-400">Efficiency Gain</div>
+                </div>
+                <div className="bg-slate-800/50 backdrop-blur rounded-lg p-4">
+                  <div className="text-3xl font-bold text-purple-500 mb-1">100%</div>
+                  <div className="text-sm text-slate-400">Data Ownership</div>
                 </div>
               </div>
               
@@ -450,9 +413,11 @@ export default function Home() {
             </div>
             
             <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-slate-800 to-slate-700 p-8 shadow-2xl">
-                <div className="h-full rounded-xl bg-slate-900/50 flex items-center justify-center">
-                  <Cpu className="h-32 w-32 text-orange-500/20" />
+              <div className="rounded-2xl bg-gradient-to-br from-slate-800 to-slate-700 p-8 shadow-2xl">
+                <div className="text-center">
+                  <div className="text-6xl font-bold text-orange-500 mb-4">200+</div>
+                  <div className="text-xl text-slate-300 mb-2">Project Reviews</div>
+                  <div className="text-sm text-slate-400">Consistently delivering exceptional results</div>
                 </div>
               </div>
             </div>

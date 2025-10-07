@@ -328,9 +328,9 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5" />
                     <div>
-                      <div className="font-semibold text-slate-900">Federal Experience</div>
+                      <div className="font-semibold text-slate-900">Government Experience</div>
                       <div className="text-sm text-slate-600">
-                        Proven track record with DOJ, VA, and tribal nations
+                        Proven track record with federal, tribal, and local governments
                       </div>
                     </div>
                   </div>
