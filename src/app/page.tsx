@@ -169,7 +169,7 @@ export default function Home() {
                   Our Services
                 </Button>
               </Link>
-              <a href="/assets/images/thisone.png" target="_blank" rel="noopener noreferrer">
+              <a href="/assets/documents/Weigh Anchor Capability Statement  - 14May2024.pdf" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" variant="outline" className="border-slate-300">
                   <Download className="mr-2 h-4 w-4" />
                   Capability Statement

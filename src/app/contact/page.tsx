@@ -206,7 +206,7 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div className="pt-3">
-                      <a href="/assets/images/thisone.png" target="_blank" rel="noopener noreferrer">
+                      <a href="/assets/documents/Weigh Anchor Capability Statement  - 14May2024.pdf" target="_blank" rel="noopener noreferrer">
                         <Button 
                           variant="outline" 
                           className="w-full border-slate-300"

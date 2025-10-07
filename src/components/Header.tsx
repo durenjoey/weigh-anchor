@@ -80,7 +80,7 @@ export default function Header() {
             ))}
             
             {/* View Capability Statement */}
-            <a href="/assets/images/thisone.png" target="_blank" rel="noopener noreferrer">
+            <a href="/assets/documents/Weigh Anchor Capability Statement  - 14May2024.pdf" target="_blank" rel="noopener noreferrer">
               <Button 
                 variant="outline"
                 size="sm"
