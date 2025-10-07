@@ -56,9 +56,11 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-orange to-orange-dark rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-all">
-              <Anchor className="w-5 h-5 text-white" />
-            </div>
+            <img 
+              src="/assets/logos/WeighAnchor_Logoonly_Transparent_2023_08_16.png" 
+              alt="Weigh Anchor" 
+              className="h-10 w-auto group-hover:scale-105 transition-transform"
+            />
             <div>
               <span className="font-display text-xl font-semibold text-slate-900">Weigh Anchor</span>
               <span className="hidden lg:block text-xs text-slate-500">Construction Innovation</span>

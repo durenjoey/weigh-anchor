@@ -196,37 +196,41 @@ export default function AboutPage() {
               Leadership Team
             </h2>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Placeholder for leadership - replace with actual team */}
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {/* CEO & Founder */}
               <Card className="border-0 shadow-lg">
                 <CardContent className="p-8 text-center">
-                  <div className="w-24 h-24 bg-slate-200 rounded-full mx-auto mb-4"></div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-1">CEO & Founder</h3>
-                  <p className="text-sm text-slate-600 mb-3">Service-Disabled Veteran</p>
+                  <div className="w-32 h-32 mx-auto mb-6 overflow-hidden rounded-full border-4 border-orange-100">
+                    <img 
+                      src="/assets/team/ceo.jpeg" 
+                      alt="Joseph Duren Lopez" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-1">Joseph Duren Lopez</h3>
+                  <p className="text-sm text-orange-600 font-semibold mb-2">CEO & Founder</p>
+                  <p className="text-sm text-slate-600 mb-3">Service-Disabled Veteran, USAF</p>
                   <p className="text-sm text-slate-500">
-                    20+ years construction and federal contracting experience
+                    20+ years construction and federal contracting experience. Transforming the industry through innovation and military precision.
                   </p>
                 </CardContent>
               </Card>
 
+              {/* CFO */}
               <Card className="border-0 shadow-lg">
                 <CardContent className="p-8 text-center">
-                  <div className="w-24 h-24 bg-slate-200 rounded-full mx-auto mb-4"></div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-1">Chief Technology Officer</h3>
-                  <p className="text-sm text-slate-600 mb-3">Technology Innovation</p>
+                  <div className="w-32 h-32 mx-auto mb-6 overflow-hidden rounded-full border-4 border-orange-100">
+                    <img 
+                      src="/assets/team/cfo.png" 
+                      alt="Roxana Forghani" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-1">Roxana Forghani</h3>
+                  <p className="text-sm text-orange-600 font-semibold mb-2">Chief Financial Officer</p>
+                  <p className="text-sm text-slate-600 mb-3">Former Fortune 500 Leader, CPA</p>
                   <p className="text-sm text-slate-500">
-                    Former tech industry leader driving construction innovation
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-8 text-center">
-                  <div className="w-24 h-24 bg-slate-200 rounded-full mx-auto mb-4"></div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-1">VP of Operations</h3>
-                  <p className="text-sm text-slate-600 mb-3">Project Excellence</p>
-                  <p className="text-sm text-slate-500">
-                    15+ years managing complex federal construction projects
+                    Financial innovation and disruptor with extensive Fortune 500 experience driving growth and operational excellence.
                   </p>
                 </CardContent>
               </Card>
@@ -249,15 +253,52 @@ export default function AboutPage() {
                   (SDVOSB). This certification reflects our commitment to excellence and provides our 
                   clients with procurement advantages while honoring our military heritage.
                 </p>
-                <div className="flex gap-4">
-                  <BadgeUI className="bg-orange-100 text-orange-700 border-orange-200 px-4 py-2">
-                    <Award className="w-4 h-4 mr-2" />
-                    SDVOSB Certified
-                  </BadgeUI>
-                  <BadgeUI className="bg-blue-100 text-blue-700 border-blue-200 px-4 py-2">
-                    <Shield className="w-4 h-4 mr-2" />
-                    Veteran Owned
-                  </BadgeUI>
+                <div className="space-y-6">
+                  <div className="flex gap-4">
+                    <BadgeUI className="bg-orange-100 text-orange-700 border-orange-200 px-4 py-2">
+                      <Award className="w-4 h-4 mr-2" />
+                      SDVOSB Certified
+                    </BadgeUI>
+                    <BadgeUI className="bg-blue-100 text-blue-700 border-blue-200 px-4 py-2">
+                      <Shield className="w-4 h-4 mr-2" />
+                      Veteran Owned
+                    </BadgeUI>
+                  </div>
+                  <div className="pt-4">
+                    <div className="text-sm text-slate-600 mb-4">Official Certifications</div>
+                    <div className="grid grid-cols-2 gap-4 mb-6">
+                      <img 
+                        src="/assets/logos/SDVOSB_Logo_White_2023_06_22.png.png" 
+                        alt="SDVOSB Certified" 
+                        className="h-14 w-auto bg-slate-800 p-2 rounded-lg"
+                      />
+                      <img 
+                        src="/assets/logos/dbe.png" 
+                        alt="DBE Certified" 
+                        className="h-14 w-auto bg-white p-2 rounded-lg border border-slate-200"
+                      />
+                      <img 
+                        src="/assets/logos/King county scs.png" 
+                        alt="King County SCS" 
+                        className="h-14 w-auto bg-white p-2 rounded-lg border border-slate-200"
+                      />
+                      <img 
+                        src="/assets/logos/OMWBE-Certified-Badge.png" 
+                        alt="OMWBE MBE Certified" 
+                        className="h-14 w-auto bg-white p-2 rounded-lg border border-slate-200"
+                      />
+                    </div>
+                    <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div>
+                        <div className="text-slate-500 text-xs">CAGE Code</div>
+                        <div className="font-semibold text-slate-900">9LA92</div>
+                      </div>
+                      <div>
+                        <div className="text-slate-500 text-xs">UEI</div>
+                        <div className="font-semibold text-slate-900">JU1LYRJGRWL9</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -296,9 +337,9 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5" />
                     <div>
-                      <div className="font-semibold text-slate-900">24/7 Support</div>
+                      <div className="font-semibold text-slate-900">Rapid Response</div>
                       <div className="text-sm text-slate-600">
-                        Continuous monitoring and rapid response capabilities
+                        Quick deployment and response capabilities for urgent project needs
                       </div>
                     </div>
                   </div>

@@ -97,9 +97,7 @@ export default function ContactPage() {
                       <div>
                         <div className="font-semibold">Headquarters</div>
                         <div className="text-sm text-slate-600">
-                          10900 NE 4th Street<br />
-                          Suite 2300<br />
-                          Bellevue, WA 98004
+                          Bellevue, WA
                         </div>
                       </div>
                     </div>
@@ -126,15 +124,23 @@ export default function ContactPage() {
                   <CardContent className="space-y-3">
                     <div>
                       <div className="text-sm text-slate-500">CAGE Code</div>
-                      <div className="font-semibold">Available upon request</div>
+                      <div className="font-semibold">9LA92</div>
                     </div>
                     <div>
                       <div className="text-sm text-slate-500">UEI</div>
-                      <div className="font-semibold">Available upon request</div>
+                      <div className="font-semibold">JU1LYRJGRWL9</div>
                     </div>
                     <div>
                       <div className="text-sm text-slate-500">NAICS Codes</div>
                       <div className="font-semibold">236220, 541330, 541511</div>
+                    </div>
+                    <div className="pt-3">
+                      <div className="text-sm text-slate-500 mb-2">Certification</div>
+                      <img 
+                        src="/assets/logos/SDVOSB_Logo_White_2023_06_22.png.png" 
+                        alt="SDVOSB Certified" 
+                        className="h-10 w-auto bg-slate-800 p-2 rounded mb-3"
+                      />
                     </div>
                     <div className="pt-3">
                       <Button 
@@ -288,8 +294,7 @@ export default function ContactPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-slate-600 mb-4">
-                    10900 NE 4th Street, Suite 2300<br />
-                    Bellevue, WA 98004
+                    Bellevue, WA
                   </p>
                   <p className="text-sm text-slate-500">
                     Primary operations center for all federal and commercial projects

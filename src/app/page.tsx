@@ -156,6 +156,15 @@ export default function Home() {
               </div>
             </div>
 
+            {/* SDVOSB Certification */}
+            <div className="mt-8 mb-6">
+              <img 
+                src="/assets/logos/SDVOSB_Logo_White_2023_06_22.png.png" 
+                alt="SDVOSB Certified" 
+                className="h-12 w-auto bg-slate-800 p-2 rounded-lg"
+              />
+            </div>
+
             {/* Professional Action Buttons */}
             <div className="mt-8 flex flex-wrap gap-4">
               <Link href="/contact">
@@ -241,7 +250,7 @@ export default function Home() {
                 SDVOSB
               </Badge>
               <Badge className="bg-blue-100 text-blue-700 border-blue-200 px-3 py-1">
-                CAGE: XXXXX
+                CAGE: 9LA92
               </Badge>
             </div>
           </div>
@@ -363,14 +372,14 @@ export default function Home() {
                     <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5" />
                     <div>
                       <div className="font-semibold text-slate-900">CAGE Code</div>
-                      <div className="text-sm text-slate-600">Available upon request</div>
+                      <div className="text-sm text-slate-600">9LA92</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5" />
                     <div>
                       <div className="font-semibold text-slate-900">UEI</div>
-                      <div className="text-sm text-slate-600">Available upon request</div>
+                      <div className="text-sm text-slate-600">JU1LYRJGRWL9</div>
                     </div>
                   </div>
                 </div>
@@ -405,8 +414,8 @@ export default function Home() {
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-slate-900">24/7 Support</div>
-                      <div className="text-sm text-slate-600">Round-the-clock project monitoring</div>
+                      <div className="font-semibold text-slate-900">Real-Time Monitoring</div>
+                      <div className="text-sm text-slate-600">Continuous project visibility and tracking</div>
                     </div>
                   </div>
                 </div>
@@ -447,12 +456,8 @@ export default function Home() {
                   <div className="text-sm text-slate-400">Faster Delivery</div>
                 </div>
                 <div className="bg-slate-800/50 backdrop-blur rounded-lg p-4">
-                  <div className="text-3xl font-bold text-purple-500 mb-1">100%</div>
+                  <div className="text-3xl font-bold text-green-500 mb-1">100%</div>
                   <div className="text-sm text-slate-400">Data Security</div>
-                </div>
-                <div className="bg-slate-800/50 backdrop-blur rounded-lg p-4">
-                  <div className="text-3xl font-bold text-green-500 mb-1">24/7</div>
-                  <div className="text-sm text-slate-400">Real-Time Visibility</div>
                 </div>
               </div>
               
@@ -478,7 +483,11 @@ export default function Home() {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="grid lg:grid-cols-4 gap-8 mb-8">
             <div>
-              <h3 className="font-semibold mb-4">Weigh Anchor</h3>
+              <img 
+                src="/assets/logos/WeighAnchor_Logowithwords_Transparent_Alt_2022_03_06.png.png" 
+                alt="Weigh Anchor" 
+                className="h-12 w-auto mb-4 brightness-0 invert"
+              />
               <p className="text-sm text-slate-400">
                 Technology-enhanced construction management for federal and commercial projects.
               </p>
@@ -486,31 +495,31 @@ export default function Home() {
             <div>
               <h3 className="font-semibold mb-4">Contact</h3>
               <div className="space-y-2 text-sm text-slate-400">
-                <p>10900 NE 4th Street, Suite 2300</p>
-                <p>Bellevue, WA 98004</p>
-                <p>(425) 289-0030</p>
+                <p>Bellevue, WA</p>
+                <p>(407) 687-3792</p>
+                <p>info@weighanchor.com</p>
               </div>
             </div>
             <div>
               <h3 className="font-semibold mb-4">Certifications</h3>
               <div className="space-y-2 text-sm text-slate-400">
                 <p>SDVOSB Certified</p>
-                <p>CAGE: XXXXX</p>
-                <p>UEI: XXXXXXXXX</p>
+                <p>Service-Disabled Veteran-Owned</p>
+                <p>Federal & Commercial Projects</p>
               </div>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Resources</h3>
+              <h3 className="font-semibold mb-4">Quick Links</h3>
               <div className="space-y-2">
-                <Link href="/capabilities" className="block text-sm text-slate-400 hover:text-white">
-                  Capabilities
+                <Link href="/services" className="block text-sm text-slate-400 hover:text-white">
+                  Our Services
                 </Link>
-                <Link href="/past-performance" className="block text-sm text-slate-400 hover:text-white">
-                  Past Performance
+                <Link href="/about" className="block text-sm text-slate-400 hover:text-white">
+                  About Us
                 </Link>
-                <a href="#" className="block text-sm text-slate-400 hover:text-white">
-                  Capability Statement (PDF)
-                </a>
+                <Link href="/contact" className="block text-sm text-slate-400 hover:text-white">
+                  Contact
+                </Link>
               </div>
             </div>
           </div>
@@ -522,7 +531,7 @@ export default function Home() {
             <div className="flex items-center gap-6 text-sm">
               <span className="text-slate-300">Proudly Veteran Owned</span>
               <span className="text-slate-600">•</span>
-              <span className="text-slate-300">Serving Federal & Commercial Clients Nationwide</span>
+              <span className="text-slate-300">SDVOSB Certified</span>
             </div>
           </div>
         </div>

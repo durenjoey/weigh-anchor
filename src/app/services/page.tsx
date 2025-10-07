@@ -79,7 +79,7 @@ export default function ServicesPage() {
     {
       icon: Activity,
       title: "Real-Time Monitoring",
-      description: "24/7 project visibility with instant alerts and automated reporting"
+      description: "Real-time project visibility with instant alerts and automated reporting"
     },
     {
       icon: TrendingUp,
