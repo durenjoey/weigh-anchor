@@ -12,7 +12,6 @@ import {
   Globe,
   Award,
   Users,
-  TrendingUp,
   Download,
   Zap,
   Target,
@@ -67,6 +66,7 @@ export default function CapabilityStatementPage() {
     documentTitle: `Weigh-Anchor-Capability-Statement-${new Date().toISOString().split('T')[0]}`,
     onBeforePrint: () => {
       setIsGeneratingPdf(true);
+      return Promise.resolve();
     },
     onAfterPrint: () => {
       setIsGeneratingPdf(false);
