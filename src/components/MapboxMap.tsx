@@ -154,7 +154,7 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
       map.current!.getCanvas().style.cursor = 'pointer';
       
       const feature = e.features![0];
-      const coordinates = (feature.geometry as GeoJSON.Point).coordinates.slice();
+      const coordinates = (feature.geometry as GeoJSON.Point).coordinates as [number, number];
       const props = feature.properties!;
       
       const popupContent = `
@@ -196,7 +196,7 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
     // Add click events
     map.current.on('click', 'projects-circles', (e) => {
       const feature = e.features![0];
-      const coordinates = (feature.geometry as GeoJSON.Point).coordinates.slice();
+      const coordinates = (feature.geometry as GeoJSON.Point).coordinates as [number, number];
       
       if (onProjectSelect) {
         // Find the original project object
