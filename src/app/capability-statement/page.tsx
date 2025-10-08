@@ -65,9 +65,8 @@ export default function CapabilityStatementPage() {
   const handlePrint = useReactToPrint({
     contentRef: contentRef,
     documentTitle: `Weigh-Anchor-Capability-Statement-${new Date().toISOString().split('T')[0]}`,
-    onBeforeGetContent: () => {
+    onBeforePrint: () => {
       setIsGeneratingPdf(true);
-      return Promise.resolve();
     },
     onAfterPrint: () => {
       setIsGeneratingPdf(false);

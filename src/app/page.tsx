@@ -488,11 +488,3 @@ export default function Home() {
   );
 }
 
-// Badge component for certifications
-function Badge({ children, className }: { children: React.ReactNode; className?: string }) {
-  return (
-    <span className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-medium ${className}`}>
-      {children}
-    </span>
-  );
-}
