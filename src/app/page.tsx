@@ -10,16 +10,12 @@ import {
   ArrowRight,
   TrendingUp,
   Globe2,
-  Users,
-  Activity,
   Download,
   Award,
   CheckCircle2,
-  Briefcase,
-  Star,
-  MessageCircle
+  Briefcase
 } from "lucide-react";
-import { getTotalProjectCount, getOpenProjectCount, getUniqueStates } from "@/data/projects";
+import { getTotalProjectCount, getUniqueStates } from "@/data/projects";
 import Link from "next/link";
 import Header from "@/components/Header";
 import MapboxMap from "@/components/MapboxMap";
