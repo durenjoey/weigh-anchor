@@ -90,7 +90,8 @@ export default function Home() {
   const clientLogos = [
     { name: "Federal Government", type: "federal" },
     { name: "Tribal Nations", type: "tribal" },
-    { name: "Fortune 500", type: "corporate" }
+    { name: "Municipal Governments", type: "municipal" },
+    { name: "Private Sector", type: "corporate" }
   ];
 
   return (
