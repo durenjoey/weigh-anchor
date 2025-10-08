@@ -125,7 +125,7 @@ export default function AboutPage() {
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Technology</h3>
                   <p className="text-sm text-slate-600">
-                    Internal tools that give competitive advantage
+                    Leading with innovation for client advantage
                   </p>
                 </CardContent>
               </Card>
