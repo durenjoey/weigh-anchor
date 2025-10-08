@@ -56,8 +56,7 @@ export default function Header() {
               className="h-10 w-auto group-hover:scale-105 transition-transform"
             />
             <div>
-              <span className="font-display text-xl font-semibold text-slate-900">Weigh Anchor</span>
-              <span className="hidden lg:block text-xs text-slate-500">Professional Services, Any Location</span>
+              <span className="font-display text-xl font-semibold text-slate-900 leading-tight">Weigh Anchor</span>
             </div>
           </Link>
           

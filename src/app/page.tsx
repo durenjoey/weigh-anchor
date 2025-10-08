@@ -26,18 +26,14 @@ import MapboxMap from "@/components/MapboxMap";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
-  const [activeProjects, setActiveProjects] = useState(0);
   const [totalProjects, setTotalProjects] = useState(0);
   const [states, setStates] = useState(0);
-  const [contractValue, setContractValue] = useState(0);
 
   useEffect(() => {
     setMounted(true);
     // Animate numbers on mount
     const projectTarget = getTotalProjectCount();
-    const activeTarget = getOpenProjectCount();
     const statesTarget = getUniqueStates().length;
-    const contractTarget = 47; // $47M in contract value
     
     const duration = 2000;
     const steps = 60;
@@ -49,16 +45,12 @@ export default function Home() {
       const progress = currentStep / steps;
       
       setTotalProjects(Math.floor(projectTarget * progress));
-      setActiveProjects(Math.floor(activeTarget * progress));
       setStates(Math.floor(statesTarget * progress));
-      setContractValue(Math.floor(contractTarget * progress));
       
       if (currentStep === steps) {
         clearInterval(timer);
         setTotalProjects(projectTarget);
-        setActiveProjects(activeTarget);
         setStates(statesTarget);
-        setContractValue(contractTarget);
       }
     }, increment);
     
@@ -114,7 +106,7 @@ export default function Home() {
             </p>
 
             {/* Performance Metrics */}
-            <div className="mt-10 flex flex-wrap gap-8 items-center">
+            <div className="mt-10 flex flex-wrap gap-8 items-center justify-start">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-orange-100 rounded-lg">
                   <TrendingUp className="h-5 w-5 text-orange-600" />
@@ -122,16 +114,6 @@ export default function Home() {
                 <div>
                   <div className="text-2xl font-bold text-slate-900">{mounted ? totalProjects : 0}+</div>
                   <div className="text-sm text-slate-500">Project Portfolio</div>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-green-100 rounded-lg">
-                  <Activity className="h-5 w-5 text-green-600" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-slate-900">${mounted ? contractValue : 0}M+</div>
-                  <div className="text-sm text-slate-500">Contract Value</div>
                 </div>
               </div>
               
