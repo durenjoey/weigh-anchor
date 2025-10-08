@@ -19,6 +19,12 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
   // Mapbox access token - you'll need to get this from Mapbox
   const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || '';
 
+  // Debug logging
+  useEffect(() => {
+    console.log('MapboxMap render - Token exists:', !!MAPBOX_TOKEN);
+    console.log('MapboxMap render - Projects count:', projects.length);
+  }, [MAPBOX_TOKEN]);
+
   const getProjectColor = (project: Project) => {
     switch (project.type) {
       case 'tribal-government': return '#3b82f6'; // blue
@@ -59,126 +65,170 @@ export default function MapboxMap({ onProjectSelect }: MapboxMapProps) {
     };
   }, [MAPBOX_TOKEN]);
 
-  // Add project markers
+  // Add project markers using map sources and layers instead of DOM markers
   useEffect(() => {
+    console.log('Projects useEffect triggered - isMapLoaded:', isMapLoaded, 'onProjectSelect:', !!onProjectSelect);
     if (!map.current || !isMapLoaded) return;
 
-    // Clear existing markers
-    const existingMarkers = document.querySelectorAll('.mapbox-marker');
-    existingMarkers.forEach(marker => marker.remove());
+    console.log('Adding project layers...');
+    // Remove existing source and layers if they exist
+    if (map.current.getSource('projects')) {
+      console.log('Removing existing layers...');
+      map.current.removeLayer('projects-circles');
+      map.current.removeLayer('projects-labels');
+      map.current.removeSource('projects');
+    }
 
-    // Add markers for all projects
-    projects.forEach((project) => {
-      // Create marker element
-      const markerEl = document.createElement('div');
-      markerEl.className = 'mapbox-marker';
+    // Create GeoJSON data from projects
+    const geojsonData = {
+      type: 'FeatureCollection' as const,
+      features: projects.map(project => ({
+        type: 'Feature' as const,
+        geometry: {
+          type: 'Point' as const,
+          coordinates: [project.coordinates.lng, project.coordinates.lat]
+        },
+        properties: {
+          name: project.name,
+          location: project.location,
+          state: project.state,
+          type: project.type,
+          status: project.status,
+          projectCount: project.projectCount,
+          color: getProjectColor(project)
+        }
+      }))
+    };
+
+    // Add source
+    map.current.addSource('projects', {
+      type: 'geojson',
+      data: geojsonData
+    });
+
+    // Add circles layer
+    map.current.addLayer({
+      id: 'projects-circles',
+      type: 'circle',
+      source: 'projects',
+      paint: {
+        'circle-radius': [
+          'case',
+          ['>', ['get', 'projectCount'], 5], 14,
+          ['>', ['get', 'projectCount'], 1], 12,
+          10
+        ],
+        'circle-color': ['get', 'color'],
+        'circle-stroke-width': 2,
+        'circle-stroke-color': '#ffffff',
+        'circle-opacity': 0.9
+      }
+    });
+
+    // Add labels layer for project counts > 1
+    map.current.addLayer({
+      id: 'projects-labels',
+      type: 'symbol',
+      source: 'projects',
+      filter: ['>', ['get', 'projectCount'], 1],
+      layout: {
+        'text-field': ['get', 'projectCount'],
+        'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+        'text-size': 11
+      },
+      paint: {
+        'text-color': '#ffffff'
+      }
+    });
+
+    // Create popup
+    const popup = new mapboxgl.Popup({
+      closeButton: false,
+      closeOnClick: false,
+      offset: 15
+    });
+
+    // Add hover events
+    map.current.on('mouseenter', 'projects-circles', (e) => {
+      console.log('Hover enter:', e.features![0].properties!.name);
+      map.current!.getCanvas().style.cursor = 'pointer';
       
-      const size = project.projectCount > 5 ? '28px' : project.projectCount > 1 ? '24px' : '20px';
-      markerEl.style.cssText = `
-        width: ${size};
-        height: ${size};
-        border-radius: 50%;
-        background-color: ${getProjectColor(project)};
-        border: 2px solid white;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 11px;
-        font-weight: bold;
-        color: white;
-        transition: all 0.2s ease;
+      const feature = e.features![0];
+      const coordinates = (feature.geometry as any).coordinates.slice();
+      const props = feature.properties!;
+      
+      const popupContent = `
+        <div style="
+          background: white;
+          color: #1e293b;
+          padding: 12px;
+          border-radius: 8px;
+          font-size: 14px;
+          max-width: 250px;
+        ">
+          <div style="font-weight: bold; color: ${props.color}; margin-bottom: 4px;">
+            ${props.name}
+          </div>
+          <div style="color: #64748b; font-size: 12px;">
+            ${props.location}, ${props.state}
+          </div>
+          <div style="color: #94a3b8; margin-top: 4px; font-size: 11px;">
+            ${props.type.replace('-', ' ').toUpperCase()} • ${props.status.toUpperCase()}
+          </div>
+          ${props.projectCount > 1 ? `
+            <div style="color: ${props.color}; margin-top: 4px; font-size: 12px; font-weight: 600;">
+              ${props.projectCount} projects at this location
+            </div>
+          ` : ''}
+        </div>
       `;
 
-      // Add project count if > 1
-      if (project.projectCount > 1) {
-        markerEl.textContent = project.projectCount.toString();
-      }
+      popup.setLngLat(coordinates)
+        .setHTML(popupContent)
+        .addTo(map.current!);
+    });
 
-      // Add hover effect
-      markerEl.addEventListener('mouseenter', () => {
-        markerEl.style.transform = 'scale(1.2)';
-        markerEl.style.zIndex = '1000';
-      });
+    map.current.on('mouseleave', 'projects-circles', () => {
+      map.current!.getCanvas().style.cursor = '';
+      popup.remove();
+    });
 
-      markerEl.addEventListener('mouseleave', () => {
-        markerEl.style.transform = 'scale(1)';
-        markerEl.style.zIndex = '1';
-      });
-
-      // Add click handler
-      markerEl.addEventListener('click', () => {
-        if (onProjectSelect) {
+    // Add click events
+    map.current.on('click', 'projects-circles', (e) => {
+      const feature = e.features![0];
+      const coordinates = (feature.geometry as any).coordinates.slice();
+      
+      if (onProjectSelect) {
+        // Find the original project object
+        const project = projects.find(p => 
+          p.coordinates.lng === coordinates[0] && 
+          p.coordinates.lat === coordinates[1]
+        );
+        if (project) {
           onProjectSelect(project);
         }
-        
-        // Fly to location
-        if (map.current) {
-          map.current.flyTo({
-            center: [project.coordinates.lng, project.coordinates.lat],
-            zoom: 8,
-            duration: 2000
-          });
-        }
-      });
-
-      // Create marker
-      new mapboxgl.Marker(markerEl)
-        .setLngLat([project.coordinates.lng, project.coordinates.lat])
-        .addTo(map.current!);
-
-      // Add popup on hover
-      const popup = new mapboxgl.Popup({
-        closeButton: false,
-        closeOnClick: false,
-        offset: 25
-      });
-
-      markerEl.addEventListener('mouseenter', () => {
-        const popupContent = `
-          <div style="
-            background: white;
-            color: #1e293b;
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 14px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            max-width: 250px;
-          ">
-            <div style="font-weight: bold; color: ${getProjectColor(project)}; margin-bottom: 4px;">
-              ${project.name}
-            </div>
-            <div style="color: #64748b; font-size: 12px;">
-              ${project.location}, ${project.state}
-            </div>
-            <div style="color: #94a3b8; margin-top: 4px; font-size: 11px;">
-              ${project.type.replace('-', ' ').toUpperCase()} • ${project.status.toUpperCase()}
-            </div>
-            ${project.projectCount > 1 ? `
-              <div style="color: ${getProjectColor(project)}; margin-top: 4px; font-size: 12px; font-weight: 600;">
-                ${project.projectCount} projects at this location
-              </div>
-            ` : ''}
-          </div>
-        `;
-
-        popup.setLngLat([project.coordinates.lng, project.coordinates.lat])
-          .setHTML(popupContent)
-          .addTo(map.current!);
-      });
-
-      markerEl.addEventListener('mouseleave', () => {
-        popup.remove();
+      }
+      
+      // Fly to location
+      map.current!.flyTo({
+        center: coordinates,
+        zoom: 8,
+        duration: 1500
       });
     });
+
   }, [isMapLoaded, onProjectSelect]);
 
   return (
     <div 
       ref={mapContainer}
-      className="w-full h-full"
-      style={{ minHeight: '100%' }}
+      style={{ 
+        width: '100%', 
+        height: '100%',
+        position: 'absolute',
+        top: 0,
+        left: 0
+      }}
     />
   );
 }

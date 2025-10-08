@@ -166,41 +166,10 @@ export default function Home() {
         <div className="relative mt-8">
           <div className="container mx-auto px-4 lg:px-6 pb-12">
             <div className="mb-4">
-              <h2 className="text-2xl font-bold text-slate-900">Project Coverage</h2>
-              <p className="text-slate-600">Federal, tribal, and commercial projects across the nation</p>
+              <h2 className="text-2xl font-bold text-slate-900">Projects</h2>
             </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-slate-900" style={{ height: '600px' }}>
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent z-10 pointer-events-none"></div>
+            <div style={{ height: '600px', width: '100%', position: 'relative' }}>
               <MapboxMap />
-              
-              {/* Map Legend */}
-              <div className="absolute bottom-6 left-6 z-20 bg-white/95 backdrop-blur-md rounded-xl p-4 shadow-xl">
-                <div className="text-sm font-semibold text-slate-600 mb-2">Project Types</div>
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-blue-500"></div>
-                    <span className="text-xs text-slate-700">Federal/Tribal</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                    <span className="text-xs text-slate-700">Commercial</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-orange-500"></div>
-                    <span className="text-xs text-slate-700">Technology</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Stats Overlay */}
-              <div className="absolute bottom-6 right-6 z-20 bg-white/95 backdrop-blur-md rounded-xl p-4 shadow-xl">
-                <div className="text-2xl font-bold text-slate-900">
-                  {getUniqueStates().length} States • {getTotalProjectCount()}+ Project Portfolio
-                </div>
-                <div className="text-sm text-slate-600">
-                  Federal, Tribal & Commercial Projects
-                </div>
-              </div>
             </div>
           </div>
         </div>
