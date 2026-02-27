@@ -323,7 +323,7 @@ export default function Home() {
             backgroundImage: 'radial-gradient(circle at 20% 50%, #ff8c42 0%, transparent 50%), radial-gradient(circle at 80% 80%, #3b82f6 0%, transparent 50%)'
           }}></div>
         </div>
-        
+
         <div className="relative container mx-auto px-4 lg:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -331,43 +331,56 @@ export default function Home() {
                 The Technology <span className="text-orange-500">Advantage</span>
               </h2>
               <p className="text-lg text-slate-300 mb-8 leading-relaxed">
-                Our mission is to become the industry's most technology-forward construction firm. 
-                We deliver superior results through proprietary systems and data-driven insights. 
-                Our clients benefit from enhanced efficiency, improved project visibility, and 
-                intelligent project management—all while maintaining complete data ownership in our systems.
+                We built proprietary AI and automation systems that power every project we deliver.
+                While other firms outsource or bolt on technology, ours is built in-house — purpose-built
+                for construction management and deeply integrated into how we work.
               </p>
-              
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="bg-slate-800/50 backdrop-blur rounded-lg p-4">
-                  <div className="text-3xl font-bold text-orange-500 mb-1">10,000+</div>
-                  <div className="text-sm text-slate-400">AI Conversations</div>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start gap-4 bg-slate-800/50 backdrop-blur rounded-lg p-4">
+                  <Cpu className="h-6 w-6 text-orange-500 mt-0.5 shrink-0" />
+                  <div>
+                    <div className="font-semibold text-white">AI-Powered Project Intelligence</div>
+                    <div className="text-sm text-slate-400">Automated reporting, risk detection, and decision support across every active project</div>
+                  </div>
                 </div>
-                <div className="bg-slate-800/50 backdrop-blur rounded-lg p-4">
-                  <div className="text-3xl font-bold text-green-500 mb-1">4.4/5</div>
-                  <div className="text-sm text-slate-400">Client Rating</div>
+                <div className="flex items-start gap-4 bg-slate-800/50 backdrop-blur rounded-lg p-4">
+                  <TrendingUp className="h-6 w-6 text-blue-500 mt-0.5 shrink-0" />
+                  <div>
+                    <div className="font-semibold text-white">40% Efficiency Gains</div>
+                    <div className="text-sm text-slate-400">Our systems eliminate manual overhead so teams focus on what matters — delivering projects</div>
+                  </div>
                 </div>
-                <div className="bg-slate-800/50 backdrop-blur rounded-lg p-4">
-                  <div className="text-3xl font-bold text-blue-500 mb-1">40%</div>
-                  <div className="text-sm text-slate-400">Efficiency Gain</div>
+                <div className="flex items-start gap-4 bg-slate-800/50 backdrop-blur rounded-lg p-4">
+                  <Shield className="h-6 w-6 text-green-500 mt-0.5 shrink-0" />
+                  <div>
+                    <div className="font-semibold text-white">Your Data Stays Yours</div>
+                    <div className="text-sm text-slate-400">All project data remains proprietary and secure within our systems — never shared, never sold</div>
+                  </div>
                 </div>
-                <div className="bg-slate-800/50 backdrop-blur rounded-lg p-4">
-                  <div className="text-3xl font-bold text-purple-500 mb-1">100%</div>
-                  <div className="text-sm text-slate-400">Data Ownership</div>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-2 text-sm text-slate-400">
-                <Shield className="h-4 w-4" />
-                <span>All project data remains proprietary and secure within our systems</span>
               </div>
             </div>
-            
+
             <div className="relative">
               <div className="rounded-2xl bg-gradient-to-br from-slate-800 to-slate-700 p-8 shadow-2xl">
-                <div className="text-center">
-                  <div className="text-6xl font-bold text-orange-500 mb-4">200+</div>
-                  <div className="text-xl text-slate-300 mb-2">Project Reviews</div>
-                  <div className="text-sm text-slate-400">Consistently delivering exceptional results</div>
+                <div className="text-sm font-semibold text-orange-500 uppercase tracking-wider mb-6">What This Means For You</div>
+                <div className="space-y-5">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 shrink-0" />
+                    <div className="text-slate-300">Real-time visibility into project status, budget, and schedule</div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 shrink-0" />
+                    <div className="text-slate-300">Faster turnaround on reporting, compliance, and documentation</div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 shrink-0" />
+                    <div className="text-slate-300">Proactive issue identification before they become problems</div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 shrink-0" />
+                    <div className="text-slate-300">Consistent quality across projects in any location</div>
+                  </div>
                 </div>
               </div>
             </div>
