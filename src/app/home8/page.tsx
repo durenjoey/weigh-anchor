@@ -483,24 +483,19 @@ export default function Home8() {
       {/* Stats — industrial control panel */}
       <section className="border-y-2 border-zinc-800 bg-zinc-900/50">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x-2 divide-zinc-800">
+          <div className="grid grid-cols-3 divide-x-2 divide-zinc-800">
             {[
               {
                 value: VERIFIED_STATS.activeProjects,
                 suffix: "+",
-                label: "ACTIVE PROJECTS",
+                label: "CONSTRUCTION PROJECTS",
               },
               {
                 value: VERIFIED_STATS.statesAndTerritories,
                 suffix: "",
                 label: "STATES & TERRITORIES",
               },
-              { value: 55, suffix: "+", label: "AUTOMATIONS AT PFIZER" },
-              {
-                value: "10→4",
-                suffix: "",
-                label: "HEADCOUNT AFTER AUTOMATION",
-              },
+              { value: 55, suffix: "+", label: "AUTOMATION PROJECTS" },
             ].map((stat, i) => (
               <div key={i} className="py-10 px-6 text-center">
                 <div className="text-orange-500">
