@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, FlaskConical } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -10,7 +10,7 @@ const NAV_ITEMS = [
   {
     label: "Services",
     children: [
-      { href: "/services2", label: "Construction Services", description: "CM, Owner's Rep, Controls, PMO" },
+      { href: "/services2", label: "Construction Services", description: "PM, Controls, Program Management" },
       { href: "/copilot", label: "Construction Copilot", description: "Business process automation — $5K/mo" },
     ],
   },
@@ -18,25 +18,9 @@ const NAV_ITEMS = [
   { href: "/capability-statement", label: "Capabilities" },
 ];
 
-const VARIANT_PAGES = [
-  { href: "/", label: "Original Homepage" },
-  { href: "/home2", label: "Home 2 — Light + Typewriter" },
-  { href: "/home3", label: "Home 3 — Dark + Gold" },
-  { href: "/home4", label: "Home 4 — Industrial" },
-  { href: "/home5", label: "Home 5 — Orange Logo" },
-  { href: "/home6", label: "Home 6 — V2 Logo" },
-  { href: "/home7", label: "Home 7 — White Logo" },
-  { href: "/home8", label: "Home 8 — Map Hero" },
-  { href: "/services", label: "Services — Original" },
-  { href: "/services2", label: "Services 2 — Industrial" },
-  { href: "/construction-copilot", label: "Copilot — Original" },
-  { href: "/copilot", label: "Copilot — Industrial" },
-];
-
 export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeight?: string }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [variantsOpen, setVariantsOpen] = useState(false);
   const pathname = usePathname();
 
   const isActive = (href: string) => pathname === href;
@@ -46,11 +30,11 @@ export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeigh
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
-          <Link href="/home4" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <img
-              src={logo || "/assets/logos/weigh_anchor_new_logo.png"}
+              src={logo || "/assets/logos/weigh_anchor_logo_v2.png"}
               alt="Weigh Anchor"
-              className={`${logoHeight || "h-7"} w-auto group-hover:scale-105 transition-transform`}
+              className={`${logoHeight || "h-14"} w-auto group-hover:scale-105 transition-transform`}
             />
             <span className="font-bold text-white text-lg tracking-tight uppercase">Weigh Anchor</span>
           </Link>
@@ -111,44 +95,6 @@ export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeigh
                 </Button>
               </Link>
             ))}
-
-            <div className="w-px h-6 bg-zinc-800 mx-2" />
-
-            {/* Variants dropdown — dev navigation */}
-            <div
-              className="relative"
-              onMouseEnter={() => setVariantsOpen(true)}
-              onMouseLeave={() => setVariantsOpen(false)}
-            >
-              <button
-                className={`flex items-center gap-1.5 px-3 py-2 text-xs tracking-wider font-medium rounded-none transition-colors text-zinc-600 hover:text-violet-400`}
-              >
-                <FlaskConical className="h-3 w-3" />
-                Variants
-                <ChevronDown className={`h-3 w-3 transition-transform ${variantsOpen ? "rotate-180" : ""}`} />
-              </button>
-
-              {variantsOpen && (
-                <div className="absolute top-full right-0 pt-1 w-64">
-                  <div className="rounded-md border border-zinc-800 bg-[#0d0f13] shadow-xl shadow-black/40 overflow-hidden max-h-[400px] overflow-y-auto">
-                    {VARIANT_PAGES.map((page) => (
-                      <Link
-                        key={page.href}
-                        href={page.href}
-                        onClick={() => setVariantsOpen(false)}
-                        className={`block px-4 py-2.5 transition-colors border-b border-zinc-800/50 last:border-0 text-sm ${
-                          isActive(page.href)
-                            ? "bg-violet-500/10 text-violet-300 border-l-2 border-l-violet-500"
-                            : "hover:bg-zinc-900 text-zinc-500 hover:text-zinc-300"
-                        }`}
-                      >
-                        {page.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
 
             <div className="w-px h-6 bg-zinc-800 mx-2" />
 
@@ -213,28 +159,6 @@ export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeigh
                 {item.label}
               </Link>
             ))}
-
-            {/* Variants section */}
-            <div className="pt-3 mt-3 border-t border-zinc-800">
-              <div className="px-3 py-2 text-[10px] text-violet-500/70 uppercase tracking-[0.2em] font-mono flex items-center gap-2">
-                <FlaskConical className="h-3 w-3" />
-                Page Variants
-              </div>
-              {VARIANT_PAGES.map((page) => (
-                <Link
-                  key={page.href}
-                  href={page.href}
-                  onClick={() => setMobileOpen(false)}
-                  className={`block px-3 py-2.5 rounded-md text-sm transition-colors ${
-                    isActive(page.href)
-                      ? "bg-violet-500/10 text-violet-300"
-                      : "text-zinc-600 hover:text-zinc-400 hover:bg-zinc-900"
-                  }`}
-                >
-                  {page.label}
-                </Link>
-              ))}
-            </div>
 
             <div className="pt-3">
               <Link href="/contact" onClick={() => setMobileOpen(false)}>
