@@ -591,9 +591,9 @@ export default function Home() {
                         Automation Services
                       </h3>
                       <p className="text-zinc-500 leading-relaxed mb-6">
-                        We map your processes, eliminate what&apos;s unnecessary,
-                        simplify what remains, and automate everything else.
-                        Construction-focused.
+                        AI implementation, workflow automation, and digitization
+                        for construction organizations. We build it, deploy it,
+                        and train your team on it.
                       </p>
                       <div className="space-y-3 mb-8">
                         {[
