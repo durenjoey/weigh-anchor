@@ -393,7 +393,7 @@ export default function Home8() {
       />
 
       {/* Hero with Map Background */}
-      <section className="relative overflow-hidden" style={{ minHeight: "85vh" }}>
+      <section className="relative overflow-hidden" style={{ minHeight: "75vh" }}>
         {/* Map background */}
         <div className="absolute inset-0">
           <DarkMapBackground />
@@ -426,7 +426,7 @@ export default function Home8() {
         />
 
         {/* Hero content */}
-        <div className="relative container mx-auto px-4 lg:px-6 pt-28 pb-24 pointer-events-none" style={{ minHeight: "85vh", display: "flex", alignItems: "center" }}>
+        <div className="relative container mx-auto px-4 lg:px-6 pt-28 pb-24 pointer-events-none" style={{ minHeight: "75vh", display: "flex", alignItems: "center" }}>
           <div className="max-w-2xl pointer-events-auto">
             {/* Badge */}
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-sm border border-zinc-700 bg-zinc-900/90 text-xs text-zinc-400 mb-10 uppercase tracking-widest font-mono backdrop-blur-sm">
