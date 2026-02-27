@@ -75,9 +75,9 @@ export default function AutomationServicesPage() {
             <div className="flex gap-4 mt-2 mb-8">
               <div className="w-1 bg-gradient-to-b from-cyan-400 to-cyan-400/0 rounded-full flex-shrink-0" />
               <p className="text-lg text-zinc-500 max-w-2xl leading-relaxed">
-                Process mapping, business process improvement, automation, digitization,
-                and AI implementation — built for construction organizations that are
-                ready to stop solving problems with headcount.
+                  Automation, AI implementation, digitization, and process engineering —
+                built with your team, not around them. Whether you need a custom dashboard
+                or a full AI workflow, we build it and we build it fast.
               </p>
             </div>
 
@@ -120,7 +120,7 @@ export default function AutomationServicesPage() {
                   step: "01",
                   icon: Search,
                   title: "Map",
-                  description: "Document every process, every handoff, every system. Understand how work actually flows — not how you think it flows. This is the audit.",
+                  description: "We sit down with your team and document every process, every handoff, every system. We need to understand how work actually flows — not how anyone thinks it flows. This is the audit, and we do it together.",
                   color: "text-cyan-400",
                   borderColor: "border-cyan-500/20",
                   bgColor: "bg-cyan-500/10",
@@ -129,7 +129,7 @@ export default function AutomationServicesPage() {
                   step: "02",
                   icon: Trash2,
                   title: "Eliminate",
-                  description: "The fastest process is one that doesn't exist. Kill duplicate approvals, unnecessary reports, meetings that should be emails, and steps that exist because \"we've always done it that way.\"",
+                  description: "The fastest process is one that doesn't exist. Your team knows where the waste is — they just haven't been asked. We identify duplicate approvals, unnecessary reports, and steps that exist because \"we've always done it that way.\"",
                   color: "text-red-400",
                   borderColor: "border-red-500/20",
                   bgColor: "bg-red-500/10",
@@ -138,7 +138,7 @@ export default function AutomationServicesPage() {
                   step: "03",
                   icon: Minimize2,
                   title: "Simplify",
-                  description: "What's left gets streamlined. Consolidate tools, reduce handoffs, standardize formats. Make every remaining process as lean as possible before we touch technology.",
+                  description: "What's left gets streamlined. Consolidate tools, reduce handoffs, standardize formats. We make every remaining process as lean as possible before writing a single line of code.",
                   color: "text-orange-400",
                   borderColor: "border-orange-500/20",
                   bgColor: "bg-orange-500/10",
@@ -147,7 +147,7 @@ export default function AutomationServicesPage() {
                   step: "04",
                   icon: Cog,
                   title: "Automate",
-                  description: "Now we build. Workflow automation, system integrations, AI where it actually saves money, digitization of paper processes. This is where headcount drops and throughput stays.",
+                  description: "Now we build. AI workflows, automated reporting, system integrations, custom dashboards, digitized forms — even a website if that's what you need. We write the code, train the models, and deploy it into your operation.",
                   color: "text-cyan-400",
                   borderColor: "border-cyan-500/20",
                   bgColor: "bg-cyan-500/10",
@@ -156,7 +156,7 @@ export default function AutomationServicesPage() {
                   step: "05",
                   icon: Rocket,
                   title: "Accelerate",
-                  description: "Optimize for speed. Monitor, measure, and continuously improve. Find the next bottleneck and repeat the cycle. This never stops.",
+                  description: "Optimize for speed. Monitor performance, find the next bottleneck, repeat the cycle. Your team learns the systems as we build them — this is a partnership, not a handoff.",
                   color: "text-green-400",
                   borderColor: "border-green-500/20",
                   bgColor: "bg-green-500/10",
@@ -203,20 +203,20 @@ export default function AutomationServicesPage() {
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  title: "Process Mapping & Improvement",
-                  description: "We document your current state, identify waste, and redesign workflows before any technology gets involved. Most organizations save 20-30% just from elimination and simplification.",
+                  title: "AI & Automation",
+                  description: "AI-powered workflows, automated reporting, intelligent document processing, predictive analytics. We build and deploy AI that actually saves money — not demos, production systems.",
                 },
                 {
-                  title: "Automation & Digitization",
-                  description: "Paper forms to digital. Manual scheduling to automated dispatching. Copy-paste reporting to real-time dashboards. We build the systems that replace the repetitive work.",
+                  title: "Digitization",
+                  description: "Paper forms to digital. Spreadsheets to dashboards. Tribal websites to modern platforms. If it's analog and it shouldn't be, we digitize it — fast.",
                 },
                 {
-                  title: "AI Implementation",
-                  description: "AI where it makes financial sense — document processing, data extraction, predictive analytics, natural language interfaces. Not AI for the sake of AI. AI that saves you money.",
+                  title: "Process Engineering",
+                  description: "We work with your team to map, redesign, and optimize your operations. Collaborative — we don't disappear into a back room and hand you a report. We build it together.",
                 },
                 {
                   title: "Ongoing Support",
-                  description: "$5K/month. Maintenance, training, continuous improvement, and new automation development. All requests handled one at a time until complete. No surprise invoices.",
+                  description: "$5K/month. Maintenance, training, continuous improvement, and new builds. All requests handled one at a time until complete. Your team gets trained on everything we deploy.",
                 },
               ].map((service, i) => (
                 <FadeIn key={i} delay={i * 100}>
