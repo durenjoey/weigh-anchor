@@ -598,7 +598,6 @@ export const clients: Client[] = [
   { id: 'red-cliff', name: 'Red Cliff Band of Lake Superior Chippewa', location: 'Bayfield', state: 'WI', coordinates: { lat: 46.8456, lng: -90.8181 }, category: 'Tribal Nation' },
   { id: 'red-lake', name: 'Red Lake Band of Chippewa Indians', location: 'Red Lake', state: 'MN', coordinates: { lat: 47.8744, lng: -95.0181 }, category: 'Tribal Nation' },
   { id: 'sac-fox', name: 'Sac and Fox Nation', location: 'Reserve', state: 'KS', coordinates: { lat: 39.7456, lng: -95.3181 }, category: 'Tribal Nation' },
-  { id: 'saint-regis', name: 'Saint Regis Mohawk Tribe', location: 'Akwesasne', state: 'NY', coordinates: { lat: 44.9872, lng: -74.6581 }, category: 'Tribal Nation' },
   { id: 'salt-river', name: 'Salt River Pima-Maricopa Indian Community', location: 'Scottsdale', state: 'AZ', coordinates: { lat: 33.5456, lng: -111.8847 }, category: 'Tribal Nation' },
   { id: 'seminole', name: 'Seminole Nation of Oklahoma', location: 'Wewoka', state: 'OK', coordinates: { lat: 35.1600, lng: -96.4928 }, category: 'Tribal Nation' },
   { id: 'seneca-cayuga', name: 'Seneca-Cayuga Nation', location: 'Miami', state: 'OK', coordinates: { lat: 36.8747, lng: -94.8775 }, category: 'Tribal Nation' },
