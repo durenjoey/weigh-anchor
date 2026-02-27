@@ -576,7 +576,7 @@ export default function Home() {
                 </Link>
               </FadeIn>
 
-              {/* Copilot — cyan tech panel */}
+              {/* Automation — cyan tech panel */}
               <FadeIn delay={200}>
                 <Link href="/copilot" className="group block h-full">
                   <div className="relative h-full rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 hover:border-cyan-500/40 transition-all duration-500 overflow-hidden">
@@ -588,34 +588,19 @@ export default function Home() {
                         <Bot className="h-6 w-6 text-cyan-400" />
                       </div>
                       <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">
-                        Construction Copilot
+                        Automation Services
                       </h3>
-                      <span
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          window.open(
-                            "https://chatgpt.com/g/g-oSieVvg1P-construction-copilot",
-                            "_blank"
-                          );
-                        }}
-                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm border border-cyan-500/20 bg-cyan-500/5 text-xs text-cyan-400 mb-4 hover:bg-cyan-500/10 transition-colors cursor-pointer font-mono"
-                      >
-                        <Zap className="h-3 w-3" />
-                        #1 Rated Construction GPT &bull; 25K+ conversations
-                        <ArrowRight className="h-3 w-3" />
-                      </span>
                       <p className="text-zinc-500 leading-relaxed mb-6">
-                        Business process automation for teams running
-                        high-volume workflows with too many people and too
-                        little technology.
+                        We map your processes, eliminate what&apos;s unnecessary,
+                        simplify what remains, and automate everything else.
+                        Construction-focused.
                       </p>
                       <div className="space-y-3 mb-8">
                         {[
-                          "Operational Audit & Workflow Mapping",
-                          "Automation Implementation",
-                          "Ongoing Support & Training",
-                          "$5K/month — everything included",
+                          "Process Mapping & Improvement",
+                          "Automation & Digitization",
+                          "AI Implementation",
+                          "Ongoing Support — $5K/mo",
                         ].map((item, i) => (
                           <div
                             key={i}
