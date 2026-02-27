@@ -548,8 +548,8 @@ export default function Home() {
                       </h3>
                       <p className="text-zinc-500 leading-relaxed mb-6">
                         Project management, project controls, and program
-                        management — from remote tribal communities to
-                        Fortune 500 campuses.
+                        management for government agencies, tribal nations,
+                        and private sector organizations.
                       </p>
                       <div className="space-y-3 mb-8">
                         {[
@@ -686,8 +686,8 @@ export default function Home() {
               Ready to talk?
             </h2>
             <p className="text-lg text-zinc-500 mb-10 max-w-xl mx-auto">
-              Whether you need boots on the ground or systems that replace them
-              — let&apos;s figure it out.
+              We work with government agencies, tribal nations, and companies
+              with $100M+ in revenue. If that&apos;s you, let&apos;s talk.
             </p>
             <Link href="/contact">
               <Button
