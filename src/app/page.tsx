@@ -670,10 +670,7 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 tracking-tight">
               Ready to talk?
             </h2>
-            <p className="text-lg text-zinc-500 mb-10 max-w-xl mx-auto">
-              We work with government agencies, tribal nations, and private
-              sector organizations. If that&apos;s you, let&apos;s talk.
-            </p>
+            <div className="mb-10" />
             <Link href="/contact">
               <Button
                 size="lg"
