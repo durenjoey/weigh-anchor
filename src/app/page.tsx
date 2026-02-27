@@ -671,8 +671,8 @@ export default function Home() {
               Ready to talk?
             </h2>
             <p className="text-lg text-zinc-500 mb-10 max-w-xl mx-auto">
-              We work with government agencies, tribal nations, and companies
-              with $100M+ in revenue. If that&apos;s you, let&apos;s talk.
+              We work with government agencies, tribal nations, and private
+              sector organizations. If that&apos;s you, let&apos;s talk.
             </p>
             <Link href="/contact">
               <Button
