@@ -600,7 +600,7 @@ export default function Home() {
                           "Process Mapping & Improvement",
                           "Automation & Digitization",
                           "AI Implementation",
-                          "Ongoing Support — $5K/mo",
+                          "Ongoing Support & Training",
                         ].map((item, i) => (
                           <div
                             key={i}
