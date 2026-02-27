@@ -3,6 +3,11 @@
 
 @import "tailwindcss";
 
+/* Hide Mapbox branding globally */
+.mapboxgl-ctrl-bottom-left {
+  display: none !important;
+}
+
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-display: 'Poppins', system-ui, sans-serif;

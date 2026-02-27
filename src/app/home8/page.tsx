@@ -382,6 +382,9 @@ export default function Home8() {
         .mapboxgl-ctrl-group button span {
           filter: invert(1) !important;
         }
+        .mapboxgl-ctrl-bottom-left {
+          display: none !important;
+        }
       `}</style>
 
       <DarkNav
