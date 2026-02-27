@@ -10,8 +10,8 @@ const NAV_ITEMS = [
   {
     label: "Services",
     children: [
-      { href: "/services2", label: "Construction Services", description: "PM, Controls, Program Management" },
-      { href: "/copilot", label: "Construction Copilot", description: "Business process automation — $5K/mo" },
+      { href: "/services2", label: "Construction Services" },
+      { href: "/copilot", label: "Automation Services" },
     ],
   },
   { href: "/about", label: "About" },
@@ -73,7 +73,7 @@ export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeigh
                         }`}
                       >
                         <div className="text-sm font-medium">{child.label}</div>
-                        <div className="text-[10px] text-zinc-600 mt-0.5 font-mono uppercase tracking-wider">{child.description}</div>
+                        {child.description && <div className="text-[10px] text-zinc-600 mt-0.5 font-mono uppercase tracking-wider">{child.description}</div>}
                       </Link>
                     ))}
                   </div>
@@ -142,7 +142,7 @@ export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeigh
                 }`}
               >
                 <div className="text-sm font-medium">{child.label}</div>
-                <div className="text-[10px] text-zinc-600 mt-0.5 font-mono uppercase tracking-wider">{child.description}</div>
+                {child.description && <div className="text-[10px] text-zinc-600 mt-0.5 font-mono uppercase tracking-wider">{child.description}</div>}
               </Link>
             ))}
 
