@@ -442,8 +442,8 @@ export default function Home8() {
             <div className="mt-10 flex gap-4">
               <div className="w-1 bg-gradient-to-b from-orange-500 to-orange-500/0 rounded-full flex-shrink-0" />
               <p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
-                We manage construction projects and automate operations for
-                government agencies and Fortune 500 companies.
+                We manage construction projects and automate operations
+                across public and private sectors.
               </p>
             </div>
 
@@ -547,16 +547,16 @@ export default function Home8() {
                         Construction Services
                       </h3>
                       <p className="text-zinc-500 leading-relaxed mb-6">
-                        Construction management, project controls, PMO, and
-                        owner&apos;s representation — from remote tribal
-                        communities to Fortune 500 campuses.
+                        Project management, project controls, and program
+                        management — from remote tribal communities to
+                        Fortune 500 campuses.
                       </p>
                       <div className="space-y-3 mb-8">
                         {[
-                          "Construction Management",
-                          "Project Management & Controls",
-                          "Program Management Office",
-                          "Owner's Representation",
+                          "Project Management",
+                          "Project Controls",
+                          "Program Management",
+                          "Field Operations",
                         ].map((item, i) => (
                           <div
                             key={i}
