@@ -174,7 +174,7 @@ function FadeIn({ children, className = "", delay = 0 }: { children: React.React
   );
 }
 
-export default function Home4() {
+export default function Home5() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => { setMounted(true); }, []);
@@ -182,7 +182,7 @@ export default function Home4() {
   return (
     <div className="min-h-screen bg-[#0d0f13] text-zinc-300">
 
-      <DarkNav />
+      <DarkNav logo="/assets/logos/weigh_anchor_logo_orange.png" logoHeight="h-11" />
 
       {/* Hero */}
       <section className="relative overflow-hidden">
@@ -436,9 +436,9 @@ export default function Home4() {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="grid lg:grid-cols-4 gap-8 mb-8">
             <div>
-              <Link href="/home4" className="flex items-center gap-2 mb-4">
+              <Link href="/home5" className="flex items-center gap-2 mb-4">
                 <img
-                  src="/assets/logos/weigh_anchor_new_logo.png"
+                  src="/assets/logos/weigh_anchor_logo_orange.png"
                   alt="Weigh Anchor"
                   className="h-8 w-auto"
                 />
