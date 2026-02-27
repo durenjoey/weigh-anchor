@@ -15,7 +15,7 @@ import {
   CheckCircle2,
   Briefcase
 } from "lucide-react";
-import { getTotalProjectCount, getUniqueStates } from "@/data/projects";
+import { VERIFIED_STATS } from "@/data/projects";
 import Link from "next/link";
 import Header from "@/components/Header";
 import MapboxMap from "@/components/MapboxMap";
@@ -27,9 +27,8 @@ export default function Home() {
 
   useEffect(() => {
     setMounted(true);
-    // Animate numbers on mount
-    const projectTarget = getTotalProjectCount();
-    const statesTarget = getUniqueStates().length;
+    const projectTarget = VERIFIED_STATS.activeProjects;
+    const statesTarget = VERIFIED_STATS.statesAndTerritories;
     
     const duration = 2000;
     const steps = 60;

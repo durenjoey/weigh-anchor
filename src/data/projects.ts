@@ -379,12 +379,36 @@ export const projects: Project[] = [
     status: 'open'
   },
   {
-    id: 'northern-mariana',
-    name: 'Northern Mariana Islands Projects',
-    location: 'Northern Mariana Islands',
+    id: 'saipan-cnmi',
+    name: 'Saipan Construction Projects',
+    location: 'Saipan',
     state: 'Northern Mariana Islands',
-    coordinates: { lat: 15.2, lng: 145.7 },
-    projectCount: 6,
+    coordinates: { lat: 15.1850, lng: 145.7493 },
+    projectCount: 2,
+    type: 'tribal-government',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
+    status: 'open'
+  },
+  {
+    id: 'tinian-cnmi',
+    name: 'Tinian Construction Projects',
+    location: 'Tinian',
+    state: 'Northern Mariana Islands',
+    coordinates: { lat: 15.0028, lng: 145.6367 },
+    projectCount: 2,
+    type: 'tribal-government',
+    category: 'construction',
+    serviceType: 'Construction Project Management',
+    status: 'open'
+  },
+  {
+    id: 'rota-cnmi',
+    name: 'Rota Construction Projects',
+    location: 'Rota',
+    state: 'Northern Mariana Islands',
+    coordinates: { lat: 14.1491, lng: 145.2117 },
+    projectCount: 2,
     type: 'tribal-government',
     category: 'construction',
     serviceType: 'Construction Project Management',
@@ -517,6 +541,12 @@ export const projects: Project[] = [
     clientName: 'WCGi'
   }
 ];
+
+// Verified stats from Weigh Anchor Project Tracker
+export const VERIFIED_STATS = {
+  activeProjects: 64,
+  statesAndTerritories: 17,
+};
 
 // Helper functions
 export const getProjectsByState = (state: string) => {
