@@ -164,14 +164,13 @@ function DarkMapBackground() {
 // --- Terminal Typewriter ---
 const LINES = [
   {
-    command: "MANAGE",
-    text: "Construction projects across 17 states and territories",
+    command: "CONSTRUCTION",
+    text: "Project management, controls, and program management in 17 states and territories",
   },
   {
-    command: "AUTOMATE",
-    text: "Operations running on headcount instead of systems",
+    command: "AUTOMATION",
+    text: "Business process automation for teams running on headcount instead of systems",
   },
-  { command: "DELIVER", text: "Hard problems. Done right." },
 ];
 
 function TerminalHero() {
