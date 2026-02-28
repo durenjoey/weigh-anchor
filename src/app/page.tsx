@@ -656,27 +656,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Social proof — industrial ticker style */}
+      {/* Social proof — stacked cards */}
       <FadeIn>
-        <section className="py-10 border-y-2 border-zinc-800 bg-zinc-900/30">
+        <section className="py-16 border-y-2 border-zinc-800 bg-zinc-900/30">
           <div className="container mx-auto px-4 lg:px-6">
-            <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-sm font-mono">
-              <span className="text-[10px] text-zinc-600 uppercase tracking-[0.2em]">
-                Organizations we&apos;ve supported
-              </span>
-              <span className="text-zinc-400 font-medium">Pfizer</span>
-              <span className="text-zinc-700">|</span>
-              <span className="text-zinc-400 font-medium">
-                Department of Justice
-              </span>
-              <span className="text-zinc-700">|</span>
-              <span className="text-zinc-400 font-medium">
-                Department of Veterans Affairs
-              </span>
-              <span className="text-zinc-700">|</span>
-              <span className="text-zinc-400 font-medium">
-                40+ Tribal Nations
-              </span>
+            <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-8 text-center">
+              Organizations we&apos;ve supported
+            </p>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+              {[
+                { name: "Pfizer", desc: "Pharmaceutical — construction & automation" },
+                { name: "Department of Justice", desc: "Federal construction program management" },
+                { name: "Dept. of Veterans Affairs", desc: "Federal facility projects" },
+                { name: "40+ Tribal Nations", desc: "Remote community construction across 17 states" },
+              ].map((org, i) => (
+                <div key={i} className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-5">
+                  <div className="text-sm font-bold text-white mb-1">{org.name}</div>
+                  <div className="text-xs text-zinc-600 leading-relaxed">{org.desc}</div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

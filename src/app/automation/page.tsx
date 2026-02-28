@@ -341,9 +341,11 @@ export default function AutomationServicesPage() {
                 <FadeIn key={i} delay={i * 100}>
                   <div className="group relative rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 h-full hover:border-cyan-500/30 transition-all duration-500 overflow-hidden">
                     <div className="absolute top-0 left-0 w-24 h-[2px] bg-gradient-to-r from-cyan-500 to-transparent" />
-                    <span className="text-cyan-400/20 font-mono text-5xl font-black absolute top-4 right-6">0{i + 1}</span>
-                    <h3 className="text-lg font-bold text-white mb-3 tracking-tight">{item.title}</h3>
-                    <p className="text-zinc-500 leading-relaxed text-sm">{item.text}</p>
+                    <span className="text-cyan-400/20 font-mono text-5xl font-black absolute top-4 right-6 select-none">0{i + 1}</span>
+                    <div className="relative z-10 pr-12">
+                      <h3 className="text-lg font-bold text-white mb-3 tracking-tight">{item.title}</h3>
+                      <p className="text-zinc-500 leading-relaxed text-sm">{item.text}</p>
+                    </div>
                   </div>
                 </FadeIn>
               ))}

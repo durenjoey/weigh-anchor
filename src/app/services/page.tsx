@@ -321,19 +321,16 @@ export default function Services2Page() {
                 </div>
                 <div>
                   <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-4">Organizations We&apos;ve Supported</p>
-                  <div className="space-y-4">
+                  <div className="grid grid-cols-2 gap-3">
                     {[
                       { name: "Pfizer", detail: "Pharmaceutical — construction & automation" },
                       { name: "Department of Justice", detail: "Federal construction program management" },
-                      { name: "Department of Veterans Affairs", detail: "Federal facility projects" },
+                      { name: "Dept. of Veterans Affairs", detail: "Federal facility projects" },
                       { name: "40+ Tribal Nations", detail: "Remote community construction across 17 states" },
                     ].map((client, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <div className="w-1 h-1 bg-orange-500 rounded-full mt-2.5 flex-shrink-0" />
-                        <div>
-                          <span className="text-zinc-300 font-medium">{client.name}</span>
-                          <span className="text-zinc-600 text-sm ml-2">— {client.detail}</span>
-                        </div>
+                      <div key={i} className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-4">
+                        <div className="text-sm font-bold text-white mb-1">{client.name}</div>
+                        <div className="text-xs text-zinc-600 leading-relaxed">{client.detail}</div>
                       </div>
                     ))}
                   </div>
