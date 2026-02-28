@@ -95,7 +95,7 @@ export default function OperationsPage() {
 
         {/* Interactive Map */}
         <div className="min-h-[600px]">
-          <MapboxMap onProjectSelect={setSelectedProject} />
+          <MapboxMap />
         </div>
 
         {/* Mission Footer */}
