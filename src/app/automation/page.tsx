@@ -40,19 +40,42 @@ export default function AutomationServicesPage() {
       <DarkNav />
 
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-[30%] -right-[10%] w-[50%] h-[60%] bg-cyan-500/5 rounded-full blur-[160px]" />
-          <div className="absolute -bottom-[20%] -left-[10%] w-[40%] h-[50%] bg-cyan-600/4 rounded-full blur-[160px]" />
+      <section className="relative overflow-hidden" style={{ minHeight: "75vh" }}>
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img
+            src="/assets/images/automation-ai-implementation-services-weigh-anchor.jpg"
+            alt="AI and automation implementation services"
+            className="w-full h-full object-cover"
+          />
         </div>
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)`,
-          backgroundSize: '80px 80px'
-        }} />
 
-        <div className="relative container mx-auto px-4 lg:px-6 pt-24 pb-20">
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-sm border border-zinc-700 bg-zinc-900/80 text-xs text-zinc-400 uppercase tracking-widest font-mono mb-10">
+        {/* Gradient overlays — matches homepage style */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to right, #0d0f13 0%, #0d0f13e6 30%, #0d0f1399 55%, #0d0f1340 75%, transparent 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to bottom, #0d0f13 0%, transparent 20%)",
+          }}
+        />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to top, #0d0f13 0%, transparent 25%)",
+          }}
+        />
+
+        <div className="relative container mx-auto px-4 lg:px-6 pt-28 pb-24" style={{ minHeight: "75vh", display: "flex", alignItems: "center" }}>
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-sm border border-zinc-700 bg-zinc-900/90 text-xs text-zinc-400 uppercase tracking-widest font-mono mb-10 backdrop-blur-sm">
               <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shadow-sm shadow-cyan-400/50" />
               Automation Services
             </div>
