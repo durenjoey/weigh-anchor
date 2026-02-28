@@ -11,7 +11,7 @@ const NAV_ITEMS = [
     label: "Services",
     children: [
       { href: "/services", label: "Construction Services" },
-      { href: "/copilot", label: "Automation Services" },
+      { href: "/automation", label: "Automation Services" },
     ],
   },
   { href: "/about", label: "About" },

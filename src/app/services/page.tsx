@@ -214,7 +214,7 @@ export default function Services2Page() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="/copilot">
+              <Link href="/automation">
                 <Button size="lg" variant="outline" className="border-zinc-700 text-zinc-400 hover:bg-zinc-800 hover:text-white hover:border-zinc-600 rounded-sm uppercase tracking-wider text-sm font-medium">
                   Automation Services
                 </Button>
@@ -415,7 +415,7 @@ export default function Services2Page() {
               <h3 className="font-bold text-zinc-500 mb-4 text-[10px] uppercase tracking-[0.2em]">Company</h3>
               <div className="space-y-2">
                 <Link href="/services" className="block text-sm text-zinc-600 hover:text-white transition-colors">Construction Services</Link>
-                <Link href="/copilot" className="block text-sm text-zinc-600 hover:text-white transition-colors">Automation Services</Link>
+                <Link href="/automation" className="block text-sm text-zinc-600 hover:text-white transition-colors">Automation Services</Link>
                 <Link href="/about" className="block text-sm text-zinc-600 hover:text-white transition-colors">About</Link>
                 <Link href="/contact" className="block text-sm text-zinc-600 hover:text-white transition-colors">Contact</Link>
               </div>

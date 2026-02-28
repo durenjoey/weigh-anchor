@@ -458,7 +458,7 @@ export default function Home() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="/copilot">
+              <Link href="/automation">
                 <Button
                   size="lg"
                   variant="outline"
@@ -578,7 +578,7 @@ export default function Home() {
 
               {/* Automation — cyan tech panel */}
               <FadeIn delay={200}>
-                <Link href="/copilot" className="group block h-full">
+                <Link href="/automation" className="group block h-full">
                   <div className="relative h-full rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 hover:border-cyan-500/40 transition-all duration-500 overflow-hidden">
                     <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-500 via-cyan-400 to-transparent" />
                     <div className="absolute -top-20 -right-20 w-40 h-40 bg-cyan-500/8 rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -722,7 +722,7 @@ export default function Home() {
                   Construction Services
                 </Link>
                 <Link
-                  href="/copilot"
+                  href="/automation"
                   className="block text-sm text-zinc-600 hover:text-white transition-colors"
                 >
                   Automation Services
