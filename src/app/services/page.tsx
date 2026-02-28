@@ -8,6 +8,7 @@ import {
   BarChart3,
   Users,
   HardHat,
+  Globe,
 } from "lucide-react";
 import { VERIFIED_STATS } from "@/data/projects";
 import Link from "next/link";
@@ -164,7 +165,7 @@ const SERVICES = [
 const PROOF_POINTS = [
   { stat: `${VERIFIED_STATS.activeProjects}+`, label: "Construction Projects" },
   { stat: `${VERIFIED_STATS.statesAndTerritories}`, label: "States & Territories" },
-  { stat: "Remote", label: "Deployment Capable" },
+  { stat: "globe", label: "We Deploy Anywhere" },
 ];
 
 export default function Services2Page() {
@@ -253,7 +254,9 @@ export default function Services2Page() {
           <div className="grid grid-cols-3 divide-x-2 divide-zinc-800">
             {PROOF_POINTS.map((item, i) => (
               <div key={i} className="py-8 px-6 text-center">
-                <div className="font-mono text-3xl lg:text-4xl font-black text-orange-500 tracking-tight">{item.stat}</div>
+                <div className="font-mono text-3xl lg:text-4xl font-black text-orange-500 tracking-tight">
+                  {item.stat === "globe" ? <Globe className="h-8 lg:h-10 w-8 lg:w-10 mx-auto" /> : item.stat}
+                </div>
                 <div className="text-[10px] text-zinc-600 mt-2 uppercase tracking-[0.2em] font-mono">{item.label}</div>
               </div>
             ))}
