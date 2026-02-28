@@ -180,8 +180,7 @@ export default function Services2Page() {
           <img
             src="/assets/images/construction-project-management-services-weigh-anchor.jpg"
             alt="Construction project management services"
-            className="w-full h-full object-cover"
-            style={{ objectPosition: "center 30%" }}
+            className="w-full h-full object-cover [object-position:85%_30%] md:[object-position:center_30%]"
           />
         </div>
 
