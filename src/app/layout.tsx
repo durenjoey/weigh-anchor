@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.weighanchor.com"),
   title: "Weigh Anchor | Construction Project Management & Automation",
   description:
     "Veteran-owned construction project management and business automation serving federal agencies, tribal nations, and private sector clients across 17 states. SDVOSB certified.",

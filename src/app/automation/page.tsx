@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import DarkNav from "@/components/DarkNav";
+import Footer from "@/components/Footer";
 
 // --- Subtle animated particle background ---
 function ParticleBackground() {
@@ -487,50 +488,7 @@ export default function AutomationServicesPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 border-t-2 border-zinc-800 bg-[#0a0c10]">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="grid lg:grid-cols-4 gap-8 mb-8">
-            <div>
-              <Link href="/" className="block mb-4">
-                <img
-                  src="/assets/logos/weigh_anchor_logo_v2.png"
-                  alt="Weigh Anchor"
-                  className="h-20 w-auto mb-3"
-                />
-                <span className="font-medium text-zinc-400 text-sm uppercase tracking-widest">Weigh Anchor</span>
-              </Link>
-            </div>
-            <div>
-              <h3 className="font-bold text-zinc-500 mb-4 text-[10px] uppercase tracking-[0.2em]">Contact</h3>
-              <div className="space-y-2 text-sm text-zinc-600">
-                <p>Bellevue, WA</p>
-                <p>(407) 687-3792</p>
-                <p>info@weighanchor.com</p>
-              </div>
-            </div>
-            <div>
-              <h3 className="font-bold text-zinc-500 mb-4 text-[10px] uppercase tracking-[0.2em]">Company</h3>
-              <div className="space-y-2">
-                <Link href="/services" className="block text-sm text-zinc-600 hover:text-white transition-colors">Construction Services</Link>
-                <Link href="/automation" className="block text-sm text-zinc-600 hover:text-white transition-colors">Automation Services</Link>
-                <Link href="/about" className="block text-sm text-zinc-600 hover:text-white transition-colors">About</Link>
-                <Link href="/contact" className="block text-sm text-zinc-600 hover:text-white transition-colors">Contact</Link>
-              </div>
-            </div>
-            <div>
-              <h3 className="font-bold text-zinc-500 mb-4 text-[10px] uppercase tracking-[0.2em]">Certifications</h3>
-              <div className="space-y-2 text-sm text-zinc-600">
-                <p>SDVOSB</p>
-                <p>Veteran-Owned</p>
-              </div>
-            </div>
-          </div>
-          <div className="pt-8 border-t border-zinc-800/50 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="text-xs text-zinc-800 font-mono">&copy; 2026 Weigh Anchor. All rights reserved.</div>
-            <div className="text-xs text-zinc-800 font-mono">Proudly Veteran Owned</div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
