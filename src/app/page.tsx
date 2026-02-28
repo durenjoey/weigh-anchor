@@ -29,11 +29,13 @@ function DarkMapBackground() {
 
     mapboxgl.accessToken = MAPBOX_TOKEN;
 
+    const isMobile = window.innerWidth < 768;
+
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: "mapbox://styles/mapbox/dark-v11",
-      center: [-96, 38],
-      zoom: 4,
+      center: isMobile ? [-117, 39] : [-96, 38],
+      zoom: isMobile ? 1.8 : 4,
       pitch: 0,
       bearing: 0,
       antialias: true,
