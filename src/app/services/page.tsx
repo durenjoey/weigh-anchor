@@ -174,22 +174,46 @@ export default function Services2Page() {
       <DarkNav />
 
       {/* Hero — typewriter cycling through services */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-[30%] -left-[10%] w-[50%] h-[60%] bg-orange-600/6 rounded-full blur-[160px]" />
+      <section className="relative overflow-hidden" style={{ minHeight: "75vh" }}>
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img
+            src="/assets/images/construction-project-management-services-weigh-anchor.jpg"
+            alt="Construction project management services"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: "center 30%" }}
+          />
         </div>
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)`,
-          backgroundSize: '80px 80px'
-        }} />
-        <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: `linear-gradient(45deg, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(-45deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: '20px 20px'
-        }} />
 
-        <div className="relative container mx-auto px-4 lg:px-6 pt-24 pb-20">
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-sm border border-zinc-700 bg-zinc-900/80 text-xs text-zinc-400 mb-10 uppercase tracking-widest font-mono">
+        {/* Gradient overlays — matches homepage map style */}
+        {/* Strong left-to-center gradient for text area */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to right, #0d0f13 0%, #0d0f13e6 30%, #0d0f1399 55%, #0d0f1340 75%, transparent 100%)",
+          }}
+        />
+        {/* Top fade for nav blending */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to bottom, #0d0f13 0%, transparent 20%)",
+          }}
+        />
+        {/* Bottom fade */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to top, #0d0f13 0%, transparent 25%)",
+          }}
+        />
+
+        <div className="relative container mx-auto px-4 lg:px-6 pt-28 pb-24" style={{ minHeight: "75vh", display: "flex", alignItems: "center" }}>
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-sm border border-zinc-700 bg-zinc-900/90 text-xs text-zinc-400 mb-10 uppercase tracking-widest font-mono backdrop-blur-sm">
               <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse shadow-sm shadow-orange-500/50" />
               Construction Services
             </div>
