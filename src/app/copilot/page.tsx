@@ -432,8 +432,8 @@ export default function AutomationServicesPage() {
             <div>
               <h3 className="font-bold text-zinc-500 mb-4 text-[10px] uppercase tracking-[0.2em]">Certifications</h3>
               <div className="space-y-2 text-sm text-zinc-600">
-                <p>SDVOSB Certified</p>
-                <p>Service-Disabled Veteran-Owned</p>
+                <p>SDVOSB</p>
+                <p>Veteran-Owned</p>
               </div>
             </div>
           </div>

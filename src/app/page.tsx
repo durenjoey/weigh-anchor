@@ -746,8 +746,8 @@ export default function Home() {
                 Certifications
               </h3>
               <div className="space-y-2 text-sm text-zinc-600">
-                <p>SDVOSB Certified</p>
-                <p>Service-Disabled Veteran-Owned</p>
+                <p>SDVOSB</p>
+                <p>Veteran-Owned</p>
               </div>
             </div>
           </div>
