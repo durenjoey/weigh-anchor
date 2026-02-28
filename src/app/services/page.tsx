@@ -219,7 +219,7 @@ export default function Services2Page() {
             </div>
 
             {/* Typewriter */}
-            <div className="min-h-[180px] lg:min-h-[200px]">
+            <div className="min-h-[260px] md:min-h-[200px]">
               <ServiceTypewriter />
             </div>
 

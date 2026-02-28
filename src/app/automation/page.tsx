@@ -276,7 +276,7 @@ export default function AutomationServicesPage() {
             </div>
 
             {/* Typewriter */}
-            <div className="min-h-[180px] lg:min-h-[200px]">
+            <div className="min-h-[260px] md:min-h-[200px]">
               <ServiceTypewriter />
             </div>
 
@@ -301,24 +301,6 @@ export default function AutomationServicesPage() {
                 </Button>
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stat strip */}
-      <section className="border-y-2 border-zinc-800 bg-zinc-900/50">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="grid grid-cols-3 divide-x-2 divide-zinc-800">
-            {[
-              { stat: "55+", label: "Automation Projects" },
-              { stat: "Custom", label: "Built Per Client" },
-              { stat: "100%", label: "Team Trained on Delivery" },
-            ].map((item, i) => (
-              <div key={i} className="py-8 px-6 text-center">
-                <div className="font-mono text-3xl lg:text-4xl font-black text-cyan-400 tracking-tight">{item.stat}</div>
-                <div className="text-[10px] text-zinc-600 mt-2 uppercase tracking-[0.2em] font-mono">{item.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

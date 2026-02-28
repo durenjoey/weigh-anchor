@@ -462,7 +462,7 @@ export default function Home() {
             </div>
 
             {/* Terminal */}
-            <div className="min-h-[140px] lg:min-h-[160px]">
+            <div className="min-h-[220px] md:min-h-[160px]">
               <TerminalHero />
             </div>
 
