@@ -416,8 +416,8 @@ export default function Home() {
 
       {/* Hero with Map Background */}
       <section className="relative overflow-hidden" style={{ minHeight: "75vh" }}>
-        {/* Map background */}
-        <div className="absolute inset-0">
+        {/* Map background — non-interactive on mobile until explore mode */}
+        <div className="absolute inset-0 pointer-events-none md:pointer-events-auto">
           <DarkMapBackground />
         </div>
 
