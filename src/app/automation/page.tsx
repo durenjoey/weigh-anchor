@@ -4,6 +4,10 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
+  Search,
+  Cog,
+  Bot,
+  GraduationCap,
 } from "lucide-react";
 import Link from "next/link";
 import DarkNav from "@/components/DarkNav";
@@ -286,6 +290,24 @@ export default function AutomationServicesPage() {
         </div>
       </section>
 
+      {/* Stat strip */}
+      <section className="border-y-2 border-zinc-800 bg-zinc-900/50">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="grid grid-cols-3 divide-x-2 divide-zinc-800">
+            {[
+              { stat: "55+", label: "Automation Projects" },
+              { stat: "Custom", label: "Built Per Client" },
+              { stat: "100%", label: "Team Trained on Delivery" },
+            ].map((item, i) => (
+              <div key={i} className="py-8 px-6 text-center">
+                <div className="font-mono text-3xl lg:text-4xl font-black text-cyan-400 tracking-tight">{item.stat}</div>
+                <div className="text-[10px] text-zinc-600 mt-2 uppercase tracking-[0.2em] font-mono">{item.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* The problem */}
       <section className="py-24 border-y-2 border-zinc-800 bg-zinc-900/30">
         <div className="container mx-auto px-4 lg:px-6">
@@ -319,7 +341,9 @@ export default function AutomationServicesPage() {
                 },
               ].map((item, i) => (
                 <FadeIn key={i} delay={i * 100}>
-                  <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 h-full">
+                  <div className="group relative rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 h-full hover:border-cyan-500/30 transition-all duration-500 overflow-hidden">
+                    <div className="absolute top-0 left-0 w-24 h-[2px] bg-gradient-to-r from-cyan-500 to-transparent" />
+                    <span className="text-cyan-400/20 font-mono text-5xl font-black absolute top-4 right-6">0{i + 1}</span>
                     <h3 className="text-lg font-bold text-white mb-3 tracking-tight">{item.title}</h3>
                     <p className="text-zinc-500 leading-relaxed text-sm">{item.text}</p>
                   </div>
@@ -343,29 +367,41 @@ export default function AutomationServicesPage() {
               </div>
             </FadeIn>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-4">
               {[
                 {
+                  icon: Search,
                   title: "Process Mapping & Improvement",
                   description: "We sit down with your team and document how work actually flows. Where the time goes, where the bottlenecks are, what's manual that shouldn't be. This is always step one.",
                 },
                 {
+                  icon: Cog,
                   title: "Automation & Digitization",
                   description: "Paper forms become digital. Manual handoffs become automated. Spreadsheets become dashboards. We build systems that handle the repetitive work so your people can focus on the work that matters.",
                 },
                 {
+                  icon: Bot,
                   title: "AI Implementation",
                   description: "Document processing, automated reporting, intelligent workflows. We deploy AI into your actual operation — trained on your data, integrated with your tools, used by your team.",
                 },
                 {
+                  icon: GraduationCap,
                   title: "Ongoing Support & Training",
                   description: "We don't hand you a system and disappear. Your team gets trained on everything we build. We stay on for maintenance, improvements, and new builds as your needs evolve.",
                 },
               ].map((service, i) => (
-                <FadeIn key={i} delay={i * 100}>
-                  <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 h-full">
-                    <h3 className="text-lg font-bold text-white mb-3 tracking-tight">{service.title}</h3>
-                    <p className="text-zinc-500 leading-relaxed text-sm">{service.description}</p>
+                <FadeIn key={i} delay={i * 80}>
+                  <div className="group relative rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 hover:border-cyan-500/30 transition-all duration-500 overflow-hidden">
+                    <div className="absolute top-0 left-0 w-24 h-[2px] bg-gradient-to-r from-cyan-500 to-transparent" />
+                    <div className="flex gap-6 items-start">
+                      <div className="w-12 h-12 rounded-md bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                        <service.icon className="h-5 w-5 text-cyan-400" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{service.title}</h3>
+                        <p className="text-zinc-500 leading-relaxed">{service.description}</p>
+                      </div>
+                    </div>
                   </div>
                 </FadeIn>
               ))}
@@ -381,28 +417,36 @@ export default function AutomationServicesPage() {
             <div className="max-w-5xl mx-auto">
               <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-8">What Our Clients Say</p>
               <div className="grid lg:grid-cols-2 gap-12">
-                <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-8">
-                  <p className="text-zinc-400 leading-relaxed mb-6 italic">
-                    &ldquo;Weigh Anchor automated the processes that were eating up our admin time.
+                <div className="relative rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 overflow-hidden">
+                  <div className="absolute top-0 left-0 w-16 h-[2px] bg-gradient-to-r from-cyan-500 to-transparent" />
+                  <div className="text-cyan-400/20 text-6xl font-black leading-none mb-4">&ldquo;</div>
+                  <p className="text-zinc-400 leading-relaxed mb-6">
+                    Weigh Anchor automated the processes that were eating up our admin time.
                     We went from chasing paperwork to focusing on building.
-                    It&apos;s been a game changer for how we run our operation.&rdquo;
+                    It&apos;s been a game changer for how we run our operation.
                   </p>
                   <div className="flex items-center gap-3">
-                    <div className="w-1 h-8 bg-cyan-400/30 rounded-full" />
+                    <div className="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
+                      <span className="text-cyan-400 font-bold text-sm">LW</span>
+                    </div>
                     <div>
                       <div className="text-white font-medium text-sm">Landon Woods</div>
                       <div className="text-zinc-600 text-xs">President &amp; CEO — Woods Construction Group Inc.</div>
                     </div>
                   </div>
                 </div>
-                <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-8">
-                  <p className="text-zinc-400 leading-relaxed mb-6 italic">
-                    &ldquo;We knew we needed to modernize but didn&apos;t know where to start.
+                <div className="relative rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 overflow-hidden">
+                  <div className="absolute top-0 left-0 w-16 h-[2px] bg-gradient-to-r from-cyan-500 to-transparent" />
+                  <div className="text-cyan-400/20 text-6xl font-black leading-none mb-4">&ldquo;</div>
+                  <p className="text-zinc-400 leading-relaxed mb-6">
+                    We knew we needed to modernize but didn&apos;t know where to start.
                     Weigh Anchor mapped our workflows, built the systems, and trained our team.
-                    Now we spend our time on operations instead of administration.&rdquo;
+                    Now we spend our time on operations instead of administration.
                   </p>
                   <div className="flex items-center gap-3">
-                    <div className="w-1 h-8 bg-cyan-400/30 rounded-full" />
+                    <div className="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
+                      <span className="text-cyan-400 font-bold text-sm">RF</span>
+                    </div>
                     <div>
                       <div className="text-white font-medium text-sm">Roya Forghani</div>
                       <div className="text-zinc-600 text-xs">CEO &amp; Founder — Royal Real Estate</div>
