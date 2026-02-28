@@ -17,6 +17,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Automation & AI Implementation Services | Weigh Anchor",
+    description:
+      "AI implementation, workflow automation, and digitization for construction organizations, government agencies, and tribal nations.",
+    images: ["/assets/images/automation-ai-implementation-services-weigh-anchor.jpg"],
+  },
 };
 
 export default function AutomationLayout({

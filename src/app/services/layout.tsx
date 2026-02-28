@@ -17,6 +17,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Construction Project Management Services | Weigh Anchor",
+    description:
+      "Construction project management, project controls, program management, and field operations across 17 states and territories. Veteran-owned.",
+    images: ["/assets/images/construction-project-management-services-weigh-anchor.jpg"],
+  },
 };
 
 export default function ServicesLayout({

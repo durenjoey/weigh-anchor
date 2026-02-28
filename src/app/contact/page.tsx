@@ -250,6 +250,7 @@ export default function ContactPage() {
                         <option value="federal" className="bg-zinc-900">Federal Construction</option>
                         <option value="commercial" className="bg-zinc-900">Commercial Construction</option>
                         <option value="tribal" className="bg-zinc-900">Tribal Projects</option>
+                        <option value="government-contracting" className="bg-zinc-900">Government Contracting (SAM.gov)</option>
                         <option value="automation" className="bg-zinc-900">Automation Services</option>
                         <option value="consulting" className="bg-zinc-900">Consulting Services</option>
                         <option value="other" className="bg-zinc-900">Other</option>
@@ -343,13 +344,20 @@ export default function ContactPage() {
                 <FadeIn delay={400}>
                   <div className="relative rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 overflow-hidden">
                     <div className="absolute top-0 left-0 w-16 h-[2px] bg-gradient-to-r from-orange-600 to-transparent" />
-                    <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-4">Capability Statement</p>
-                    <p className="text-zinc-500 text-sm mb-4 leading-relaxed">Download our full capability statement for procurement purposes.</p>
-                    <a href="/assets/documents/Weigh Anchor — Capability Statement 2026.pdf" target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline" className="w-full border-zinc-700 text-zinc-400 hover:bg-zinc-800 hover:text-white hover:border-zinc-600 rounded-sm uppercase tracking-wider text-xs font-medium">
-                        Download PDF
-                      </Button>
-                    </a>
+                    <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-4">Capability Statements</p>
+                    <p className="text-zinc-500 text-sm mb-4 leading-relaxed">Download our capability statements for procurement purposes.</p>
+                    <div className="space-y-3">
+                      <a href="/assets/documents/Weigh-Anchor-Construction-Capability-Statement.pdf" target="_blank" rel="noopener noreferrer">
+                        <Button variant="outline" className="w-full border-zinc-700 text-zinc-400 hover:bg-zinc-800 hover:text-white hover:border-zinc-600 rounded-sm uppercase tracking-wider text-xs font-medium">
+                          Construction Services
+                        </Button>
+                      </a>
+                      <a href="/assets/documents/Weigh-Anchor-Automation-Capability-Statement.pdf" target="_blank" rel="noopener noreferrer" className="block">
+                        <Button variant="outline" className="w-full border-zinc-700 text-zinc-400 hover:bg-zinc-800 hover:text-white hover:border-zinc-600 rounded-sm uppercase tracking-wider text-xs font-medium">
+                          Automation Services
+                        </Button>
+                      </a>
+                    </div>
                   </div>
                 </FadeIn>
               </div>

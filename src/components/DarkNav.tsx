@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -108,6 +108,14 @@ export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeigh
             ))}
 
             <div className="w-px h-6 bg-zinc-800 mx-2" />
+
+            <a
+              href="tel:+14076873792"
+              className="flex items-center gap-1.5 px-3 py-2 text-xs tracking-wider font-medium text-zinc-500 hover:text-white transition-colors"
+            >
+              <Phone className="h-3 w-3" />
+              (407) 687-3792
+            </a>
 
             <Link href="/contact">
               <Button
