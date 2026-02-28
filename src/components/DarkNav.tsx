@@ -15,7 +15,6 @@ const NAV_ITEMS = [
     ],
   },
   { href: "/about", label: "About" },
-  { href: "/capability-statement", label: "Capabilities" },
 ];
 
 export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeight?: string }) {
@@ -41,6 +40,19 @@ export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeigh
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-0">
+            {/* Home */}
+            <Link href="/">
+              <Button
+                variant="ghost"
+                size="sm"
+                className={`uppercase text-xs tracking-wider font-medium rounded-none ${
+                  isActive("/") ? "text-white" : "text-zinc-500 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                Home
+              </Button>
+            </Link>
+
             {/* Services dropdown */}
             <div
               className="relative"
@@ -126,8 +138,19 @@ export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeigh
       {mobileOpen && (
         <div className="md:hidden border-t border-zinc-800 bg-[#0d0f13]">
           <div className="container mx-auto px-4 py-4 space-y-1">
-            {/* Services */}
-            <div className="px-3 py-2 text-[10px] text-zinc-600 uppercase tracking-[0.2em] font-mono">
+            {/* Home */}
+            <Link
+              href="/"
+              onClick={() => setMobileOpen(false)}
+              className={`block px-3 py-3 rounded-md text-sm font-medium transition-colors ${
+                isActive("/") ? "bg-zinc-800/50 text-white" : "text-zinc-400 hover:text-white hover:bg-zinc-900"
+              }`}
+            >
+              Home
+            </Link>
+
+            {/* Services group */}
+            <div className="px-3 py-3 text-sm font-medium text-zinc-500">
               Services
             </div>
             {NAV_ITEMS[0].children.map((child) => (
@@ -135,14 +158,13 @@ export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeigh
                 key={child.href}
                 href={child.href}
                 onClick={() => setMobileOpen(false)}
-                className={`block px-3 py-3 rounded-md transition-colors ${
+                className={`block pl-6 pr-3 py-3 rounded-md transition-colors ${
                   isActive(child.href)
                     ? "bg-zinc-800/50 text-white"
                     : "text-zinc-400 hover:text-white hover:bg-zinc-900"
                 }`}
               >
                 <div className="text-sm font-medium">{child.label}</div>
-                {child.description && <div className="text-[10px] text-zinc-600 mt-0.5 font-mono uppercase tracking-wider">{child.description}</div>}
               </Link>
             ))}
 

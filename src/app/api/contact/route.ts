@@ -26,7 +26,7 @@ export async function POST(request: Request) {
       from: 'Contact Form <onboarding@resend.dev>',
       to: ['jduren@weighanchor.com'],
       subject: `New Contact from ${name} - ${organization || 'Direct Inquiry'}`,
-      replyTo: email,
+      reply_to: email,
       html: emailHtml,
     });
 
