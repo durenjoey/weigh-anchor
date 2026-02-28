@@ -164,7 +164,7 @@ const SERVICES = [
 const PROOF_POINTS = [
   { stat: `${VERIFIED_STATS.activeProjects}+`, label: "Construction Projects" },
   { stat: `${VERIFIED_STATS.statesAndTerritories}`, label: "States & Territories" },
-  { stat: "40+", label: "Tribal Nations Served" },
+  { stat: "Remote", label: "Deployment Capable" },
 ];
 
 export default function Services2Page() {
@@ -203,7 +203,7 @@ export default function Services2Page() {
             <div className="flex gap-4 mt-6 mb-8">
               <div className="w-1 bg-gradient-to-b from-orange-500 to-orange-500/0 rounded-full flex-shrink-0" />
               <p className="text-zinc-600 max-w-xl leading-relaxed">
-                {VERIFIED_STATS.activeProjects}+ construction projects across {VERIFIED_STATS.statesAndTerritories} states and territories.
+                We&apos;ve managed projects where most firms won&apos;t go. It shows in how we plan and deliver.
               </p>
             </div>
 
