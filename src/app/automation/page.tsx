@@ -35,16 +35,16 @@ function ParticleBackground() {
     const h = () => canvas.offsetHeight;
 
     // Particles
-    const count = 60;
+    const count = 90;
     const particles = Array.from({ length: count }, () => ({
       x: Math.random() * w(),
       y: Math.random() * h(),
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.3,
-      r: Math.random() * 1.5 + 0.5,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      r: Math.random() * 2 + 0.8,
     }));
 
-    const connectDist = 150;
+    const connectDist = 180;
 
     function draw() {
       ctx!.clearRect(0, 0, w(), h());
@@ -64,7 +64,7 @@ function ParticleBackground() {
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < connectDist) {
-            const alpha = (1 - dist / connectDist) * 0.08;
+            const alpha = (1 - dist / connectDist) * 0.15;
             ctx!.strokeStyle = `rgba(34, 211, 238, ${alpha})`;
             ctx!.lineWidth = 0.5;
             ctx!.beginPath();
@@ -77,7 +77,7 @@ function ParticleBackground() {
 
       // Draw dots
       for (const p of particles) {
-        ctx!.fillStyle = "rgba(34, 211, 238, 0.15)";
+        ctx!.fillStyle = "rgba(34, 211, 238, 0.3)";
         ctx!.beginPath();
         ctx!.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx!.fill();
@@ -135,16 +135,16 @@ function FadeIn({ children, className = "", delay = 0 }: { children: React.React
 // --- Service Typewriter ---
 const SERVICE_LINES = [
   {
-    command: "PROCESS MAPPING",
-    text: "We document how work actually flows and find where the time and money go.",
+    command: "AI IMPLEMENTATION",
+    text: "AI workflows, document processing, and automated reporting deployed into your operation.",
   },
   {
     command: "AUTOMATION & DIGITIZATION",
     text: "Paper to digital. Manual to automated. Spreadsheets to dashboards.",
   },
   {
-    command: "AI IMPLEMENTATION",
-    text: "AI workflows, document processing, and automated reporting deployed into your operation.",
+    command: "PROCESS MAPPING",
+    text: "We document how work actually flows and find where the time and money go.",
   },
   {
     command: "SUPPORT & TRAINING",
@@ -244,12 +244,27 @@ export default function AutomationServicesPage() {
         <div className="absolute inset-0">
           <ParticleBackground />
         </div>
-        {/* Bottom fade to page bg */}
+
+        {/* Gradient overlays — matches homepage/services style */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to top, #0d0f13 0%, transparent 20%)",
+              "linear-gradient(to right, #0d0f13 0%, #0d0f13e6 30%, #0d0f1399 55%, #0d0f1340 75%, transparent 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to bottom, #0d0f13 0%, transparent 20%)",
+          }}
+        />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to top, #0d0f13 0%, transparent 25%)",
           }}
         />
 
