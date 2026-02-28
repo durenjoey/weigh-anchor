@@ -61,7 +61,7 @@ export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeigh
             >
               <button
                 className={`flex items-center gap-1 px-3 py-2 text-xs tracking-wider font-medium uppercase rounded-none transition-colors ${
-                  NAV_ITEMS[0].children.some((c) => isActive(c.href))
+                  NAV_ITEMS[0].children!.some((c) => isActive(c.href))
                     ? "text-white"
                     : "text-zinc-500 hover:text-white"
                 }`}
@@ -73,7 +73,7 @@ export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeigh
               {servicesOpen && (
                 <div className="absolute top-full left-0 pt-1 w-72">
                   <div className="rounded-md border border-zinc-800 bg-[#0d0f13] shadow-xl shadow-black/40 overflow-hidden">
-                    {NAV_ITEMS[0].children.map((child) => (
+                    {NAV_ITEMS[0].children!.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
@@ -153,7 +153,7 @@ export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeigh
             <div className="px-3 py-3 text-sm font-medium text-zinc-500">
               Services
             </div>
-            {NAV_ITEMS[0].children.map((child) => (
+            {NAV_ITEMS[0].children!.map((child) => (
               <Link
                 key={child.href}
                 href={child.href}
