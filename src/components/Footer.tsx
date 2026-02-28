@@ -66,7 +66,6 @@ export default function Footer() {
               <p>SDVOSB</p>
               <p>Veteran-Owned</p>
               <p>MBE</p>
-              <p>DBE</p>
               <p>King County SCS</p>
             </div>
           </div>
@@ -77,7 +76,7 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-4">
             <a
-              href="https://www.linkedin.com/company/weigh-anchor-llc/"
+              href="https://www.linkedin.com/company/weigh-anchor/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-zinc-700 hover:text-white transition-colors"
