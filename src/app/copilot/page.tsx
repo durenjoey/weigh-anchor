@@ -403,15 +403,14 @@ export default function AutomationServicesPage() {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="grid lg:grid-cols-4 gap-8 mb-8">
             <div>
-              <Link href="/" className="flex items-center gap-2 mb-4">
+              <Link href="/" className="flex items-center gap-3 mb-4">
                 <img
                   src="/assets/logos/weigh_anchor_logo_v2.png"
                   alt="Weigh Anchor"
-                  className="h-8 w-auto"
+                  className="h-14 w-auto"
                 />
-                <span className="font-bold text-white uppercase tracking-tight">Weigh Anchor</span>
+                <span className="font-bold text-white text-lg uppercase tracking-tight">Weigh Anchor</span>
               </Link>
-              <p className="text-sm text-zinc-700 font-mono">Map. Eliminate. Simplify. Automate.</p>
             </div>
             <div>
               <h3 className="font-bold text-zinc-500 mb-4 text-[10px] uppercase tracking-[0.2em]">Contact</h3>
