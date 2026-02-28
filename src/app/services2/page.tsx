@@ -210,7 +210,7 @@ export default function Services2Page() {
             <div className="flex flex-wrap gap-4 mt-10">
               <Link href="/contact">
                 <Button size="lg" className="bg-orange-600 text-white hover:bg-orange-500 font-bold uppercase tracking-wider text-sm rounded-sm shadow-lg shadow-orange-600/20">
-                  Start a Conversation
+                  Get in Touch
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
@@ -377,12 +377,9 @@ export default function Services2Page() {
             <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 tracking-tight">
               Let&apos;s talk about your project.
             </h2>
-            <p className="text-lg text-zinc-500 mb-10 max-w-xl mx-auto">
-              Tell us the scope, the location, and the timeline. We&apos;ll tell you how we&apos;d staff it.
-            </p>
             <Link href="/contact">
               <Button size="lg" className="bg-orange-600 text-white hover:bg-orange-500 font-bold text-sm px-10 uppercase tracking-wider rounded-sm shadow-lg shadow-orange-600/20">
-                Start a Conversation
+                Get in Touch
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
