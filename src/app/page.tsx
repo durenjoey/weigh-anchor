@@ -689,11 +689,11 @@ export default function Home() {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="grid lg:grid-cols-4 gap-8 mb-8">
             <div>
-              <Link href="/" className="flex items-center gap-3 mb-4">
+              <Link href="/" className="block mb-4">
                 <img
                   src="/assets/logos/weigh_anchor_logo_v2.png"
                   alt="Weigh Anchor"
-                  className="h-14 w-auto"
+                  className="h-20 w-auto mb-3"
                 />
                 <span className="font-bold text-white text-lg uppercase tracking-tight">
                   Weigh Anchor
