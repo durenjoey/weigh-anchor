@@ -695,7 +695,7 @@ export default function Home() {
                   alt="Weigh Anchor"
                   className="h-20 w-auto mb-3"
                 />
-                <span className="font-bold text-white text-lg uppercase tracking-tight">
+                <span className="font-medium text-zinc-400 text-sm uppercase tracking-widest">
                   Weigh Anchor
                 </span>
               </Link>
