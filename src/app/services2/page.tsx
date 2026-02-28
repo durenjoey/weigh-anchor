@@ -21,7 +21,7 @@ const SERVICE_LINES = [
   },
   {
     command: "PROJECT CONTROLS",
-    text: "Real-time budget tracking, schedule forecasting, and change order management. Updated weekly, not when someone remembers.",
+    text: "Budget tracking, schedule forecasting, and change order management. Updated weekly, not when someone remembers.",
   },
   {
     command: "PROGRAM MANAGEMENT",
@@ -286,7 +286,7 @@ export default function Services2Page() {
                   <p className="text-zinc-500 leading-relaxed mb-6">
                     Federal agencies, Fortune 500 companies, and tribal nations across the country.
                     Every engagement runs on our proprietary reporting and risk detection systems —
-                    you get real-time visibility, not monthly status calls.
+                    you get consistent visibility through weekly reporting.
                   </p>
                   <div className="flex flex-wrap gap-3">
                     {["SDVOSB", "MBE", "Veteran-Owned"].map((cert, i) => (
@@ -346,7 +346,7 @@ export default function Services2Page() {
                 },
                 {
                   title: "Technology built in",
-                  text: "Proprietary systems for reporting, cost tracking, and risk detection. Weekly dashboards. Automated alerts. You see what we see, in real time.",
+                  text: "Systems for reporting, cost tracking, and risk detection. Weekly dashboards. Automated alerts. You see what we see.",
                 },
                 {
                   title: "We deploy anywhere",
