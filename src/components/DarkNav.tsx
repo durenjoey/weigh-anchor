@@ -85,7 +85,6 @@ export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeigh
                         }`}
                       >
                         <div className="text-sm font-medium">{child.label}</div>
-                        {child.description && <div className="text-[10px] text-zinc-600 mt-0.5 font-mono uppercase tracking-wider">{child.description}</div>}
                       </Link>
                     ))}
                   </div>
