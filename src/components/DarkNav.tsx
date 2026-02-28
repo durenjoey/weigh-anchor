@@ -10,7 +10,7 @@ const NAV_ITEMS = [
   {
     label: "Services",
     children: [
-      { href: "/services2", label: "Construction Services" },
+      { href: "/services", label: "Construction Services" },
       { href: "/copilot", label: "Automation Services" },
     ],
   },
