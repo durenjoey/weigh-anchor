@@ -1,12 +1,107 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
 import DarkNav from "@/components/DarkNav";
+
+// --- Subtle animated particle background ---
+function ParticleBackground() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationRef = useRef<number>(0);
+
+  const init = useCallback(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const resize = () => {
+      canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+      canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    };
+    resize();
+    window.addEventListener("resize", resize);
+
+    const w = () => canvas.offsetWidth;
+    const h = () => canvas.offsetHeight;
+
+    // Particles
+    const count = 60;
+    const particles = Array.from({ length: count }, () => ({
+      x: Math.random() * w(),
+      y: Math.random() * h(),
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      r: Math.random() * 1.5 + 0.5,
+    }));
+
+    const connectDist = 150;
+
+    function draw() {
+      ctx!.clearRect(0, 0, w(), h());
+
+      // Update positions
+      for (const p of particles) {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > w()) p.vx *= -1;
+        if (p.y < 0 || p.y > h()) p.vy *= -1;
+      }
+
+      // Draw connections
+      for (let i = 0; i < count; i++) {
+        for (let j = i + 1; j < count; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < connectDist) {
+            const alpha = (1 - dist / connectDist) * 0.08;
+            ctx!.strokeStyle = `rgba(34, 211, 238, ${alpha})`;
+            ctx!.lineWidth = 0.5;
+            ctx!.beginPath();
+            ctx!.moveTo(particles[i].x, particles[i].y);
+            ctx!.lineTo(particles[j].x, particles[j].y);
+            ctx!.stroke();
+          }
+        }
+      }
+
+      // Draw dots
+      for (const p of particles) {
+        ctx!.fillStyle = "rgba(34, 211, 238, 0.15)";
+        ctx!.beginPath();
+        ctx!.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx!.fill();
+      }
+
+      animationRef.current = requestAnimationFrame(draw);
+    }
+
+    draw();
+
+    return () => {
+      window.removeEventListener("resize", resize);
+      cancelAnimationFrame(animationRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    const cleanup = init();
+    return cleanup;
+  }, [init]);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 w-full h-full"
+    />
+  );
+}
 
 // --- Fade in on scroll ---
 function FadeIn({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -33,6 +128,106 @@ function FadeIn({ children, className = "", delay = 0 }: { children: React.React
   );
 }
 
+// --- Service Typewriter ---
+const SERVICE_LINES = [
+  {
+    command: "PROCESS MAPPING",
+    text: "We document how work actually flows and find where the time and money go.",
+  },
+  {
+    command: "AUTOMATION & DIGITIZATION",
+    text: "Paper to digital. Manual to automated. Spreadsheets to dashboards.",
+  },
+  {
+    command: "AI IMPLEMENTATION",
+    text: "AI workflows, document processing, and automated reporting deployed into your operation.",
+  },
+  {
+    command: "SUPPORT & TRAINING",
+    text: "Your team gets trained on everything we build. We stay on as needs evolve.",
+  },
+];
+
+function ServiceTypewriter() {
+  const [lineIndex, setLineIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [phase, setPhase] = useState<"typing-cmd" | "typing-text" | "pause" | "clearing">("typing-cmd");
+  const [displayCmd, setDisplayCmd] = useState("");
+  const [displayText, setDisplayText] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
+
+  useEffect(() => {
+    const blink = setInterval(() => setShowCursor(c => !c), 530);
+    return () => clearInterval(blink);
+  }, []);
+
+  useEffect(() => {
+    const line = SERVICE_LINES[lineIndex];
+
+    if (phase === "typing-cmd") {
+      if (charIndex < line.command.length) {
+        const timer = setTimeout(() => {
+          setDisplayCmd(line.command.slice(0, charIndex + 1));
+          setCharIndex(c => c + 1);
+        }, 50);
+        return () => clearTimeout(timer);
+      } else {
+        setCharIndex(0);
+        setPhase("typing-text");
+      }
+    }
+
+    if (phase === "typing-text") {
+      if (charIndex < line.text.length) {
+        const timer = setTimeout(() => {
+          setDisplayText(line.text.slice(0, charIndex + 1));
+          setCharIndex(c => c + 1);
+        }, 18);
+        return () => clearTimeout(timer);
+      } else {
+        setPhase("pause");
+      }
+    }
+
+    if (phase === "pause") {
+      const timer = setTimeout(() => setPhase("clearing"), 3500);
+      return () => clearTimeout(timer);
+    }
+
+    if (phase === "clearing") {
+      setDisplayCmd("");
+      setDisplayText("");
+      setCharIndex(0);
+      setLineIndex((lineIndex + 1) % SERVICE_LINES.length);
+      setPhase("typing-cmd");
+    }
+  }, [phase, charIndex, lineIndex]);
+
+  return (
+    <div className="font-mono">
+      <div className="flex items-baseline gap-3">
+        <span className="text-cyan-400 text-lg select-none font-bold">&gt;_</span>
+        <h1 className="text-4xl lg:text-6xl font-black text-cyan-400 tracking-tighter uppercase">
+          {displayCmd}
+          {phase === "typing-cmd" && (
+            <span className={`inline-block w-[4px] h-[0.85em] bg-cyan-400 ml-1 align-baseline translate-y-[0.05em] ${showCursor ? "opacity-100" : "opacity-0"}`} />
+          )}
+        </h1>
+      </div>
+      <div className="mt-4 min-h-[3rem]">
+        {(phase === "typing-text" || phase === "pause") && (
+          <p className="text-lg lg:text-xl text-zinc-400 leading-relaxed max-w-2xl">
+            {displayText}
+            {phase === "typing-text" && (
+              <span className={`inline-block w-[2px] h-[1em] bg-zinc-600 ml-0.5 align-baseline translate-y-[0.1em] ${showCursor ? "opacity-100" : "opacity-0"}`} />
+            )}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function AutomationServicesPage() {
   return (
     <div className="min-h-screen bg-[#0d0f13] text-zinc-300">
@@ -41,35 +236,16 @@ export default function AutomationServicesPage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ minHeight: "75vh" }}>
-        {/* Background image */}
+        {/* Animated particle background */}
         <div className="absolute inset-0">
-          <img
-            src="/assets/images/automation-ai-implementation-services-weigh-anchor.jpg"
-            alt="AI and automation implementation services"
-            className="w-full h-full object-cover"
-          />
+          <ParticleBackground />
         </div>
-
-        {/* Gradient overlays — matches homepage style */}
+        {/* Bottom fade to page bg */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to right, #0d0f13 0%, #0d0f13e6 30%, #0d0f1399 55%, #0d0f1340 75%, transparent 100%)",
-          }}
-        />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(to bottom, #0d0f13 0%, transparent 20%)",
-          }}
-        />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(to top, #0d0f13 0%, transparent 25%)",
+              "linear-gradient(to top, #0d0f13 0%, transparent 20%)",
           }}
         />
 
@@ -80,24 +256,23 @@ export default function AutomationServicesPage() {
               Automation Services
             </div>
 
-            <h1 className="text-4xl lg:text-6xl font-black text-white tracking-tight mb-6">
-              Your competitors are automating.<br />
-              <span className="text-cyan-400">We&apos;ll help you catch up.</span>
-            </h1>
+            {/* Typewriter */}
+            <div className="min-h-[180px] lg:min-h-[200px]">
+              <ServiceTypewriter />
+            </div>
 
-            <div className="flex gap-4 mt-2 mb-8">
+            {/* Static descriptor */}
+            <div className="flex gap-4 mt-6 mb-8">
               <div className="w-1 bg-gradient-to-b from-cyan-400 to-cyan-400/0 rounded-full flex-shrink-0" />
-              <p className="text-lg text-zinc-500 max-w-2xl leading-relaxed">
-                We built our automation practice internally, then Pfizer hired us to do the same for them.
-                Now we bring AI implementation, workflow automation, and digitization to construction organizations,
-                government agencies, and tribal nations. We build it, deploy it, and train your team on it.
+              <p className="text-zinc-600 max-w-xl leading-relaxed">
+                Every solution is built around how your operation actually runs.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-4 mt-10">
               <Link href="/contact">
                 <Button size="lg" className="bg-cyan-500 text-white hover:bg-cyan-400 font-bold uppercase tracking-wider text-sm rounded-sm shadow-lg shadow-cyan-500/20">
-                  Get a Free Audit
+                  Get in Touch
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
@@ -199,34 +374,40 @@ export default function AutomationServicesPage() {
         </div>
       </section>
 
-      {/* Case studies */}
+      {/* Testimonials */}
       <FadeIn>
         <section className="py-16 border-y-2 border-zinc-800 bg-zinc-900/30">
           <div className="container mx-auto px-4 lg:px-6">
             <div className="max-w-5xl mx-auto">
-              <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-4">Where We&apos;ve Done This</p>
-              <p className="text-zinc-500 text-lg max-w-2xl mb-12">
-                We built our automation practice managing our own federal construction program — 350 projects a year across 17 states.
-                Then our clients started asking us to do the same for them.
-              </p>
+              <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-8">What Our Clients Say</p>
               <div className="grid lg:grid-cols-2 gap-12">
                 <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-8">
-                  <div className="text-sm text-cyan-400 font-mono uppercase tracking-wider mb-4">Federal Grants Program</div>
-                  <div className="font-mono text-5xl font-black text-white tracking-tight mb-2">10 → 4</div>
-                  <p className="text-zinc-600 text-sm mb-4">team members needed for the same workload</p>
-                  <p className="text-zinc-500 leading-relaxed">
-                    350 construction projects per year, managed by a team of 10 doing manual coordination — emails, spreadsheets, phone calls.
-                    We automated the reporting, scheduling, and document management. Same throughput, less than half the headcount.
+                  <p className="text-zinc-400 leading-relaxed mb-6 italic">
+                    &ldquo;Weigh Anchor automated the processes that were eating up our admin time.
+                    We went from chasing paperwork to focusing on building.
+                    It&apos;s been a game changer for how we run our operation.&rdquo;
                   </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-1 h-8 bg-cyan-400/30 rounded-full" />
+                    <div>
+                      <div className="text-white font-medium text-sm">Landon Woods</div>
+                      <div className="text-zinc-600 text-xs">President &amp; CEO — Woods Construction Group Inc.</div>
+                    </div>
+                  </div>
                 </div>
                 <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-8">
-                  <div className="text-sm text-cyan-400 font-mono uppercase tracking-wider mb-4">Pfizer</div>
-                  <div className="font-mono text-5xl font-black text-white tracking-tight mb-2">55+</div>
-                  <p className="text-zinc-600 text-sm mb-4">automation projects deployed</p>
-                  <p className="text-zinc-500 leading-relaxed">
-                    Pfizer retained us to automate construction and facilities operations workflows.
-                    What started as a few projects became an ongoing engagement — 55+ automations deployed and growing.
+                  <p className="text-zinc-400 leading-relaxed mb-6 italic">
+                    &ldquo;We knew we needed to modernize but didn&apos;t know where to start.
+                    Weigh Anchor mapped our workflows, built the systems, and trained our team.
+                    Now we spend our time on operations instead of administration.&rdquo;
                   </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-1 h-8 bg-cyan-400/30 rounded-full" />
+                    <div>
+                      <div className="text-white font-medium text-sm">Roya Forghani</div>
+                      <div className="text-zinc-600 text-xs">CEO &amp; Founder — Royal Real Estate</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
