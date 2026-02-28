@@ -21,7 +21,7 @@ const SERVICE_LINES = [
   },
   {
     command: "PROJECT CONTROLS",
-    text: "Budget tracking, schedule forecasting, and change order management. You always know where things stand.",
+    text: "Budget tracking, schedule forecasting, and change order management.",
   },
   {
     command: "PROGRAM MANAGEMENT",
@@ -29,7 +29,7 @@ const SERVICE_LINES = [
   },
   {
     command: "FIELD OPERATIONS",
-    text: "Site inspections, quality assurance, and contractor oversight. Boots on the ground, eyes on every detail.",
+    text: "Site inspections, quality assurance, and contractor oversight.",
   },
 ];
 
@@ -142,30 +142,29 @@ const SERVICES = [
   {
     icon: ClipboardList,
     title: "Project Management",
-    description: "We oversee your project from procurement through closeout. You get a single point of accountability for scope, schedule, and budget. When something shifts, you hear it from us before it becomes a problem.",
+    description: "We oversee your project from procurement through closeout. A single point of accountability for scope, schedule, and budget.",
   },
   {
     icon: BarChart3,
     title: "Project Controls",
-    description: "Cost tracking, schedule forecasting, change order management. You get real numbers. If a project is trending over budget, you'll know why and what the options are.",
+    description: "Cost tracking, schedule forecasting, and change order management across active projects.",
   },
   {
     icon: Users,
     title: "Program Management",
-    description: "Standardized reporting, resource allocation, and risk management across your entire portfolio. For organizations running dozens or hundreds of projects simultaneously across multiple locations.",
+    description: "Standardized reporting, resource allocation, and risk management across multiple projects and locations.",
   },
   {
     icon: HardHat,
     title: "Field Operations",
-    description: "Site inspections, quality assurance, contractor oversight. We walk the site, verify the work, and flag issues before they become change orders. Your eyes and ears in the field.",
+    description: "Site inspections, quality assurance, and contractor oversight. On-site verification and issue tracking across every active work area.",
   },
 ];
 
 const PROOF_POINTS = [
-  { stat: `${VERIFIED_STATS.activeProjects}+`, label: "Active Projects" },
+  { stat: `${VERIFIED_STATS.activeProjects}+`, label: "Construction Projects" },
   { stat: `${VERIFIED_STATS.statesAndTerritories}`, label: "States & Territories" },
   { stat: "40+", label: "Tribal Nations Served" },
-  { stat: "20+", label: "Years Experience" },
 ];
 
 export default function Services2Page() {
@@ -192,7 +191,7 @@ export default function Services2Page() {
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-sm border border-zinc-700 bg-zinc-900/80 text-xs text-zinc-400 mb-10 uppercase tracking-widest font-mono">
               <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse shadow-sm shadow-orange-500/50" />
-              Owner&apos;s Representation Across Every Phase
+              Construction Services
             </div>
 
             {/* Typewriter */}
@@ -204,8 +203,7 @@ export default function Services2Page() {
             <div className="flex gap-4 mt-6 mb-8">
               <div className="w-1 bg-gradient-to-b from-orange-500 to-orange-500/0 rounded-full flex-shrink-0" />
               <p className="text-zinc-600 max-w-xl leading-relaxed">
-                We represent the owner across every phase of the project.
-                {' '}{VERIFIED_STATS.activeProjects}+ active projects across {VERIFIED_STATS.statesAndTerritories} states and territories.
+                {VERIFIED_STATS.activeProjects}+ construction projects across {VERIFIED_STATS.statesAndTerritories} states and territories.
               </p>
             </div>
 
@@ -218,7 +216,7 @@ export default function Services2Page() {
               </Link>
               <Link href="/copilot">
                 <Button size="lg" variant="outline" className="border-zinc-700 text-zinc-400 hover:bg-zinc-800 hover:text-white hover:border-zinc-600 rounded-sm uppercase tracking-wider text-sm font-medium">
-                  See Construction Copilot
+                  Automation Services
                 </Button>
               </Link>
             </div>
@@ -229,7 +227,7 @@ export default function Services2Page() {
       {/* Proof strip */}
       <section className="border-y-2 border-zinc-800 bg-zinc-900/50">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x-2 divide-zinc-800">
+          <div className="grid grid-cols-3 divide-x-2 divide-zinc-800">
             {PROOF_POINTS.map((item, i) => (
               <div key={i} className="py-8 px-6 text-center">
                 <div className="font-mono text-3xl lg:text-4xl font-black text-orange-500 tracking-tight">{item.stat}</div>
@@ -284,12 +282,10 @@ export default function Services2Page() {
                   <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-4">Track Record</p>
                   <h2 className="text-2xl font-bold text-white tracking-tight mb-6">Where we&apos;ve delivered.</h2>
                   <p className="text-zinc-500 leading-relaxed mb-6">
-                    Federal agencies, Fortune 500 companies, and tribal nations across the country.
-                    Every engagement runs on our proprietary reporting and risk detection systems —
-                    you get consistent visibility into every project.
+                    Federal agencies, private sector organizations, and tribal nations across the country.
                   </p>
                   <div className="flex flex-wrap gap-3">
-                    {["SDVOSB", "MBE", "Veteran-Owned"].map((cert, i) => (
+                    {["SDVOSB", "Veteran-Owned"].map((cert, i) => (
                       <div key={i} className="px-3 py-1.5 rounded-sm border border-zinc-700 bg-zinc-900/80 text-xs text-zinc-400 uppercase tracking-widest font-mono">
                         {cert}
                       </div>
@@ -300,7 +296,7 @@ export default function Services2Page() {
                   <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-4">Organizations We&apos;ve Supported</p>
                   <div className="space-y-4">
                     {[
-                      { name: "Pfizer", detail: "Fortune 500 pharmaceutical — construction & automation" },
+                      { name: "Pfizer", detail: "Pharmaceutical — construction & automation" },
                       { name: "Department of Justice", detail: "Federal construction program management" },
                       { name: "Department of Veterans Affairs", detail: "Federal facility projects" },
                       { name: "40+ Tribal Nations", detail: "Remote community construction across 17 states" },
@@ -338,19 +334,19 @@ export default function Services2Page() {
               {[
                 {
                   title: "One point of contact",
-                  text: "You get a dedicated project lead who owns the outcome. Not a rotation of junior staff. Not a shared resource across 15 accounts.",
+                  text: "A dedicated project lead who owns the outcome from procurement through closeout.",
                 },
                 {
                   title: "Veteran-led operations",
-                  text: "Founded by a U.S. Air Force Civil Engineering veteran. The company runs on structure, accountability, and clear communication — up and down the chain.",
+                  text: "Founded by a U.S. Air Force Civil Engineering veteran. Structure, accountability, and clear communication at every level.",
                 },
                 {
                   title: "Technology built in",
-                  text: "Systems for reporting, cost tracking, and risk detection. Dashboards, automated alerts. You see what we see.",
+                  text: "Reporting dashboards, cost tracking systems, and automated alerts across every active project.",
                 },
                 {
                   title: "We deploy anywhere",
-                  text: "17 states and territories — including rural Alaska, Pacific islands, and tribal communities with complex logistics. We handle mobilization, not just management.",
+                  text: "17 states and territories — including rural Alaska, Pacific islands, and tribal communities with complex logistics.",
                 },
               ].map((item, i) => (
                 <FadeIn key={i} delay={i * 100}>
@@ -399,15 +395,16 @@ export default function Services2Page() {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="grid lg:grid-cols-4 gap-8 mb-8">
             <div>
-              <Link href="/home4" className="flex items-center gap-2 mb-4">
+              <Link href="/" className="block mb-4">
                 <img
-                  src="/assets/logos/weigh_anchor_new_logo.png"
+                  src="/assets/logos/weigh_anchor_logo_v2.png"
                   alt="Weigh Anchor"
-                  className="h-8 w-auto"
+                  className="h-20 w-auto mb-3"
                 />
-                <span className="font-bold text-white uppercase tracking-tight">Weigh Anchor</span>
+                <span className="font-medium text-zinc-400 text-sm uppercase tracking-widest">
+                  Weigh Anchor
+                </span>
               </Link>
-              <p className="text-sm text-zinc-700 font-mono">Hard problems. Done right.</p>
             </div>
             <div>
               <h3 className="font-bold text-zinc-500 mb-4 text-[10px] uppercase tracking-[0.2em]">Contact</h3>
@@ -421,7 +418,7 @@ export default function Services2Page() {
               <h3 className="font-bold text-zinc-500 mb-4 text-[10px] uppercase tracking-[0.2em]">Company</h3>
               <div className="space-y-2">
                 <Link href="/services2" className="block text-sm text-zinc-600 hover:text-white transition-colors">Construction Services</Link>
-                <Link href="/copilot" className="block text-sm text-zinc-600 hover:text-white transition-colors">Construction Copilot</Link>
+                <Link href="/copilot" className="block text-sm text-zinc-600 hover:text-white transition-colors">Automation Services</Link>
                 <Link href="/about" className="block text-sm text-zinc-600 hover:text-white transition-colors">About</Link>
                 <Link href="/contact" className="block text-sm text-zinc-600 hover:text-white transition-colors">Contact</Link>
               </div>
@@ -429,8 +426,8 @@ export default function Services2Page() {
             <div>
               <h3 className="font-bold text-zinc-500 mb-4 text-[10px] uppercase tracking-[0.2em]">Certifications</h3>
               <div className="space-y-2 text-sm text-zinc-600">
-                <p>SDVOSB Certified</p>
-                <p>Service-Disabled Veteran-Owned</p>
+                <p>SDVOSB</p>
+                <p>Veteran-Owned</p>
               </div>
             </div>
           </div>

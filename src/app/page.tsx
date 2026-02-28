@@ -716,7 +716,7 @@ export default function Home() {
               </h3>
               <div className="space-y-2">
                 <Link
-                  href="/services"
+                  href="/services2"
                   className="block text-sm text-zinc-600 hover:text-white transition-colors"
                 >
                   Construction Services
@@ -725,7 +725,7 @@ export default function Home() {
                   href="/copilot"
                   className="block text-sm text-zinc-600 hover:text-white transition-colors"
                 >
-                  Construction Copilot
+                  Automation Services
                 </Link>
                 <Link
                   href="/about"
