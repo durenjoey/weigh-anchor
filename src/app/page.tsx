@@ -400,12 +400,17 @@ export default function Home() {
       {mapExplore && (
         <div className="md:hidden fixed inset-0 z-50 bg-[#0d0f13]">
           <DarkMapBackground />
-          <button
-            onClick={() => setMapExplore(false)}
-            className="fixed top-4 right-4 z-50 p-3 rounded-full bg-zinc-900/90 border border-zinc-700 text-white backdrop-blur-sm shadow-lg"
-          >
-            <X className="h-5 w-5" />
-          </button>
+          <div className="fixed top-4 left-0 right-0 z-50 flex items-center justify-between px-4">
+            <span className="text-[10px] text-zinc-400 uppercase tracking-[0.2em] font-mono bg-zinc-900/80 px-4 py-2 rounded-full border border-zinc-800 backdrop-blur-sm">
+              Explore Our Project Locations
+            </span>
+            <button
+              onClick={() => setMapExplore(false)}
+              className="p-3 rounded-full bg-zinc-900/90 border border-zinc-700 text-white backdrop-blur-sm shadow-lg"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
           <div className="fixed bottom-6 left-0 right-0 text-center">
             <span className="text-[10px] text-zinc-500 uppercase tracking-[0.2em] font-mono bg-zinc-900/80 px-4 py-2 rounded-full border border-zinc-800 backdrop-blur-sm">
               Pinch to zoom &bull; Drag to explore
