@@ -398,7 +398,7 @@ export default function Home() {
 
       {/* Fullscreen map explore — mobile only */}
       {mapExplore && (
-        <div className="md:hidden fixed inset-0 z-50 bg-[#0d0f13]">
+        <div className="fixed inset-0 z-50 bg-[#0d0f13]">
           <DarkMapBackground />
           <div className="fixed top-4 left-0 right-0 z-50 flex items-center justify-between px-4">
             <span className="text-[10px] text-zinc-400 uppercase tracking-[0.2em] font-mono bg-zinc-900/80 px-4 py-2 rounded-full border border-zinc-800 backdrop-blur-sm">
@@ -498,20 +498,14 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Explore map button — mobile only */}
+            {/* Explore map button */}
             <button
               onClick={() => setMapExplore(true)}
-              className="md:hidden mt-8 flex items-center gap-2 text-[10px] text-zinc-500 uppercase tracking-[0.2em] font-mono hover:text-orange-500 transition-colors"
+              className="mt-8 flex items-center gap-2 text-[10px] text-zinc-500 uppercase tracking-[0.2em] font-mono hover:text-orange-500 transition-colors cursor-pointer"
             >
               <Map className="h-3.5 w-3.5" />
-              Tap to explore the map
+              Explore our project locations
             </button>
-
-            {/* Hint — desktop only */}
-            <div className="hidden md:flex mt-8 text-[10px] text-zinc-600 uppercase tracking-[0.2em] font-mono items-center gap-2">
-              <div className="w-1 h-1 bg-orange-500/60 rounded-full" />
-              Explore our project locations on the map
-            </div>
           </div>
         </div>
       </section>
