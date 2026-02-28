@@ -10,6 +10,8 @@ import {
   Zap,
   ChevronRight,
   HardHat,
+  Map,
+  X,
 } from "lucide-react";
 import { VERIFIED_STATS, clients } from "@/data/projects";
 import Link from "next/link";
@@ -351,6 +353,7 @@ function FadeIn({
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
+  const [mapExplore, setMapExplore] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -393,6 +396,24 @@ export default function Home() {
         logoHeight="h-14"
       />
 
+      {/* Fullscreen map explore — mobile only */}
+      {mapExplore && (
+        <div className="md:hidden fixed inset-0 z-50 bg-[#0d0f13]">
+          <DarkMapBackground />
+          <button
+            onClick={() => setMapExplore(false)}
+            className="fixed top-4 right-4 z-50 p-3 rounded-full bg-zinc-900/90 border border-zinc-700 text-white backdrop-blur-sm shadow-lg"
+          >
+            <X className="h-5 w-5" />
+          </button>
+          <div className="fixed bottom-6 left-0 right-0 text-center">
+            <span className="text-[10px] text-zinc-500 uppercase tracking-[0.2em] font-mono bg-zinc-900/80 px-4 py-2 rounded-full border border-zinc-800 backdrop-blur-sm">
+              Pinch to zoom &bull; Drag to explore
+            </span>
+          </div>
+        </div>
+      )}
+
       {/* Hero with Map Background */}
       <section className="relative overflow-hidden" style={{ minHeight: "75vh" }}>
         {/* Map background */}
@@ -401,7 +422,6 @@ export default function Home() {
         </div>
 
         {/* Gradient overlays to make text readable */}
-        {/* Strong left-to-center gradient for text area */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -409,7 +429,6 @@ export default function Home() {
               "linear-gradient(to right, #0d0f13 0%, #0d0f13e6 30%, #0d0f1399 55%, #0d0f1340 75%, transparent 100%)",
           }}
         />
-        {/* Top fade for nav blending */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -417,7 +436,6 @@ export default function Home() {
               "linear-gradient(to bottom, #0d0f13 0%, transparent 20%)",
           }}
         />
-        {/* Bottom fade */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -427,7 +445,10 @@ export default function Home() {
         />
 
         {/* Hero content */}
-        <div className="relative container mx-auto px-4 lg:px-6 pt-28 pb-24 pointer-events-none" style={{ minHeight: "75vh", display: "flex", alignItems: "center" }}>
+        <div
+          className="relative container mx-auto px-4 lg:px-6 pt-28 pb-24 pointer-events-none"
+          style={{ minHeight: "75vh", display: "flex", alignItems: "center" }}
+        >
           <div className="max-w-2xl pointer-events-auto">
             {/* Badge */}
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-sm border border-zinc-700 bg-zinc-900/90 text-xs text-zinc-400 mb-10 uppercase tracking-widest font-mono backdrop-blur-sm">
@@ -467,13 +488,22 @@ export default function Home() {
                   className="border-zinc-700 text-zinc-400 hover:bg-zinc-800 hover:text-white hover:border-zinc-600 rounded-sm uppercase tracking-wider text-sm font-medium backdrop-blur-sm"
                 >
                   <Terminal className="mr-2 h-4 w-4" />
-                  Construction Copilot
+                  Automation Services
                 </Button>
               </Link>
             </div>
 
-            {/* Hint to interact with map */}
-            <div className="mt-8 text-[10px] text-zinc-600 uppercase tracking-[0.2em] font-mono flex items-center gap-2">
+            {/* Explore map button — mobile only */}
+            <button
+              onClick={() => setMapExplore(true)}
+              className="md:hidden mt-8 flex items-center gap-2 text-[10px] text-zinc-500 uppercase tracking-[0.2em] font-mono hover:text-orange-500 transition-colors"
+            >
+              <Map className="h-3.5 w-3.5" />
+              Tap to explore the map
+            </button>
+
+            {/* Hint — desktop only */}
+            <div className="hidden md:flex mt-8 text-[10px] text-zinc-600 uppercase tracking-[0.2em] font-mono items-center gap-2">
               <div className="w-1 h-1 bg-orange-500/60 rounded-full" />
               Explore our project locations on the map
             </div>
