@@ -31,5 +31,52 @@ export default function AutomationLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What is business process automation?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "It's converting the manual, repetitive parts of your operation into digital systems that run automatically. Paper forms become digital. Spreadsheet tracking becomes real-time dashboards. Email handoffs become automated workflows. The goal is to free your team from administrative overhead so they can focus on actual work.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How long does it take to implement automation?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "It depends on scope, but most engagements start producing results within 4-8 weeks. We begin with process mapping to understand how your operation actually runs, then build and deploy systems incrementally — you start seeing value before the full engagement is complete.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do we need to be tech-savvy to work with you?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "No. Most of our clients are operations-focused teams, not technology companies. We build systems around how your team already works, train everyone on what we deploy, and stay on for ongoing support. If your team can use email, they can use what we build.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What does a typical automation engagement look like?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We start by mapping your current processes — where time goes, what's manual, where things fall through cracks. Then we design and build the automation, deploy it into your environment, and train your team. After launch, we provide ongoing support and iterate as your needs evolve.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+      {children}
+    </>
+  );
 }

@@ -212,12 +212,12 @@ function ServiceTypewriter() {
     <div className="font-mono">
       <div className="flex items-baseline gap-3">
         <span className="text-cyan-400 text-lg select-none font-bold">&gt;_</span>
-        <h1 className="text-4xl lg:text-6xl font-black text-cyan-400 tracking-tighter uppercase">
+        <div role="presentation" className="text-4xl lg:text-6xl font-black text-cyan-400 tracking-tighter uppercase">
           {displayCmd}
           {phase === "typing-cmd" && (
             <span className={`inline-block w-[4px] h-[0.85em] bg-cyan-400 ml-1 align-baseline translate-y-[0.05em] ${showCursor ? "opacity-100" : "opacity-0"}`} />
           )}
-        </h1>
+        </div>
       </div>
       <div className="mt-4 min-h-[3rem]">
         {(phase === "typing-text" || phase === "pause") && (
@@ -275,6 +275,8 @@ export default function AutomationServicesPage() {
               <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shadow-sm shadow-cyan-400/50" />
               Automation Services
             </div>
+
+            <h1 className="sr-only">Business Process Automation &amp; AI Implementation Services</h1>
 
             {/* Typewriter */}
             <div className="min-h-[260px] md:min-h-[200px]">
@@ -458,6 +460,49 @@ export default function AutomationServicesPage() {
           </div>
         </section>
       </FadeIn>
+
+      {/* FAQ — structured for AI extraction */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-5xl mx-auto">
+            <FadeIn>
+              <div className="mb-16">
+                <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-4">Common Questions</p>
+                <h2 className="text-3xl lg:text-4xl font-black text-white tracking-tight">Frequently Asked</h2>
+              </div>
+            </FadeIn>
+
+            <div className="space-y-6">
+              {[
+                {
+                  q: "What is business process automation?",
+                  a: "It's converting the manual, repetitive parts of your operation into digital systems that run automatically. Paper forms become digital. Spreadsheet tracking becomes real-time dashboards. Email handoffs become automated workflows. The goal is to free your team from administrative overhead so they can focus on actual work.",
+                },
+                {
+                  q: "How long does it take to implement automation?",
+                  a: "It depends on scope, but most engagements start producing results within 4-8 weeks. We begin with process mapping to understand how your operation actually runs, then build and deploy systems incrementally — you start seeing value before the full engagement is complete.",
+                },
+                {
+                  q: "Do we need to be tech-savvy to work with you?",
+                  a: "No. Most of our clients are operations-focused teams, not technology companies. We build systems around how your team already works, train everyone on what we deploy, and stay on for ongoing support. If your team can use email, they can use what we build.",
+                },
+                {
+                  q: "What does a typical automation engagement look like?",
+                  a: "We start by mapping your current processes — where time goes, what's manual, where things fall through cracks. Then we design and build the automation, deploy it into your environment, and train your team. After launch, we provide ongoing support and iterate as your needs evolve.",
+                },
+              ].map((item, i) => (
+                <FadeIn key={i} delay={i * 80}>
+                  <div className="relative rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 overflow-hidden">
+                    <div className="absolute top-0 left-0 w-16 h-[2px] bg-gradient-to-r from-cyan-500 to-transparent" />
+                    <h3 className="text-lg font-bold text-white mb-3 tracking-tight">{item.q}</h3>
+                    <p className="text-zinc-500 leading-relaxed text-sm">{item.a}</p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="py-24 relative overflow-hidden">

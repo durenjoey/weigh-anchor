@@ -94,12 +94,12 @@ function ServiceTypewriter() {
     <div className="font-mono">
       <div className="flex items-baseline gap-3">
         <span className="text-orange-500 text-lg select-none font-bold">&gt;_</span>
-        <h1 className="text-4xl lg:text-6xl font-black text-orange-500 tracking-tighter uppercase">
+        <div role="presentation" className="text-4xl lg:text-6xl font-black text-orange-500 tracking-tighter uppercase">
           {displayCmd}
           {phase === "typing-cmd" && (
             <span className={`inline-block w-[4px] h-[0.85em] bg-orange-500 ml-1 align-baseline translate-y-[0.05em] ${showCursor ? "opacity-100" : "opacity-0"}`} />
           )}
-        </h1>
+        </div>
       </div>
       <div className="mt-4 min-h-[3rem]">
         {(phase === "typing-text" || phase === "pause") && (
@@ -218,6 +218,8 @@ export default function Services2Page() {
               <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse shadow-sm shadow-orange-500/50" />
               Construction Services
             </div>
+
+            <h1 className="sr-only">Construction Project Management Services</h1>
 
             {/* Typewriter */}
             <div className="min-h-[260px] md:min-h-[200px]">
@@ -378,6 +380,49 @@ export default function Services2Page() {
                     <div className="absolute top-0 left-0 w-16 h-[2px] bg-gradient-to-r from-orange-600 to-transparent" />
                     <h3 className="text-lg font-bold text-white mb-3 tracking-tight">{item.title}</h3>
                     <p className="text-zinc-500 leading-relaxed text-sm">{item.text}</p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ — structured for AI extraction */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-5xl mx-auto">
+            <FadeIn>
+              <div className="mb-16">
+                <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-4">Common Questions</p>
+                <h2 className="text-3xl lg:text-4xl font-black text-white tracking-tight">Frequently Asked</h2>
+              </div>
+            </FadeIn>
+
+            <div className="space-y-6">
+              {[
+                {
+                  q: "What does construction project management include?",
+                  a: "We handle the full project lifecycle — procurement, scheduling, budget management, contractor oversight, quality assurance, and closeout. You get a single point of accountability for your entire project.",
+                },
+                {
+                  q: "Do you work with small and mid-size businesses?",
+                  a: "Yes. We built our systems managing large federal and tribal nation programs, and we bring that same rigor to smaller organizations. Our productized packages make enterprise-grade project management accessible to teams of any size.",
+                },
+                {
+                  q: "What types of projects do you manage?",
+                  a: "Government facilities, tribal housing and infrastructure, commercial construction, and private sector builds. We've delivered across 17 states and territories, including remote communities in rural Alaska and Pacific islands.",
+                },
+                {
+                  q: "How is Weigh Anchor different from other PM firms?",
+                  a: "We pair construction project management with automation. That means your reporting, cost tracking, and project controls are digitized from day one — not manual spreadsheets passed around by email.",
+                },
+              ].map((item, i) => (
+                <FadeIn key={i} delay={i * 80}>
+                  <div className="relative rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 overflow-hidden">
+                    <div className="absolute top-0 left-0 w-16 h-[2px] bg-gradient-to-r from-orange-600 to-transparent" />
+                    <h3 className="text-lg font-bold text-white mb-3 tracking-tight">{item.q}</h3>
+                    <p className="text-zinc-500 leading-relaxed text-sm">{item.a}</p>
                   </div>
                 </FadeIn>
               ))}

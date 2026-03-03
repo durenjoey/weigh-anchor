@@ -503,6 +503,27 @@ export default function Home() {
               </Link>
             </div>
 
+            {/* Capability Statements */}
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href="/assets/documents/Weigh-Anchor-Construction-Capability-Statement.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10px] text-zinc-600 uppercase tracking-[0.15em] font-mono hover:text-orange-500 transition-colors"
+              >
+                Construction Capability Statement &darr;
+              </a>
+              <span className="text-zinc-800">|</span>
+              <a
+                href="/assets/documents/Weigh-Anchor-Automation-Capability-Statement.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10px] text-zinc-600 uppercase tracking-[0.15em] font-mono hover:text-cyan-400 transition-colors"
+              >
+                Automation Capability Statement &darr;
+              </a>
+            </div>
+
             {/* Explore map button */}
             <button
               onClick={() => setMapExplore(true)}
