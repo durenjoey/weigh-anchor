@@ -135,6 +135,7 @@ export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeigh
           <button
             className="md:hidden p-2 text-zinc-400 hover:text-white transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>

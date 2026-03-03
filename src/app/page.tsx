@@ -241,14 +241,14 @@ function TerminalHero() {
         <span className="text-orange-500 text-lg select-none font-bold">
           &gt;_
         </span>
-        <h1 className="text-5xl lg:text-7xl font-black text-orange-500 tracking-tighter uppercase">
+        <div role="presentation" className="text-5xl lg:text-7xl font-black text-orange-500 tracking-tighter uppercase">
           {displayCmd}
           {phase === "typing-cmd" && (
             <span
               className={`inline-block w-[4px] h-[0.85em] bg-orange-500 ml-1 align-baseline translate-y-[0.05em] ${showCursor ? "opacity-100" : "opacity-0"}`}
             />
           )}
-        </h1>
+        </div>
       </div>
       <div className="mt-3 min-h-[2rem]">
         {(phase === "typing-text" || phase === "pause") && (
@@ -461,6 +461,10 @@ export default function Home() {
               <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse shadow-sm shadow-orange-500/50" />
               SDVOSB Certified &bull; Veteran-Owned
             </div>
+
+            <h1 className="sr-only">
+              Veteran-Owned Construction Project Management &amp; Business Automation
+            </h1>
 
             {/* Terminal */}
             <div className="min-h-[220px] md:min-h-[160px]">
