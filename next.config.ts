@@ -20,7 +20,31 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=()",
+            value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+          },
+          {
+            key: "X-DNS-Prefetch-Control",
+            value: "on",
+          },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+          {
+            key: "Content-Security-Policy",
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://api.mapbox.com blob:",
+              "style-src 'self' 'unsafe-inline' https://api.mapbox.com",
+              "img-src 'self' data: blob: https://api.mapbox.com https://*.mapbox.com",
+              "font-src 'self' data:",
+              "connect-src 'self' https://api.mapbox.com https://*.mapbox.com https://events.mapbox.com",
+              "worker-src 'self' blob:",
+              "child-src blob:",
+              "frame-ancestors 'none'",
+              "base-uri 'self'",
+              "form-action 'self'",
+            ].join("; "),
           },
         ],
       },
