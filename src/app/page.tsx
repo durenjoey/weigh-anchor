@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
@@ -456,11 +457,6 @@ export default function Home() {
           style={{ minHeight: "75vh", display: "flex", alignItems: "center" }}
         >
           <div className="max-w-2xl pointer-events-auto">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-sm border border-zinc-700 bg-zinc-900/90 text-xs text-zinc-400 mb-10 uppercase tracking-widest font-mono backdrop-blur-sm">
-              <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse shadow-sm shadow-orange-500/50" />
-              SDVOSB Certified &bull; Veteran-Owned
-            </div>
 
             <h1 className="sr-only">
               Veteran-Owned Construction Project Management &amp; Business Automation
@@ -530,10 +526,9 @@ export default function Home() {
                 suffix: "",
                 label: "STATES & TERRITORIES",
               },
-              { value: 55, suffix: "+", label: "AUTOMATION PROJECTS" },
             ].map((stat, i) => (
               <div key={i} className="py-10 px-6 text-center">
-                <div className="text-orange-500">
+                <div className="text-white/60" style={{ filter: "drop-shadow(0 0 12px rgba(234, 88, 12, 0.55)) drop-shadow(0 0 4px rgba(234, 88, 12, 0.35))" }}>
                   {typeof stat.value === "number" ? (
                     <Counter target={stat.value} suffix={stat.suffix} />
                   ) : (
@@ -547,6 +542,12 @@ export default function Home() {
                 </div>
               </div>
             ))}
+            <div className="py-10 px-6 text-center">
+              <Image src="/assets/logos/SDVOSB_Logo_White_2023_06_22.png.png" alt="SDVOSB Certified" width={48} height={48} className="mx-auto h-10 lg:h-12 w-auto opacity-60" style={{ filter: "drop-shadow(0 0 12px rgba(234, 88, 12, 0.55)) drop-shadow(0 0 4px rgba(234, 88, 12, 0.35))" }} />
+              <div className="text-[10px] text-zinc-600 mt-3 uppercase tracking-[0.2em] font-mono">
+                Veteran Owned
+              </div>
+            </div>
           </div>
         </div>
       </section>
