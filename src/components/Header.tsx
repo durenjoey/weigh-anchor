@@ -31,11 +31,6 @@ export default function Header() {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="flex items-center justify-end text-sm">
             <div className="flex items-center gap-6">
-              <a href="tel:+14076873792" className="flex items-center gap-2 hover:text-orange-400 transition-colors">
-                <Phone className="h-3 w-3" />
-                (407) 687-3792
-              </a>
-              <span className="text-slate-400">•</span>
               <a href="mailto:info@weighanchor.com" className="flex items-center gap-2 hover:text-orange-400 transition-colors">
                 <Mail className="h-3 w-3" />
                 info@weighanchor.com
@@ -130,10 +125,6 @@ export default function Header() {
               
               {/* Mobile Contact Info */}
               <div className="pt-4 mt-4 border-t border-gray-200 space-y-3">
-                <a href="tel:+14076873792" className="flex items-center gap-2 text-sm text-slate-600 px-3">
-                  <Phone className="h-4 w-4" />
-                  (407) 687-3792
-                </a>
                 <a href="mailto:info@weighanchor.com" className="flex items-center gap-2 text-sm text-slate-600 px-3">
                   <Mail className="h-4 w-4" />
                   info@weighanchor.com

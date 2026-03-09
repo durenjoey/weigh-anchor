@@ -346,19 +346,12 @@ export default function ContactPage() {
                   <div className="relative rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 overflow-hidden">
                     <div className="absolute top-0 left-0 w-16 h-[2px] bg-gradient-to-r from-orange-600 to-transparent" />
                     <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-4">Capability Statements</p>
-                    <p className="text-zinc-500 text-sm mb-4 leading-relaxed">Download our capability statements for procurement purposes.</p>
-                    <div className="space-y-3">
-                      <a href="/assets/documents/Weigh-Anchor-Construction-Capability-Statement.pdf" target="_blank" rel="noopener noreferrer">
-                        <Button variant="outline" className="w-full border-zinc-700 text-zinc-400 hover:bg-zinc-800 hover:text-white hover:border-zinc-600 rounded-sm uppercase tracking-wider text-xs font-medium">
-                          Construction Services
-                        </Button>
-                      </a>
-                      <a href="/assets/documents/Weigh-Anchor-Automation-Capability-Statement.pdf" target="_blank" rel="noopener noreferrer" className="block">
-                        <Button variant="outline" className="w-full border-zinc-700 text-zinc-400 hover:bg-zinc-800 hover:text-white hover:border-zinc-600 rounded-sm uppercase tracking-wider text-xs font-medium">
-                          Automation Services
-                        </Button>
-                      </a>
-                    </div>
+                    <p className="text-zinc-500 text-sm mb-4 leading-relaxed">Need our capability statement for procurement? Reach out and we&apos;ll send it over.</p>
+                    <a href="mailto:info@weighanchor.com">
+                      <Button variant="outline" className="w-full border-zinc-700 text-zinc-400 hover:bg-zinc-800 hover:text-white hover:border-zinc-600 rounded-sm uppercase tracking-wider text-xs font-medium">
+                        Request via Email
+                      </Button>
+                    </a>
                   </div>
                 </FadeIn>
               </div>
