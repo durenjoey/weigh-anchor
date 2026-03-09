@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
@@ -30,9 +31,11 @@ export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeigh
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <img
+            <Image
               src={logo || "/assets/logos/weigh_anchor_logo_v2.png"}
               alt="Weigh Anchor"
+              width={56}
+              height={56}
               className={`${logoHeight || "h-14"} w-auto group-hover:scale-105 transition-transform`}
             />
             <span className="font-bold text-white text-lg tracking-tight uppercase">Weigh Anchor</span>

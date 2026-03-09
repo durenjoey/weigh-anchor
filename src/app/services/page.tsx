@@ -11,6 +11,7 @@ import {
   Globe,
 } from "lucide-react";
 import { VERIFIED_STATS } from "@/data/projects";
+import Image from "next/image";
 import Link from "next/link";
 import DarkNav from "@/components/DarkNav";
 import Footer from "@/components/Footer";
@@ -179,10 +180,12 @@ export default function Services2Page() {
       <section className="relative overflow-hidden" style={{ minHeight: "75vh" }}>
         {/* Background image */}
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/assets/images/construction-project-management-services-weigh-anchor.jpg"
             alt="Construction project management services"
-            className="w-full h-full object-cover [object-position:85%_30%] md:[object-position:center_30%]"
+            fill
+            priority
+            className="object-cover [object-position:85%_30%] md:[object-position:center_30%]"
           />
         </div>
 

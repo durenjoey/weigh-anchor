@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { 
+import {
   Menu,
   X,
   Phone,
@@ -45,9 +46,11 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <img 
-              src="/assets/logos/WeighAnchor_Logoonly_Transparent_2023_08_16.png" 
-              alt="Weigh Anchor" 
+            <Image
+              src="/assets/logos/WeighAnchor_Logoonly_Transparent_2023_08_16.png"
+              alt="Weigh Anchor"
+              width={40}
+              height={40}
               className="h-10 w-auto group-hover:scale-105 transition-transform"
             />
             <div>

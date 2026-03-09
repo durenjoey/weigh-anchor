@@ -82,6 +82,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased font-sans bg-background text-foreground min-h-screen">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-orange-600 focus:text-white focus:rounded-sm focus:text-sm focus:font-bold"
+        >
+          Skip to main content
+        </a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -176,7 +182,7 @@ export default function RootLayout({
             }),
           }}
         />
-        <div className="min-h-screen">
+        <div id="main-content" className="min-h-screen">
           {children}
         </div>
       </body>

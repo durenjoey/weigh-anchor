@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -50,7 +51,7 @@ function BioCard({ image, name, title, intro, expanded }: {
       <div className="p-8">
         <div className="flex items-start gap-6 mb-6">
           <div className="w-20 h-20 rounded-md overflow-hidden flex-shrink-0 border border-zinc-700">
-            <img src={image} alt={name} className="w-full h-full object-cover" />
+            <Image src={image} alt={name} width={80} height={80} className="w-full h-full object-cover" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-white tracking-tight">{name}</h3>

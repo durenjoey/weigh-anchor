@@ -190,6 +190,7 @@ export default function ContactPage() {
                           onChange={handleChange}
                           placeholder="John Smith"
                           required
+                          aria-required="true"
                           className="w-full h-10 rounded-md border border-zinc-800 bg-zinc-900/50 px-3 py-2 text-sm text-zinc-300 placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-orange-500/50 focus:border-orange-500/50 transition-colors"
                         />
                       </div>
@@ -204,6 +205,7 @@ export default function ContactPage() {
                           onChange={handleChange}
                           placeholder="john@company.com"
                           required
+                          aria-required="true"
                           className="w-full h-10 rounded-md border border-zinc-800 bg-zinc-900/50 px-3 py-2 text-sm text-zinc-300 placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-orange-500/50 focus:border-orange-500/50 transition-colors"
                         />
                       </div>
@@ -269,6 +271,7 @@ export default function ContactPage() {
                         placeholder="Tell us about your project needs..."
                         rows={6}
                         required
+                        aria-required="true"
                         className="w-full rounded-md border border-zinc-800 bg-zinc-900/50 px-3 py-2 text-sm text-zinc-300 placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-orange-500/50 focus:border-orange-500/50 transition-colors resize-none"
                       />
                     </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -7,9 +8,11 @@ export default function Footer() {
         <div className="grid lg:grid-cols-4 gap-8 mb-8">
           <div>
             <Link href="/" className="block mb-4">
-              <img
+              <Image
                 src="/assets/logos/weigh_anchor_logo_v2.png"
                 alt="Weigh Anchor"
+                width={120}
+                height={80}
                 className="h-20 w-auto mb-3"
               />
               <span className="font-medium text-zinc-400 text-sm uppercase tracking-widest">
