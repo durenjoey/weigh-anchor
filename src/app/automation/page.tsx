@@ -7,6 +7,7 @@ import {
   Search,
   Cog,
   Bot,
+  Layers,
   GraduationCap,
 } from "lucide-react";
 import Link from "next/link";
@@ -35,7 +36,6 @@ function ParticleBackground() {
     const w = () => canvas.offsetWidth;
     const h = () => canvas.offsetHeight;
 
-    // Particles
     const count = 90;
     const particles = Array.from({ length: count }, () => ({
       x: Math.random() * w(),
@@ -50,7 +50,6 @@ function ParticleBackground() {
     function draw() {
       ctx!.clearRect(0, 0, w(), h());
 
-      // Update positions
       for (const p of particles) {
         p.x += p.vx;
         p.y += p.vy;
@@ -58,7 +57,6 @@ function ParticleBackground() {
         if (p.y < 0 || p.y > h()) p.vy *= -1;
       }
 
-      // Draw connections
       for (let i = 0; i < count; i++) {
         for (let j = i + 1; j < count; j++) {
           const dx = particles[i].x - particles[j].x;
@@ -76,7 +74,6 @@ function ParticleBackground() {
         }
       }
 
-      // Draw dots
       for (const p of particles) {
         ctx!.fillStyle = "rgba(34, 211, 238, 0.3)";
         ctx!.beginPath();
@@ -137,20 +134,20 @@ function FadeIn({ children, className = "", delay = 0 }: { children: React.React
 // --- Service Typewriter ---
 const SERVICE_LINES = [
   {
+    command: "PROCESS AUTOMATION",
+    text: "Manual workflows become automated. Disconnected tracking becomes centralized.",
+  },
+  {
     command: "AI IMPLEMENTATION",
-    text: "AI workflows, document processing, and automated reporting deployed into your operation.",
+    text: "Document processing, automated reporting, and intelligent workflows deployed into your operation.",
   },
   {
-    command: "AUTOMATION & DIGITIZATION",
-    text: "Paper to digital. Manual to automated. Spreadsheets to dashboards.",
+    command: "PLATFORM CONSOLIDATION",
+    text: "License reconciliation, access governance, hierarchy restructuring, vendor coordination.",
   },
   {
-    command: "PROCESS MAPPING",
-    text: "We document how work actually flows and find where the time and money go.",
-  },
-  {
-    command: "SUPPORT & TRAINING",
-    text: "Your team gets trained on everything we build. We stay on as needs evolve.",
+    command: "DATA MODERNIZATION",
+    text: "Legacy systems consolidated. Data governance established. Analytics operationalized.",
   },
 ];
 
@@ -234,6 +231,35 @@ function ServiceTypewriter() {
   );
 }
 
+const SERVICES = [
+  {
+    icon: Search,
+    title: "Process Mapping & Improvement",
+    description: "We document how work moves through your organization — where time goes, where handoffs break, what's manual that shouldn't be. This is always step one.",
+  },
+  {
+    icon: Cog,
+    title: "Automation & Digitization",
+    description: "We build systems that replace repetitive work. Manual workflows become automated. Disconnected tracking becomes centralized. Your team gets time back for work that requires judgment.",
+  },
+  {
+    icon: Bot,
+    title: "AI Implementation",
+    description: "Document processing, automated reporting, intelligent workflows. Deployed into your operation — trained on your data, integrated with your tools, managed by your team.",
+  },
+  {
+    icon: Layers,
+    title: "Platform Consolidation & Administration",
+    description: "We consolidate, configure, and administer the software platforms your operation runs on. License reconciliation, access governance, hierarchy restructuring, vendor coordination.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Training & Knowledge Transfer",
+    description: "Your team gets trained on everything we build. Documentation, training materials, and handoff processes are built into the scope — not bolted on at the end.",
+  },
+];
+
+
 export default function AutomationServicesPage() {
   return (
     <div className="min-h-screen bg-[#0d0f13] text-zinc-300">
@@ -242,12 +268,10 @@ export default function AutomationServicesPage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ minHeight: "75vh" }}>
-        {/* Animated particle background */}
         <div className="absolute inset-0">
           <ParticleBackground />
         </div>
 
-        {/* Gradient overlays — matches homepage/services style */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -274,21 +298,19 @@ export default function AutomationServicesPage() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-sm border border-zinc-700 bg-zinc-900/90 text-xs text-zinc-400 uppercase tracking-widest font-mono mb-10 backdrop-blur-sm">
               <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shadow-sm shadow-cyan-400/50" />
-              Automation Services
+              Technology Services
             </div>
 
-            <h1 className="sr-only">Business Process Automation &amp; AI Implementation Services</h1>
+            <h1 className="sr-only">Technology Consulting, Process Automation &amp; AI Implementation</h1>
 
-            {/* Typewriter */}
             <div className="min-h-[260px] md:min-h-[200px]">
               <ServiceTypewriter />
             </div>
 
-            {/* Static descriptor */}
             <div className="flex gap-4 mt-6 mb-8">
               <div className="w-1 bg-gradient-to-b from-cyan-400 to-cyan-400/0 rounded-full flex-shrink-0" />
               <p className="text-zinc-600 max-w-xl leading-relaxed">
-                Every solution is built around how your operation actually runs.
+                Technology consulting, process automation, and AI implementation for government agencies and enterprise organizations.
               </p>
             </div>
 
@@ -309,93 +331,23 @@ export default function AutomationServicesPage() {
         </div>
       </section>
 
-      {/* The problem */}
-      <section className="py-24 border-y-2 border-zinc-800 bg-zinc-900/30">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="max-w-5xl mx-auto">
-            <FadeIn>
-              <div className="mb-16">
-                <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-4">The Reality</p>
-                <h2 className="text-3xl lg:text-4xl font-black text-white tracking-tight mb-4">
-                  Most companies know they need to modernize. They just don&apos;t know where to start.
-                </h2>
-              </div>
-            </FadeIn>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {[
-                {
-                  title: "AI is everywhere — but what does it mean for you?",
-                  text: "Every vendor is pitching AI. Every conference is talking about it. But nobody is explaining what it actually looks like inside a construction company, a tribal organization, or a government agency. We can — because we've done it.",
-                },
-                {
-                  title: "Your team is the system",
-                  text: "Work orders tracked in spreadsheets. Project updates passed through email chains. Scheduling done by a coordinator who keeps it all in their head. When that person leaves, the knowledge goes with them.",
-                },
-                {
-                  title: "Software hasn't helped",
-                  text: "You've probably tried off-the-shelf tools that promised to fix everything. Most of them created more work — new logins, new data entry, new things to maintain. The problem isn't software. It's that nobody mapped your actual operations first.",
-                },
-                {
-                  title: "You're not behind — you just haven't had the right partner",
-                  text: "The gap between where you are and where you could be isn't as big as it feels. Most of the value comes from automating the 20% of work that eats 80% of your team's time. We find it, build the solution, and train your people on it.",
-                },
-              ].map((item, i) => (
-                <FadeIn key={i} delay={i * 100}>
-                  <div className="group relative rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 h-full hover:border-cyan-500/30 transition-all duration-500 overflow-hidden">
-                    <div className="absolute top-0 left-0 w-24 h-[2px] bg-gradient-to-r from-cyan-500 to-transparent" />
-                    <span className="text-cyan-400/20 font-mono text-5xl font-black absolute top-4 right-6 select-none">0{i + 1}</span>
-                    <div className="relative z-10 pr-12">
-                      <h3 className="text-lg font-bold text-white mb-3 tracking-tight">{item.title}</h3>
-                      <p className="text-zinc-500 leading-relaxed text-sm">{item.text}</p>
-                    </div>
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What we do */}
-      <section className="py-24">
+      {/* Services — stacked panels */}
+      <section className="py-24 border-t-2 border-zinc-800">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-5xl mx-auto">
             <FadeIn>
               <div className="mb-16">
                 <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-4">What We Do</p>
-                <h2 className="text-3xl lg:text-4xl font-black text-white tracking-tight mb-4">
-                  We figure out what to automate, build it, and teach your team how to use it.
-                </h2>
+                <h2 className="text-3xl lg:text-4xl font-black text-white tracking-tight">Core Services</h2>
               </div>
             </FadeIn>
 
             <div className="space-y-4">
-              {[
-                {
-                  icon: Search,
-                  title: "Process Mapping & Improvement",
-                  description: "We sit down with your team and document how work actually flows. Where the time goes, where the bottlenecks are, what's manual that shouldn't be. This is always step one.",
-                },
-                {
-                  icon: Cog,
-                  title: "Automation & Digitization",
-                  description: "Paper forms become digital. Manual handoffs become automated. Spreadsheets become dashboards. We build systems that handle the repetitive work so your people can focus on the work that matters.",
-                },
-                {
-                  icon: Bot,
-                  title: "AI Implementation",
-                  description: "Document processing, automated reporting, intelligent workflows. We deploy AI into your actual operation — trained on your data, integrated with your tools, used by your team.",
-                },
-                {
-                  icon: GraduationCap,
-                  title: "Ongoing Support & Training",
-                  description: "We don't hand you a system and disappear. Your team gets trained on everything we build. We stay on for maintenance, improvements, and new builds as your needs evolve.",
-                },
-              ].map((service, i) => (
+              {SERVICES.map((service, i) => (
                 <FadeIn key={i} delay={i * 80}>
                   <div className="group relative rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 hover:border-cyan-500/30 transition-all duration-500 overflow-hidden">
                     <div className="absolute top-0 left-0 w-24 h-[2px] bg-gradient-to-r from-cyan-500 to-transparent" />
+
                     <div className="flex gap-6 items-start">
                       <div className="w-12 h-12 rounded-md bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center flex-shrink-0 mt-1">
                         <service.icon className="h-5 w-5 text-cyan-400" />
@@ -413,41 +365,85 @@ export default function AutomationServicesPage() {
         </div>
       </section>
 
-      {/* FAQ — structured for AI extraction */}
+      {/* Track record */}
+      <FadeIn>
+        <section className="py-16 border-y-2 border-zinc-800 bg-zinc-900/30">
+          <div className="container mx-auto px-4 lg:px-6">
+            <div className="max-w-5xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-12">
+                <div>
+                  <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-4">Track Record</p>
+                  <h2 className="text-2xl font-bold text-white tracking-tight mb-6">Where we&apos;ve delivered.</h2>
+                  <p className="text-zinc-500 leading-relaxed mb-6">
+                    Enterprise platform projects at global pharmaceutical companies. Operational automation for public sector organizations managing critical infrastructure.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    {["MWBE", "SDVOB", "Small Contractor"].map((cert, i) => (
+                      <div key={i} className="px-3 py-1.5 rounded-sm border border-zinc-700 bg-zinc-900/80 text-xs text-zinc-400 uppercase tracking-widest font-mono">
+                        {cert}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-4">Organizations We&apos;ve Supported</p>
+                  <div className="grid grid-cols-2 gap-3">
+                    {[
+                      { name: "Fortune 500", detail: "Platform consolidation, EHSS automation, chemical inventory systems" },
+                      { name: "Federal Government", detail: "Program management & operational systems" },
+                      { name: "Local Government", detail: "Data modernization, analytics & process automation" },
+                      { name: "Small & Mid-Size Business", detail: "Workflow automation, digitization & operational systems" },
+                    ].map((client, i) => (
+                      <div key={i} className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-4">
+                        <div className="text-sm font-bold text-white mb-1">{client.name}</div>
+                        <div className="text-xs text-zinc-600 leading-relaxed">{client.detail}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </FadeIn>
+
+      {/* What you get */}
       <section className="py-24">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-5xl mx-auto">
             <FadeIn>
               <div className="mb-16">
-                <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-4">Common Questions</p>
-                <h2 className="text-3xl lg:text-4xl font-black text-white tracking-tight">Frequently Asked</h2>
+                <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-4">Why Us</p>
+                <h2 className="text-3xl lg:text-4xl font-black text-white tracking-tight">
+                  What you get.
+                </h2>
               </div>
             </FadeIn>
 
-            <div className="space-y-6">
+            <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  q: "What is business process automation?",
-                  a: "It's converting the manual, repetitive parts of your operation into digital systems that run automatically. Paper forms become digital. Spreadsheet tracking becomes real-time dashboards. Email handoffs become automated workflows. The goal is to free your team from administrative overhead so they can focus on actual work.",
+                  title: "Operations background",
+                  text: "We started in construction project management — managing scope, schedule, and budget where systems failing means real consequences. That shapes how we build technology.",
                 },
                 {
-                  q: "How long does it take to implement automation?",
-                  a: "It depends on scope, but most engagements start producing results within 4-8 weeks. We begin with process mapping to understand how your operation actually runs, then build and deploy systems incrementally — you start seeing value before the full engagement is complete.",
+                  title: "Built to transfer",
+                  text: "Every engagement is designed so your team owns the result. Documentation, training, and handoff are built into the scope.",
                 },
                 {
-                  q: "Do we need to be tech-savvy to work with you?",
-                  a: "No. Most of our clients are operations-focused teams, not technology companies. We build systems around how your team already works, train everyone on what we deploy, and stay on for ongoing support. If your team can use email, they can use what we build.",
+                  title: "Enterprise scale",
+                  text: "We've delivered automation programs for Fortune 500 clients managing hundreds of sites and supported government organizations modernizing legacy operations.",
                 },
                 {
-                  q: "What does a typical automation engagement look like?",
-                  a: "We start by mapping your current processes — where time goes, what's manual, where things fall through cracks. Then we design and build the automation, deploy it into your environment, and train your team. After launch, we provide ongoing support and iterate as your needs evolve.",
+                  title: "One team, start to finish",
+                  text: "You work with the same people from kickoff through delivery. No junior staff rotations after the sale.",
                 },
               ].map((item, i) => (
-                <FadeIn key={i} delay={i * 80}>
-                  <div className="relative rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 overflow-hidden">
+                <FadeIn key={i} delay={i * 100}>
+                  <div className="relative rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 overflow-hidden h-full">
                     <div className="absolute top-0 left-0 w-16 h-[2px] bg-gradient-to-r from-cyan-500 to-transparent" />
-                    <h3 className="text-lg font-bold text-white mb-3 tracking-tight">{item.q}</h3>
-                    <p className="text-zinc-500 leading-relaxed text-sm">{item.a}</p>
+                    <h3 className="text-lg font-bold text-white mb-3 tracking-tight">{item.title}</h3>
+                    <p className="text-zinc-500 leading-relaxed text-sm">{item.text}</p>
                   </div>
                 </FadeIn>
               ))}
@@ -467,15 +463,10 @@ export default function AutomationServicesPage() {
         }} />
         <div className="relative container mx-auto px-4 lg:px-6 text-center">
           <FadeIn>
-            <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-6">Start Here</p>
+            <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-6">Get Started</p>
             <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 tracking-tight">
-              Not sure what you need? That&apos;s fine.
+              Ready to talk?
             </h2>
-            <p className="text-lg text-zinc-500 mb-10 max-w-2xl mx-auto">
-              Most of our clients didn&apos;t know exactly what to ask for when they first reached out.
-              We&apos;ll walk through your operations together, show you where the opportunities are,
-              and you can decide what makes sense from there. No commitment, no pitch.
-            </p>
             <Link href="/contact">
               <Button size="lg" className="bg-cyan-500 text-white hover:bg-cyan-400 font-bold text-sm px-10 uppercase tracking-wider rounded-sm shadow-lg shadow-cyan-500/20">
                 Get in Touch
@@ -486,7 +477,6 @@ export default function AutomationServicesPage() {
         </div>
       </section>
 
-      {/* Footer */}
       <Footer />
     </div>
   );
