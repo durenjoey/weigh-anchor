@@ -413,37 +413,6 @@ export default function AutomationServicesPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <FadeIn>
-        <section className="py-16 border-y-2 border-zinc-800 bg-zinc-900/30">
-          <div className="container mx-auto px-4 lg:px-6">
-            <div className="max-w-5xl mx-auto">
-              <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-8">What Our Clients Say</p>
-              <div className="max-w-2xl mx-auto">
-                <div className="relative rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 overflow-hidden">
-                  <div className="absolute top-0 left-0 w-16 h-[2px] bg-gradient-to-r from-cyan-500 to-transparent" />
-                  <div className="text-cyan-400/20 text-6xl font-black leading-none mb-4">&ldquo;</div>
-                  <p className="text-zinc-400 leading-relaxed mb-6">
-                    We knew we needed to modernize but didn&apos;t know where to start.
-                    Weigh Anchor mapped our workflows, built the systems, and trained our team.
-                    Now we spend our time on operations instead of administration.
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
-                      <span className="text-cyan-400 font-bold text-sm">RF</span>
-                    </div>
-                    <div>
-                      <div className="text-white font-medium text-sm">Roya Forghani</div>
-                      <div className="text-zinc-600 text-xs">CEO &amp; Founder — Royal Real Estate</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </FadeIn>
-
       {/* FAQ — structured for AI extraction */}
       <section className="py-24">
         <div className="container mx-auto px-4 lg:px-6">
