@@ -36,16 +36,16 @@ export default function Footer() {
             </h3>
             <div className="space-y-2">
               <Link
-                href="/services"
-                className="block text-sm text-zinc-600 hover:text-white transition-colors"
-              >
-                Construction Services
-              </Link>
-              <Link
                 href="/automation"
                 className="block text-sm text-zinc-600 hover:text-white transition-colors"
               >
-                Automation Services
+                Automation & AI
+              </Link>
+              <Link
+                href="/services"
+                className="block text-sm text-zinc-600 hover:text-white transition-colors"
+              >
+                Construction
               </Link>
               <Link
                 href="/about"
@@ -67,7 +67,6 @@ export default function Footer() {
             </h3>
             <div className="space-y-2 text-sm text-zinc-600">
               <p>SDVOSB</p>
-              <p>Veteran-Owned</p>
               <p>MBE</p>
               <p>King County SCS</p>
             </div>
@@ -75,7 +74,7 @@ export default function Footer() {
         </div>
         <div className="pt-8 border-t border-zinc-800/50 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-xs text-zinc-800 font-mono">
-            &copy; 2026 Weigh Anchor. All rights reserved.
+            &copy; 2022&ndash;{new Date().getFullYear()} Weigh Anchor LLC. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
             <a
