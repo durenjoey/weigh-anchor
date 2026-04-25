@@ -544,7 +544,7 @@ export const projects: Project[] = [
 
 // Verified stats from Weigh Anchor Project Tracker
 export const VERIFIED_STATS = {
-  activeProjects: 64,
+  activeProjects: 65,
   statesAndTerritories: 17,
 };
 
@@ -587,8 +587,8 @@ export const clients: Client[] = [
   { id: 'tananacross', name: 'Tananacross', location: 'Tanacross', state: 'AK', coordinates: { lat: 63.3847, lng: -143.3464 }, category: 'Tribal Nation' },
   { id: 'tcc', name: 'Tanana Chiefs Conference', location: 'Fairbanks', state: 'AK', coordinates: { lat: 64.8378, lng: -147.7164 }, category: 'Tribal Nation' },
   // Tribal Nations — Lower 48
-  { id: 'confederated-tribes', name: 'Confederated Tribes of Coos, Lower Umpqua and Siuslaw', location: 'Coos Bay', state: 'OR', coordinates: { lat: 43.3665, lng: -124.2179 }, category: 'Tribal Nation' },
   { id: 'crow-nation', name: 'Crow Nation', location: 'Crow Agency', state: 'MT', coordinates: { lat: 45.5347, lng: -107.9403 }, category: 'Tribal Nation' },
+  { id: 'confederated-tribes', name: 'Confederated Tribes of Coos, Lower Umpqua and Siuslaw', location: 'Coos Bay', state: 'OR', coordinates: { lat: 43.3665, lng: -124.2179 }, category: 'Tribal Nation' },
   { id: 'gila-river', name: 'Gila River Indian Community', location: 'Sacaton', state: 'AZ', coordinates: { lat: 33.0767, lng: -111.7397 }, category: 'Tribal Nation' },
   { id: 'lac-vieux', name: 'Lac Vieux Desert Band', location: 'Watersmeet', state: 'MI', coordinates: { lat: 46.2619, lng: -89.1456 }, category: 'Tribal Nation' },
   { id: 'little-traverse', name: 'Little Traverse Bay Bands of Odawa Indians', location: 'Harbor Springs', state: 'MI', coordinates: { lat: 45.4317, lng: -84.9933 }, category: 'Tribal Nation' },
@@ -599,10 +599,9 @@ export const clients: Client[] = [
   { id: 'red-lake', name: 'Red Lake Band of Chippewa Indians', location: 'Red Lake', state: 'MN', coordinates: { lat: 47.8744, lng: -95.0181 }, category: 'Tribal Nation' },
   { id: 'sac-fox', name: 'Sac and Fox Nation', location: 'Reserve', state: 'KS', coordinates: { lat: 39.7456, lng: -95.3181 }, category: 'Tribal Nation' },
   { id: 'salt-river', name: 'Salt River Pima-Maricopa Indian Community', location: 'Scottsdale', state: 'AZ', coordinates: { lat: 33.5456, lng: -111.8847 }, category: 'Tribal Nation' },
-  { id: 'seminole', name: 'Seminole Nation of Oklahoma', location: 'Wewoka', state: 'OK', coordinates: { lat: 35.1600, lng: -96.4928 }, category: 'Tribal Nation' },
+  { id: 'absentee-shawnee', name: 'Absentee Shawnee Tribe', location: 'Shawnee', state: 'OK', coordinates: { lat: 35.3273, lng: -96.9253 }, category: 'Tribal Nation' },
   { id: 'seneca-cayuga', name: 'Seneca-Cayuga Nation', location: 'Miami', state: 'OK', coordinates: { lat: 36.8747, lng: -94.8775 }, category: 'Tribal Nation' },
   { id: 'sisseton', name: 'Sisseton Wahpeton Oyate', location: 'Agency Village', state: 'SD', coordinates: { lat: 45.6644, lng: -96.9847 }, category: 'Tribal Nation' },
-  { id: 'skokomish', name: 'Skokomish Tribe', location: 'Shelton', state: 'WA', coordinates: { lat: 47.3331, lng: -123.1528 }, category: 'Tribal Nation' },
   { id: 'spokane', name: 'Spokane Tribe of Indians', location: 'Wellpinit', state: 'WA', coordinates: { lat: 47.9072, lng: -117.9639 }, category: 'Tribal Nation' },
   { id: 'winnebago', name: 'Winnebago Tribe of Nebraska', location: 'Winnebago', state: 'NE', coordinates: { lat: 42.2456, lng: -96.4847 }, category: 'Tribal Nation' },
   { id: 'yurok', name: 'Yurok Tribe', location: 'Klamath', state: 'CA', coordinates: { lat: 41.5267, lng: -124.0400 }, category: 'Tribal Nation' },
@@ -621,6 +620,8 @@ export const clients: Client[] = [
   { id: 'wagram-family', name: 'Wagram Family Practice', location: 'Wagram', state: 'NC', coordinates: { lat: 34.8946, lng: -79.3632 }, category: 'Healthcare' },
   { id: 'dignity-homecare', name: 'Dignity Homecare', location: 'Pembroke', state: 'NC', coordinates: { lat: 34.6831, lng: -79.1956 }, category: 'Healthcare' },
   { id: 'choc', name: 'CHOC', location: 'Raeford', state: 'NC', coordinates: { lat: 34.9781, lng: -79.2256 }, category: 'Healthcare' },
+  // Local Government
+  { id: 'lafourche', name: 'Lafourche Parish', location: 'Thibodaux', state: 'LA', coordinates: { lat: 29.7958, lng: -90.8228 }, category: 'Local Business' },
   // Local Business
   { id: 'hce', name: 'HCE', location: 'Pembroke', state: 'NC', coordinates: { lat: 34.6900, lng: -79.1880 }, category: 'Local Business' },
   { id: 'fairmont', name: 'Fairmont', location: 'Fairmont', state: 'NC', coordinates: { lat: 34.4966, lng: -79.1140 }, category: 'Local Business' },

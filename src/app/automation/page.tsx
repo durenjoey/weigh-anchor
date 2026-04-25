@@ -245,7 +245,7 @@ const SERVICES = [
   {
     icon: Bot,
     title: "AI Implementation",
-    description: "Document processing, automated reporting, intelligent workflows. Deployed into your operation — trained on your data, integrated with your tools, managed by your team.",
+    description: "AI deployed where it earns its place. We start with process and automation, then layer AI only where determinism isn't enough. Integrated with your tools, managed by your team.",
   },
   {
     icon: Layers,
@@ -310,7 +310,7 @@ export default function AutomationServicesPage() {
             <div className="flex gap-4 mt-6 mb-8">
               <div className="w-1 bg-gradient-to-b from-cyan-400 to-cyan-400/0 rounded-full flex-shrink-0" />
               <p className="text-zinc-600 max-w-xl leading-relaxed">
-                Technology consulting, process automation, and AI implementation for government agencies and enterprise organizations.
+                We engineer and automate the systems that run the built environment.
               </p>
             </div>
 
@@ -378,7 +378,7 @@ export default function AutomationServicesPage() {
                     Enterprise platform projects at global pharmaceutical companies. Operational automation for public sector organizations managing critical infrastructure.
                   </p>
                   <div className="flex flex-wrap gap-3">
-                    {["MWBE", "SDVOB", "Small Contractor"].map((cert, i) => (
+                    {["SDVOSB", "MBE", "King County SCS"].map((cert, i) => (
                       <div key={i} className="px-3 py-1.5 rounded-sm border border-zinc-700 bg-zinc-900/80 text-xs text-zinc-400 uppercase tracking-widest font-mono">
                         {cert}
                       </div>

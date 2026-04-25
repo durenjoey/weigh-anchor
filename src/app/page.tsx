@@ -170,12 +170,16 @@ function DarkMapBackground() {
 // --- Terminal Typewriter ---
 const LINES = [
   {
-    command: "CONSTRUCTION",
-    text: "Project management, controls, and program management in 17 states and territories",
-  },
-  {
     command: "AUTOMATION",
     text: "Business process automation for teams running on headcount instead of systems",
+  },
+  {
+    command: "CONSTRUCTION",
+    text: "Project management, controls, and program development across 17 states and territories",
+  },
+  {
+    command: "AI",
+    text: "Process first, automation second, AI only where determinism isn't enough",
   },
 ];
 
@@ -459,7 +463,7 @@ export default function Home() {
           <div className="max-w-2xl pointer-events-auto">
 
             <h1 className="sr-only">
-              Veteran-Owned Construction Project Management &amp; Business Automation
+              Veteran-Owned Automation, AI, and Construction Professional Services
             </h1>
 
             {/* Terminal */}
@@ -471,8 +475,7 @@ export default function Home() {
             <div className="mt-10 flex gap-4">
               <div className="w-1 bg-gradient-to-b from-orange-500 to-orange-500/0 rounded-full flex-shrink-0" />
               <p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
-                We manage construction projects and automate operations
-                across public and private sectors.
+                We engineer and automate the systems that run the built environment.
               </p>
             </div>
 
@@ -494,7 +497,7 @@ export default function Home() {
                   className="border-zinc-700 text-zinc-400 hover:bg-zinc-800 hover:text-white hover:border-zinc-600 rounded-sm uppercase tracking-wider text-sm font-medium backdrop-blur-sm"
                 >
                   <Terminal className="mr-2 h-4 w-4" />
-                  Automation Services
+                  Automation & AI
                 </Button>
               </Link>
             </div>
@@ -519,7 +522,7 @@ export default function Home() {
               {
                 value: VERIFIED_STATS.activeProjects,
                 suffix: "+",
-                label: "CONSTRUCTION PROJECTS",
+                label: "PROJECTS DELIVERED",
               },
               {
                 value: VERIFIED_STATS.statesAndTerritories,
@@ -569,8 +572,52 @@ export default function Home() {
             </FadeIn>
 
             <div className="grid lg:grid-cols-2 gap-6">
-              {/* Construction — orange industrial panel */}
+              {/* Automation & AI — cyan tech panel */}
               <FadeIn delay={100}>
+                <Link href="/automation" className="group block h-full">
+                  <div className="relative h-full rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 hover:border-cyan-500/40 transition-all duration-500 overflow-hidden">
+                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-500 via-cyan-400 to-transparent" />
+                    <div className="absolute -top-20 -right-20 w-40 h-40 bg-cyan-500/8 rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    <div className="relative">
+                      <div className="w-12 h-12 rounded-md bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-6">
+                        <Bot className="h-6 w-6 text-cyan-400" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">
+                        Automation & AI
+                      </h3>
+                      <p className="text-zinc-500 leading-relaxed mb-6">
+                        Workflow automation, AI implementation, and business
+                        process engineering for organizations whose operations
+                        have to work.
+                      </p>
+                      <div className="space-y-3 mb-8">
+                        {[
+                          "Workflow Automation",
+                          "AI Implementation",
+                          "Business Process Engineering",
+                          "Change Management & Training",
+                        ].map((item, i) => (
+                          <div
+                            key={i}
+                            className="flex items-center gap-3 text-sm text-zinc-500"
+                          >
+                            <div className="w-1 h-1 bg-cyan-400 rounded-full" />
+                            {item}
+                          </div>
+                        ))}
+                      </div>
+                      <span className="inline-flex items-center text-sm font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors uppercase tracking-wider">
+                        Learn more
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </FadeIn>
+
+              {/* Construction — orange industrial panel */}
+              <FadeIn delay={200}>
                 <Link href="/services" className="group block h-full">
                   <div className="relative h-full rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 hover:border-orange-500/40 transition-all duration-500 overflow-hidden">
                     <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-orange-600 via-orange-500 to-transparent" />
@@ -581,18 +628,18 @@ export default function Home() {
                         <Building2 className="h-6 w-6 text-orange-500" />
                       </div>
                       <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">
-                        Construction Services
+                        Construction
                       </h3>
                       <p className="text-zinc-500 leading-relaxed mb-6">
                         Project management, project controls, and program
-                        management for government agencies, tribal nations,
+                        development for government agencies, tribal nations,
                         and private sector organizations.
                       </p>
                       <div className="space-y-3 mb-8">
                         {[
                           "Project Management",
                           "Project Controls",
-                          "Program Management",
+                          "Program Development",
                           "Field Operations",
                         ].map((item, i) => (
                           <div
@@ -605,50 +652,6 @@ export default function Home() {
                         ))}
                       </div>
                       <span className="inline-flex items-center text-sm font-bold text-orange-500 group-hover:text-orange-400 transition-colors uppercase tracking-wider">
-                        Learn more
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </FadeIn>
-
-              {/* Automation — cyan tech panel */}
-              <FadeIn delay={200}>
-                <Link href="/automation" className="group block h-full">
-                  <div className="relative h-full rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 hover:border-cyan-500/40 transition-all duration-500 overflow-hidden">
-                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-500 via-cyan-400 to-transparent" />
-                    <div className="absolute -top-20 -right-20 w-40 h-40 bg-cyan-500/8 rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                    <div className="relative">
-                      <div className="w-12 h-12 rounded-md bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-6">
-                        <Bot className="h-6 w-6 text-cyan-400" />
-                      </div>
-                      <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">
-                        Automation Services
-                      </h3>
-                      <p className="text-zinc-500 leading-relaxed mb-6">
-                        AI implementation, workflow automation, and digitization
-                        for construction organizations. We build it, deploy it,
-                        and train your team on it.
-                      </p>
-                      <div className="space-y-3 mb-8">
-                        {[
-                          "Process Mapping & Improvement",
-                          "Automation & Digitization",
-                          "AI Implementation",
-                          "Ongoing Support & Training",
-                        ].map((item, i) => (
-                          <div
-                            key={i}
-                            className="flex items-center gap-3 text-sm text-zinc-500"
-                          >
-                            <div className="w-1 h-1 bg-cyan-400 rounded-full" />
-                            {item}
-                          </div>
-                        ))}
-                      </div>
-                      <span className="inline-flex items-center text-sm font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors uppercase tracking-wider">
                         Learn more
                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </span>

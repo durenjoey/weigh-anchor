@@ -110,7 +110,7 @@ export default function AboutPage() {
             <div className="flex gap-4 mt-8 mb-8">
               <div className="w-1 bg-gradient-to-b from-orange-500 to-orange-500/0 rounded-full flex-shrink-0" />
               <p className="text-zinc-400 max-w-xl leading-relaxed text-lg">
-                Construction services and automation. Veteran-owned.
+                Automation, AI, and construction services. Veteran-owned.
                 Headquartered in Bellevue, WA. Deployed across 17 states and territories.
               </p>
             </div>
@@ -142,7 +142,7 @@ export default function AboutPage() {
 
               <FadeIn delay={300}>
                 <p className="text-zinc-500 leading-relaxed">
-                  It started with our founder deploying to these places himself — working alongside local teams to plan their projects in places where the nearest supply chain was a charter flight away. These were the projects that built our reputation. We slept in sleeping bags on facility floors, worked without cell service, and learned more about project delivery in those environments than most firms learn in a career.
+                  It started with our founder deploying to these places himself, working alongside local teams to plan their projects in places where the nearest supply chain was a charter flight away. These were the projects that built our reputation. We slept in sleeping bags on facility floors, worked without cell service, and learned more about project delivery in those environments than most firms learn in a career.
                 </p>
               </FadeIn>
 
@@ -150,9 +150,9 @@ export default function AboutPage() {
                 <div className="relative rounded-lg border border-zinc-800 bg-zinc-900/50 p-8 mt-12 overflow-hidden">
                   <div className="absolute top-0 left-0 w-24 h-[2px] bg-gradient-to-r from-orange-600 to-transparent" />
                   <p className="text-zinc-400 leading-relaxed italic">
-                    Our name comes from the nautical command to raise the anchor — the moment a ship breaks free from what&apos;s holding it in place and begins to move. That&apos;s what we do for our clients. We find what&apos;s keeping them stuck, we aid in the lift, and we get things moving.
+                    Our name comes from the nautical command to raise the anchor. The moment a ship breaks free from what&apos;s holding it in place and begins to move. That&apos;s what we do for our clients. We find what&apos;s keeping them stuck, we aid in the lift, and we get things moving.
                   </p>
-                  <p className="text-zinc-600 text-sm mt-4 font-mono">— Joey Duren</p>
+                  <p className="text-zinc-600 text-sm mt-4 font-mono">- Joey Duren</p>
                 </div>
               </FadeIn>
             </div>
@@ -169,10 +169,10 @@ export default function AboutPage() {
                 <div>
                   <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-4">Who We Are</p>
                   <h2 className="text-2xl font-bold text-white tracking-tight mb-6">
-                    We manage projects for government agencies, tribal nations, and private sector organizations.
+                    We engineer and automate the systems that run the built environment.
                   </h2>
                   <p className="text-zinc-500 leading-relaxed">
-                    We also automate the operations behind construction — the reporting, the workflows, the processes that run on people instead of systems.
+                    Workflow automation, AI implementation, and business process engineering for organizations whose operations have to work. We also manage construction projects across government, tribal, and private sector programs.
                   </p>
                 </div>
                 <div>
@@ -181,7 +181,7 @@ export default function AboutPage() {
                     We&apos;re a certified Service-Disabled Veteran-Owned Small Business. It&apos;s where we come from and how we operate: with structure, accountability, and a bias toward action.
                   </p>
                   <div className="flex flex-wrap gap-3">
-                    {["SDVOSB", "Veteran-Owned", "MBE"].map((cert, i) => (
+                    {["SDVOSB", "MBE", "King County SCS"].map((cert, i) => (
                       <div key={i} className="px-3 py-1.5 rounded-sm border border-zinc-700 bg-zinc-900/80 text-xs text-zinc-400 uppercase tracking-widest font-mono">
                         {cert}
                       </div>
@@ -217,7 +217,7 @@ export default function AboutPage() {
                 },
                 {
                   title: "We build the systems, not just the buildings",
-                  text: "We also automate the operations behind projects \u2014 cost tracking, reporting, document workflows. When we finish, we leave behind systems that keep working after we\u2019re gone.",
+                  text: "We also automate the operations behind projects: cost tracking, reporting, document workflows. When we finish, we leave behind systems that keep working after we\u2019re gone.",
                 },
               ].map((item, i) => (
                 <FadeIn key={i} delay={i * 100}>
@@ -251,9 +251,9 @@ export default function AboutPage() {
                   image="/assets/team/ceo.jpeg"
                   name="Joseph Duren Lopez"
                   title="President &amp; CEO"
-                  intro="U.S. Air Force veteran, Civil Engineering Squadron. Joey founded Weigh Anchor after military service and built the firm from the ground up — starting with the projects no one else wanted in the places no one else would go."
+                  intro="U.S. Air Force veteran, Civil Engineering Squadron. Joey founded Weigh Anchor after military service and built the firm from the ground up, starting with the projects no one else wanted in the places no one else would go."
                   expanded={[
-                    "He has personally managed and overseen projects across 17 states and territories, from federal courthouses to remote tribal infrastructure. He also leads the firm\u2019s automation practice, having delivered 55+ automation projects across multiple industries.",
+                    "He has personally managed and overseen projects across 17 states and territories, from federal courthouses to remote tribal infrastructure. He also leads the firm\u2019s automation practice, delivering 100+ automations per project for Fortune 500 clients and building Construction Copilot, the #1 ranked construction GPT with ~30,000 users.",
                     "Prior to Weigh Anchor, Joey founded Alpha CREW, a disaster relief nonprofit that delivered over 100,000 pounds of aid to Puerto Rico following Hurricane Maria.",
                   ]}
                 />
@@ -265,7 +265,7 @@ export default function AboutPage() {
                   image="/assets/team/cfo.png"
                   name="Roxana Forghani"
                   title="Chief Financial Officer"
-                  intro="CPA and former Senior Manager at Deloitte. Roxana brings Fortune 500 financial leadership to a veteran-owned firm — managing financial operations, contract compliance, and the fiscal strategy behind Weigh Anchor\u2019s growth."
+                  intro="CPA and former Senior Manager at Deloitte. Roxana brings Fortune 500 financial leadership to a veteran-owned firm, managing financial operations, contract compliance, and the fiscal strategy behind Weigh Anchor\u2019s growth."
                   expanded={[
                     "She also leads Accountaholics, her own accounting practice serving businesses and individuals.",
                   ]}

@@ -356,9 +356,9 @@ export default function ContactPage() {
                           Construction Services
                         </Button>
                       </a>
-                      <a href="/Weigh-Anchor-Automation-Capability-Statement.pdf" download>
+                      <a href="/Weigh-Anchor-AI-Automation-Capability-Statement.pdf" download>
                         <Button variant="outline" className="w-full border-zinc-700 text-zinc-400 hover:bg-zinc-800 hover:text-white hover:border-zinc-600 rounded-sm uppercase tracking-wider text-xs font-medium">
-                          Automation Services
+                          Automation & AI
                         </Button>
                       </a>
                     </div>
