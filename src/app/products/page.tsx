@@ -5,7 +5,7 @@ import DarkNav from "@/components/DarkNav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Products — Construction Copilot | Weigh Anchor",
+  title: "Products | Construction Copilot | Weigh Anchor",
   description:
     "Construction Copilot removes the administrative burden of construction. The #1 construction GPT and Daily Report, an offline voice-to-AI daily reporting app.",
 };
@@ -47,9 +47,9 @@ export default function ProductsPage() {
               Remove the administrative burden of construction.
             </h1>
             <p className="mt-6 text-lg text-zinc-400 leading-relaxed">
-              Construction Copilot is Weigh Anchor&apos;s suite of AI tools for the people who
-              actually run the work. The mission is simple: give crews their time back by taking the
-              paperwork off their hands — so they can build, not type.
+              Construction Copilot is Weigh Anchor&apos;s suite of AI tools for the people who run
+              construction. The mission is simple: take the administrative burden off their plate, so
+              their time goes to the work instead of the paperwork.
             </p>
           </div>
         </div>

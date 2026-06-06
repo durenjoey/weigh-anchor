@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Construction Copilot GPT | Weigh Anchor",
   description:
-    "The #1 construction GPT in the ChatGPT store. AI assistant for construction management — cost control, scheduling, earned value, and more. 25,000+ conversations.",
+    "The #1 construction GPT in the ChatGPT store. AI assistant for construction management: cost control, scheduling, earned value, and more. 25,000+ conversations.",
 };
 
 const GPT_URL = "https://chatgpt.com/g/g-oSieVvg1P-construction-copilot";
@@ -49,7 +49,7 @@ export default function ConstructionCopilotGPTPage() {
           <p className="mt-4 text-lg text-zinc-400">AI Assistant for Construction Management</p>
           <p className="mt-6 text-zinc-400 leading-relaxed">
             The most-used construction GPT in the ChatGPT store. Built by Weigh Anchor for project
-            managers, superintendents, and estimators — ask it about cost control, scheduling,
+            managers, superintendents, and estimators. Ask it about cost control, scheduling,
             earned value management, contracts, and the realities of running a job.
           </p>
 

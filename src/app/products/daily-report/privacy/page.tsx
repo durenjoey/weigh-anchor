@@ -5,7 +5,7 @@ import DarkNav from "@/components/DarkNav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Daily Report — Privacy Policy | Weigh Anchor",
+  title: "Daily Report Privacy Policy | Weigh Anchor",
   description:
     "Daily Report collects nothing. Your reports, photos, and recordings stay on your device. This is the app's full privacy policy.",
 };
@@ -38,8 +38,8 @@ export default function DailyReportPrivacyPage() {
           <div>
             <h2 className="text-white text-xl font-bold tracking-tight mb-3">What stays on your device</h2>
             <p>
-              Everything you create — report text, the original voice recordings, photos, signatures,
-              and the generated PDFs — is stored locally on your iPhone. We have no servers that
+              Everything you create (report text, the original voice recordings, photos, signatures,
+              and the generated PDFs) is stored locally on your iPhone. We have no servers that
               receive this information and no ability to access it.
             </p>
           </div>
@@ -57,15 +57,15 @@ export default function DailyReportPrivacyPage() {
             <h2 className="text-white text-xl font-bold tracking-tight mb-3">Permissions we use</h2>
             <ul className="list-disc pl-5 space-y-2">
               <li>
-                <span className="text-zinc-300">Microphone &amp; Speech Recognition</span> — to record
+                <span className="text-zinc-300">Microphone &amp; Speech Recognition</span>: to record
                 and transcribe your spoken report, on-device.
               </li>
               <li>
-                <span className="text-zinc-300">Camera &amp; Photos</span> — to attach jobsite photos
+                <span className="text-zinc-300">Camera &amp; Photos</span>: to attach jobsite photos
                 to a report, stored only on your device.
               </li>
               <li>
-                <span className="text-zinc-300">Location</span> — to stamp a finished report with where
+                <span className="text-zinc-300">Location</span>: to stamp a finished report with where
                 it was created (proof it was made on site), and to look up local weather. Location is
                 stored in your report on your device.
               </li>

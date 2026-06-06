@@ -5,7 +5,7 @@ import DarkNav from "@/components/DarkNav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Daily Report — Construction Copilot | Weigh Anchor",
+  title: "Daily Report | Construction Copilot | Weigh Anchor",
   description:
     "Speak your daily report; on-device AI turns it into a structured, signed PDF. Fully offline, private, built for the field. Coming soon to the App Store.",
 };
@@ -14,12 +14,12 @@ const FEATURES = [
   {
     icon: Mic,
     title: "Voice to report",
-    body: "Talk through your day like you'd text your PM. On-device AI sorts it into manpower, work, delays, safety, and more — or type it, same pipeline.",
+    body: "Talk through your day like you'd text your PM. On-device AI sorts it into manpower, work, delays, safety, and more. Or type it, same pipeline.",
   },
   {
     icon: WifiOff,
     title: "Works offline",
-    body: "Everything that matters runs on your phone — no signal required. Perfect for the dead zones real jobsites live in.",
+    body: "Everything that matters runs on your phone, no signal required. Perfect for the dead zones real jobsites live in.",
   },
   {
     icon: Camera,
@@ -60,7 +60,7 @@ export default function DailyReportPage() {
           </h1>
           <p className="mt-6 text-lg text-zinc-400 leading-relaxed">
             You run the job, it runs the paperwork. Speak your daily report and on-device AI turns it
-            into a structured, signed PDF — fully offline, fully private, built for the field.
+            into a structured, signed PDF. Fully offline, fully private, built for the field.
           </p>
 
           <div className="mt-8 inline-flex items-center gap-3 rounded-sm border border-orange-600/40 bg-orange-600/10 px-5 py-3 text-sm text-orange-300 uppercase tracking-wider font-mono">
