@@ -28,8 +28,8 @@ const FEATURES = [
   },
   {
     icon: FileSignature,
-    title: "A court-credible record",
-    body: "Timestamp, GPS, and your preserved words make each report a contemporaneous, legal-grade daily log.",
+    title: "A record you can rely on",
+    body: "Each report captures the time, location, and your own words, so you have a clear, accurate account of the day.",
   },
   {
     icon: ShieldCheck,
