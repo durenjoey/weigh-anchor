@@ -7,7 +7,10 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const NAV_ITEMS = [
+type NavChild = { href: string; label: string };
+type NavItem = { label: string; href?: string; children?: NavChild[] };
+
+const NAV_ITEMS: NavItem[] = [
   {
     label: "Services",
     children: [
@@ -15,15 +18,31 @@ const NAV_ITEMS = [
       { href: "/services", label: "Construction" },
     ],
   },
+  {
+    label: "Products",
+    href: "/products",
+    children: [
+      { href: "/products/construction-copilot-gpt", label: "Construction Copilot GPT" },
+      { href: "/products/daily-report", label: "Daily Report" },
+    ],
+  },
   { href: "/about", label: "About" },
 ];
 
 export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeight?: string }) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
   const pathname = usePathname();
 
   const isActive = (href: string) => pathname === href;
+  const groupActive = (item: NavItem) =>
+    (item.href ? pathname.startsWith(item.href) : false) ||
+    (item.children?.some((c) => isActive(c.href)) ?? false);
+
+  const triggerClass = (active: boolean) =>
+    `flex items-center gap-1 px-3 py-2 text-xs tracking-wider font-medium uppercase rounded-none transition-colors ${
+      active ? "text-white" : "text-zinc-500 hover:text-white"
+    }`;
 
   return (
     <header className="sticky top-0 z-50 bg-[#0d0f13]/90 backdrop-blur-xl border-b border-zinc-800">
@@ -56,59 +75,63 @@ export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeigh
               </Button>
             </Link>
 
-            {/* Services dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
-            >
-              <button
-                className={`flex items-center gap-1 px-3 py-2 text-xs tracking-wider font-medium uppercase rounded-none transition-colors ${
-                  NAV_ITEMS[0].children!.some((c) => isActive(c.href))
-                    ? "text-white"
-                    : "text-zinc-500 hover:text-white"
-                }`}
-              >
-                Services
-                <ChevronDown className={`h-3 w-3 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
-              </button>
-
-              {servicesOpen && (
-                <div className="absolute top-full left-0 pt-1 w-72">
-                  <div className="rounded-md border border-zinc-800 bg-[#0d0f13] shadow-xl shadow-black/40 overflow-hidden">
-                    {NAV_ITEMS[0].children!.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        onClick={() => setServicesOpen(false)}
-                        className={`block px-4 py-3 transition-colors border-b border-zinc-800/50 last:border-0 ${
-                          isActive(child.href)
-                            ? "bg-zinc-800/50 text-white"
-                            : "hover:bg-zinc-900 text-zinc-400 hover:text-white"
-                        }`}
-                      >
-                        <div className="text-sm font-medium">{child.label}</div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Regular nav items */}
-            {NAV_ITEMS.slice(1).map((item) => (
-              <Link key={item.href} href={item.href!}>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className={`uppercase text-xs tracking-wider font-medium rounded-none ${
-                    isActive(item.href!) ? "text-white" : "text-zinc-500 hover:text-white hover:bg-white/5"
-                  }`}
+            {NAV_ITEMS.map((item) =>
+              item.children ? (
+                // Dropdown (Services, Products). If the item has its own href, the trigger
+                // navigates on click AND opens the menu on hover (so a quick click still works).
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => setOpenMenu(item.label)}
+                  onMouseLeave={() => setOpenMenu(null)}
                 >
-                  {item.label}
-                </Button>
-              </Link>
-            ))}
+                  {item.href ? (
+                    <Link href={item.href} className={triggerClass(groupActive(item))}>
+                      {item.label}
+                      <ChevronDown className={`h-3 w-3 transition-transform ${openMenu === item.label ? "rotate-180" : ""}`} />
+                    </Link>
+                  ) : (
+                    <button className={triggerClass(groupActive(item))}>
+                      {item.label}
+                      <ChevronDown className={`h-3 w-3 transition-transform ${openMenu === item.label ? "rotate-180" : ""}`} />
+                    </button>
+                  )}
+
+                  {openMenu === item.label && (
+                    <div className="absolute top-full left-0 pt-1 w-72">
+                      <div className="rounded-md border border-zinc-800 bg-[#0d0f13] shadow-xl shadow-black/40 overflow-hidden">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            onClick={() => setOpenMenu(null)}
+                            className={`block px-4 py-3 transition-colors border-b border-zinc-800/50 last:border-0 ${
+                              isActive(child.href)
+                                ? "bg-zinc-800/50 text-white"
+                                : "hover:bg-zinc-900 text-zinc-400 hover:text-white"
+                            }`}
+                          >
+                            <div className="text-sm font-medium">{child.label}</div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link key={item.href} href={item.href!}>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className={`uppercase text-xs tracking-wider font-medium rounded-none ${
+                      isActive(item.href!) ? "text-white" : "text-zinc-500 hover:text-white hover:bg-white/5"
+                    }`}
+                  >
+                    {item.label}
+                  </Button>
+                </Link>
+              )
+            )}
 
             <div className="w-px h-6 bg-zinc-800 mx-2" />
 
@@ -152,38 +175,48 @@ export default function DarkNav({ logo, logoHeight }: { logo?: string; logoHeigh
               Home
             </Link>
 
-            {/* Services group */}
-            <div className="px-3 py-3 text-sm font-medium text-zinc-500">
-              Services
-            </div>
-            {NAV_ITEMS[0].children!.map((child) => (
-              <Link
-                key={child.href}
-                href={child.href}
-                onClick={() => setMobileOpen(false)}
-                className={`block pl-6 pr-3 py-3 rounded-md transition-colors ${
-                  isActive(child.href)
-                    ? "bg-zinc-800/50 text-white"
-                    : "text-zinc-400 hover:text-white hover:bg-zinc-900"
-                }`}
-              >
-                <div className="text-sm font-medium">{child.label}</div>
-              </Link>
-            ))}
-
-            {/* Regular items */}
-            {NAV_ITEMS.slice(1).map((item) => (
-              <Link
-                key={item.href}
-                href={item.href!}
-                onClick={() => setMobileOpen(false)}
-                className={`block px-3 py-3 rounded-md text-sm font-medium transition-colors ${
-                  isActive(item.href!) ? "bg-zinc-800/50 text-white" : "text-zinc-400 hover:text-white hover:bg-zinc-900"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {NAV_ITEMS.map((item) =>
+              item.children ? (
+                <div key={item.label}>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="block px-3 py-3 text-sm font-medium text-zinc-300 hover:text-white"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <div className="px-3 py-3 text-sm font-medium text-zinc-500">{item.label}</div>
+                  )}
+                  {item.children.map((child) => (
+                    <Link
+                      key={child.href}
+                      href={child.href}
+                      onClick={() => setMobileOpen(false)}
+                      className={`block pl-6 pr-3 py-3 rounded-md transition-colors ${
+                        isActive(child.href)
+                          ? "bg-zinc-800/50 text-white"
+                          : "text-zinc-400 hover:text-white hover:bg-zinc-900"
+                      }`}
+                    >
+                      <div className="text-sm font-medium">{child.label}</div>
+                    </Link>
+                  ))}
+                </div>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href!}
+                  onClick={() => setMobileOpen(false)}
+                  className={`block px-3 py-3 rounded-md text-sm font-medium transition-colors ${
+                    isActive(item.href!) ? "bg-zinc-800/50 text-white" : "text-zinc-400 hover:text-white hover:bg-zinc-900"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
 
             <div className="pt-3">
               <Link href="/contact" onClick={() => setMobileOpen(false)}>
