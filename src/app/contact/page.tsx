@@ -39,7 +39,8 @@ export default function ContactPage() {
     phone: "",
     organization: "",
     projectType: "",
-    message: ""
+    message: "",
+    company_website: "" // honeypot: must stay empty for real users
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
@@ -74,7 +75,8 @@ export default function ContactPage() {
           phone: "",
           organization: "",
           projectType: "",
-          message: ""
+          message: "",
+          company_website: ""
         });
       } else {
         setSubmitStatus({
@@ -179,6 +181,17 @@ export default function ContactPage() {
 
                 <FadeIn delay={100}>
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Honeypot: hidden from real users; bots that fill it get silently dropped server-side */}
+                    <input
+                      type="text"
+                      name="company_website"
+                      value={formData.company_website}
+                      onChange={handleChange}
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                      style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", opacity: 0 }}
+                    />
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
                         <label className="text-[10px] text-zinc-600 uppercase tracking-[0.2em] font-mono mb-2 block">
