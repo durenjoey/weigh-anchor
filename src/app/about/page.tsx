@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -30,56 +29,6 @@ function FadeIn({ children, className = "", delay = 0 }: { children: React.React
     >
       {children}
     </div>
-  );
-}
-
-function BioCard({ image, name, title, intro, expanded }: {
-  image: string;
-  name: string;
-  title: string;
-  intro: string;
-  expanded: string[];
-}) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <button
-      onClick={() => setOpen(!open)}
-      className="relative rounded-lg border border-zinc-800 bg-zinc-900/50 overflow-hidden text-left w-full hover:border-zinc-700 transition-colors cursor-pointer"
-    >
-      <div className="absolute top-0 left-0 w-24 h-[2px] bg-gradient-to-r from-orange-600 to-transparent" />
-      <div className="p-8">
-        <div className="flex items-start gap-6 mb-6">
-          <div className="w-20 h-20 rounded-md overflow-hidden flex-shrink-0 border border-zinc-700">
-            <Image src={image} alt={name} width={80} height={80} className="w-full h-full object-cover" />
-          </div>
-          <div>
-            <h3 className="text-xl font-bold text-white tracking-tight">{name}</h3>
-            <p className="text-orange-500 text-sm font-mono uppercase tracking-wider mt-1" dangerouslySetInnerHTML={{ __html: title }} />
-          </div>
-        </div>
-        <p className="text-zinc-500 leading-relaxed text-sm">{intro}</p>
-
-        <div className={`grid transition-all duration-500 ease-in-out ${open ? "grid-rows-[1fr] opacity-100 mt-4" : "grid-rows-[0fr] opacity-0"}`}>
-          <div className="overflow-hidden">
-            <div className="space-y-4">
-              {expanded.map((text, i) => (
-                <p key={i} className="text-zinc-600 leading-relaxed text-sm">{text}</p>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-4 flex items-center gap-2">
-          <span className="text-[10px] text-zinc-600 uppercase tracking-[0.2em] font-mono">
-            {open ? "Show less" : "Read more"}
-          </span>
-          <svg className={`w-3 h-3 text-zinc-600 transition-transform duration-300 ${open ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
-      </div>
-    </button>
   );
 }
 
@@ -228,49 +177,6 @@ export default function AboutPage() {
                   </div>
                 </FadeIn>
               ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership */}
-      <section className="py-24 border-t-2 border-zinc-800">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="max-w-5xl mx-auto">
-            <FadeIn>
-              <div className="mb-16">
-                <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-mono mb-4">Leadership</p>
-                <h2 className="text-3xl lg:text-4xl font-black text-white tracking-tight">Who runs it.</h2>
-              </div>
-            </FadeIn>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Joey */}
-              <FadeIn delay={100}>
-                <BioCard
-                  image="/assets/team/ceo.jpeg"
-                  name="Joseph Duren Lopez"
-                  title="President &amp; CEO"
-                  intro="U.S. Air Force veteran, Civil Engineering Squadron. Joey founded Weigh Anchor after military service and built the firm from the ground up, starting with the projects no one else wanted in the places no one else would go."
-                  expanded={[
-                    "He has personally managed and overseen projects across 17 states and territories, from federal courthouses to remote tribal infrastructure. He also leads the firm\u2019s automation practice, delivering 100+ automations per project for Fortune 500 clients and building Construction Copilot, the #1 ranked construction GPT with ~30,000 users.",
-                    "Prior to Weigh Anchor, Joey founded Alpha CREW, a disaster relief nonprofit that delivered over 100,000 pounds of aid to Puerto Rico following Hurricane Maria.",
-                  ]}
-                />
-              </FadeIn>
-
-              {/* Roxana */}
-              <FadeIn delay={200}>
-                <BioCard
-                  image="/assets/team/cfo.png"
-                  name="Roxana Forghani"
-                  title="Chief Financial Officer"
-                  intro="CPA and former Senior Manager at Deloitte. Roxana brings Fortune 500 financial leadership to a veteran-owned firm, managing financial operations, contract compliance, and the fiscal strategy behind Weigh Anchor\u2019s growth."
-                  expanded={[
-                    "She also leads Accountaholics, her own accounting practice serving businesses and individuals.",
-                  ]}
-                />
-              </FadeIn>
             </div>
           </div>
         </div>
