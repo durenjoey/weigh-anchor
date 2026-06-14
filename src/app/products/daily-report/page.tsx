@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, Mic, WifiOff, FileSignature, Camera, ShieldCheck, Mail } from "lucide-react";
+import { ArrowLeft, Mic, WifiOff, FileSignature, Camera, ShieldCheck, Mail, Apple } from "lucide-react";
 import DarkNav from "@/components/DarkNav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Daily Report | Construction Copilot | Weigh Anchor",
   description:
-    "Speak your daily report; on-device AI turns it into a structured, signed PDF. Fully offline, private, built for the field. Coming soon to the App Store.",
+    "Speak your daily report; on-device AI turns it into a structured, signed PDF. Fully offline, private, built for the field. Now on the App Store.",
 };
 
 const FEATURES = [
@@ -63,9 +63,15 @@ export default function DailyReportPage() {
             into a structured, signed PDF. Fully offline, fully private, built for the field.
           </p>
 
-          <div className="mt-8 inline-flex items-center gap-3 rounded-sm border border-orange-600/40 bg-orange-600/10 px-5 py-3 text-sm text-orange-300 uppercase tracking-wider font-mono">
-            Coming soon to the App Store
-          </div>
+          <a
+            href="https://apps.apple.com/us/app/daily-report-construction-ai/id6777528347"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex items-center gap-3 rounded-sm border border-orange-600 bg-orange-600 px-6 py-3 text-sm font-semibold text-white uppercase tracking-wider font-mono transition-colors hover:bg-orange-500"
+          >
+            <Apple className="h-4 w-4" />
+            Download on the App Store
+          </a>
         </div>
 
         {/* Features */}

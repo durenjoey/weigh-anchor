@@ -25,7 +25,7 @@ const PRODUCTS = [
     eyebrow: "iOS App",
     name: "Daily Report",
     blurb:
-      "Speak your daily report; on-device AI turns it into a structured, signed PDF. Fully offline, private, and built for the field. Coming soon to the App Store.",
+      "Speak your daily report; on-device AI turns it into a structured, signed PDF. Fully offline, private, and built for the field. Now on the App Store.",
     icon: ClipboardList,
     cta: "See the app",
   },
