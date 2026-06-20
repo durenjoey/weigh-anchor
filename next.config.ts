@@ -55,6 +55,16 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    // The apps now live on constructioncopilot.com (the app home). Redirect the
+    // WA marketing product pages there. Privacy + Terms stay on this domain
+    // (App Store listing links to them).
+    return [
+      { source: "/products", destination: "https://constructioncopilot.com", permanent: true },
+      { source: "/products/daily-report", destination: "https://constructioncopilot.com/daily-report", permanent: true },
+      { source: "/products/construction-copilot-gpt", destination: "https://constructioncopilot.com", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

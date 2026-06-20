@@ -26,9 +26,9 @@ const SHOTS = [
 ];
 
 const STATS = [
-  { value: "#1", label: "General Construction GPT" },
-  { value: "25,000+", label: "Conversations" },
-  { value: "600+", label: "Ratings" },
+  { value: "Free", label: "On the App Store" },
+  { value: "Offline", label: "Works in dead zones" },
+  { value: "On-device", label: "Private AI" },
 ];
 
 const FEATURES = [
