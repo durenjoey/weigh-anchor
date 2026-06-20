@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Enterprise construction project management and business automation for organizations ready to digitize and scale.",
     start_url: "/",
     display: "standalone",
-    background_color: "#ffffff",
-    theme_color: "#ff3d00",
+    background_color: "#0d0f13",
+    theme_color: "#0d0f13",
     icons: [
       {
         src: "/favicon.png",
