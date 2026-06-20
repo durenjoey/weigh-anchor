@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Daily Report Privacy Policy | Weigh Anchor",
   description:
-    "Daily Report collects nothing. Your reports, photos, and recordings stay on your device. This is the app's full privacy policy.",
+    "Daily Report runs on your device with no account. AI report structuring uses a no-retention cloud model when you are online, and stays fully on-device when you are offline. This is the app's full privacy policy.",
   alternates: {
     canonical: "/products/daily-report/privacy",
   },
@@ -28,31 +28,62 @@ export default function DailyReportPrivacyPage() {
 
         <h1 className="text-3xl lg:text-5xl font-bold text-white tracking-tight">Privacy Policy</h1>
         <p className="mt-3 text-sm text-zinc-500 uppercase tracking-widest font-mono">
-          Daily Report &middot; Effective June 6, 2026
+          Daily Report &middot; Effective June 19, 2026
         </p>
 
         <div className="mt-10 space-y-8 text-zinc-400 leading-relaxed">
           <p className="text-lg text-zinc-300">
-            Daily Report is built privacy-first. The app does not collect, transmit, or sell your
-            data. There is no account, no analytics, no advertising, and no third-party tracking.
-            Your reports stay on your device unless you choose to share them.
+            Daily Report is built privacy-first. In this version there is no account and no login.
+            There is no analytics, no advertising, and no third-party tracking. Your reports stay on
+            your device. The one thing that can leave your device is the words of your report, sent
+            to a no-retention cloud AI to structure them, and only when you are online and have not
+            switched to on-device AI. Nothing is sent to Weigh Anchor servers, and nothing is sold.
           </p>
 
           <div>
             <h2 className="text-white text-xl font-bold tracking-tight mb-3">What stays on your device</h2>
             <p>
               Everything you create (report text, the original voice recordings, photos, signatures,
-              and the generated PDFs) is stored locally on your iPhone. We have no servers that
-              receive this information and no ability to access it.
+              GPS location, and the generated PDFs) is stored locally on your iPhone. We have no
+              servers that receive this information and no ability to access it. There is no account
+              and no login in this version.
             </p>
           </div>
 
           <div>
-            <h2 className="text-white text-xl font-bold tracking-tight mb-3">On-device AI</h2>
+            <h2 className="text-white text-xl font-bold tracking-tight mb-3">How the AI structures your report</h2>
             <p>
-              Voice transcription and the AI that organizes your words into a report run entirely on
-              your device using Apple&apos;s on-device models. Your recordings and report content are
-              never uploaded for processing.
+              Daily Report turns your spoken or typed words into a structured report using AI. How
+              that works depends on whether you are online:
+            </p>
+            <ul className="list-disc pl-5 space-y-2 mt-3">
+              <li>
+                <span className="text-zinc-300">Online (default)</span>: the transcript of what you
+                said or typed is sent to a no-retention cloud AI, currently Google Gemini, which
+                processes it and sends back the structured report. The provider does not store your
+                transcript and does not use it to train its models. The finished report is saved on
+                your device.
+              </li>
+              <li>
+                <span className="text-zinc-300">Offline, or on-device AI</span>: when you have no
+                signal, or when you switch the app to on-device AI, the report is built entirely on
+                your iPhone and nothing leaves the device.
+              </li>
+            </ul>
+            <p className="mt-3">
+              Either way, your voice recordings, photos, signature, GPS location, and the report
+              itself stay on your device. Only the transcript text is ever sent for cloud structuring,
+              and only in the online default mode.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-white text-xl font-bold tracking-tight mb-3">Cloud backup and sync</h2>
+            <p>
+              Cloud backup, sync across devices, and team sharing are a future, separate, opt-in paid
+              feature and are <span className="text-zinc-300">not part of this version</span>. In this
+              version your reports are not backed up to any server. If you delete the app, the reports
+              on your device go with it, so export anything you want to keep.
             </p>
           </div>
 
@@ -61,7 +92,9 @@ export default function DailyReportPrivacyPage() {
             <ul className="list-disc pl-5 space-y-2">
               <li>
                 <span className="text-zinc-300">Microphone &amp; Speech Recognition</span>: to record
-                and transcribe your spoken report, on-device.
+                and transcribe your spoken report. Transcription runs on your device; the resulting
+                transcript text is what gets sent for cloud structuring in the online default mode
+                (see above).
               </li>
               <li>
                 <span className="text-zinc-300">Camera &amp; Photos</span>: to attach jobsite photos
@@ -98,6 +131,16 @@ export default function DailyReportPrivacyPage() {
           </div>
 
           <div>
+            <h2 className="text-white text-xl font-bold tracking-tight mb-3">No tracking, no selling, no other third parties</h2>
+            <p>
+              We do not track you, we do not run analytics, and we do not sell your data. The only
+              third parties involved are the named cloud AI provider (Google Gemini) that structures
+              your report when you are online, and Apple&apos;s WeatherKit when you use weather
+              auto-fill. There is no other third-party AI and no advertising network.
+            </p>
+          </div>
+
+          <div>
             <h2 className="text-white text-xl font-bold tracking-tight mb-3">Children</h2>
             <p>Daily Report is a professional tool and is not directed to children.</p>
           </div>
@@ -121,7 +164,11 @@ export default function DailyReportPrivacyPage() {
           </div>
 
           <p className="text-sm text-zinc-600">
-            Daily Report is published by Weigh Anchor LLC.
+            Daily Report is published by Weigh Anchor LLC. See also our{" "}
+            <Link href="/products/daily-report/terms" className="text-zinc-400 underline hover:text-white">
+              Terms of Use
+            </Link>
+            .
           </p>
         </div>
       </section>
