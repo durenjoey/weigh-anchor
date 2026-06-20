@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Contact | Weigh Anchor",
   description:
     "Get in touch with Weigh Anchor for construction project management, automation services, or federal contracting inquiries. SDVOSB certified, veteran-owned.",
+  alternates: {
+    canonical: "/contact",
+  },
   openGraph: {
     title: "Contact | Weigh Anchor",
     description:

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Construction Copilot GPT | Weigh Anchor",
   description:
     "The #1 construction GPT in the ChatGPT store. AI assistant for construction management: cost control, scheduling, earned value, and more. 25,000+ conversations.",
+  alternates: {
+    canonical: "/products/construction-copilot-gpt",
+  },
 };
 
 const GPT_URL = "https://chatgpt.com/g/g-oSieVvg1P-construction-copilot";

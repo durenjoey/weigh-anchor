@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
   async headers() {
     return [
       {
@@ -20,7 +21,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+            value: "camera=(), microphone=(), geolocation=(), interest-cohort=(), browsing-topics=()",
           },
           {
             key: "X-DNS-Prefetch-Control",
@@ -35,15 +36,19 @@ const nextConfig: NextConfig = {
             value: [
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://api.mapbox.com blob:",
-              "style-src 'self' 'unsafe-inline' https://api.mapbox.com",
+              "style-src 'self' 'unsafe-inline' https://api.mapbox.com https://fonts.googleapis.com",
               "img-src 'self' data: blob: https://api.mapbox.com https://*.mapbox.com",
-              "font-src 'self' data:",
+              "font-src 'self' data: https://fonts.gstatic.com",
               "connect-src 'self' https://api.mapbox.com https://*.mapbox.com https://events.mapbox.com",
               "worker-src 'self' blob:",
               "child-src blob:",
+              "media-src 'self'",
+              "manifest-src 'self'",
+              "object-src 'none'",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",
+              "upgrade-insecure-requests",
             ].join("; "),
           },
         ],

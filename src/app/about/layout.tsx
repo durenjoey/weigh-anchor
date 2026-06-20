@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "About | Weigh Anchor",
   description:
     "Veteran-owned construction services and automation firm. We deploy our own teams to remote and challenging project sites across 17 states and territories.",
+  alternates: {
+    canonical: "/about",
+  },
   openGraph: {
     title: "About | Weigh Anchor",
     description:

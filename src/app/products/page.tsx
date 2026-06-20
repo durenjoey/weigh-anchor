@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Products | Construction Copilot | Weigh Anchor",
   description:
     "Construction Copilot removes the administrative burden of construction. The #1 construction GPT and Daily Report, an offline voice-to-AI daily reporting app.",
+  alternates: {
+    canonical: "/products",
+  },
 };
 
 const PRODUCTS = [

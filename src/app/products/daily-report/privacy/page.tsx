@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Daily Report Privacy Policy | Weigh Anchor",
   description:
     "Daily Report collects nothing. Your reports, photos, and recordings stay on your device. This is the app's full privacy policy.",
+  alternates: {
+    canonical: "/products/daily-report/privacy",
+  },
 };
 
 export default function DailyReportPrivacyPage() {

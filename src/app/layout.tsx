@@ -36,12 +36,12 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.weighanchor.com",
+    canonical: "/",
   },
   category: "construction",
   icons: {
     icon: "/favicon.png",
-    apple: "/favicon.png",
+    apple: "/apple-touch-icon.png",
     shortcut: "/favicon.png",
   },
   openGraph: {

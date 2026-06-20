@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Daily Report | Construction Copilot | Weigh Anchor",
   description:
     "Speak your daily report; on-device AI turns it into a structured, signed PDF. Fully offline, private, built for the field. Now on the App Store.",
+  alternates: {
+    canonical: "/products/daily-report",
+  },
 };
 
 const FEATURES = [

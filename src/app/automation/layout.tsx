@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Automation & AI Implementation Services | Weigh Anchor",
   description:
     "AI implementation, workflow automation, and digitization for construction organizations, government agencies, and tribal nations. We build it, deploy it, and train your team on it.",
+  alternates: {
+    canonical: "/automation",
+  },
   openGraph: {
     title: "Automation & AI Implementation Services | Weigh Anchor",
     description:

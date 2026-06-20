@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Construction Project Management Services | Weigh Anchor",
   description:
     "Construction project management, project controls, program management, and field operations across 17 states and territories. Veteran-owned. Remote deployment capable.",
+  alternates: {
+    canonical: "/services",
+  },
   openGraph: {
     title: "Construction Project Management Services | Weigh Anchor",
     description:
