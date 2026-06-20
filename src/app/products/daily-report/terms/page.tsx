@@ -51,12 +51,12 @@ export default function DailyReportTermsPage() {
             </p>
             <p className="mt-3">
               The report structuring uses AI. When you are online (the default), the transcript of
-              your words is sent to a no-retention cloud AI, currently Google Gemini, which processes
-              it and returns the structured report; the provider does not store your transcript or use
-              it to train its models. When you are offline, or when you switch to on-device AI, the
-              report is built entirely on your iPhone and nothing leaves the device. Either way, your
-              recordings, photos, signature, GPS, and the report itself stay on your device. See the
-              Privacy Policy for the full data picture.
+              your words is sent to a cloud AI, currently Google Gemini, solely to process it into a
+              structured report and return it to you; we do not sell your transcript or use it for
+              advertising. When you are offline, or when you switch to on-device AI, the report is
+              built entirely on your iPhone and nothing leaves the device. Either way, your recordings,
+              photos, signature, GPS, and the report itself stay on your device. See the Privacy Policy
+              for the full data picture.
             </p>
           </div>
 
@@ -65,8 +65,8 @@ export default function DailyReportTermsPage() {
             <p>
               The reports, PDFs, text, recordings, photos, and signatures you create with the app
               belong to you (or to the employer or entity you create them for). We claim no ownership
-              of them. We do not sell your content, and we do not use the content of your reports to
-              train third-party AI models. Cloud backup, sync, and team sharing are a future, separate,
+              of them. We do not sell your content, and we do not use it for advertising. Cloud backup,
+              sync, and team sharing are a future, separate,
               opt-in paid feature and are not part of this version, so in this version your reports are
               not stored on any Weigh Anchor server.
             </p>

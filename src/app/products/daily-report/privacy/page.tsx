@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Daily Report Privacy Policy | Weigh Anchor",
   description:
-    "Daily Report runs on your device with no account. AI report structuring uses a no-retention cloud model when you are online, and stays fully on-device when you are offline. This is the app's full privacy policy.",
+    "Daily Report runs on your device with no account. When you are online, your report text is sent solely to structure it into a report and returned to your device; offline and on-device mode keep everything on the phone. This is the app's full privacy policy.",
   alternates: {
     canonical: "/products/daily-report/privacy",
   },
@@ -35,9 +35,10 @@ export default function DailyReportPrivacyPage() {
           <p className="text-lg text-zinc-300">
             Daily Report is built privacy-first. In this version there is no account and no login.
             There is no analytics, no advertising, and no third-party tracking. Your reports stay on
-            your device. The one thing that can leave your device is the words of your report, sent
-            to a no-retention cloud AI to structure them, and only when you are online and have not
-            switched to on-device AI. Nothing is sent to Weigh Anchor servers, and nothing is sold.
+            your device. The one thing that can leave your device is the words of your report, sent to
+            a cloud AI solely to structure them into a report and return it to you, and only when you
+            are online and have not switched to on-device AI. Your reports are not stored on Weigh
+            Anchor servers, and nothing is sold.
           </p>
 
           <div>
@@ -59,10 +60,9 @@ export default function DailyReportPrivacyPage() {
             <ul className="list-disc pl-5 space-y-2 mt-3">
               <li>
                 <span className="text-zinc-300">Online (default)</span>: the transcript of what you
-                said or typed is sent to a no-retention cloud AI, currently Google Gemini, which
-                processes it and sends back the structured report. The provider does not store your
-                transcript and does not use it to train its models. The finished report is saved on
-                your device.
+                said or typed is sent to a cloud AI, currently Google Gemini, solely to structure it
+                into a report, which is sent back and saved on your device. We do not sell your
+                transcript and do not use it for advertising.
               </li>
               <li>
                 <span className="text-zinc-300">Offline, or on-device AI</span>: when you have no

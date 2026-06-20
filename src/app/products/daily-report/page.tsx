@@ -55,7 +55,7 @@ const FEATURES = [
   {
     icon: ShieldCheck,
     title: "Private by design",
-    body: "No account, no tracking. Online, your words go to a no-retention AI to build the report; offline, it all runs on your phone. Your reports stay on your device unless you choose to send them.",
+    body: "No account, no tracking. Online, your words are sent solely to build the report and returned to you; offline, it all runs on your phone. Your reports stay on your device unless you choose to send them.",
   },
 ];
 
@@ -182,10 +182,10 @@ export default function DailyReportPage() {
             Device requirements
           </h3>
           <p className="text-sm text-zinc-400 leading-relaxed">
-            Voice-to-report works on any supported iPhone when you are online, using a no-retention
-            cloud AI. The fully offline on-device AI requires an iPhone 15 Pro or newer with Apple
-            Intelligence. On other iPhones you can still build, sign, and export reports by hand when
-            offline.
+            Voice-to-report works on any supported iPhone when you are online, using a cloud AI that
+            structures your report and returns it to you. The fully offline on-device AI requires an
+            iPhone 15 Pro or newer with Apple Intelligence. On other iPhones you can still build, sign,
+            and export reports by hand when offline.
           </p>
         </div>
 
