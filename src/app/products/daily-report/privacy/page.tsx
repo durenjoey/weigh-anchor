@@ -62,8 +62,9 @@ export default function DailyReportPrivacyPage() {
               <li>
                 <span className="text-zinc-300">Audio is platform-specific.</span> On iPhone, your
                 audio never leaves your device; speech-to-text runs on the phone itself. On Android,
-                your voice recording is sent to our transcription provider solely to convert it to
-                text (details below).
+                when Cloud AI is on and you are online, your voice recording is sent to our
+                transcription provider solely to convert it to text; otherwise Android&apos;s built-in
+                speech recognition is used (details below).
               </li>
               <li>
                 <span className="text-zinc-300">Our server stores nothing.</span> Our processing
@@ -101,11 +102,13 @@ export default function DailyReportPrivacyPage() {
             </p>
             <p className="mt-3">
               On iPhone, your audio never leaves your device; speech-to-text runs on the phone itself.
-              On Android, your voice recording is sent over an encrypted connection to our
-              transcription provider (Groq) solely to convert it to text; transcription requests are
-              not retained by default and may be temporarily logged by the provider for up to 30 days
-              solely for troubleshooting or abuse investigation. On both platforms, only when Cloud AI
-              is on and you are online, the resulting text is sent to be structured into your report.
+              On Android, when Cloud AI is on and you are online, your voice recording is sent over an
+              encrypted connection to our transcription provider (Groq) solely to convert it to text;
+              transcription requests are not retained by default and may be temporarily logged by the
+              provider for up to 30 days solely for troubleshooting or abuse investigation. When Cloud
+              AI is off or you are offline, Android instead transcribes with the device&apos;s built-in
+              speech recognition (see the on-device section below). On both platforms, only when Cloud
+              AI is on and you are online, the resulting text is sent to be structured into your report.
             </p>
             <ul className="list-disc pl-5 space-y-2 mt-3">
               <li>
@@ -188,9 +191,12 @@ export default function DailyReportPrivacyPage() {
                 signing.
               </li>
               <li>
-                <span className="text-zinc-300">On Android</span>, converting your voice to text
-                requires an internet connection, because transcription runs through our provider (see
-                above). You can still build, edit, sign, and export reports by hand when offline.
+                <span className="text-zinc-300">On Android</span>, when Cloud AI is off or you are
+                offline, your voice is transcribed by Android&apos;s built-in speech recognition
+                instead of our provider. On modern Android versions this runs on the device; on some
+                older devices, Android&apos;s speech service may process audio under Google&apos;s or
+                your device maker&apos;s policies, which we do not control. You can always build,
+                edit, sign, and export reports by hand, online or offline.
               </li>
             </ul>
           </div>
@@ -213,7 +219,8 @@ export default function DailyReportPrivacyPage() {
               <li>
                 <span className="text-zinc-300">Microphone &amp; Speech Recognition</span>: to record
                 your spoken report and, on iPhone, transcribe it on the device. On Android the
-                recording is transcribed by our provider as described above.
+                recording is transcribed by our provider when Cloud AI is on and you are online, or
+                by Android&apos;s built-in speech recognition otherwise (see above).
               </li>
               <li>
                 <span className="text-zinc-300">Camera &amp; Photos</span>: to attach jobsite photos

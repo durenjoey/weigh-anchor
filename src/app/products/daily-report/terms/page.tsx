@@ -63,10 +63,12 @@ export default function DailyReportTermsPage() {
               the text of your report is sent over an encrypted connection through our stateless
               server to a cloud AI (Google Gemini, paid API tier) solely to structure it into a report
               and return it to your device. On iPhone, speech-to-text runs on the device and your
-              audio never leaves it; on Android, your voice recording is sent to our transcription
-              provider (Groq) solely to convert it to text, and it is not retained by default (the
-              provider may temporarily log requests for up to 30 days solely for troubleshooting or
-              abuse investigation). Our server stores nothing and does not log the content of
+              audio never leaves it; on Android, when Cloud AI is on and you are online, your voice
+              recording is sent to our transcription provider (Groq) solely to convert it to text,
+              and it is not retained by default (the provider may temporarily log requests for up to
+              30 days solely for troubleshooting or abuse investigation), while offline or with Cloud
+              AI off, Android&apos;s built-in speech recognition is used instead. Our server stores
+              nothing and does not log the content of
               requests, and neither provider uses your content to train its models. On iPhone you can
               switch to on-device mode in Settings, which runs the AI entirely on your device;
               on-device mode also runs automatically when you are offline on a supported iPhone. We do

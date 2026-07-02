@@ -35,7 +35,7 @@ const FEATURES = [
   {
     icon: Mic,
     title: "Voice to report",
-    body: "Talk through your day like you'd text your PM. On-device AI sorts it into manpower, work, delays, safety, and more. Or type it, same pipeline.",
+    body: "Talk through your day like you'd text your PM. AI sorts it into manpower, work, delays, safety, and more. Or type it, same pipeline.",
   },
   {
     icon: WifiOff,
@@ -95,8 +95,9 @@ export default function DailyReportPage() {
             Daily Report
           </h1>
           <p className="mt-6 text-lg text-zinc-400 leading-relaxed">
-            You run the job, it runs the paperwork. Speak your daily report and on-device AI turns it
-            into a structured, signed PDF. Fully offline, fully private, built for the field.
+            You run the job, it runs the paperwork. Speak your daily report and AI turns it into a
+            structured, signed PDF. Works online or in a dead zone, and your reports live on your
+            phone. Built for the field.
           </p>
 
           <AppStoreButton className="mt-8" />
