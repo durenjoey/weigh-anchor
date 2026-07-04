@@ -63,6 +63,14 @@ const nextConfig: NextConfig = {
       { source: "/products", destination: "https://constructioncopilot.com", permanent: true },
       { source: "/products/daily-report", destination: "https://constructioncopilot.com/daily-report", permanent: true },
       { source: "/products/construction-copilot-gpt", destination: "https://constructioncopilot.com", permanent: true },
+      // Legacy routes from the pre-redesign site (deleted pages that Search
+      // Console may still have indexed).
+      { source: "/construction-copilot", destination: "https://constructioncopilot.com", permanent: true },
+      { source: "/construction-copilot/:path*", destination: "https://constructioncopilot.com", permanent: true },
+      { source: "/copilot", destination: "/automation", permanent: true },
+      { source: "/technology", destination: "/automation", permanent: true },
+      { source: "/operations", destination: "/services", permanent: true },
+      { source: "/capability-statement", destination: "/about", permanent: true },
     ];
   },
 };
