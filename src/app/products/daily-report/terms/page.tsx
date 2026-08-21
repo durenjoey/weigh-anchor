@@ -34,7 +34,7 @@ export default function DailyReportTermsPage() {
         <div className="mt-10 space-y-8 text-zinc-400 leading-relaxed">
           <p className="text-lg text-zinc-300">
             These Terms of Use are a binding agreement between you and Weigh Anchor LLC, a Washington
-            limited liability company based in Bellevue, Washington, for the use of the Daily Report
+            limited liability company based in Snohomish, Washington, for the use of the Daily Report
             mobile app for iOS and Android and any optional cloud features we may later offer
             (together, the &quot;Service&quot;). Daily Report is a Construction Copilot product. By
             downloading, installing, or using the Service, you agree to these Terms and to our{" "}
@@ -404,7 +404,7 @@ export default function DailyReportTermsPage() {
           <div>
             <h2 className="text-white text-xl font-bold tracking-tight mb-3">19. Contact</h2>
             <p>
-              Weigh Anchor LLC, Bellevue, Washington. Questions, concerns, or notices regarding these
+              Weigh Anchor LLC, Snohomish, Washington. Questions, concerns, or notices regarding these
               Terms? Email{" "}
               <a href="mailto:info@weighanchor.com" className="text-orange-500 hover:text-orange-400">
                 info@weighanchor.com

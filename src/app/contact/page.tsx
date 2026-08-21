@@ -142,7 +142,7 @@ export default function ContactPage() {
               {[
                 { icon: Phone, label: "Phone", value: "(407) 687-3792", href: "tel:+14076873792" },
                 { icon: Mail, label: "Email", value: "info@weighanchor.com", href: "mailto:info@weighanchor.com" },
-                { icon: MapPin, label: "Headquarters", value: "Bellevue, WA" },
+                { icon: MapPin, label: "Headquarters", value: "Snohomish, WA" },
                 { icon: Clock, label: "Hours", value: "Mon\u2013Fri, 8\u20136 PST" },
               ].map((item, i) => (
                 <div key={i} className="py-8 px-6">

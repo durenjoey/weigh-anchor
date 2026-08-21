@@ -34,7 +34,7 @@ export default function DailyReportPrivacyPage() {
         <div className="mt-10 space-y-8 text-zinc-400 leading-relaxed">
           <p className="text-lg text-zinc-300">
             Daily Report is a Construction Copilot product published by Weigh Anchor LLC, a Washington
-            limited liability company based in Bellevue, Washington. This policy covers the Daily
+            limited liability company based in Snohomish, Washington. This policy covers the Daily
             Report mobile app for iOS and Android. We built it on a simple principle: your data is
             yours. The app is free, has no accounts, no ads, no analytics, and no tracking. Your
             reports live on your device, not on our servers. This policy explains, in plain English,
@@ -351,7 +351,7 @@ export default function DailyReportPrivacyPage() {
           <div>
             <h2 className="text-white text-xl font-bold tracking-tight mb-3">Contact</h2>
             <p>
-              Weigh Anchor LLC, Bellevue, Washington. Questions about privacy or the app? Email{" "}
+              Weigh Anchor LLC, Snohomish, Washington. Questions about privacy or the app? Email{" "}
               <a href="mailto:info@weighanchor.com" className="text-orange-500 hover:text-orange-400">
                 info@weighanchor.com
               </a>

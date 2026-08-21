@@ -25,7 +25,7 @@ export default function Footer() {
               Contact
             </h3>
             <div className="space-y-2 text-sm text-zinc-600">
-              <p>Bellevue, WA</p>
+              <p>Snohomish, WA</p>
               <p>(407) 687-3792</p>
               <a href="mailto:info@weighanchor.com" className="hover:text-white transition-colors">info@weighanchor.com</a>
             </div>

@@ -107,7 +107,7 @@ export default function RootLayout({
               },
               address: {
                 "@type": "PostalAddress",
-                addressLocality: "Bellevue",
+                addressLocality: "Snohomish",
                 addressRegion: "WA",
                 addressCountry: "US",
               },
