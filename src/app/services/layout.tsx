@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Construction Project Management Services | Weigh Anchor",
   description:
-    "Construction project management, project controls, program management, and field operations across 17 states and territories. Veteran-owned. Remote deployment capable.",
+    "Construction project management, project controls, program management, and field operations across 19 states and territories. Veteran-owned. Remote deployment capable.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
     title: "Construction Project Management Services | Weigh Anchor",
     description:
-      "Construction project management, project controls, program management, and field operations across 17 states and territories.",
+      "Construction project management, project controls, program management, and field operations across 19 states and territories.",
     images: [
       {
         url: "/assets/images/construction-project-management-services-weigh-anchor.jpg",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Construction Project Management Services | Weigh Anchor",
     description:
-      "Construction project management, project controls, program management, and field operations across 17 states and territories. Veteran-owned.",
+      "Construction project management, project controls, program management, and field operations across 19 states and territories. Veteran-owned.",
     images: ["/assets/images/construction-project-management-services-weigh-anchor.jpg"],
   },
 };
@@ -64,7 +64,7 @@ export default function ServicesLayout({
                 name: "What types of projects do you manage?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Government facilities, tribal housing and infrastructure, commercial construction, and private sector builds. We've delivered across 17 states and territories, including remote communities in rural Alaska and Pacific islands.",
+                  text: "Government facilities, tribal housing and infrastructure, commercial construction, and private sector builds. We've delivered across 19 states and territories, including remote communities in rural Alaska and Pacific islands.",
                 },
               },
               {

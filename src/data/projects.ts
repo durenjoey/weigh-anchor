@@ -544,8 +544,8 @@ export const projects: Project[] = [
 
 // Verified stats from Weigh Anchor Project Tracker
 export const VERIFIED_STATS = {
-  activeProjects: 65,
-  statesAndTerritories: 17,
+  activeProjects: 70,
+  statesAndTerritories: 19,
 };
 
 // --- Client Map Data ---

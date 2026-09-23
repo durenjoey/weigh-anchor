@@ -331,7 +331,7 @@ export default function Services2Page() {
                       { name: "Pfizer", detail: "Pharmaceutical — construction & automation" },
                       { name: "Department of Justice (OVC/BJA)", detail: "Technical assistance to tribal grantees" },
                       { name: "Dept. of Veterans Affairs", detail: "Federal facility projects" },
-                      { name: "40+ Tribal Nations", detail: "Remote community construction across 17 states" },
+                      { name: "60+ Tribal Nations", detail: "Remote community construction across 16 states" },
                     ].map((client, i) => (
                       <div key={i} className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-4">
                         <div className="text-sm font-bold text-white mb-1">{client.name}</div>
@@ -375,7 +375,7 @@ export default function Services2Page() {
                 },
                 {
                   title: "We deploy anywhere",
-                  text: "17 states and territories — including rural Alaska, Pacific islands, and tribal communities with complex logistics.",
+                  text: "19 states and territories — including rural Alaska, Pacific islands, and tribal communities with complex logistics.",
                 },
               ].map((item, i) => (
                 <FadeIn key={i} delay={i * 100}>
@@ -414,7 +414,7 @@ export default function Services2Page() {
                 },
                 {
                   q: "What types of projects do you manage?",
-                  a: "Government facilities, tribal housing and infrastructure, commercial construction, and private sector builds. We've delivered across 17 states and territories, including remote communities in rural Alaska and Pacific islands.",
+                  a: "Government facilities, tribal housing and infrastructure, commercial construction, and private sector builds. We've delivered across 19 states and territories, including remote communities in rural Alaska and Pacific islands.",
                 },
                 {
                   q: "How is Weigh Anchor different from other PM firms?",

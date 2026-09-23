@@ -60,7 +60,7 @@ export default function AboutPage() {
               <div className="w-1 bg-gradient-to-b from-orange-500 to-orange-500/0 rounded-full flex-shrink-0" />
               <p className="text-zinc-400 max-w-xl leading-relaxed text-lg">
                 Automation, AI, and construction services. Veteran-owned.
-                Headquartered in Snohomish, WA. Deployed across 17 states and territories.
+                Headquartered in Snohomish, WA. Deployed across 19 states and territories.
               </p>
             </div>
           </div>

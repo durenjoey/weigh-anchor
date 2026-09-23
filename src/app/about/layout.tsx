@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About | Weigh Anchor",
   description:
-    "Veteran-owned construction services and automation firm. We deploy our own teams to remote and challenging project sites across 17 states and territories.",
+    "Veteran-owned construction services and automation firm. We deploy our own teams to remote and challenging project sites across 19 states and territories.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
     title: "About | Weigh Anchor",
     description:
-      "Veteran-owned construction services and automation firm deploying to remote and challenging project sites across 17 states and territories.",
+      "Veteran-owned construction services and automation firm deploying to remote and challenging project sites across 19 states and territories.",
     images: [
       {
         url: "/assets/images/weigh-anchor-og-default.jpg",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About | Weigh Anchor",
     description:
-      "Veteran-owned construction services and automation firm deploying to remote and challenging project sites across 17 states and territories.",
+      "Veteran-owned construction services and automation firm deploying to remote and challenging project sites across 19 states and territories.",
     images: ["/assets/images/weigh-anchor-og-default.jpg"],
   },
 };

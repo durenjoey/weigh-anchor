@@ -175,7 +175,7 @@ const LINES = [
   },
   {
     command: "CONSTRUCTION",
-    text: "Project management, controls, and program development across 17 states and territories",
+    text: "Project management, controls, and program development across 19 states and territories",
   },
   {
     command: "AI",
@@ -676,7 +676,7 @@ export default function Home() {
                 { name: "Pfizer", desc: "Pharmaceutical — construction & automation" },
                 { name: "Department of Justice (OVC/BJA)", desc: "Technical assistance to tribal grantees" },
                 { name: "Dept. of Veterans Affairs", desc: "Federal facility projects" },
-                { name: "40+ Tribal Nations", desc: "Remote community construction across 17 states" },
+                { name: "60+ Tribal Nations", desc: "Remote community construction across 16 states" },
               ].map((org, i) => (
                 <div key={i} className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-5">
                   <div className="text-sm font-bold text-white mb-1">{org.name}</div>
