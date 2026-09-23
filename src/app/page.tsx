@@ -674,7 +674,7 @@ export default function Home() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
               {[
                 { name: "Pfizer", desc: "Pharmaceutical — construction & automation" },
-                { name: "Department of Justice", desc: "Federal construction program management" },
+                { name: "Department of Justice (OVC/BJA)", desc: "Technical assistance to tribal grantees" },
                 { name: "Dept. of Veterans Affairs", desc: "Federal facility projects" },
                 { name: "40+ Tribal Nations", desc: "Remote community construction across 17 states" },
               ].map((org, i) => (

@@ -143,7 +143,7 @@ export default function RootLayout({
                   itemOffered: {
                     "@type": "Service",
                     name: "Construction Program Management",
-                    description: "Multi-project program oversight including OVC/DOJ grant-funded construction for tribal nations.",
+                    description: "Multi-project program oversight, including Department of Justice (OVC/BJA) technical assistance to tribal grantees.",
                   },
                 },
                 {

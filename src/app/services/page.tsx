@@ -329,7 +329,7 @@ export default function Services2Page() {
                   <div className="grid grid-cols-2 gap-3">
                     {[
                       { name: "Pfizer", detail: "Pharmaceutical — construction & automation" },
-                      { name: "Department of Justice", detail: "Federal construction program management" },
+                      { name: "Department of Justice (OVC/BJA)", detail: "Technical assistance to tribal grantees" },
                       { name: "Dept. of Veterans Affairs", detail: "Federal facility projects" },
                       { name: "40+ Tribal Nations", detail: "Remote community construction across 17 states" },
                     ].map((client, i) => (
