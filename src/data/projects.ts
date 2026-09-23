@@ -591,7 +591,6 @@ export const clients: Client[] = [
   { id: 'bbna', name: 'Bristol Bay Native Association', location: 'Dillingham', state: 'AK', coordinates: { lat: 59.04, lng: -158.46 }, category: 'Tribal Nation' },
   { id: 'hoonah', name: 'Hoonah Indian Association', location: 'Hoonah', state: 'AK', coordinates: { lat: 58.11, lng: -135.44 }, category: 'Tribal Nation' },
   { id: 'kasigluk', name: 'Kasigluk Traditional Elders Council', location: 'Kasigluk', state: 'AK', coordinates: { lat: 60.90, lng: -162.52 }, category: 'Tribal Nation' },
-  { id: 'kawerak', name: 'Kawerak, Inc.', location: 'Nome', state: 'AK', coordinates: { lat: 64.50, lng: -165.41 }, category: 'Tribal Nation' },
   { id: 'kipnuk', name: 'Native Village of Kipnuk', location: 'Kipnuk', state: 'AK', coordinates: { lat: 59.94, lng: -164.04 }, category: 'Tribal Nation' },
   { id: 'tununak', name: 'Native Village of Tununak', location: 'Tununak', state: 'AK', coordinates: { lat: 60.58, lng: -165.26 }, category: 'Tribal Nation' },
   { id: 'venetie', name: 'Native Village of Venetie Tribal Government', location: 'Venetie', state: 'AK', coordinates: { lat: 67.01, lng: -146.42 }, category: 'Tribal Nation' },
