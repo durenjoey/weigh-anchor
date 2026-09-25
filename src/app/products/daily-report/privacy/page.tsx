@@ -28,7 +28,7 @@ export default function DailyReportPrivacyPage() {
 
         <h1 className="text-3xl lg:text-5xl font-bold text-white tracking-tight">Privacy Policy</h1>
         <p className="mt-3 text-sm text-zinc-500 uppercase tracking-widest font-mono">
-          Daily Report &middot; Effective July 2, 2026
+          Daily Report &middot; Effective September 25, 2026
         </p>
 
         <div className="mt-10 space-y-8 text-zinc-400 leading-relaxed">
@@ -220,7 +220,10 @@ export default function DailyReportPrivacyPage() {
                 <span className="text-zinc-300">Microphone &amp; Speech Recognition</span>: to record
                 your spoken report and, on iPhone, transcribe it on the device. On Android the
                 recording is transcribed by our provider when Cloud AI is on and you are online, or
-                by Android&apos;s built-in speech recognition otherwise (see above).
+                by Android&apos;s built-in speech recognition otherwise (see above). Once you start a
+                recording, it keeps recording if your screen locks or you switch apps, with your
+                phone&apos;s recording indicator showing, until you stop it or 60 minutes pass. The app
+                never records in the background at any other time.
               </li>
               <li>
                 <span className="text-zinc-300">Camera &amp; Photos</span>: to attach jobsite photos
@@ -245,6 +248,30 @@ export default function DailyReportPrivacyPage() {
               service solely to retrieve current conditions for your report. On iPhone this is
               Apple&apos;s WeatherKit, handled by Apple under its own privacy policy. Weather lookups
               are used only to fill in the weather fields of your report and are not stored by us.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-white text-xl font-bold tracking-tight mb-3">Update announcements</h2>
+            <p>
+              Starting with version 1.2, the app checks for announcements, such as news about an app
+              update, by downloading a small file from our website (daily.constructioncopilot.com)
+              when you open the app, at most every few hours, or when you tap the bell. The request
+              carries only the app version. It includes no account, no device identifier, and none of
+              your report data. Like any website, our hosting provider (Vercel) receives your IP
+              address in order to deliver the file and may keep standard request logs briefly under
+              its own policy; we do not use them to identify or track you. Announcements are signed
+              by us, and the app only shows messages it can verify came from us.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-white text-xl font-bold tracking-tight mb-3">Error history</h2>
+            <p>
+              Starting with version 1.2, when something goes wrong the app shows a short error code
+              (for example, DR-210) and keeps a list of recent error codes and times in Settings so
+              you can tell us what happened. This list stays on your device. It contains no report
+              content and is never sent to us.
             </p>
           </div>
 
