@@ -20,7 +20,7 @@ export default function DailyReportPrivacyPage() {
 
       <section className="container mx-auto px-4 lg:px-6 py-16 lg:py-24 max-w-3xl">
         <Link
-          href="/products/daily-report"
+          href="https://www.constructioncopilot.com/daily-report"
           className="inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-white uppercase tracking-widest font-mono mb-10"
         >
           <ArrowLeft className="h-3 w-3" /> Daily Report
