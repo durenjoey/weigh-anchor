@@ -20,10 +20,13 @@ const NAV_ITEMS: NavItem[] = [
   },
   {
     label: "Products",
-    href: "/products",
+    // The product pages moved to constructioncopilot.com. Link there directly:
+    // a local /products href makes next/link prefetch an RSC payload that
+    // redirects cross-origin, which the CSP (connect-src) blocks on every page.
+    href: "https://www.constructioncopilot.com",
     children: [
-      { href: "/products/construction-copilot-gpt", label: "Construction Copilot GPT" },
-      { href: "/products/daily-report", label: "Daily Report" },
+      { href: "https://www.constructioncopilot.com", label: "Construction Copilot GPT" },
+      { href: "https://www.constructioncopilot.com/daily-report", label: "Daily Report" },
     ],
   },
   { href: "/about", label: "About" },

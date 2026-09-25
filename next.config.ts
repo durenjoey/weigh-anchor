@@ -1,5 +1,11 @@
 import type { NextConfig } from "next";
 
+// upgrade-insecure-requests breaks http://localhost previews in Safari and the
+// iOS Simulator (every asset gets upgraded to a nonexistent https://localhost),
+// so it only ships when the site is actually deployed. Vercel sets VERCEL=1.
+// (Same gate as constructioncopilot.com.)
+const isDeployed = !!process.env.VERCEL;
+
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   async headers() {
@@ -48,7 +54,7 @@ const nextConfig: NextConfig = {
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",
-              "upgrade-insecure-requests",
+              ...(isDeployed ? ["upgrade-insecure-requests"] : []),
             ].join("; "),
           },
         ],
@@ -60,13 +66,13 @@ const nextConfig: NextConfig = {
     // WA marketing product pages there. Privacy + Terms stay on this domain
     // (App Store listing links to them).
     return [
-      { source: "/products", destination: "https://constructioncopilot.com", permanent: true },
-      { source: "/products/daily-report", destination: "https://constructioncopilot.com/daily-report", permanent: true },
-      { source: "/products/construction-copilot-gpt", destination: "https://constructioncopilot.com", permanent: true },
+      { source: "/products", destination: "https://www.constructioncopilot.com", permanent: true },
+      { source: "/products/daily-report", destination: "https://www.constructioncopilot.com/daily-report", permanent: true },
+      { source: "/products/construction-copilot-gpt", destination: "https://www.constructioncopilot.com", permanent: true },
       // Legacy routes from the pre-redesign site (deleted pages that Search
       // Console may still have indexed).
-      { source: "/construction-copilot", destination: "https://constructioncopilot.com", permanent: true },
-      { source: "/construction-copilot/:path*", destination: "https://constructioncopilot.com", permanent: true },
+      { source: "/construction-copilot", destination: "https://www.constructioncopilot.com", permanent: true },
+      { source: "/construction-copilot/:path*", destination: "https://www.constructioncopilot.com", permanent: true },
       { source: "/copilot", destination: "/automation", permanent: true },
       { source: "/technology", destination: "/automation", permanent: true },
       { source: "/operations", destination: "/services", permanent: true },
