@@ -77,6 +77,12 @@ export default function Footer() {
             &copy; 2022&ndash;{new Date().getFullYear()} Weigh Anchor LLC. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
+            <Link href="/privacy" className="text-xs text-zinc-700 hover:text-white transition-colors">
+              Privacy
+            </Link>
+            <Link href="/terms" className="text-xs text-zinc-700 hover:text-white transition-colors">
+              Terms
+            </Link>
             <a
               href="https://www.linkedin.com/company/weigh-anchor/"
               target="_blank"
