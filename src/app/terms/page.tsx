@@ -13,7 +13,7 @@ export default function WeighAnchorTermsPage() {
   return (
     <PolicyShell
       title="Website Terms of Use"
-      subtitle={<>Weigh Anchor LLC &middot; Version 1 &middot; Effective [DATE TO BE SET ON APPROVAL]</>}
+      subtitle={<>Weigh Anchor LLC &middot; Version 1 &middot; Effective [EFFECTIVE DATE: FILL IN ON THE DAY JOEY APPROVES]</>}
     >
       <p className="text-lg text-zinc-300">
         These terms apply to your use of weighanchor.com (the “site”), run by Weigh Anchor LLC, a
@@ -92,7 +92,7 @@ export default function WeighAnchorTermsPage() {
       <Section title="9. Governing law">
         <p>
           Washington law governs these terms. Any dispute about the site must be brought in the state or
-          federal courts located in [PENDING: King or Snohomish] County, Washington.
+          federal courts located in Snohomish County, Washington.
         </p>
       </Section>
 

@@ -14,7 +14,7 @@ export default function WeighAnchorPrivacyPage() {
   return (
     <PolicyShell
       title="Privacy Notice"
-      subtitle={<>Weigh Anchor LLC &middot; Version 1 &middot; Effective [DATE TO BE SET ON APPROVAL]</>}
+      subtitle={<>Weigh Anchor LLC &middot; Version 1 &middot; Effective [EFFECTIVE DATE: FILL IN ON THE DAY JOEY APPROVES]</>}
     >
       <Lead>
         Weigh Anchor LLC is a Washington limited liability company based in Snohomish, Washington
@@ -75,8 +75,8 @@ export default function WeighAnchorPrivacyPage() {
       <Section title="How long we keep it">
         <p>
           We keep contact form messages and business records for as long as needed for the purpose
-          they were collected for and for the records the law or our contracts require. [CONFIRM: a
-          default period for inquiries that do not become work, for example two years.]
+          they were collected for and for the records the law or our contracts require. Contact form messages that do not lead to work are kept until you ask us to delete
+          them, and no longer than two years.
         </p>
       </Section>
 
