@@ -90,8 +90,8 @@ export default function DailyReportTermsPage() {
               later offer optional cloud features that require an account, you will be responsible for
               providing accurate account information, keeping your credentials confidential, and all
               activity under your account, and you should notify us promptly at{" "}
-              <a href="mailto:info@weighanchor.com" className="text-orange-500 hover:text-orange-400">
-                info@weighanchor.com
+              <a href="mailto:contact@constructioncopilot.com" className="text-orange-500 hover:text-orange-400">
+                contact@constructioncopilot.com
               </a>{" "}
               of any suspected unauthorized use. We will never ask you for your password by email,
               text, phone, or any other channel.
@@ -355,8 +355,8 @@ export default function DailyReportTermsPage() {
               These Terms, and any dispute arising out of or relating to them or to the Service, are
               governed by the laws of the State of Washington, without regard to its conflict-of-laws
               rules. Before starting any formal proceeding, you agree to contact us at{" "}
-              <a href="mailto:info@weighanchor.com" className="text-orange-500 hover:text-orange-400">
-                info@weighanchor.com
+              <a href="mailto:contact@constructioncopilot.com" className="text-orange-500 hover:text-orange-400">
+                contact@constructioncopilot.com
               </a>{" "}
               with a description of the dispute and to attempt in good faith to resolve it for at
               least 30 days. Any action or proceeding arising out of or relating to these Terms or the
@@ -406,8 +406,8 @@ export default function DailyReportTermsPage() {
             <p>
               Weigh Anchor LLC, Snohomish, Washington. Questions, concerns, or notices regarding these
               Terms? Email{" "}
-              <a href="mailto:info@weighanchor.com" className="text-orange-500 hover:text-orange-400">
-                info@weighanchor.com
+              <a href="mailto:contact@constructioncopilot.com" className="text-orange-500 hover:text-orange-400">
+                contact@constructioncopilot.com
               </a>
               . For legal notices, please include &quot;Legal - Daily Report Terms&quot; in the
               subject line.

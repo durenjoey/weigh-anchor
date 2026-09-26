@@ -299,8 +299,8 @@ export default function DailyReportPrivacyPage() {
               you believe we hold any personal information about you (for example, an email you sent
               us), we voluntarily extend access, correction, and deletion rights to everyone,
               regardless of where you live. Email{" "}
-              <a href="mailto:info@weighanchor.com" className="text-orange-500 hover:text-orange-400">
-                info@weighanchor.com
+              <a href="mailto:contact@constructioncopilot.com" className="text-orange-500 hover:text-orange-400">
+                contact@constructioncopilot.com
               </a>{" "}
               with the subject line &quot;Privacy Request&quot; and we will respond within the time
               required by applicable law. We may need to verify your identity before acting on a
@@ -321,8 +321,8 @@ export default function DailyReportPrivacyPage() {
               leaves the device, and on Android it is transcribed transiently as described above and
               is not used to identify anyone. Washington residents with questions about the My Health
               My Data Act can contact us at{" "}
-              <a href="mailto:info@weighanchor.com" className="text-orange-500 hover:text-orange-400">
-                info@weighanchor.com
+              <a href="mailto:contact@constructioncopilot.com" className="text-orange-500 hover:text-orange-400">
+                contact@constructioncopilot.com
               </a>
               .
             </p>
@@ -335,8 +335,8 @@ export default function DailyReportPrivacyPage() {
               to children. We do not knowingly collect personal information from anyone under 18, and
               the Children&apos;s Online Privacy Protection Act (COPPA) does not apply to the app. If
               you believe a minor has provided us information, contact us at{" "}
-              <a href="mailto:info@weighanchor.com" className="text-orange-500 hover:text-orange-400">
-                info@weighanchor.com
+              <a href="mailto:contact@constructioncopilot.com" className="text-orange-500 hover:text-orange-400">
+                contact@constructioncopilot.com
               </a>
               .
             </p>
@@ -379,8 +379,8 @@ export default function DailyReportPrivacyPage() {
             <h2 className="text-white text-xl font-bold tracking-tight mb-3">Contact</h2>
             <p>
               Weigh Anchor LLC, Snohomish, Washington. Questions about privacy or the app? Email{" "}
-              <a href="mailto:info@weighanchor.com" className="text-orange-500 hover:text-orange-400">
-                info@weighanchor.com
+              <a href="mailto:contact@constructioncopilot.com" className="text-orange-500 hover:text-orange-400">
+                contact@constructioncopilot.com
               </a>
               . For privacy requests, please include &quot;Privacy Request&quot; in the subject line.
             </p>

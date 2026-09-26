@@ -196,11 +196,11 @@ export default function DailyReportPage() {
             Questions or need a hand?
           </h3>
           <a
-            href="mailto:info@weighanchor.com"
+            href="mailto:contact@constructioncopilot.com"
             className="inline-flex items-center gap-2 text-orange-500 hover:text-orange-400 font-medium"
           >
             <Mail className="h-4 w-4" />
-            info@weighanchor.com
+            contact@constructioncopilot.com
           </a>
           <p className="mt-3 text-sm text-zinc-500">
             Read our{" "}
