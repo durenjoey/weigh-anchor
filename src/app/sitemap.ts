@@ -34,6 +34,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.6,
     },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date("2026-09-26"),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: new Date("2026-09-26"),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
     // /products, /products/daily-report (incl. /privacy and /terms), and
     // /products/construction-copilot-gpt redirect to constructioncopilot.com
     // (see next.config.ts redirects) so they must not be listed here.

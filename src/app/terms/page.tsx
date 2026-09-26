@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PolicyShell, Section, List, B, Mail, A, draftRobots } from "@/components/policy/Policy";
 
-// DRAFT (policies-v2 branch). New page: weighanchor.com/terms returned 404 before this.
+// Version 1, effective September 26, 2026 (approved by Joey 9/26).
 export const metadata: Metadata = {
   title: "Website Terms of Use | Weigh Anchor",
   description: "The terms for using weighanchor.com.",
@@ -13,7 +13,7 @@ export default function WeighAnchorTermsPage() {
   return (
     <PolicyShell
       title="Website Terms of Use"
-      subtitle={<>Weigh Anchor LLC &middot; Version 1 &middot; Effective [EFFECTIVE DATE: FILL IN ON THE DAY JOEY APPROVES]</>}
+      subtitle={<>Weigh Anchor LLC &middot; Version 1 &middot; Effective September 26, 2026</>}
     >
       <p className="text-lg text-zinc-300">
         These terms apply to your use of weighanchor.com (the “site”), run by Weigh Anchor LLC, a

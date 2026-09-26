@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PolicyShell, Section, List, B, Lead, Mail, A, draftRobots } from "@/components/policy/Policy";
 
-// DRAFT (policies-v2 branch). New page: weighanchor.com/privacy returned 404 before this.
+// Version 1, effective September 26, 2026 (approved by Joey 9/26).
 export const metadata: Metadata = {
   title: "Privacy Notice | Weigh Anchor",
   description:
@@ -14,7 +14,7 @@ export default function WeighAnchorPrivacyPage() {
   return (
     <PolicyShell
       title="Privacy Notice"
-      subtitle={<>Weigh Anchor LLC &middot; Version 1 &middot; Effective [EFFECTIVE DATE: FILL IN ON THE DAY JOEY APPROVES]</>}
+      subtitle={<>Weigh Anchor LLC &middot; Version 1 &middot; Effective September 26, 2026</>}
     >
       <Lead>
         Weigh Anchor LLC is a Washington limited liability company based in Snohomish, Washington

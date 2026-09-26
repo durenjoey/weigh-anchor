@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 // DRAFT SWITCH for the policies-v2 review. While true, every page built on
 // PolicyShell shows a "not in effect" banner and asks search engines not to
 // index it. Set to false only when Joey approves the text for publication.
-export const POLICY_DRAFT = true;
+export const POLICY_DRAFT = false;
 
 export const draftRobots = POLICY_DRAFT ? { index: false, follow: false } : undefined;
 
