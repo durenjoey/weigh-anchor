@@ -42,9 +42,10 @@ export async function POST(request: Request) {
     const projectType = sanitizeHeader(clamp(body?.projectType, 100));
     const message = clamp(body?.message, 5000);
 
-    // Required fields + strict email validation. The email value is reused as
-    // the recipient of a confirmation message, so it MUST be a single valid
-    // address to avoid open-relay / spam-amplification abuse.
+    // Required fields + strict email validation. The email is used only as the
+    // reply-to on the notification to Joey. No email is ever sent TO the
+    // submitted address (that confirmation was removed 2026-09-26: it let anyone
+    // use this form to send mail to strangers under Weigh Anchor's name).
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: 'Please provide your name, email, and a message.' },
@@ -94,26 +95,6 @@ export async function POST(request: Request) {
         { status: 500 }
       );
     }
-
-    // Also send a confirmation email to the sender. Only reached after the
-    // email has passed isValidEmail (single valid address).
-    await resend.emails.send({
-      from: 'Weigh Anchor <onboarding@resend.dev>',
-      to: [email],
-      subject: 'Thank you for contacting Weigh Anchor',
-      html: `
-        <h2>Thank you for your inquiry!</h2>
-        <p>Dear ${safeName},</p>
-        <p>We've received your message and will get back to you within one business day.</p>
-        <p>If you need immediate assistance, please call us at (407) 687-3792.</p>
-        <br>
-        <p>Best regards,<br>The Weigh Anchor Team</p>
-        <hr>
-        <p style="color: #666; font-size: 12px;">
-          This is an automated response to confirm we received your inquiry.
-        </p>
-      `,
-    });
 
     return NextResponse.json(
       { message: 'Email sent successfully' },
