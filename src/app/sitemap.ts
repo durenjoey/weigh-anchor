@@ -34,20 +34,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.6,
     },
-    // /products, /products/daily-report, and /products/construction-copilot-gpt
-    // 301 to constructioncopilot.com (see next.config.ts redirects) so they
-    // must not be listed here. Privacy + Terms still live on this domain.
-    {
-      url: `${baseUrl}/products/daily-report/privacy`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.4,
-    },
-    {
-      url: `${baseUrl}/products/daily-report/terms`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.4,
-    },
+    // /products, /products/daily-report (incl. /privacy and /terms), and
+    // /products/construction-copilot-gpt redirect to constructioncopilot.com
+    // (see next.config.ts redirects) so they must not be listed here.
   ];
 }
