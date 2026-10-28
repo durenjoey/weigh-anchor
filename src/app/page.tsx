@@ -530,7 +530,7 @@ export default function Home() {
                 label: "STATES & TERRITORIES",
               },
             ].map((stat, i) => (
-              <div key={i} className="py-10 px-6 text-center">
+              <div key={i} className="py-10 px-6 text-center flex flex-col justify-end">
                 <div className="text-white/60" style={{ filter: "drop-shadow(0 0 12px rgba(234, 88, 12, 0.55)) drop-shadow(0 0 4px rgba(234, 88, 12, 0.35))" }}>
                   {typeof stat.value === "number" ? (
                     <Counter target={stat.value} suffix={stat.suffix} />
@@ -545,8 +545,22 @@ export default function Home() {
                 </div>
               </div>
             ))}
-            <div className="py-10 px-6 text-center">
-              <Image src="/assets/logos/SDVOSB_Logo_White_2023_06_22.png.png" alt="SDVOSB Certified" width={48} height={48} className="mx-auto h-10 lg:h-12 w-auto opacity-60" style={{ filter: "drop-shadow(0 0 12px rgba(234, 88, 12, 0.55)) drop-shadow(0 0 4px rgba(234, 88, 12, 0.35))" }} />
+            <div className="py-10 px-6 text-center flex flex-col justify-end">
+              {/* Official SBA VetCert icon, byte-for-byte from SBA's decals-and-icons.zip
+                  (sba.gov/brand/for-partners/sba-certified-businesses). SBA rules: use it
+                  unaltered, so no opacity, filter, recolor or crop; scale proportionally only.
+                  The plain white tile sits behind it (not on it) because the icon's navy
+                  edge has too little contrast against this dark strip. */}
+              <div className="mx-auto w-fit rounded-sm bg-white p-2">
+                <Image
+                  src="/assets/logos/SBA-Service-Disabled-Veteran-Owned-Certified.png"
+                  alt="U.S. Small Business Administration Service-Disabled Veteran-Owned Certified"
+                  width={1210}
+                  height={1513}
+                  unoptimized
+                  className="block h-14 lg:h-16 w-auto"
+                />
+              </div>
               <div className="text-[10px] text-zinc-600 mt-3 uppercase tracking-[0.2em] font-mono">
                 Veteran Owned
               </div>
