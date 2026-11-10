@@ -4,7 +4,8 @@ import { PolicyShell, Section, List, B, Mail, A, draftRobots } from "@/component
 // Version 1, effective September 26, 2026 (approved by Joey 9/26).
 export const metadata: Metadata = {
   title: "Website Terms of Use | Weigh Anchor",
-  description: "The terms for using weighanchor.com.",
+  description:
+    "Terms of use for the Weigh Anchor LLC website, covering site content, acceptable use, links, disclaimers, governing law and Construction Copilot product terms.",
   alternates: { canonical: "/terms" },
   robots: draftRobots,
 };

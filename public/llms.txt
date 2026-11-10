@@ -1,26 +1,31 @@
 # Weigh Anchor
 
-> Enterprise construction project management and business automation for organizations ready to digitize and scale.
+> AI and automation implementation for organizations that still run on paper forms, spreadsheets and manual handoffs, plus construction project management for public and private owners.
 
 ## About
 
-Weigh Anchor is a veteran-owned firm based in Bellevue, WA that provides two core services: construction project management and business process automation. We serve federal agencies, tribal nations, and private sector organizations across 19 U.S. states and territories — and we're expanding access to small and mid-size businesses through productized service packages.
+Weigh Anchor LLC is a veteran-owned firm based in Snohomish, WA. It has two lines of work: AI and business automation implementation, and construction project management. It serves federal agencies, tribal nations and private sector organizations across 18 states.
 
 Founded by a U.S. Air Force Civil Engineering veteran. SDVOSB certified.
 
-## Services
+## AI and Automation Implementation
+- AI Implementation: Document processing, automated reporting and intelligent workflows deployed into operations
+- Automation and Digitization: Converting paper forms, manual handoffs and spreadsheets into automated systems
+- Process Mapping and Improvement: Documenting how work actually flows and identifying bottlenecks
+- Ongoing Support and Training: Team training on every system built, with continued maintenance and evolution
 
-### Construction Project Management
+## Construction Project Management
 - Project Management: Full lifecycle oversight from procurement through closeout
 - Project Controls: Budget tracking, schedule forecasting, change order management
 - Program Management: Standardized reporting, resource allocation, risk management across portfolios
 - Field Operations: Site inspections, quality assurance, contractor oversight
 
-### Business Automation
-- Process Mapping & Improvement: Documenting how work actually flows and identifying bottlenecks
-- Automation & Digitization: Converting paper forms, manual handoffs, and spreadsheets into automated systems
-- AI Implementation: Document processing, automated reporting, intelligent workflows deployed into operations
-- Ongoing Support & Training: Team training on every system built, with continued maintenance and evolution
+## Construction Copilot
+
+Construction Copilot is a trade name (DBA) of Weigh Anchor LLC and its line of software products for construction.
+- Website: https://www.constructioncopilot.com
+- Daily Report: A daily report app for construction crews. Talk for a minute and get a signed PDF. Free for iPhone and Android, no account needed, works with no signal. https://www.constructioncopilot.com/
+- Products: https://www.constructioncopilot.com/products
 
 ## Who We Serve
 - Federal agencies (Department of Justice, Department of Veterans Affairs)
@@ -29,7 +34,7 @@ Founded by a U.S. Air Force Civil Engineering veteran. SDVOSB certified.
 - Small and mid-size businesses ready to modernize operations
 
 ## Key Facts
-- Location: Bellevue, WA
+- Location: Snohomish, WA
 - Phone: (407) 687-3792
 - Email: info@weighanchor.com
 - Website: https://www.weighanchor.com
@@ -40,7 +45,8 @@ Founded by a U.S. Air Force Civil Engineering veteran. SDVOSB certified.
 
 ## Pages
 - Home: https://www.weighanchor.com/
+- AI and Automation Services: https://www.weighanchor.com/automation
 - Construction Services: https://www.weighanchor.com/services
-- Automation Services: https://www.weighanchor.com/automation
+- Products: https://www.weighanchor.com/products
 - About: https://www.weighanchor.com/about
 - Contact: https://www.weighanchor.com/contact
