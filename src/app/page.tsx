@@ -175,7 +175,7 @@ const LINES = [
   },
   {
     command: "CONSTRUCTION",
-    text: "Project management, controls, and program development across 19 states and territories",
+    text: "Project management, controls, and program development across 18 states and a U.S. territory",
   },
   {
     command: "AI",

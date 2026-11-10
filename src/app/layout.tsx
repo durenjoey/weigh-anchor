@@ -3,9 +3,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.weighanchor.com"),
-  title: "Weigh Anchor | Construction Project Management & Automation",
+  title: "Weigh Anchor | AI & Automation Implementation, Construction PM",
   description:
-    "Enterprise construction project management and business automation for organizations ready to digitize and scale.",
+    "Veteran-owned firm that implements AI and automation and manages construction projects for federal, tribal and private clients in 18 states and a U.S. territory.",
   keywords: [
     "SDVOSB construction management",
     "veteran-owned construction",
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
     shortcut: "/favicon.png",
   },
   openGraph: {
-    title: "Weigh Anchor | Construction Project Management & Automation",
+    title: "Weigh Anchor | AI & Automation Implementation, Construction PM",
     description:
-      "Enterprise construction project management and business automation for organizations ready to digitize and scale.",
+      "Veteran-owned firm that implements AI and automation and manages construction projects for federal, tribal and private clients in 18 states and a U.S. territory.",
     images: [
       {
         url: "/assets/images/weigh-anchor-og-default.jpg",
@@ -61,9 +61,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Weigh Anchor | Construction Project Management & Automation",
+    title: "Weigh Anchor | AI & Automation Implementation, Construction PM",
     description:
-      "Enterprise construction project management and business automation for organizations ready to digitize and scale.",
+      "Veteran-owned firm that implements AI and automation and manages construction projects for federal, tribal and private clients in 18 states and a U.S. territory.",
     images: ["/assets/images/weigh-anchor-og-default.jpg"],
   },
 };
@@ -98,7 +98,7 @@ export default function RootLayout({
               legalName: "Weigh Anchor LLC",
               url: "https://www.weighanchor.com",
               logo: "https://www.weighanchor.com/assets/logos/weigh_anchor_logo_v2.png",
-              description: "Enterprise construction project management and business automation for organizations ready to digitize and scale.",
+              description: "Veteran-owned firm that implements AI and automation and manages construction projects for federal, tribal and private clients in 18 states and a U.S. territory.",
               telephone: "+1-407-687-3792",
               email: "info@weighanchor.com",
               founder: {

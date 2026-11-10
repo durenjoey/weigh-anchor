@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact | Weigh Anchor",
     description:
-      "Get in touch with Weigh Anchor for construction services and automation. Veteran-owned, deployed across 19 states and territories.",
+      "Get in touch with Weigh Anchor for construction services and automation. Veteran-owned, deployed across 18 states and a U.S. territory.",
     images: [
       {
         url: "/assets/images/weigh-anchor-og-default.jpg",

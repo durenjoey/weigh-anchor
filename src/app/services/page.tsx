@@ -375,7 +375,7 @@ export default function Services2Page() {
                 },
                 {
                   title: "We deploy anywhere",
-                  text: "19 states and territories — including rural Alaska, Pacific islands, and tribal communities with complex logistics.",
+                  text: "18 states and a U.S. territory, including rural Alaska, Pacific islands, and tribal communities with complex logistics.",
                 },
               ].map((item, i) => (
                 <FadeIn key={i} delay={i * 100}>
@@ -414,7 +414,7 @@ export default function Services2Page() {
                 },
                 {
                   q: "What types of projects do you manage?",
-                  a: "Government facilities, tribal housing and infrastructure, commercial construction, and private sector builds. We've delivered across 19 states and territories, including remote communities in rural Alaska and Pacific islands.",
+                  a: "Government facilities, tribal housing and infrastructure, commercial construction, and private sector builds. We've delivered across 18 states and a U.S. territory, including remote communities in rural Alaska and Pacific islands.",
                 },
                 {
                   q: "How is Weigh Anchor different from other PM firms?",
